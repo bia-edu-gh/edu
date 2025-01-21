@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="/breman-islamic-academy/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
     <title>Breman Islamic Academy - Report Cards</title>
     <style>
         @media (min-width: 768px) {
@@ -64,11 +64,11 @@
     </nav>
     <div class="main-container">
         <aside class="sidebar" id="sidebar">
-            <img src="/breman-islamic-academy/images/i.Breman Islamic Bage 1.jpg" alt="School Badge" id="side">
+            <img src="i.Breman Islamic Bage 1.jpg" alt="School Badge" id="side">
             <br><b style="margin-left: 60px;">BIA.EDU</b><br><b style="margin-left: 35px;">BREMAN ASIKUMA</b>
             <ul>
-                <li><button id="home" class="button"><a href="/breman-islamic-academy/html/index.html">Home</a></button></li>
-                <li><button id="report_cards" class="button active"><a href="/breman-islamic-academy/html/h.report_cards.html" style="color: red;">Report Cards</a></button></li>
+                <li><button id="home" class="button"><a href="index.html">Home</a></button></li>
+                <li><button id="report_cards" class="button active"><a href="h.report_cards.html" style="color: red;">Report Cards</a></button></li>
                 <li><button id="exams" class="button"><a href="exams.html">Exams</a></button></li>
                 <li><button id="gallery" class="button"><a href="gallery.html">Gallery</a></button></li>
                 <li><button id="audios" class="button"><a href="audios.html">Audios</a></button></li>
@@ -261,7 +261,7 @@
                 localStorage.setItem("studentData", JSON.stringify(student));
 
                 // Redirect to report_cards_display.html
-                window.location.href = "report_cards_display.html";
+                window.location.href = "h.report_cards_display.html";
             } else {
                 alert("Student not found. Enter the right Student Name, Class, Term, and Academic Year.");
                 closeConfirmationPopup();
@@ -275,7 +275,7 @@
     </script>
     <footer class="footer">
         <audio controls id="audio" autoplay loop>
-            <source src="/breman-islamic-academy/audios/m.background-music.aac" type="audio/mpeg">
+            <source src="m.background-music.aac" type="audio/mpeg">
         </audio>
         <marquee>- - - Motto: Sovereignty Belongs to Allah - - -</marquee>
     </footer>
