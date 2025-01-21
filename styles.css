@@ -1,0 +1,215 @@
+body {
+            background: mintcream;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column; /* Added for better header/content flow */
+        }
+        .header {
+            background-color: green;
+            background-image: url("/breman-islamic-academy/images/together.jpg");
+            background-size: cover;
+            background-position: center;
+            height: 120px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: 0; /* Adjust based on header height */
+            left: 0;
+            width: 100%;
+            z-index: 1000;}
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 60px;
+            position: fixed;
+            top: 80px; /* Adjust based on header height */
+            width: 100%;
+            background: burlywood;
+            z-index: 1000;}
+        .left_me {position: relative;
+                  left: 8%;}
+        #toggle-button, #current, #mail, #call {border-radius: 5px; padding: 10px; 
+                                  border: none; background: green; 
+                                  color: white; cursor: pointer;}
+        .right_us {position: relative;
+                   right: 15%;}
+        #input    {border-radius: 1em; width: 37%; max-width: 25em;
+                   border: none;}
+       
+        .sidebar {
+            position: fixed;
+            top: 90px; /* Adjust based on header height */
+            left: -250px; /* Initially off-screen */
+            width: 230px;
+            height: calc(100vh - 60px); /* Full height minus header */
+            background: bisque; /* Sidebar background color */
+            padding: 50px 0px 0px;
+            transition: left 0.0s ease; /* Slide effect */
+            z-index: 0;
+            overflow-y: auto; /* Add scrollbar if content exceeds height */
+        }
+        .sidebar.open {
+            left: 0; /* Shift sidebar into view */
+        }
+        .sidebar img {
+            width: 55%;
+            max-width: 300px;
+            height: auto;
+            border-radius: 50%;
+            display: block;
+            margin: 0 auto; margin-top: 20px;
+            text-align: center;
+        }
+        ul {
+            padding: 0;
+            list-style-type: none; /* Remove bullet points */
+        }
+        .sidebar .button {
+            width: 100%; /* Make buttons full width of sidebar */
+            background-color: burlywood; /* Set button color to burlywood */
+            border: 2px solid rgba(255, 255, 255, 0.2); /* Increase border thickness */
+            color: black; /* Text color for better contrast */
+            padding: 15px; /* Increase inner padding for thickness */
+            text-align: left; /* Align text to the left */
+            margin: 0; /* Remove margin to make buttons meet */
+            cursor: pointer; /* Pointer on hover */
+            transition: background-color 0.3s; /* Smooth transition */
+            border-radius: 0; /* Remove rounded corners for a seamless look */
+            background-image: none; /* Set default background image */
+            background-size: 20px 20px; /* Adjust size as needed */
+            background-repeat: no-repeat; /* Do not repeat the image */
+            background-position: left center; /* Position the image to the left */
+            padding-left: 30px; /* Add space for the image */
+        }
+        /* Add specific background images for each button */
+        #home {
+            background-image: url('/breman-islamic-academy/images/i.home.jpg'); /* Replace with the actual home image URL */
+        }
+        #report_cards {
+            background-image: url('/breman-islamic-academy/images/i.report.jpg'); /* Replace with the actual report cards image URL */
+        }
+        #exams {
+            background-image: url('/breman-islamic-academy/images/i.exams.jpg'); /* Replace with the actual exams image URL */
+        }
+        #gallery {
+            background-image: url('/breman-islamic-academy/images/i.gallery.jpg'); /* Replace with the actual gallery image URL */
+        }
+        #audios {
+            background-image: url('/breman-islamic-academy/images/i.audios.jpg'); /* Replace with the actual audios image URL */
+        }
+        #admission {
+            background-image: url('/breman-islamic-academy/images/i.admission.jpg'); /* Replace with the actual admission image URL */
+        }
+        .sidebar .button:hover {
+            background-color: rgba(255, 215, 0, 0.5); /* Lighten on hover (optional) */
+        }
+        .sidebar .button a {
+            color: inherit; /* Inherit color from button */
+            text-decoration: none; /* Remove underline */
+            display: block; /* Make anchor fill button */
+            width: 100%; /* Ensure anchor is full width */
+            height: 100%; /* Ensure anchor is full height */}
+        .content {
+            padding: 6% 0% 0%;
+            text-align: center;
+            flex-grow: 1;
+            margin-top: 60px; /* Space for header and navbar */
+            transition: margin-left 0.3s ease; /* Smooth transition for content shift */
+             }
+         /* Shift content on large screens only */
+        @media (min-width: 768px) {
+            .content.shifted {
+                margin-left: 200px; /* Shift content when sidebar is open */}}
+        /* Small screens: No shifting */
+        @media (max-width: 767px) {.content {margin-left: 0; /* No shifting on small screens */}}
+
+        .main-container {
+            display: flex;
+            margin-top: 1%; /* Space for header and navbar */
+            height: calc(100vh - 60px); /* Full viewport height */}
+
+
+        .popup {
+            display: none; /* Hide pop-ups by default */
+            position: fixed; /* Position them fixed to the viewport */
+            background: white; /* Aquamarine background color for the pop-up */
+            border: 1px solid #ccc; /* Border for the pop-up */
+            padding: 20px; /* Padding inside the pop-up */
+            z-index: 1000; /* Ensure it's above other content */
+            left: 50%; /* Center horizontally */
+            top: 50%; /* Center vertically */
+            transform: translate(-50%, -50%); /* Perfectly center */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Add shadow for better visibility */
+            border-radius: 10px; /* Rounded corners */
+        }
+        .popup-header, .popup-footer {
+            background-color: #4CAF40; /* Same color for header and footer */
+            color: white; /* Text color for header and footer */
+            padding: 10px; /* Padding inside header and footer */
+            text-align: center; /* Center the text */
+            border-radius: 10px 10px 0 0; /* Rounded top corners for header */
+        }
+        .popup-footer {
+            border-radius: 0 0 10px 10px; /* Rounded bottom corners for footer */
+        }
+        .popup p {
+            margin: 10px 0; /* Space around paragraphs */
+        }
+        .popup button {
+            background-color: #f44336; /* Color for the close button */
+            color: white; /* Text color for the button */
+            border: none; /* Remove border */
+            padding: 10px 15px; /* Padding for the button */
+            cursor: pointer; /* Pointer cursor on hover */
+            border-radius: 5px; /* Rounded corners */
+            display: block; /* Make the button block-level for full width */
+            margin: 10px auto 0; /* Center the button */
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        @media (max-width: 767px) {
+            .header {height: 100px;
+                     width: 100%;
+                     flex-direction: column;
+                    justify-content: flex-start;}
+            .navbar {flex-direction: column;
+                     position: fixed;
+                     top: 65px;}
+            .sidebar {height: 48%; margin-top: 50px /* Adjust height on small screens */}
+            .main-container {flex-direction: column; margin-top: 3.5em;}
+            #index_head, .welcome-message, #motto {width: 75%; margin: 10px auto; padding:10px;}
+            #index_head {margin-top: 100px;}
+            #audio {height: 20px;width: 80px;}
+            marquee {width: 100%;
+                     position: relative;
+                     left: 0px;}
+            footer{height: 100%;}}
+
+        .footer {
+            height: auto;
+            display: flex;
+            padding: 10px 0px 25px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background: burlywood;
+            z-index: 1000;}
+        #audio {height: 20px;
+                width: 90px;
+                position: relative;
+                left: 120px}
+        marquee {background: white;
+                 width: 30%;
+                 position: relative;
+                 left: 40%;}

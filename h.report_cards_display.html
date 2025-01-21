@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terminal Reports Checking</title>
+    <style>
+        body {font-size: 14px;
+            font-family: Roboto, sans-serif;
+            margin: 20px;
+            display: flex;
+            flex-direction: column; /* Stack elements vertically */
+            align-items: center; /* Center the content horizontally */
+        }
+        table {
+            width: 100%; /* Use full width */
+            max-width: 480px; /* Set a max width to 480px */
+            border-collapse: collapse; /* Ensure borders are collapsed for uniformity */
+            margin-bottom: 20px;
+        }
+        th,
+        td {border: 1px solid #000; /* Uniform border for all cells */
+            padding: 4px;
+            text-align: left; /* Align text to the left */}
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px; /* Add some space above the button */
+            background: yellow;
+            color: red;
+            text-decoration: underline;
+            border: none;
+            border-radius: 10px;
+        }
+        img {
+            width: 100%; /* Set a consistent width for the image */
+            max-width: 480px; /* Max width to maintain responsiveness */
+            height: auto; /* Maintain aspect ratio */
+        }
+        .full-width {
+            text-align: left; /* Align text to the left for full-width rows */
+        }
+        .empty-row {
+            height: 100px; /* Set height to match the header */
+        }
+        /* Hide borders when printing */
+        @media print {
+            table {
+                border: none; /* Hide table borders */
+            }
+            th, td {
+                border: none; /* Hide cell borders */
+            }
+        }
+        .wrap {
+            word-wrap: break-word;
+            max-width: 150px; /* Set a max width for the subject name */
+        }
+    </style>
+</head>
+<body>
+
+<table>
+    <tr>
+        <td colspan="3" class="full-width" style="padding: 0">
+            <img src="/breman-islamic-academy/images/i.report-head.jpg" alt="Header Image" style="display: block;">
+        </td>
+    </tr>
+    <tr>
+        <td colspan="3" class="full-width" style="text-align: center; background: burlywood; color: white; padding: 5px 0 5px;">
+            <strong>Results Checking</strong>
+        </td> 
+    </tr>
+    <tr>
+        <td colspan="3" class="full-width">
+            <strong style="color: red;">Disclaimer:</strong> 
+            <span style="color: indigo; font-size: 14px;">THE RESULTS GIVEN BELOW ARE PROVISIONAL. THE FINAL RESULTS WILL BE PRINTED ON YOUR REPORT CARD.</span>
+        </td>
+    </tr>
+    <tr class="empty-row">
+        <td colspan="3" class="full-width"><img src="/breman-islamic-academy/images/i.empty.jpg" alt="Empty Space"></td>
+    </tr>
+    <tr>
+        <td colspan="3" class="full-width">
+            <span style="color: indigo; font-size: 14px;">RESULTS OF THE CANDIDATE ON THIS PRINT-OUT CAN BE CROSS-CHECKED BY COMPARING IT TO THE ONE ON THE REPORT CARD.</span>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="3" class="full-width" style="background: burlywood; color: white;">
+            <strong>Candidate's Details</strong>
+        </td>
+    </tr>
+    <tbody id="studentDetails"></tbody>
+     <tr>
+        <td colspan="3" class="full-width" style="background: burlywood; color: white; padding: 0.85em;">
+            <strong></strong>
+        </td>
+    </tr>
+    <tr>
+                    <td style="padding: 0.85em;"><strong></strong></td>
+                    <td colspan="2"></td>
+    </tr>
+    <tr>
+        <td colspan="3" class="full-width" style="background: burlywood; color: white;">
+            <strong>Results</strong>
+        </td>
+    </tr>
+    <tbody id="subjectResults"></tbody>
+</table>
+
+<div>
+    <button onclick="window.print()">Click to Print This Page</button>
+</div>
+
+<script>
+    window.onload = function() {
+        const student = JSON.parse(localStorage.getItem("studentData"));
+
+        if (student) {
+            document.getElementById("studentDetails").innerHTML = `
+                <tr>
+                    <td><strong>Student Name</strong></td>
+                    <td colspan="2">${student.studentName}</td>
+                </tr>
+                <tr>
+                    <td><strong>Class</strong></td>
+                    <td colspan="2">${student.class}</td>
+                </tr>
+                <tr>
+                    <td><strong>Term</strong></td>
+                    <td colspan="2">${student.term}</td>
+                </tr>
+                
+                <tr>
+                    <td><strong>Academic Year</strong></td>
+                    <td colspan="2">${student.academicYear}</td>
+                </tr>
+                <tr>
+                    <td><strong>Aggregate</strong></td>
+                    <td colspan="2">${student.aggregate}</td>
+                </tr>
+                <tr>
+                    <td><strong>Position</strong></td>
+                    <td colspan="2">${student.position}</td>
+                </tr>
+
+            `;
+
+            let resultsHTML = `
+
+                <tr>
+                    <td><strong>SUBJECT NAME</strong></td>
+                    <td style="text-align: center;"><strong>GRADE</strong></td>
+                    <td><strong>REMARKS</strong></td>
+                </tr>
+            `;
+            
+            for (const subject in student.grades) {
+                const subjectName = subject === "religious and moral education" ? "RELIGIOUS AND MORAL EDUCATION" : subject.toUpperCase();
+                resultsHTML += `
+                    <tr>
+                        <td class="wrap">${subjectName}</td>
+                        <td style="text-align: center;">${student.grades[subject]}</td>
+                        <td>${student.remarks[subject]}</td>
+                    </tr>
+                `;
+            }
+
+            document.getElementById("subjectResults").innerHTML = resultsHTML;
+        } else {
+            alert("No student data found.");
+            window.location.href = "/breman-islamic-academy/html/h.report_cards.html"; // Redirect back if no data
+        }
+    }
+</script>
+
+</body>
+</html>
