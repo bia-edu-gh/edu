@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="/breman-islamic-academy/css/styles.css">
     <title>Breman Islamic Academy - Report Cards</title>
     <style>
         @media (min-width: 768px) {
@@ -18,11 +18,7 @@
                   display: flex;
                  flex-direction: column;
                  align-items: center; /* Center content */}
-        .popup-content {
-            background-color: #e0f7fa; /* Different color for content inside the popup */
-            padding: 10px; /* Padding for content */
-            margin: 10px 0; /* Margin for spacing */
-        }
+
         #generate {background: seagreen; 
                    color: white; padding: 3px 5px;
                    border-radius: 20px; font-size: 15px;
@@ -33,12 +29,12 @@
                   margin-left: auto;
                   height: 100%;
                   max-height: 25em;
-                  margin-top: 20%;
+                  margin-top: 0;
                   background: #f9f9f9;
                   width: 100%; /* Set the width of the fieldset */
                   max-width: 40em; /* Max width for larger screens */
                   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional shadow for better visibility */}
-        @media (max-width: 767px) {fieldset {margin-top: 9%;}}
+        @media (max-width: 767px) {fieldset {margin-top: 0;}}
 
         legend  {background: gold; color: blue; padding: 5px; border-radius: 15px;
                  width: 70%; max-width: 40em;}
@@ -64,11 +60,11 @@
     </nav>
     <div class="main-container">
         <aside class="sidebar" id="sidebar">
-            <img src="i.Breman Islamic Bage 1.jpg" alt="School Badge" id="side">
+            <img src="/breman-islamic-academy/images/i.Breman Islamic Bage 1.jpg" alt="School Badge" id="side">
             <br><b style="margin-left: 60px;">BIA.EDU</b><br><b style="margin-left: 35px;">BREMAN ASIKUMA</b>
             <ul>
-                <li><button id="home" class="button"><a href="index.html">Home</a></button></li>
-                <li><button id="report_cards" class="button active"><a href="h.report_cards.html" style="color: red;">Report Cards</a></button></li>
+                <li><button id="home" class="button"><a href="/breman-islamic-academy/html/index.html">Home</a></button></li>
+                <li><button id="report_cards" class="button active"><a href="/breman-islamic-academy/html/h.report_cards.html" style="color: red;">Report Cards</a></button></li>
                 <li><button id="exams" class="button"><a href="exams.html">Exams</a></button></li>
                 <li><button id="gallery" class="button"><a href="gallery.html">Gallery</a></button></li>
                 <li><button id="audios" class="button"><a href="audios.html">Audios</a></button></li>
@@ -119,16 +115,15 @@
                         </select>
                     </p>
                     <p>
-                        <button id="generate" type="submit" style="
-                                                     "><b>Generate Report Card</b></button>
+                        <button id="generate" type="submit"><b>Generate Report Card</b></button>                   
                     </p>
             </fieldset>
             </form>
             <div id="result" style="display:none;"></div>
-        </main>
-    </div>
+            </main>
+            </div>
 
-        <div class="overlay" id="overlay"></div>
+       <div class="overlay" id="overlay"></div>
     <div class="popup" id="emailPopup">
         <div class="popup-header">
             <h2>Email for Support</h2>
@@ -136,7 +131,7 @@
         <div class="popup-content" id="popupContent">
         <p>Are you confused about something?<br>Don't worry, send a mail to:</p>
         <p><br><input id="help" type="email" value="abubakarabdulai@gmail.com" readonly style="position: absolute;
-                                                                           left: 10%; bottom: 8.5em; width: 75%; padding-left: 5px;
+                                                                           left: 10%; bottom: 32%; width: 75%; padding-left: 5px;
                                                                            border-radius: 6px; text-align: center;"></p>
                                                                        </div>
         <div class="popup-footer">
@@ -178,8 +173,8 @@
         </div>
     </div>
 
-    <script type="text/javascript" src="script.js"></script>
-    <script type="text/javascript" src="data.js"></script>
+    <script type="text/javascript" src="/breman-islamic-academy/js/script.js"></script>
+    <script type="text/javascript" src="/breman-islamic-academy/js/data.js"></script>
 <script>
          function calculateAggregate(student) {
             const grades = Object.entries(student.grades).map(([subject, grade]) => ({ subject, grade: parseInt(grade) }));
@@ -187,15 +182,15 @@
             let mandatoryGrades = [];
             let remainingGrades = [];
 
-            if (student.class === "Nursery") {
+            if (student.class === "Nursery", "KG 1", "KG 2") {
                 // Sum all grades for Nursery
                 const total = grades.reduce((sum, g) => sum + g.grade, 0);
                 return total;
-            } else if (student.class === "Basic 1" || student.class === "Basic 4") {
+            } else if (student.class === "Basic 1","Basic 2", "Basic 3" || student.class === "Basic 4", "Basic 5", "Basic 6") {
                 // Mandatory subjects
                 mandatoryGrades = grades.filter(g => ["english language", "history", "mathematics", "science"].includes(g.subject));
                 remainingGrades = grades.filter(g => !["english language", "history", "mathematics", "science"].includes(g.subject));
-            } else if (student.class === "Form 1") {
+            } else if (student.class === "Form 1", "Form 2", "Form 3") {
                 // Mandatory subjects
                 mandatoryGrades = grades.filter(g => ["english language", "mathematics", "science", "social studies"].includes(g.subject));
                 remainingGrades = grades.filter(g => !["english language", "mathematics", "science", "social studies"].includes(g.subject));
@@ -261,7 +256,7 @@
                 localStorage.setItem("studentData", JSON.stringify(student));
 
                 // Redirect to report_cards_display.html
-                window.location.href = "h.report_cards_display.html";
+                window.location.href = "/breman-islamic-academy/html/h.report_cards_display.html";
             } else {
                 alert("Student not found. Enter the right Student Name, Class, Term, and Academic Year.");
                 closeConfirmationPopup();
@@ -275,7 +270,7 @@
     </script>
     <footer class="footer">
         <audio controls id="audio" autoplay loop>
-            <source src="m.background-music.aac" type="audio/mpeg">
+            <source src="/breman-islamic-academy/audios/m.background-music.aac" type="audio/mpeg">
         </audio>
         <marquee>- - - Motto: Sovereignty Belongs to Allah - - -</marquee>
     </footer>
