@@ -73,22 +73,22 @@ body {
         }
         /* Add specific background images for each button */
         #home {
-            background-image: url('/breman-islamic-academy/images/i.home.jpg'); /* Replace with the actual home image URL */
+            background-image: url('i.home.jpg'); /* Replace with the actual home image URL */
         }
         #report_cards {
-            background-image: url('/breman-islamic-academy/images/i.report.jpg'); /* Replace with the actual report cards image URL */
+            background-image: url('i.report.jpg'); /* Replace with the actual report cards image URL */
         }
         #exams {
-            background-image: url('/breman-islamic-academy/images/i.exams.jpg'); /* Replace with the actual exams image URL */
+            background-image: url('i.exams.jpg'); /* Replace with the actual exams image URL */
         }
         #gallery {
-            background-image: url('/breman-islamic-academy/images/i.gallery.jpg'); /* Replace with the actual gallery image URL */
+            background-image: url('i.gallery.jpg'); /* Replace with the actual gallery image URL */
         }
         #audios {
-            background-image: url('/breman-islamic-academy/images/i.audios.jpg'); /* Replace with the actual audios image URL */
+            background-image: url('i.audios.jpg'); /* Replace with the actual audios image URL */
         }
         #admission {
-            background-image: url('/breman-islamic-academy/images/i.admission.jpg'); /* Replace with the actual admission image URL */
+            background-image: url('i.admission.jpg'); /* Replace with the actual admission image URL */
         }
         .sidebar .button:hover {
             background-color: rgba(255, 215, 0, 0.5); /* Lighten on hover (optional) */
