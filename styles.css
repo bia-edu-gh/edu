@@ -5,28 +5,14 @@ body {
             display: flex;
             flex-direction: column; /* Added for better header/content flow */
         }
-        .header {
-            background-color: green;
-            background-image: url("together.jpg");
-            background-size: cover;
-            background-position: center;
-            height: 120px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            position: fixed;
-            top: 0; /* Adjust based on header height */
-            left: 0;
-            width: 100%;
-            z-index: 1000;}
+        
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 10px 60px;
             position: fixed;
-            top: 80px; /* Adjust based on header height */
+            top: 0; /* Adjust based on header height */
             width: 100%;
             background: burlywood;
             z-index: 1000;}
@@ -42,12 +28,12 @@ body {
        
         .sidebar {
             position: fixed;
-            top: 90px; /* Adjust based on header height */
+            top: 2em; /* Adjust based on header height */
             left: -250px; /* Initially off-screen */
             width: 230px;
             height: calc(100vh - 60px); /* Full height minus header */
             background: bisque; /* Sidebar background color */
-            padding: 50px 0px 0px;
+            padding: 7em 0em 0em;
             transition: left 0.0s ease; /* Slide effect */
             z-index: 0;
             overflow-y: auto; /* Add scrollbar if content exceeds height */
@@ -87,22 +73,22 @@ body {
         }
         /* Add specific background images for each button */
         #home {
-            background-image: url('i.home.jpg'); /* Replace with the actual home image URL */
+            background-image: url('/breman-islamic-academy/images/i.home.jpg'); /* Replace with the actual home image URL */
         }
         #report_cards {
-            background-image: url('i.report.jpg'); /* Replace with the actual report cards image URL */
+            background-image: url('/breman-islamic-academy/images/i.report.jpg'); /* Replace with the actual report cards image URL */
         }
         #exams {
-            background-image: url('i.exams.jpg'); /* Replace with the actual exams image URL */
+            background-image: url('/breman-islamic-academy/images/i.exams.jpg'); /* Replace with the actual exams image URL */
         }
         #gallery {
-            background-image: url('i.gallery.jpg'); /* Replace with the actual gallery image URL */
+            background-image: url('/breman-islamic-academy/images/i.gallery.jpg'); /* Replace with the actual gallery image URL */
         }
         #audios {
-            background-image: url('i.audios.jpg'); /* Replace with the actual audios image URL */
+            background-image: url('/breman-islamic-academy/images/i.audios.jpg'); /* Replace with the actual audios image URL */
         }
         #admission {
-            background-image: url('i.admission.jpg'); /* Replace with the actual admission image URL */
+            background-image: url('/breman-islamic-academy/images/i.admission.jpg'); /* Replace with the actual admission image URL */
         }
         .sidebar .button:hover {
             background-color: rgba(255, 215, 0, 0.5); /* Lighten on hover (optional) */
@@ -153,6 +139,13 @@ body {
             text-align: center; /* Center the text */
             border-radius: 10px 10px 0 0; /* Rounded top corners for header */
         }
+
+        .popup-content {
+            background-color: #e0f7fa; /* Different color for content inside the popup */
+            padding: 10px; /* Padding for content */
+            margin: 10px 0; /* Margin for spacing */
+        }
+
         .popup-footer {
             border-radius: 0 0 10px 10px; /* Rounded bottom corners for footer */
         }
@@ -179,13 +172,9 @@ body {
             background: rgba(0, 0, 0, 0.5);
         }
         @media (max-width: 767px) {
-            .header {height: 100px;
-                     width: 100%;
-                     flex-direction: column;
-                    justify-content: flex-start;}
             .navbar {flex-direction: column;
                      position: fixed;
-                     top: 65px;}
+                     top: 0;}
             .sidebar {height: 48%; margin-top: 50px /* Adjust height on small screens */}
             .main-container {flex-direction: column; margin-top: 3.5em;}
             #index_head, .welcome-message, #motto {width: 75%; margin: 10px auto; padding:10px;}
@@ -194,10 +183,10 @@ body {
             marquee {width: 100%;
                      position: relative;
                      left: 0px;}
-            footer{height: 100%;}}
+            footer{height: 50em; max-height: 70em;}}
 
-        .footer {
-            height: auto;
+        .footer {height: 6%;
+            
             display: flex;
             padding: 10px 0px 25px;
             position: fixed;
@@ -212,4 +201,5 @@ body {
         marquee {background: white;
                  width: 30%;
                  position: relative;
-                 left: 40%;}
+                 left: 40%;
+                 height: 1.3em;}
