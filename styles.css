@@ -1,12 +1,10 @@
-body {
-            background: mintcream;
+      body {background: mintcream;
             margin: 0;
             font-family: Arial, sans-serif;
             display: flex;
-            flex-direction: column; /* Added for better header/content flow */
-        }
+            flex-direction: column; /* Added for better header/content flow */}
         
-        .navbar {
+        .navbar {height: 5em;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -16,38 +14,62 @@ body {
             width: 100%;
             background: burlywood;
             z-index: 1000;}
+  
         .left_me {position: relative;
                   left: 8%;}
-        #toggle-button, #current, #mail, #call {border-radius: 5px; padding: 10px; 
+       #current, #mail, #call {border-radius: 5px; padding: 5px; 
                                   border: none; background: green; 
-                                  color: white; cursor: pointer;}
+                                  color: white; cursor: pointer;
+                                  font-size: 15px;}
+        #toggle-button {position: relative; right: 2em; display: block;
+                        border-radius: 3px; 
+                        padding: 0 2px; 
+                        border: none; background: green; 
+                        color: white; cursor: pointer;
+                        font-size: 28px}
+        #schoolName {width: 7em; height: 2em;
+                     position: absolute;
+                     right: 16em;
+                     border-radius: 1em;}
         .right_us {position: relative;
-                   right: 15%;}
-        #input    {border-radius: 1em; width: 37%; max-width: 25em;
-                   border: none;}
+                   right: 7em;
+                   top: 1em;
+                   margin: 0;}
+        .one      {position: absolute;
+                   top: 3em;
+                   right: 18em;}
+        #input    {border-radius: 2em 0em 0em 2em; width: 100%; max-width: 40em;
+                   border: none; position: relative; bottom: 2.5em; padding: 5px;
+                   margin-right: 0;}
+        #go    {color: white; font-size: 15px;
+                   position: relative; bottom: 3.7em; left: 14em;
+                   border-radius: 0 50%;
+                   background: green;
+                   padding: 6.5px 5px;}
        
         .sidebar {
             position: fixed;
-            top: 2em; /* Adjust based on header height */
+            top: 1em; /* Adjust based on header height */
             left: -250px; /* Initially off-screen */
             width: 230px;
+            max-height: 50%;
             height: calc(100vh - 60px); /* Full height minus header */
             background: bisque; /* Sidebar background color */
             padding: 7em 0em 0em;
             transition: left 0.0s ease; /* Slide effect */
-            z-index: 0;
+            z-index: 2;
             overflow-y: auto; /* Add scrollbar if content exceeds height */
         }
         .sidebar.open {
             left: 0; /* Shift sidebar into view */
         }
-        .sidebar img {
+        .sidebar img  {
             width: 55%;
             max-width: 300px;
             height: auto;
             border-radius: 50%;
             display: block;
-            margin: 0 auto; margin-top: 20px;
+            margin: 0 auto; margin-top: 0px;
             text-align: center;
         }
         ul {
@@ -73,22 +95,22 @@ body {
         }
         /* Add specific background images for each button */
         #home {
-            background-image: url('i.home.jpg'); /* Replace with the actual home image URL */
+            background-image: url('/breman-islamic-academy/images/i.home.jpg'); /* Replace with the actual home image URL */
         }
         #report_cards {
-            background-image: url('i.report.jpg'); /* Replace with the actual report cards image URL */
+            background-image: url('/breman-islamic-academy/images/i.report.jpg'); /* Replace with the actual report cards image URL */
         }
         #exams {
-            background-image: url('i.exams.jpg'); /* Replace with the actual exams image URL */
+            background-image: url('/breman-islamic-academy/images/i.exams.jpg'); /* Replace with the actual exams image URL */
         }
         #gallery {
-            background-image: url('i.gallery.jpg'); /* Replace with the actual gallery image URL */
+            background-image: url('/breman-islamic-academy/images/i.gallery.jpg'); /* Replace with the actual gallery image URL */
         }
         #audios {
-            background-image: url('i.audios.jpg'); /* Replace with the actual audios image URL */
+            background-image: url('/breman-islamic-academy/images/i.audios.jpg'); /* Replace with the actual audios image URL */
         }
         #admission {
-            background-image: url('i.admission.jpg'); /* Replace with the actual admission image URL */
+            background-image: url('/breman-islamic-academy/images/i.admission.jpg'); /* Replace with the actual admission image URL */
         }
         .sidebar .button:hover {
             background-color: rgba(255, 215, 0, 0.5); /* Lighten on hover (optional) */
@@ -171,21 +193,8 @@ body {
             height: 100%;
             background: rgba(0, 0, 0, 0.5);
         }
-        @media (max-width: 767px) {
-            .navbar {flex-direction: column;
-                     position: fixed;
-                     top: 0;}
-            .sidebar {height: 48%; margin-top: 50px /* Adjust height on small screens */}
-            .main-container {flex-direction: column; margin-top: 3.5em;}
-            #index_head, .welcome-message, #motto {width: 75%; margin: 10px auto; padding:10px;}
-            #index_head {margin-top: 100px;}
-            #audio {height: 20px;width: 80px;}
-            marquee {width: 100%;
-                     position: relative;
-                     left: 0px;}
-            footer{height: 50em; max-height: 70em;}}
 
-        .footer {height: 6%;
+        .footer {height: 5%;
             
             display: flex;
             padding: 10px 0px 25px;
