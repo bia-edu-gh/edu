@@ -10,20 +10,17 @@
             margin: 20px;
             display: flex;
             flex-direction: column; /* Stack elements vertically */
-            align-items: center; /* Center the content horizontally */
-        }
-        table {
-            width: 100%; /* Use full width */
+            align-items: center; /* Center the content horizontally */}
+            
+        table {width: 100%; /* Use full width */
             max-width: 480px; /* Set a max width to 480px */
             border-collapse: collapse; /* Ensure borders are collapsed for uniformity */
-            margin-bottom: 20px;
-        }
+            margin-bottom: 20px;}
         th,
         td {border: 1px solid #000; /* Uniform border for all cells */
             padding: 4px;
             text-align: left; /* Align text to the left */}
-        button {
-            padding: 10px 15px;
+        button {padding: 10px 15px;
             font-size: 16px;
             cursor: pointer;
             margin-top: 10px; /* Add some space above the button */
@@ -31,32 +28,21 @@
             color: red;
             text-decoration: underline;
             border: none;
-            border-radius: 10px;
-        }
-        img {
-            width: 100%; /* Set a consistent width for the image */
+            border-radius: 10px;}
+
+        img {width: 100%; /* Set a consistent width for the image */
             max-width: 480px; /* Max width to maintain responsiveness */
-            height: auto; /* Maintain aspect ratio */
-        }
-        .full-width {
-            text-align: left; /* Align text to the left for full-width rows */
-        }
-        .empty-row {
-            height: 100px; /* Set height to match the header */
-        }
+            height: auto; /* Maintain aspect ratio */}
+        .full-width {text-align: left; /* Align text to the left for full-width rows */}
+        .empty-row {height: 80px; /* Set height to match the header */}
+        .empty-row img {width: 7em; height: 6em; padding-left: 3em;
+                        border-radius: 0px}
         /* Hide borders when printing */
         @media print {
-            table {
-                border: none; /* Hide table borders */
-            }
-            th, td {
-                border: none; /* Hide cell borders */
-            }
-        }
-        .wrap {
-            word-wrap: break-word;
-            max-width: 150px; /* Set a max width for the subject name */
-        }
+            table {border: none; /* Hide table borders */}
+            th, td {border: none; /* Hide cell borders */}}
+     .wrap {word-wrap: break-word;
+            max-width: 150px; /* Set a max width for the subject name */}
     </style>
 </head>
 <body>
@@ -64,7 +50,7 @@
 <table>
     <tr>
         <td colspan="3" class="full-width" style="padding: 0">
-            <img src="i.report-head.jpg" alt="Header Image" style="display: block;">
+            <img src="/breman-islamic-academy/images/i.report-head.jpg" alt="Header Image" style="display: block;">
         </td>
     </tr>
     <tr>
@@ -78,8 +64,8 @@
             <span style="color: indigo; font-size: 14px;">THE RESULTS GIVEN BELOW ARE PROVISIONAL. THE FINAL RESULTS WILL BE PRINTED ON YOUR REPORT CARD.</span>
         </td>
     </tr>
-    <tr class="empty-row">
-        <td colspan="3" class="full-width"><img src="i.empty.jpg" alt="Empty Space"></td>
+    <tr class="empty-row" style="padding: 0;">
+        <td colspan="3" class="full-width"><img src="/breman-islamic-academy/images/i.Breman Islamic Bage 1.jpg" alt="Empty Space"></td>
     </tr>
     <tr>
         <td colspan="3" class="full-width">
@@ -170,7 +156,7 @@
             document.getElementById("subjectResults").innerHTML = resultsHTML;
         } else {
             alert("No student data found.");
-            window.location.href = "h.report_cards.html"; // Redirect back if no data
+            window.location.href = "/breman-islamic-academy/html/h.report_cards.html"; // Redirect back if no data
         }
     }
 </script>

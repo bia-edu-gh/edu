@@ -3,11 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="/breman-islamic-academy/css/styles.css">
     <title>Breman Islamic Academy - Home</title>
     <style type="text/css">
         body {font-size: 14px;}
 
+        #schoolName {position: absolute;
+                     right: 13.5em;
+                     height: 1.7em;}
         .container {width: 100%;}
 
         .grid {display: block; /* Mobile layout */}
@@ -69,7 +72,7 @@
             width: 90%;}
              
         #motto {
-            padding: 70px 15px;
+            padding: 83px 15px;
             border-radius: 5px; 
             margin-top: 1em;
             background: greenyellow;
@@ -79,28 +82,28 @@
     </style>
 </head>
 <body>
-    <header class="header"></header>
-    <nav class="navbar">
+     <nav class="navbar">
         <div class="left_me">
-            <button id="toggle-button" onclick="toggleSidebar()" title="Toggle Sidebar">Toggle Sidebar</button>
+            <button id="toggle-button" onclick="toggleSidebar()" title="Toggle Sidebar">≡</button>
         </div>
+            <form action="https://www.google.com/search" method="get" style="display: inline;" class="one">
+                <input type="text" name="q" placeholder="Search Google" id="input" required>
+                <button type="submit" id="search" style="border: none; background: burlywood;"><b id="go">GO</b></button>
+            </form>
         <div class="right_us">
+            <img id="schoolName" src="/breman-islamic-academy/images/i.nav.jpg">            
             <button title="Current Page" id="current">Home</button>
             <button onclick="openEmailPopup()" id="mail">Email</button>
             <button onclick="openContactPopup()" id="call">Contact</button>
-            <form action="https://www.google.com/search" method="get" style="display: inline;">
-                <input type="text" name="q" placeholder="Search Google" id="input" required>
-                <button type="submit" id="search" style="border: none; background: burlywood;"><b style="color: blue; font-size: 15px;">GO</b></button>
-            </form>
         </div>
     </nav>
     <div class="main-container">
         <aside class="sidebar" id="sidebar">
-            <img src="i.Breman Islamic Bage 1.jpg" alt="School Badge" id="side">
+            <img src="/breman-islamic-academy/images/i.Breman Islamic Bage 1.jpg" alt="School Badge" id="side">
             <br><b style="margin-left: 80px;">BIA.EDU</b><br><b style="margin-left: 35px;">BREMAN ASIKUMA</b>
             <ul>
-                <li><button id="home" class="button active"><a href="index.html" style="color: red;">Home</a></button></li>
-                <li><button id="report_cards" class="button"><a href="h.report_cards.html">Report Cards</a></button></li>
+                <li><button id="home" class="button active"><a href="/breman-islamic-academy/html/index.html" style="color: red;">Home</a></button></li>
+                <li><button id="report_cards" class="button"><a href="/breman-islamic-academy/html/h.report_cards.html">Report Cards</a></button></li>
                 <li><button id="exams" class="button"><a href="exams.html">Exams</a></button></li>
                 <li><button id="gallery" class="button"><a href="gallery.html">Gallery</a></button></li>
                 <li><button id="audios" class="button"><a href="audios.html">Audios</a></button></li>
@@ -165,11 +168,11 @@
         </div>
     </div>
 
-    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="/breman-islamic-academy/js/script.js"></script>
 
     <footer class="footer">
         <audio controls id="audio" autoplay loop>
-            <source src="m.background-music.aac" type="audio/mpeg">
+            <source src="/breman-islamic-academy/audios/m.background-music.aac" type="audio/mpeg">
         </audio>
         <marquee>- - - Motto: Sovereignty Belongs to Allah - - -</marquee>
     </footer>
