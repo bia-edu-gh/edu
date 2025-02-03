@@ -27,17 +27,17 @@
                         border: none; background: green; 
                         color: white; cursor: pointer;
                         font-size: 28px}
-        #schoolName {width: 7em; height: 2em;
+        #schoolName {width: 5em; height: 2em;
                      position: absolute;
                      right: 14em;
                      border-radius: 1em;}
         .right_us {position: relative;
-                   right: 5em;
+                   right: 4em;
                    top: 1em;
                    margin: 0;}
         .one      {position: absolute;
                    top: 3em;
-                   right: 12em;}
+                   right: 14em;}
         #input    {border-radius: 2em 0em 0em 2em; width: 100%; max-width: 40em;
                    border: none; position: relative; bottom: 2.5em; padding: 5px;
                    margin-right: 0;}
