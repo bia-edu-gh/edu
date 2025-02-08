@@ -21,7 +21,7 @@
                                   border: none; background: green; 
                                   color: white; cursor: pointer;
                                   font-size: 15px;}
-        #toggle-button {position: relative; right: 3em; display: block;
+        #toggle-button {position: relative; right: 4em; display: block;
                         border-radius: 3px; 
                         padding: 0 2px; 
                         border: none; background: green; 
@@ -37,7 +37,7 @@
                    margin: 0;}
         .one      {position: absolute;
                    top: 3em;
-                   right: 5em;}
+                   right: 8em;}
         #input    {border-radius: 2em 0em 0em 2em; width: 100%; max-width: 40em;
                    border: none; position: relative; bottom: 2.5em; padding: 5px;
                    margin-right: 0;
@@ -199,7 +199,7 @@
             display: flex;
             padding: 10px 0px 15%;
             position: relative;
-            top: 50em;
+            top: 30em;
             width: 100%;
             background: burlywood;
             z-index: 1000;}
