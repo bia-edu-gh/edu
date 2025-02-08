@@ -21,7 +21,7 @@
                                   border: none; background: green; 
                                   color: white; cursor: pointer;
                                   font-size: 15px;}
-        #toggle-button {position: relative; right: 4em; display: block;
+        #toggle-button {position: relative; right: 2em; display: block;
                         border-radius: 3px; 
                         padding: 0 2px; 
                         border: none; background: green; 
