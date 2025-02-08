@@ -1,4 +1,4 @@
-      body {background: mintcream;
+      body {background: powderblue;
             margin: 0;
             font-family: Arial, sans-serif;
             display: flex;
@@ -16,7 +16,7 @@
             z-index: 1000;}
   
         .left_me {position: relative;
-                  left: 1em;}
+                  left: 8%;}
        #current, #mail, #call {border-radius: 5px; padding: 5px; 
                                   border: none; background: green; 
                                   color: white; cursor: pointer;
@@ -27,22 +27,23 @@
                         border: none; background: green; 
                         color: white; cursor: pointer;
                         font-size: 28px}
-        #schoolName {width: 5em; height: 2em;
+        #schoolName {width: 7em; height: 2em;
                      position: absolute;
-                     right: 14em;
+                     right: 16em;
                      border-radius: 1em;}
         .right_us {position: relative;
-                   right: 4em;
+                   right: 7em;
                    top: 1em;
                    margin: 0;}
         .one      {position: absolute;
                    top: 3em;
-                   right: 14em;}
+                   right: 18em;}
         #input    {border-radius: 2em 0em 0em 2em; width: 100%; max-width: 40em;
                    border: none; position: relative; bottom: 2.5em; padding: 5px;
-                   margin-right: 0;}
+                   margin-right: 0;
+                   box-shadow: 0 0 10px rgba(100, 200, 30, 3);}
         #go    {color: white; font-size: 15px;
-                   position: relative; bottom: 3.7em; left: 14em;
+                   position: relative; bottom: 3.7em; left: 14.8em;
                    border-radius: 0 50%;
                    background: green;
                    padding: 6.5px 5px;}
@@ -95,22 +96,22 @@
         }
         /* Add specific background images for each button */
         #home {
-            background-image: url('i.home.jpg'); /* Replace with the actual home image URL */
+            background-image: url('/breman-islamic-academy/images/i.home.jpg'); /* Replace with the actual home image URL */
         }
         #report_cards {
-            background-image: url('i.report.jpg'); /* Replace with the actual report cards image URL */
+            background-image: url('/breman-islamic-academy/images/i.report.jpg'); /* Replace with the actual report cards image URL */
         }
         #exams {
-            background-image: url('i.exams.jpg'); /* Replace with the actual exams image URL */
+            background-image: url('/breman-islamic-academy/images/i.exams.jpg'); /* Replace with the actual exams image URL */
         }
         #gallery {
-            background-image: url('i.gallery.jpg'); /* Replace with the actual gallery image URL */
+            background-image: url('/breman-islamic-academy/images/i.gallery.jpg'); /* Replace with the actual gallery image URL */
         }
         #audios {
-            background-image: url('i.audios.jpg'); /* Replace with the actual audios image URL */
+            background-image: url('/breman-islamic-academy/images/i.audios.jpg'); /* Replace with the actual audios image URL */
         }
         #admission {
-            background-image: url('i.admission.jpg'); /* Replace with the actual admission image URL */
+            background-image: url('/breman-islamic-academy/images/i.admission.jpg'); /* Replace with the actual admission image URL */
         }
         .sidebar .button:hover {
             background-color: rgba(255, 215, 0, 0.5); /* Lighten on hover (optional) */
@@ -141,7 +142,7 @@
             height: calc(100vh - 60px); /* Full viewport height */}
 
 
-        .popup {
+        .popup {width: 80%;
             display: none; /* Hide pop-ups by default */
             position: fixed; /* Position them fixed to the viewport */
             background: white; /* Aquamarine background color for the pop-up */
@@ -197,7 +198,7 @@
         .footer {height: 5%;
             
             display: flex;
-            padding: 10px 0px 25px;
+            padding: 10px 0px 10%;
             position: relative;
             bottom: 0;
             width: 100%;

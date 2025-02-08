@@ -6,10 +6,13 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
     <title>Breman Islamic Academy - Report Cards</title>
     <style>
-        body {background: mediumslateblue;}
+        .one      {position: absolute;
+                   top: 3em;
+                   right: 16em;}
         #schoolName {position: absolute;
-                     right: 14.5em;
-                     height: 1.8em;}
+                     right: 14em;
+                     height: 1.7em;
+                     width: 6em;}
         @media (min-width: 768px) {
             .content.shifted {
                 margin-left: 200px; /* Shift content when sidebar is open */}}
@@ -51,7 +54,7 @@
         legend  {background: gold; color: blue; padding: 5px; border-radius: 15px;
                  width: 80%; max-width: 40em;}
         p       {margin-top: 2em; display: flex; flex-direction: column;}
-        #studentName, select   {border-radius: 1em; margin-left: 1em;}
+        #studentName, select   {border-radius: 1em; margin-left: 1em; text-align: center;}
     </style>
 </head>
 <body>
@@ -76,11 +79,12 @@
             <br><b style="margin-left: 60px;">BIA.EDU</b><br><b style="margin-left: 35px;">BREMAN ASIKUMA</b>
             <ul>
                 <li><button id="home" class="button"><a href="index.html">Home</a></button></li>
-                <li><button id="report_cards" class="button active"><a href="h.report_cards.html" style="color: red;">Report Cards</a></button></li>
-                <li><button id="exams" class="button"><a href="exams.html">Exams</a></button></li>
-                <li><button id="gallery" class="button"><a href="gallery.html">Gallery</a></button></li>
-                <li><button id="audios" class="button"><a href="audios.html">Audios</a></button></li>
-                <li><button id="admission" class="button"><a href="admission.html">Admission</a></button></li>
+                <li><button id="report_cards" class="button active"><a href="h.report_cards.html" 
+                    style="color: blue;"><b>Report Cards</b></a></button></li>
+                <li><button id="exams" class="button"><a href="h.exams.html">Exams</a></button></li>
+                <li><button id="gallery" class="button"><a href="h.gallery.html">Gallery</a></button></li>
+                <li><button id="audios" class="button"><a href="h.audios.html">Audios</a></button></li>
+                <li><button id="admission" class="button"><a href="h.admission.html">Admission</a></button></li>
             </ul>
         </aside>
         <main class="content" id="content">
@@ -89,7 +93,7 @@
                 <legend><b>Student Report Card Checking</b></legend>
                     <p style="margin-left: 2.5em; margin-right: 3em;">
                         <label for="studentName" ><b>Student Name:</b></label>
-                        <input type="text" id="studentName" placeholder="enter your full name" 
+                        <input type="text" id="studentName" placeholder="- - -enter your full name- - -" 
                         style="text-transform: uppercase; width: 20em;" required>
                     </p>
                     <p style="margin-left: 1.5em; margin-right: 2em;">
@@ -124,6 +128,7 @@
                         <select id="yearSelect" required>
                             <option>- - -Select Academic Year- - -</option>
                             <option>2023/2024</option>
+                            <option>2025</option>
                         </select>
                     </p>
                     <p>
@@ -143,7 +148,7 @@
         <div class="popup-content" id="popupContent">
         <p>Are you confused about something?<br>Don't worry, send a mail to:</p>
         <p><br><input id="help" type="email" value="abubakarabdulai@gmail.com" readonly style="position: absolute;
-                                                                           left: 10%; bottom: 32%; width: 75%; padding-left: 5px;
+                                                                           left: 10%; bottom: 32%; width: 78%; padding-left: 5px;
                                                                            border-radius: 6px; text-align: center;"></p>
                                                                        </div>
         <div class="popup-footer">
@@ -160,7 +165,7 @@
         <p><strong>Headmaster Name:</strong>
         <input type="text" value="Abdulai Abubakar" readonly style="border-radius: 5px; width: 80%; text-align: center;"></p>
         <p><strong>Contact:</strong>
-        <input type="text" value="0241303485" readonly style="border-radius: 5px; width: 50%; text-align: center;"></p>
+        <input type="text" value="0241303485" readonly style="border-radius: 5px; width: 80%; text-align: center;"></p>
         </div>
         <div class="popup-footer">
             <button onclick="closeContactPopup()">Close</button>
@@ -186,7 +191,10 @@
     </div>
 
     <script type="text/javascript" src="script.js"></script>
-    <script type="text/javascript" src="data.js"></script>
+    <script type="text/javascript" src="2024.1.data.js">
+    </script>
+    <script type="text/javascript" src="2025.2.data.js">
+    </script>
 <script>
          function calculateAggregate(student) {
             const grades = Object.entries(student.grades).map(([subject, grade]) => ({ subject, grade: parseInt(grade) }));

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Breman Islamic Academy - Home</title>
+    <style type="text/css">
+        body {font-size: 14px;}
+        #schoolName {position: absolute;
+                     right: 13.5em;
+                     height: 1.7em;
+                     width: 6em;}
+        .container {width: 100%;
+                    margin-left: 1.5em}
+
+        .grid {display: block; /* Mobile layout */}
+
+        .grid-item {padding: 10px;
+                    background-color: blueviolet ;
+                    margin-bottom: 1em;
+                    margin-left: 1em;
+                    margin-right:1em;
+                    border: none;
+                    border-radius: 5px;}
+
+        /* Tablet styles */
+        @media screen and (min-width: 481px) {
+            body {font-size: 16px;}
+
+            .container {width: 90%;}
+
+            .grid {display: grid;
+                   grid-template-columns: repeat(2, 1fr); /* Two columns */}}
+
+        /* Desktop styles */
+        @media screen and (min-width: 769px) {
+            body {font-size: 18px;}
+
+            .container {width: 70%;
+                        margin: auto; /* Centering */}
+
+            .grid {grid-template-columns: repeat(3, 1fr); /* Three columns */}}
+
+        #intro  {margin: 3em;
+                 text-align: justify;
+                 background: goldenrod;
+                 padding: 1em;
+                 color: blue;
+                 border-radius: 20px 20px 0 0;}
+        #term1 {
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin-top: 0px;
+            max-width: 600px;
+            margin: 20px auto;
+            width: 90%;;}
+
+        .welcome-message {
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin-top: 0px;
+            max-width: 600px;
+            margin: 20px auto;
+            width: 90%;} 
+
+        #term3 {padding: 10px 15px;
+            border-radius: 5px; 
+            margin-bottom: 10px;
+            color: white;
+            max-width: 600px;
+            margin: 20px auto;
+            width: 90%;}
+    </style>
+</head>
+<body>
+     <nav class="navbar">
+        <div class="left_me">
+            <button id="toggle-button" onclick="toggleSidebar()" title="Toggle Sidebar">≡</button>
+        </div>
+            <form action="https://www.google.com/search" method="get" style="display: inline;" class="one">
+                <input type="text" name="q" placeholder="Search Google" id="input" required>
+                <button type="submit" id="search" style="border: none; background: burlywood;"><b id="go">GO</b></button>
+            </form>
+        <div class="right_us">
+            <img id="schoolName" src="i.nav.jpg">
+            <button title="Current Page" id="current">Exams</button>
+            <button onclick="openEmailPopup()" id="mail">Email</button>
+            <button onclick="openContactPopup()" id="call">Contact</button>
+        </div>
+    </nav>
+    <div class="main-container">
+        <aside class="sidebar" id="sidebar">
+            <img src="i.Breman Islamic Bage 1.jpg" alt="School Badge" id="side">
+            <br><b style="margin-left: 80px;">BIA.EDU</b><br><b style="margin-left: 35px;">BREMAN ASIKUMA</b>
+            <ul>
+                <li><button id="home" class="button"><a href="index.html">Home</a></button></li>
+                <li><button id="report_cards" class="button"><a href="h.report_cards.html">Report Cards</a></button></li>
+                <li><button id="exams" class="button active"><a href="h.exams.html" style="color: blue;"><b>Exams</b></a></button></li>
+                <li><button id="gallery" class="button"><a href="h.gallery.html">Gallery</a></button></li>
+                <li><button id="audios" class="button"><a href="h.audios.html">Audios</a></button></li>
+                <li><button id="admission" class="button"><a href="h.admission.html">Admission</a></button></li>
+            </ul>
+        </aside>
+        <main class="content" id="content">
+            <div id="intro">
+                The examination question written over the terms and years are uploaded on this page for revision and learning purposes.
+                Select from the <b>Terms, Classes</b> and <b>Subjects</b> to download your ward exams questions. Supervise him or her to go through at home during his or her leisure time.
+            </div>
+            <div class="container">
+            <div class="grid">
+                <div class="grid-item">
+                <strong id="term1">Term 1</strong>
+                </div>
+                <div class="grid-item">
+                    <strong class="welcome-message">Term 2</strong>
+                </div>
+                <div class="grid-item">
+                    <strong id="term3">Term 3</strong>
+                </div>
+            </div>
+            </div>
+        </main>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+    <div class="popup" id="emailPopup">
+        <div class="popup-header">
+            <h2>Email for Support</h2>
+        </div>
+        <div class="popup-content" id="popupContent">
+        <p>Are you confused about something?<br>Don't worry, send a mail to:</p>
+        <p><br><input id="help" type="email" value="abubakarabdulai@gmail.com" readonly style="position: absolute;
+                                                                           left: 10%; bottom: 32%; width: 78%; padding-left: 5px;
+                                                                           border-radius: 6px; text-align: center;"></p>
+                                                                       </div>
+        <div class="popup-footer">
+            <button onclick="closePopup()">Close</button>
+        </div>
+        </div>
+
+        <div class="popup" id="contactPopup">
+        <div class="popup-header">
+            <h2>Contact for Help</h2>
+        </div>
+        <div class="popup-content" id="popupContent">
+        <p>Do you want to talk to the school management?</p>
+        <p><strong>Headmaster Name:</strong>
+        <input type="text" value="Abdulai Abubakar" readonly style="border-radius: 5px; width: 80%; text-align: center;"></p>
+        <p><strong>Contact:</strong>
+        <input type="text" value="0241303485" readonly style="border-radius: 5px; width: 80%; text-align: center;"></p>
+        </div>
+        <div class="popup-footer">
+            <button onclick="closeContactPopup()">Close</button>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="script.js"></script>
+
+    <footer class="footer">
+        <audio controls id="audio" autoplay loop>
+            <source src="m.background-music.aac" type="audio/mpeg">
+        </audio>
+        <marquee>- - - Motto: Sovereignty Belongs to Allah - - -</marquee>
+    </footer>
+</body>
+</html>

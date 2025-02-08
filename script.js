@@ -7,11 +7,11 @@ const sidebar = document.getElementById('sidebar');
             if (sidebar.classList.contains('open')) {
                 sidebar.classList.remove('open');
                 content.classList.remove('shifted');
-                toggleButton.textContent = 'Ξ'; // Update button text
+                toggleButton.textContent = '≡'; // Update button text
             } else {
                 sidebar.classList.add('open');
                 content.classList.add('shifted');
-                toggleButton.textContent = 'Ξ'; // Update button text
+                toggleButton.textContent = '≡'; // Update button text
             }
         }
 
