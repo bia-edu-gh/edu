@@ -29,15 +29,15 @@
                         font-size: 28px}
         #schoolName {width: 7em; height: 2em;
                      position: absolute;
-                     right: 16em;
+                     right: 15em;
                      border-radius: 1em;}
         .right_us {position: relative;
-                   right: 7em;
+                   right: 5em;
                    top: 1em;
                    margin: 0;}
         .one      {position: absolute;
                    top: 3em;
-                   right: 18em;}
+                   right: 15em;}
         #input    {border-radius: 2em 0em 0em 2em; width: 100%; max-width: 40em;
                    border: none; position: relative; bottom: 2.5em; padding: 5px;
                    margin-right: 0;
@@ -198,9 +198,9 @@
         .footer {height: 5%;
             
             display: flex;
-            padding: 10px 0px 10%;
+            padding: 10px 0px 15%;
             position: relative;
-            bottom: 0;
+            top: 100em;
             width: 100%;
             background: burlywood;
             z-index: 1000;}
