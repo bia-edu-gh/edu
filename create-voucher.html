@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <title>Generate Vouchers</title>
+    <style>
+      body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          border-radius: 5px;
+          background: powderblue;
+          font-size: 14px;
+          display: flex;
+          flex-direction: column;
+      }
+      .navbar {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 10px 60px;
+          position: fixed;
+          top: 0;
+          width: 100%;
+          background: burlywood;
+          z-index: 1000;
+      }
+      nav img {
+          width: 20em;
+          max-width: 5em;
+          height: 4.5em;
+          border-radius: 50%;
+          display: block;
+          text-align: center;
+      }
+      #admin {
+          background: white;
+          padding: 5px; 
+          border-radius: 2em;
+          color: blue; font-size: 11px;
+      }
+      .container {
+          max-width: 50em;
+          margin: 8em auto;
+          padding: 2em;
+          margin-bottom: 1em;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      }
+      .voucher {
+          background: white;
+          border: 1px solid #ccc;
+          font-family: Times New Roman, sans-serif;
+          font-size: 12px;
+          padding: 5px;
+          margin: 5px;
+          width: 50mm;
+          height: 25mm;
+          box-sizing: border-box;
+      }
+      #create {
+          padding: 10px;
+          background-color: #4CAF50;
+          color: white;
+          border: none;
+          cursor: pointer;
+          width: 100%;
+      }
+      #create:hover {
+          background-color: #45a049;
+      }
+      .voucher-container {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 1px;
+      }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <img src="i.Breman Islamic Bage 1.jpg" alt="School Badge" id="side">
+        <b id="admin">GENERATE VOUCHER/Admin</b>
+        <div class="right_us">
+            <form action="https://www.google.com/search" method="get" style="display: inline;">
+                <input type="text" name="q" placeholder="Search Google" id="input" required>
+                <button type="submit" id="search" style="border: none; background: burlywood;">
+                    <b id="go">GO</b>
+                </button>
+            </form>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2>Generate Vouchers</h2>
+        <button onclick="createVouchers()" id="create">Create Vouchers</button>
+        <button onclick="printVouchers()" id="printButton" style="display:none;">Print Vouchers</button>
+        <div class="voucher-container" id="vouchersContainer"></div>
+    </div>
+
+    <script>
+        let vouchers = []; // Array to hold voucher objects
+
+        function generateSerialNumber() {
+            const characters = '0123456789';
+            let serial = 'BIA'; // Start with "BIA"
+            for (let i = 0; i < 7; i++) {
+                serial += characters.charAt(Math.floor(Math.random() * characters.length));
+            }
+            return serial;
+        }
+
+        function generatePin() {
+            let pin = '';
+            for (let i = 0; i < 5; i++) {
+                pin += Math.floor(Math.random() * 10).toString();
+            }
+            return pin;
+        }
+
+        function createVouchers() {
+            const container = document.getElementById('vouchersContainer');
+            container.innerHTML = ''; // Clear previous vouchers
+            vouchers = []; // Reset vouchers array for new generation
+
+            for (let i = 0; i < 27; i++) {
+                const serial = generateSerialNumber();
+                const pin = generatePin();
+                vouchers.push({ serial, pin, used: false }); // Add voucher object to array
+
+                const voucher = document.createElement('div');
+                voucher.className = 'voucher';
+                voucher.innerHTML = `
+                    <b>Your BIA Admission Voucher details are;</b>
+                    <p><strong>Serial Number: </strong>${serial}</p>
+                    <strong>PIN: </strong>${pin}
+                `;
+                container.appendChild(voucher);
+            }
+
+            // Save vouchers to localStorage
+            localStorage.setItem('vouchers', JSON.stringify(vouchers));
+
+            document.getElementById('printButton').style.display = 'block'; // Show print button
+        }
+
+        function printVouchers() {
+            const vouchersHTML = document.getElementById('vouchersContainer').innerHTML;
+            const printWindow = window.open('', '', 'height=600,width=800');
+            printWindow.document.write('<html><head><title>BIA Vouchers</title>');
+            printWindow.document.write(`
+                <style>
+                    body { font-family: Arial, sans-serif; padding: 5px; }
+                    .voucher-container { 
+                        display: grid; 
+                        grid-template-columns: repeat(3, 1fr);
+                        gap: 10px;
+                    }
+                    .voucher {
+                        font-family: Times New Roman, sans-serif;
+                        border: 1px solid #ccc;
+                        padding: 10px;
+                        width: 80mm;
+                        height: 35mm;
+                        box-sizing: border-box;
+                    }
+                </style>
+            `);
+            printWindow.document.write('<body>');
+            printWindow.document.write('<div class="voucher-container">' + vouchersHTML + '</div>');
+            printWindow.document.write('</body></html>');
+            printWindow.document.close();
+            printWindow.print();
+        }
+    </script>
+
+    <footer class="footer">
+        <marquee>- - - Motto: Sovereignty Belongs to Allah - - -</marquee>
+    </footer>
+</body>
+</html>
