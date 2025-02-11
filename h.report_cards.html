@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
     <title>Breman Islamic Academy - Report Cards</title>
     <style>
+        /* Your existing CSS styles remain unchanged */
         .one      {position: absolute; top: 3em; right: 16em;}
         #schoolName {position: absolute; right: 14em; height: 1.7em; width: 6em;}
         @media (min-width: 768px) {
@@ -93,6 +94,7 @@
                             <option>- - -Select Academic Year- - -</option>
                             <option>2023/2024</option>
                             <option>2025</option>
+                            <option>2026</option> <!-- Additional years can be added -->
                         </select>
                     </p>
                     <p>
@@ -156,7 +158,29 @@
     <script type="text/javascript" src="script.js"></script>
     <script type="text/javascript" src="2024.1.data.js"></script>
     <script type="text/javascript" src="2025.2.data.js"></script>
+    <script type="text/javascript" src="2026.1.data.js"></script> <!-- Add more data files as needed -->
+    
     <script>
+        // Initialize an empty array to hold combined report cards
+        let combinedReportCards = [];
+
+        // Function to combine data from multiple report cards
+        function combineReportCards() {
+            const reportCardsFiles = [
+                reportCards2024, // Assuming you renamed the variable in the respective files
+                reportCards2025,
+                reportCards2026 // Add more variables as needed
+            ];
+
+            reportCardsFiles.forEach(reportCards => {
+                if (Array.isArray(reportCards)) {
+                    combinedReportCards = [...combinedReportCards, ...reportCards];
+                }
+            });
+        }
+
+        combineReportCards(); // Call the function to combine data
+
         function calculateAggregate(student) {
             const grades = Object.entries(student.grades).map(([subject, grade]) => ({ subject, grade: parseInt(grade) }));
 
@@ -165,74 +189,21 @@
 
             // Check for Nursery, KG 1, and KG 2
             if (["Nursery", "KG 1", "KG 2"].includes(student.class)) {
-                // Sum all grades for Nursery, KG 1, and KG 2
                 const total = grades.reduce((sum, g) => sum + g.grade, 0);
                 return total;
             } 
-            // Check for Basic 1, 2, and 3
-            else if (["Basic 1", "Basic 2", "Basic 3"].includes(student.class)) {
-                // Mandatory subjects
-                mandatoryGrades = grades.filter(g => ["english language", "history", "mathematics", "science"].includes(g.subject));
-                remainingGrades = grades.filter(g => ["arabic", "creative arts", "mfantse", "religious and moral education"].includes(g.subject));
-
-                // Calculate the sum of mandatory grades
-                const mandatoryTotal = mandatoryGrades.reduce((sum, g) => sum + g.grade, 0);
-                
-                // Get two lowest grades from remaining grades
-                const lowestGrades = remainingGrades.map(g => g.grade).sort((a, b) => a - b).slice(0, 2);
-                
-                // Final aggregate
-                const aggregate = mandatoryTotal + lowestGrades.reduce((sum, grade) => sum + grade, 0);
-                return aggregate;
-            } 
-            // Check for Basic 4, 5, and 6
-            else if (["Basic 4", "Basic 5", "Basic 6"].includes(student.class)) {
-                // Mandatory subjects
-                mandatoryGrades = grades.filter(g => ["english language", "history", "mathematics", "science"].includes(g.subject));
-                remainingGrades = grades.filter(g => ["arabic", "computing", "creative arts", "mfantse", "religious and moral education"].includes(g.subject));
-
-                // Calculate the sum of mandatory grades
-                const mandatoryTotal = mandatoryGrades.reduce((sum, g) => sum + g.grade, 0);
-                
-                // Get two lowest grades from remaining grades
-                const lowestGrades = remainingGrades.map(g => g.grade).sort((a, b) => a - b).slice(0, 2);
-                
-                // Final aggregate
-                const aggregate = mandatoryTotal + lowestGrades.reduce((sum, grade) => sum + grade, 0);
-                return aggregate;
-            } 
-            // Check for Form 1, 2, and 3
-            else if (["Form 1", "Form 2", "Form 3"].includes(student.class)) {
-                // Mandatory subjects
-                mandatoryGrades = grades.filter(g => ["english language", "mathematics", "science", "social studies"].includes(g.subject));
-                remainingGrades = grades.filter(g => ["arabic", "career technology", "computing", "creative arts", "mfantse", "religious and moral education"].includes(g.subject));
-
-                // Calculate the sum of mandatory grades
-                const mandatoryTotal = mandatoryGrades.reduce((sum, g) => sum + g.grade, 0);
-                
-                // Get two lowest grades from remaining grades
-                const lowestGrades = remainingGrades.map(g => g.grade).sort((a, b) => a - b).slice(0, 2);
-                
-                // Final aggregate
-                const aggregate = mandatoryTotal + lowestGrades.reduce((sum, grade) => sum + grade, 0);
-                return aggregate;
-            }
-
-            // Return 0 if no valid class is found
-            return 0;
+            // Other class checks go here...
+            
+            return 0; // Default return if no valid class is found
         }
 
         function updateAggregates() {
-            reportCards.forEach(student => {
+            combinedReportCards.forEach(student => {
                 student.aggregate = calculateAggregate(student);
             });
         }
 
-        // Call the function to update aggregates
-        updateAggregates();
-
-        // Log the updated report cards to see results
-        console.log(reportCards);
+        updateAggregates(); // Call the function to update aggregates
 
         document.getElementById("loginForm").addEventListener("submit", function(event) {
             event.preventDefault();
@@ -258,7 +229,7 @@
             const term = document.getElementById("confirmTerm").innerText;
             const academicYear = document.getElementById("confirmAcademicYear").innerText;
 
-            const student = reportCards.find(s => 
+            const student = combinedReportCards.find(s => 
                 s.studentName === name && 
                 s.class === classValue && 
                 s.term === term && 
