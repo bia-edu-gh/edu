@@ -7,18 +7,13 @@
     <title>Breman Islamic Academy - Report Cards</title>
     <style>
         /* Your existing CSS styles remain unchanged */
-        .one      {position: absolute; top: 3em; right: 16em;}
-        #schoolName {position: absolute; right: 14em; height: 1.7em; width: 6em;}
-        @media (min-width: 768px) {
-            .content.shifted { margin-left: 200px; /* Shift content when sidebar is open */ }
-        }
-        @media (max-width: 767px) { .content { margin-left: 0; /* No shifting on small screens */ } }
+        .one { position: absolute; top: 3em; right: 16em; }
+        #schoolName { position: absolute; right: 14em; height: 1.7em; width: 6em; }
         .content { transition: margin-left 0.3s ease; margin-left: 0; padding: 20px; display: flex; flex-direction: column; align-items: center; }
         #generate { background: seagreen; color: white; padding: 3px 5px; width: 80%; border-radius: 20px; font-size: 15px; margin-top: 50px; border: none; position: relative; left: 2em; }
         fieldset { border: none; border-radius: 8px; padding: 2em 0; margin-left: auto; height: 100%; max-height: 25em; position: relative; top: 2em; background: mediumorchid; width: 100%; max-width: 40em; box-shadow: 0 0 10px rgba(200, 150, 300, 0.9); }
         #termSelect, #classSelect { max-width: 15em; margin-left: 5em; text-align: center; }
         #yearSelect { max-width: 20em; margin-left: 4.2em; text-align: center; }
-        @media (max-width: 767px) { fieldset { margin-top: 0; } }
         legend { background: gold; color: blue; padding: 5px; border-radius: 15px; width: 80%; max-width: 40em; }
         p { margin-top: 2em; display: flex; flex-direction: column; }
         #studentName, select { border-radius: 1em; margin-left: 1em; text-align: center; }
@@ -57,11 +52,11 @@
             <form id="loginForm">
                 <fieldset class="report_cards">
                     <legend><b>Student Report Card Checking</b></legend>
-                    <p style="margin-left: 2.5em; margin-right: 3em;">
+                    <p>
                         <label for="studentName"><b>Student Name:</b></label>
                         <input type="text" id="studentName" placeholder="- - -enter your full name- - -" style="text-transform: uppercase; width: 20em;" required>
                     </p>
-                    <p style="margin-left: 1.5em; margin-right: 2em;">
+                    <p>
                         <b><label for="classSelect">Class:</label></b>
                         <select id="classSelect" required>
                             <option>- - - Select Class - - -</option>
@@ -79,7 +74,7 @@
                             <option>Form 3</option>
                         </select>
                     </p>
-                    <p style="margin-left: 1.5em; margin-right: 2em;">
+                    <p>
                         <b><label for="termSelect">Term:</label></b>
                         <select id="termSelect" required>
                             <option>- - - Select Term - - -</option>
@@ -88,15 +83,14 @@
                             <option>Term 3</option>
                         </select>
                     </p>
-                    <p style="margin-right: 2em;">
+                    <p>
                         <b><label for="yearSelect">Academic Year:</label></b>
                         <select id="yearSelect" required>
                             <option>- - -Select Academic Year- - -</option>
-                            <!-- Additional years can be added -->
-                            <option>2025</option>
-                            <option>2026</option> 
-                        </select>
                             <option>2023/2024</option>
+                            <option>2025</option>
+                            <option>2026</option>
+                        </select>
                     </p>
                     <p>
                         <button id="generate" type="submit"><b>Generate Report Card</b></button>
@@ -159,7 +153,7 @@
     <script type="text/javascript" src="script.js"></script>
     <script type="text/javascript" src="2024.1.data.js"></script>
     <script type="text/javascript" src="2025.2.data.js"></script>
- <!-- Add more data files as needed -->
+    <script type="text/javascript" src="2026.1.data.js"></script> <!-- Add more data files as needed -->
     
     <script>
         // Initialize an empty array to hold combined report cards
@@ -168,7 +162,7 @@
         // Function to combine data from multiple report cards
         function combineReportCards() {
             const reportCardsFiles = [
-                reportCards2024, // Assuming you renamed the variable in the respective files
+                reportCards2024,
                 reportCards2025,
                 reportCards2026 // Add more variables as needed
             ];
@@ -207,7 +201,7 @@
         updateAggregates(); // Call the function to update aggregates
 
         document.getElementById("loginForm").addEventListener("submit", function(event) {
-            event.preventDefault();
+            event.preventDefault(); // Prevents the default form submission
 
             const name = document.getElementById("studentName").value.toUpperCase();
             const classValue = document.getElementById("classSelect").value;
@@ -242,9 +236,9 @@
                 localStorage.setItem("studentData", JSON.stringify(student));
 
                 // Redirect to report_cards_display.html
-                window.location.href = "h.report_cards_display.html";
+                window.location.href = "h.report_cards_display.html"; // Ensure this file exists
             } else {
-                alert("Student not found. Enter the right Student Name, Class, Term, and Academic Year.");
+                alert("Student not found. Please enter the correct details.");
                 closeConfirmationPopup();
             }
         });
