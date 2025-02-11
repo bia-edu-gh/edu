@@ -6,55 +6,21 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
     <title>Breman Islamic Academy - Report Cards</title>
     <style>
-        .one      {position: absolute;
-                   top: 3em;
-                   right: 16em;}
-        #schoolName {position: absolute;
-                     right: 14em;
-                     height: 1.7em;
-                     width: 6em;}
+        .one      {position: absolute; top: 3em; right: 16em;}
+        #schoolName {position: absolute; right: 14em; height: 1.7em; width: 6em;}
         @media (min-width: 768px) {
-            .content.shifted {
-                margin-left: 200px; /* Shift content when sidebar is open */}}
-        /* Small screens: No shifting */
-        @media (max-width: 767px) {.content {margin-left: 0; /* No shifting on small screens */}}
-
-        .content {transition: margin-left 0.3s ease;
-                  margin-left: 0;
-                  padding: 20px;
-                  display: flex;
-                 flex-direction: column;
-                 align-items: center; /* Center content */}
-
-        #generate {background: seagreen; 
-                   color: white; padding: 3px 5px;
-                   width: 80%;
-                   border-radius: 20px; font-size: 15px;
-                   margin-top: 50px; border: none;
-                   position: relative;
-                   left: 2em;}
-        fieldset {border: none;
-                  border-radius: 8px;
-                  padding: 2em 0 2em;
-                  margin-left: auto;
-                  height: 100%;
-                  max-height: 25em;
-                  position: relative;
-                  top: 2em;
-                  background: mediumorchid;
-                  width: 100%; /* Set the width of the fieldset */
-                  max-width: 40em; /* Max width for larger screens */
-                  box-shadow: 0 0 10px rgba(200, 150, 300, 0.9); /* Optional shadow for better visibility */}
-        #termSelect, #classSelect {max-width: 15em; margin-left: 5em;
-                                   text-align: center;}
-        #yearSelect   {max-width: 20em; margin-left: 4.2em;
-                       text-align: center;}
-        @media (max-width: 767px) {fieldset {margin-top: 0;}}
-
-        legend  {background: gold; color: blue; padding: 5px; border-radius: 15px;
-                 width: 80%; max-width: 40em;}
-        p       {margin-top: 2em; display: flex; flex-direction: column;}
-        #studentName, select   {border-radius: 1em; margin-left: 1em; text-align: center;}
+            .content.shifted { margin-left: 200px; /* Shift content when sidebar is open */ }
+        }
+        @media (max-width: 767px) { .content { margin-left: 0; /* No shifting on small screens */ } }
+        .content { transition: margin-left 0.3s ease; margin-left: 0; padding: 20px; display: flex; flex-direction: column; align-items: center; }
+        #generate { background: seagreen; color: white; padding: 3px 5px; width: 80%; border-radius: 20px; font-size: 15px; margin-top: 50px; border: none; position: relative; left: 2em; }
+        fieldset { border: none; border-radius: 8px; padding: 2em 0; margin-left: auto; height: 100%; max-height: 25em; position: relative; top: 2em; background: mediumorchid; width: 100%; max-width: 40em; box-shadow: 0 0 10px rgba(200, 150, 300, 0.9); }
+        #termSelect, #classSelect { max-width: 15em; margin-left: 5em; text-align: center; }
+        #yearSelect { max-width: 20em; margin-left: 4.2em; text-align: center; }
+        @media (max-width: 767px) { fieldset { margin-top: 0; } }
+        legend { background: gold; color: blue; padding: 5px; border-radius: 15px; width: 80%; max-width: 40em; }
+        p { margin-top: 2em; display: flex; flex-direction: column; }
+        #studentName, select { border-radius: 1em; margin-left: 1em; text-align: center; }
     </style>
 </head>
 <body>
@@ -62,10 +28,10 @@
         <div class="left_me">
             <button id="toggle-button" onclick="toggleSidebar()" title="Toggle Sidebar">≡</button>
         </div>
-            <form action="https://www.google.com/search" method="get" style="display: inline;" class="one">
-                <input type="text" name="q" placeholder="Search Google" id="input" required>
-                <button type="submit" id="search" style="border: none; background: burlywood;"><b id="go">GO</b></button>
-            </form>
+        <form action="https://www.google.com/search" method="get" style="display: inline;" class="one">
+            <input type="text" name="q" placeholder="Search Google" id="input" required>
+            <button type="submit" id="search" style="border: none; background: burlywood;"><b id="go">GO</b></button>
+        </form>
         <div class="right_us">
             <img id="schoolName" src="i.nav.jpg">
             <button title="Current Page" id="current">Report Cards</button>
@@ -79,8 +45,7 @@
             <br><b style="margin-left: 60px;">BIA.EDU</b><br><b style="margin-left: 35px;">BREMAN ASIKUMA</b>
             <ul>
                 <li><button id="home" class="button"><a href="index.html">Home</a></button></li>
-                <li><button id="report_cards" class="button active"><a href="h.report_cards.html" 
-                    style="color: blue;"><b>Report Cards</b></a></button></li>
+                <li><button id="report_cards" class="button active"><a href="h.report_cards.html" style="color: blue;"><b>Report Cards</b></a></button></li>
                 <li><button id="exams" class="button"><a href="h.exams.html">Exams</a></button></li>
                 <li><button id="gallery" class="button"><a href="h.gallery.html">Gallery</a></button></li>
                 <li><button id="audios" class="button"><a href="h.audios.html">Audios</a></button></li>
@@ -89,12 +54,11 @@
         </aside>
         <main class="content" id="content">
             <form id="loginForm">
-            <fieldset class="report_cards">
-                <legend><b>Student Report Card Checking</b></legend>
+                <fieldset class="report_cards">
+                    <legend><b>Student Report Card Checking</b></legend>
                     <p style="margin-left: 2.5em; margin-right: 3em;">
-                        <label for="studentName" ><b>Student Name:</b></label>
-                        <input type="text" id="studentName" placeholder="- - -enter your full name- - -" 
-                        style="text-transform: uppercase; width: 20em;" required>
+                        <label for="studentName"><b>Student Name:</b></label>
+                        <input type="text" id="studentName" placeholder="- - -enter your full name- - -" style="text-transform: uppercase; width: 20em;" required>
                     </p>
                     <p style="margin-left: 1.5em; margin-right: 2em;">
                         <b><label for="classSelect">Class:</label></b>
@@ -115,7 +79,7 @@
                         </select>
                     </p>
                     <p style="margin-left: 1.5em; margin-right: 2em;">
-                        <b><label for="termSelect" >Term:</label></b>
+                        <b><label for="termSelect">Term:</label></b>
                         <select id="termSelect" required>
                             <option>- - - Select Term - - -</option>
                             <option>Term 1</option>
@@ -132,99 +96,130 @@
                         </select>
                     </p>
                     <p>
-                        <button id="generate" type="submit"><b>Generate Report Card</b></button>                   
+                        <button id="generate" type="submit"><b>Generate Report Card</b></button>
                     </p>
-            </fieldset>
+                </fieldset>
             </form>
             <div id="result" style="display:none;"></div>
-            </main>
-            </div>
+        </main>
+    </div>
 
-       <div class="overlay" id="overlay"></div>
+    <div class="overlay" id="overlay"></div>
     <div class="popup" id="emailPopup">
         <div class="popup-header">
             <h2>Email for Support</h2>
         </div>
         <div class="popup-content" id="popupContent">
-        <p>Are you confused about something?<br>Don't worry, send a mail to:</p>
-        <p><br><input id="help" type="email" value="abubakarabdulai@gmail.com" readonly style="position: absolute;
-                                                                           left: 10%; bottom: 32%; width: 78%; padding-left: 5px;
-                                                                           border-radius: 6px; text-align: center;"></p>
-                                                                       </div>
+            <p>Are you confused about something?<br>Don't worry, send a mail to:</p>
+            <p><br><input id="help" type="email" value="abubakarabdulai@gmail.com" readonly style="position: absolute; left: 10%; bottom: 32%; width: 78%; padding-left: 5px; border-radius: 6px; text-align: center;"></p>
+        </div>
         <div class="popup-footer">
             <button onclick="closePopup()">Close</button>
         </div>
-        </div>
+    </div>
 
-        <div class="popup" id="contactPopup">
+    <div class="popup" id="contactPopup">
         <div class="popup-header">
             <h2>Contact for Help</h2>
         </div>
         <div class="popup-content" id="popupContent">
-        <p>Do you want to talk to the school management?</p>
-        <p><strong>Headmaster Name:</strong>
-        <input type="text" value="Abdulai Abubakar" readonly style="border-radius: 5px; width: 80%; text-align: center;"></p>
-        <p><strong>Contact:</strong>
-        <input type="text" value="0241303485" readonly style="border-radius: 5px; width: 80%; text-align: center;"></p>
+            <p>Do you want to talk to the school management?</p>
+            <p><strong>Headmaster Name:</strong>
+                <input type="text" value="Abdulai Abubakar" readonly style="border-radius: 5px; width: 80%; text-align: center;">
+            </p>
+            <p><strong>Contact:</strong>
+                <input type="text" value="0241303485" readonly style="border-radius: 5px; width: 80%; text-align: center;">
+            </p>
         </div>
         <div class="popup-footer">
             <button onclick="closeContactPopup()">Close</button>
         </div>
-        </div>
+    </div>
 
-        <!-- Confirmation Popup -->
     <div class="overlay" id="confirmationOverlay" style="display:none;"></div>
-        <div class="popup" id="confirmationPopup" style="display:none;">
+    <div class="popup" id="confirmationPopup" style="display:none;">
         <div class="popup-header">
             <h2>Confirm Details</h2>
         </div>
         <div class="popup-content" id="popupContent">
-        <p><strong>Student Name:</strong> <span id="confirmStudentName"></span></p>
-        <p><strong>Class:</strong> <span id="confirmClass"></span></p>
-        <p><strong>Term:</strong> <span id="confirmTerm"></span></p>
-        <p><strong>Academic Year:</strong> <span id="confirmAcademicYear"></span></p>
+            <p><strong>Student Name:</strong> <span id="confirmStudentName"></span></p>
+            <p><strong>Class:</strong> <span id="confirmClass"></span></p>
+            <p><strong>Term:</strong> <span id="confirmTerm"></span></p>
+            <p><strong>Academic Year:</strong> <span id="confirmAcademicYear"></span></p>
         </div>
-         <div class="popup-footer">
-        <button id="agreeButton" style="background: green; color: white;">Agree</button>
-        <button onclick="closeConfirmationPopup()" style="background: red; color: white;">Disagree</button>
+        <div class="popup-footer">
+            <button id="agreeButton" style="background: green; color: white;">Agree</button>
+            <button onclick="closeConfirmationPopup()" style="background: red; color: white;">Disagree</button>
         </div>
     </div>
 
     <script type="text/javascript" src="script.js"></script>
-    <script type="text/javascript" src="2024.1.data.js">
-    </script>
-    <script type="text/javascript" src="2025.2.data.js">
-    </script>
-<script>
-         function calculateAggregate(student) {
+    <script type="text/javascript" src="2024.1.data.js"></script>
+    <script type="text/javascript" src="2025.2.data.js"></script>
+    <script>
+        function calculateAggregate(student) {
             const grades = Object.entries(student.grades).map(([subject, grade]) => ({ subject, grade: parseInt(grade) }));
 
             let mandatoryGrades = [];
             let remainingGrades = [];
 
-            if (student.class === "Nursery", "KG 1", "KG 2") {
-                // Sum all grades for Nursery
+            // Check for Nursery, KG 1, and KG 2
+            if (["Nursery", "KG 1", "KG 2"].includes(student.class)) {
+                // Sum all grades for Nursery, KG 1, and KG 2
                 const total = grades.reduce((sum, g) => sum + g.grade, 0);
                 return total;
-            } else if (student.class === "Basic 1","Basic 2", "Basic 3" || student.class === "Basic 4", "Basic 5", "Basic 6") {
+            } 
+            // Check for Basic 1, 2, and 3
+            else if (["Basic 1", "Basic 2", "Basic 3"].includes(student.class)) {
                 // Mandatory subjects
                 mandatoryGrades = grades.filter(g => ["english language", "history", "mathematics", "science"].includes(g.subject));
-                remainingGrades = grades.filter(g => !["english language", "history", "mathematics", "science"].includes(g.subject));
-            } else if (student.class === "Form 1", "Form 2", "Form 3") {
+                remainingGrades = grades.filter(g => ["arabic", "creative arts", "mfantse", "religious and moral education"].includes(g.subject));
+
+                // Calculate the sum of mandatory grades
+                const mandatoryTotal = mandatoryGrades.reduce((sum, g) => sum + g.grade, 0);
+                
+                // Get two lowest grades from remaining grades
+                const lowestGrades = remainingGrades.map(g => g.grade).sort((a, b) => a - b).slice(0, 2);
+                
+                // Final aggregate
+                const aggregate = mandatoryTotal + lowestGrades.reduce((sum, grade) => sum + grade, 0);
+                return aggregate;
+            } 
+            // Check for Basic 4, 5, and 6
+            else if (["Basic 4", "Basic 5", "Basic 6"].includes(student.class)) {
+                // Mandatory subjects
+                mandatoryGrades = grades.filter(g => ["english language", "history", "mathematics", "science"].includes(g.subject));
+                remainingGrades = grades.filter(g => ["arabic", "computing", "creative arts", "mfantse", "religious and moral education"].includes(g.subject));
+
+                // Calculate the sum of mandatory grades
+                const mandatoryTotal = mandatoryGrades.reduce((sum, g) => sum + g.grade, 0);
+                
+                // Get two lowest grades from remaining grades
+                const lowestGrades = remainingGrades.map(g => g.grade).sort((a, b) => a - b).slice(0, 2);
+                
+                // Final aggregate
+                const aggregate = mandatoryTotal + lowestGrades.reduce((sum, grade) => sum + grade, 0);
+                return aggregate;
+            } 
+            // Check for Form 1, 2, and 3
+            else if (["Form 1", "Form 2", "Form 3"].includes(student.class)) {
                 // Mandatory subjects
                 mandatoryGrades = grades.filter(g => ["english language", "mathematics", "science", "social studies"].includes(g.subject));
-                remainingGrades = grades.filter(g => !["english language", "mathematics", "science", "social studies"].includes(g.subject));
+                remainingGrades = grades.filter(g => ["arabic", "career technology", "computing", "creative arts", "mfantse", "religious and moral education"].includes(g.subject));
+
+                // Calculate the sum of mandatory grades
+                const mandatoryTotal = mandatoryGrades.reduce((sum, g) => sum + g.grade, 0);
+                
+                // Get two lowest grades from remaining grades
+                const lowestGrades = remainingGrades.map(g => g.grade).sort((a, b) => a - b).slice(0, 2);
+                
+                // Final aggregate
+                const aggregate = mandatoryTotal + lowestGrades.reduce((sum, grade) => sum + grade, 0);
+                return aggregate;
             }
 
-            // Calculate the sum of mandatory grades
-            const mandatoryTotal = mandatoryGrades.reduce((sum, g) => sum + g.grade, 0);
-            
-            // Get two lowest grades from remaining grades
-            const lowestGrades = remainingGrades.map(g => g.grade).sort((a, b) => a - b).slice(0, 2);
-            
-            // Final aggregate
-            const aggregate = mandatoryTotal + lowestGrades.reduce((sum, grade) => sum + grade, 0);
-            return aggregate; // Return as a string with 2 decimal places
+            // Return 0 if no valid class is found
+            return 0;
         }
 
         function updateAggregates() {
@@ -238,7 +233,6 @@
 
         // Log the updated report cards to see results
         console.log(reportCards);
-
 
         document.getElementById("loginForm").addEventListener("submit", function(event) {
             event.preventDefault();
