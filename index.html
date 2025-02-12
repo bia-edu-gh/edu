@@ -3,182 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <title>Breman Islamic Academy - Home</title>
-    <style type="text/css">
-        body {font-size: 14px;}
-        .one      {position: absolute;
-                   top: 3em;
-                   right: 16em;}
-        #schoolName {position: absolute;
-                     right: 13.5em;
-                     height: 1.7em;
-                     width: 6em;}
-        .container {width: 100%;}
-
-        .grid {display: block; /* Mobile layout */}
-
-        .grid-item {padding: 10px;
-                    background-color: ;
-                    margin-bottom: auto;
-                    margin-left: 0.6em;
-                    margin-right: 10px;
-                    border: none;
-                    border-radius: 5px;}
-
-        /* Tablet styles */
-        @media screen and (min-width: 481px) {
-            body {font-size: 16px;}
-
-            .container {width: 90%;}
-
-            .grid {display: grid;
-                   grid-template-columns: repeat(2, 1fr); /* Two columns */}}
-
-        /* Desktop styles */
-        @media screen and (min-width: 769px) {
-            body {font-size: 18px;}
-
-            .container {width: 70%;
-                        margin: auto; /* Centering */}
-
-            .grid {grid-template-columns: repeat(3, 1fr); /* Three columns */}}
-
-        #index_head {
-            background: red;
+    <title>Search Bar</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #1a1a1a;
+            margin: 0;
+        }
+        .search-bar {
+            display: flex;
+            align-items: center;
+            background-color: #2a2a2a;
+            border-radius: 24px;
+            padding: 10px;
+            width: 80%;
+            max-width: 600px;
+        }
+        .search-bar input {
+            flex: 1;
+            background: transparent;
+            border: none;
             color: white;
-            padding: 73px 15px;
-            border-radius: 5px;
-            max-width: 600px;
-            margin: 0 auto;
-            margin-top: 0.8em;
-            width: 90%;}
-
-        .welcome-message {
-            background: blue;
+            font-size: 16px;
+            outline: none;
+            padding: 10px;
+        }
+        .search-bar button {
+            background: none;
+            border: none;
             color: white;
-            padding: 10px 15px;
-            border-radius: 5px;
-            margin-top: 0px;
-            max-width: 600px;
-            margin: 20px auto;
-            width: 90%;} 
-
-        #acomodation {
-            padding: 30px 15px;
-            border-radius: 5px; 
-            margin-bottom: 10px;
-            background: silver;
-            color: blue;
-            max-width: 600px;
-            margin: 20px auto;
-            width: 90%;}
-             
-        #motto {
-            padding: 83px 15px;
-            border-radius: 5px; 
-            margin-top: 1em;
-            background: greenyellow;
-            max-width: 600px;
-            margin: 20px auto;
-            width: 90%;}
+            cursor: pointer;
+            margin-left: 10px;
+        }
+        .search-bar button:hover {
+            opacity: 0.7;
+        }
     </style>
 </head>
 <body>
-     <nav class="navbar">
-        <div class="left_me">
-            <button id="toggle-button" onclick="toggleSidebar()" title="Toggle Sidebar">≡</button>
-        </div>
-            <form action="https://www.google.com/search" method="get" style="display: inline;" class="one">
-                <input type="text" name="q" placeholder="Search Google" id="input" required>
-                <button type="submit" id="search" style="border: none; background: burlywood;"><b id="go">GO</b></button>
-            </form>
-        <div class="right_us">
-            <img id="schoolName" src="i.nav.jpg">            
-            <button title="Current Page" id="current">Home</button>
-            <button onclick="openEmailPopup()" id="mail">Email</button>
-            <button onclick="openContactPopup()" id="call">Contact</button>
-        </div>
-    </nav>
-    <div class="main-container">
-        <aside class="sidebar" id="sidebar">
-            <img src="i.Breman Islamic Bage 1.jpg" alt="School Badge" id="side">
-            <br><b style="margin-left: 80px;">BIA.EDU</b><br><b style="margin-left: 35px;">BREMAN ASIKUMA</b>
-            <ul>
-                <li><button id="home" class="button active"><a href="index.html" style="color: blue;">
-                    <b>Home</b></a></button></li>
-                <li><button id="report_cards" class="button"><a href="h.report_cards.html">Report Cards</a></button></li>
-                <li><button id="exams" class="button"><a href="h.exams.html">Exams</a></button></li>
-                <li><button id="gallery" class="button"><a href="h.gallery.html">Gallery</a></button></li>
-                <li><button id="audios" class="button"><a href="h.audios.html">Audios</a></button></li>
-                <li><button id="admission" class="button"><a href="h.admission.html">Admission</a></button></li>
-            </ul>
-        </aside>
-        <main class="content" id="content">
-            <div class="container">
-            <div class="grid">
-                <div class="grid-item">
-                <h2 id="index_head">بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ 
-                </h2></div>
-                <div class="grid-item">
-                <div class="welcome-message">
-                    <p>Assalamualaikum,<br>Welcome to <b>BREMAN ISLAMIC ACADEMY</b> Portal.</p>
-                    <p>Select from the dropdown menu to perform your actions.</p>
-                </div>
-                </div>
-                <div class="grid-item">
-                <div id="acomodation">
-                    <strong>ACOMODATION</strong>
-                    <p>Breman Islamic Academy offer acomodation for both</p><b>Boarding and Day Students.</b>
-                </div></div>
-                <div class="grid-item">
-                <div id="motto">
-                    <b>Sovereignty Belongs to Allah.</b>
-                </div></div>
-            </div>
-            </div>
-        </main>
+    <div class="search-bar">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_Logo.svg" alt="Google Logo" width="24">
+        <input type="text" placeholder="Search...">
+        <button><img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Google_Icons_Mic.svg" alt="Voice Search" width="24"></button>
+        <button><img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Google_Icons_Camera.svg" alt="Camera Search" width="24"></button>
     </div>
-
-    <div class="overlay" id="overlay"></div>
-    <div class="popup" id="emailPopup">
-        <div class="popup-header">
-            <h2>Email for Support</h2>
-        </div>
-        <div class="popup-content" id="popupContent">
-        <p>Are you confused about something?<br>Don't worry, send a mail to:</p>
-        <p><br><input id="help" type="email" value="abubakarabdulai@gmail.com" readonly style="position: absolute;
-                                                                           left: 10%; bottom: 32%; width: 78%; padding-left: 5px;
-                                                                           border-radius: 6px; text-align: center;"></p>
-                                                                       </div>
-        <div class="popup-footer">
-            <button onclick="closePopup()">Close</button>
-        </div>
-        </div>
-
-        <div class="popup" id="contactPopup">
-        <div class="popup-header">
-            <h2>Contact for Help</h2>
-        </div>
-        <div class="popup-content" id="popupContent">
-        <p>Do you want to talk to the school management?</p>
-        <p><strong>Headmaster Name:</strong>
-        <input type="text" value="Abdulai Abubakar" readonly style="border-radius: 5px; width: 80%; text-align: center;"></p>
-        <p><strong>Contact:</strong>
-        <input type="text" value="0241303485" readonly style="border-radius: 5px; width: 80%; text-align: center;"></p>
-        </div>
-        <div class="popup-footer">
-            <button onclick="closeContactPopup()">Close</button>
-        </div>
-    </div>
-
-    <script type="text/javascript" src="script.js"></script>
-
-    <footer class="footer">
-        <audio controls id="audio" autoplay loop>
-            <source src="m.background-music.aac" type="audio/mpeg">
-        </audio>
-        <marquee>- - - Motto: Sovereignty Belongs to Allah - - -</marquee>
-    </footer>
 </body>
 </html>
