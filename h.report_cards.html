@@ -12,11 +12,11 @@
         .content { transition: margin-left 0.3s ease; margin-left: 0; padding: 20px; display: flex; flex-direction: column; align-items: center; }
         #generate { background: seagreen; color: white; padding: 3px 5px; width: 80%; border-radius: 20px; font-size: 15px; margin-top: 50px; border: none; position: relative; left: 2em; }
         fieldset { border: none; border-radius: 8px; padding: 2em 0; margin-left: auto; height: 100%; max-height: 25em; position: relative; top: 2em; background: mediumorchid; width: 100%; max-width: 40em; box-shadow: 0 0 10px rgba(200, 150, 300, 0.9); }
-        #termSelect, #classSelect { max-width: 15em; margin-left: 3em; text-align: center; }
-        #yearSelect { max-width: 20em; margin-left: 4em; text-align: center; }
+        #termSelect, #classSelect { max-width: 15em; margin-left: 5em; text-align: center; }
+        #yearSelect { max-width: 20em; margin-left: 4.2em; text-align: center; }
         legend { background: gold; color: blue; padding: 5px; border-radius: 15px; width: 80%; max-width: 40em; }
         p { margin-top: 2em; display: flex; flex-direction: column; }
-        #studentName, select { border-radius: 1em; margin-left: 0.8em; text-align: center; }
+        #studentName, select { border-radius: 1em; margin-left: 1em; text-align: center; }
     </style>
 </head>
 <body>
@@ -89,7 +89,6 @@
                             <option>- - -Select Academic Year- - -</option>
                             <option>2023/2024</option>
                             <option>2025</option>
-                            <option>2026</option>
                         </select>
                     </p>
                     <p>
@@ -154,99 +153,73 @@
     <script type="text/javascript" src="2024.1.data.js"></script>
     <script type="text/javascript" src="2025.2.data.js"></script>
     <!-- Add more data files as needed -->
-    
+
     <script>
-        // Initialize an empty array to hold combined report cards
-        let combinedReportCards = [];
+        document.addEventListener("DOMContentLoaded", function() {
+            let combinedReportCards = [];
 
-        // Function to combine data from multiple report cards
-        function combineReportCards() {
-            const reportCardsFiles = [
-                reportCards2024,
-                reportCards2025,
-                reportCards2026 // Add more variables as needed
-            ];
+            function combineReportCards() {
+                const reportCardsFiles = [
+                    reportCards2024, // Ensure these variables are defined in your data files
+                    reportCards2025
+                ];
 
-            reportCardsFiles.forEach(reportCards => {
-                if (Array.isArray(reportCards)) {
-                    combinedReportCards = [...combinedReportCards, ...reportCards];
+                reportCardsFiles.forEach(reportCards => {
+                    if (Array.isArray(reportCards)) {
+                        combinedReportCards = [...combinedReportCards, ...reportCards];
+                    }
+                });
+            }
+
+            combineReportCards(); // Call the function to combine data
+
+            document.getElementById("loginForm").addEventListener("submit", function(event) {
+                event.preventDefault(); // Prevents the default form submission
+
+                const name = document.getElementById("studentName").value.toUpperCase();
+                const classValue = document.getElementById("classSelect").value;
+                const term = document.getElementById("termSelect").value;
+                const academicYear = document.getElementById("yearSelect").value;
+
+                // Show confirmation popup
+                document.getElementById("confirmStudentName").innerText = name;
+                document.getElementById("confirmClass").innerText = classValue;
+                document.getElementById("confirmTerm").innerText = term;
+                document.getElementById("confirmAcademicYear").innerText = academicYear;
+
+                document.getElementById("confirmationOverlay").style.display = "block";
+                document.getElementById("confirmationPopup").style.display = "block";
+            });
+
+            document.getElementById("agreeButton").addEventListener("click", function() {
+                const name = document.getElementById("confirmStudentName").innerText;
+                const classValue = document.getElementById("confirmClass").innerText;
+                const term = document.getElementById("confirmTerm").innerText;
+                const academicYear = document.getElementById("confirmAcademicYear").innerText;
+
+                const student = combinedReportCards.find(s => 
+                    s.studentName === name && 
+                    s.class === classValue && 
+                    s.term === term && 
+                    s.academicYear === academicYear
+                );
+
+                if (student) {
+                    // Store student data in local storage
+                    localStorage.setItem("studentData", JSON.stringify(student));
+                    // Redirect to report_cards_display.html
+                    window.location.href = "h.report_cards_display.html"; // Ensure this file exists
+                } else {
+                    alert("Student not found. Please enter the correct details.");
+                    closeConfirmationPopup();
                 }
             });
-        }
 
-        combineReportCards(); // Call the function to combine data
-
-        function calculateAggregate(student) {
-            const grades = Object.entries(student.grades).map(([subject, grade]) => ({ subject, grade: parseInt(grade) }));
-
-            let mandatoryGrades = [];
-            let remainingGrades = [];
-
-            // Check for Nursery, KG 1, and KG 2
-            if (["Nursery", "KG 1", "KG 2"].includes(student.class)) {
-                const total = grades.reduce((sum, g) => sum + g.grade, 0);
-                return total;
-            } 
-            // Other class checks go here...
-            
-            return 0; // Default return if no valid class is found
-        }
-
-        function updateAggregates() {
-            combinedReportCards.forEach(student => {
-                student.aggregate = calculateAggregate(student);
-            });
-        }
-
-        updateAggregates(); // Call the function to update aggregates
-
-        document.getElementById("loginForm").addEventListener("submit", function(event) {
-            event.preventDefault(); // Prevents the default form submission
-
-            const name = document.getElementById("studentName").value.toUpperCase();
-            const classValue = document.getElementById("classSelect").value;
-            const term = document.getElementById("termSelect").value;
-            const academicYear = document.getElementById("yearSelect").value;
-
-            // Show confirmation popup
-            document.getElementById("confirmStudentName").innerText = name;
-            document.getElementById("confirmClass").innerText = classValue;
-            document.getElementById("confirmTerm").innerText = term;
-            document.getElementById("confirmAcademicYear").innerText = academicYear;
-
-            document.getElementById("confirmationOverlay").style.display = "block";
-            document.getElementById("confirmationPopup").style.display = "block";
-        });
-
-        document.getElementById("agreeButton").addEventListener("click", function() {
-            const name = document.getElementById("confirmStudentName").innerText;
-            const classValue = document.getElementById("confirmClass").innerText;
-            const term = document.getElementById("confirmTerm").innerText;
-            const academicYear = document.getElementById("confirmAcademicYear").innerText;
-
-            const student = combinedReportCards.find(s => 
-                s.studentName === name && 
-                s.class === classValue && 
-                s.term === term && 
-                s.academicYear === academicYear
-            );
-
-            if (student) {
-                // Store student data in local storage
-                localStorage.setItem("studentData", JSON.stringify(student));
-
-                // Redirect to report_cards_display.html
-                window.location.href = "h.report_cards_display.html"; // Ensure this file exists
-            } else {
-                alert("Student not found. Please enter the correct details.");
-                closeConfirmationPopup();
+            function closeConfirmationPopup() {
+                document.getElementById("confirmationOverlay").style.display = "none";
+                document.getElementById("confirmationPopup").style.display = "none";
             }
         });
-
-        function closeConfirmationPopup() {
-            document.getElementById("confirmationOverlay").style.display = "none";
-            document.getElementById("confirmationPopup").style.display = "none";
-        }
     </script>
     <footer class="footer">
         <audio controls id="audio" autoplay loop>
