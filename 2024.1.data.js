@@ -325,7 +325,7 @@ const reportCards2024 = [
     // Add more nursery students...
 
     // KG1 Students
-    {studentName: "ABDUL AZIZ",
+    {studentName: "HANIF  ABDUL AZIZ",
         class: "KG 1",
         term: "Term 1",
         academicYear: "2023/2024",
