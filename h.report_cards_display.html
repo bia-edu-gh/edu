@@ -18,7 +18,7 @@
             margin-bottom: 20px;}
         th,
         td {border: 1px solid #000; /* Uniform border for all cells */
-            padding: 1px;
+            padding: 5px;
             text-align: left; /* Align text to the left */}
         button {background: darkgray;
             font-size: 16px;
@@ -29,7 +29,7 @@
             border: none;}
 
         img {width: 100%; /* Set a consistent width for the image */
-            max-width: 480px; /* Max width to maintain responsiveness */
+            max-width: 500px; /* Max width to maintain responsiveness */
             height: auto; /* Maintain aspect ratio */}
         .full-width {text-align: left; /* Align text to the left for full-width rows */}
         .empty-row {height: 80px; /* Set height to match the header */}
@@ -139,7 +139,7 @@
             let resultsHTML = `
 
                 <tr>
-                    <td><strong>SUBJECT NAME</strong></td>
+                    <td style="padding-right: 0;"><strong>SUBJECT NAME</strong></td>
                     <td style="text-align: center;"><strong>GRADE</strong></td>
                     <td><strong>REMARKS</strong></td>
                 </tr>
