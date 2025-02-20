@@ -20,15 +20,13 @@
         td {border: 1px solid #000; /* Uniform border for all cells */
             padding: 4px;
             text-align: left; /* Align text to the left */}
-        button {padding: 10px 15px;
+        button {background: darkgray;
             font-size: 16px;
             cursor: pointer;
             margin-top: 10px; /* Add some space above the button */
-            background: gray;
-            color: red;
+            color: green;
             text-decoration: underline;
-            border: none;
-            border-radius: 10px;}
+            border: none;}
 
         img {width: 100%; /* Set a consistent width for the image */
             max-width: 480px; /* Max width to maintain responsiveness */
@@ -40,7 +38,8 @@
         /* Hide borders when printing */
         @media print {
             table {border: none; /* Hide table borders */}
-            th, td {border: none; /* Hide cell borders */}}
+            th, td {border: none; /* Hide cell borders */}
+            button {margin-top: 20px;}}
      .wrap {word-wrap: break-word;
             max-width: 150px; /* Set a max width for the subject name */}
     </style>
@@ -54,7 +53,8 @@
         </td>
     </tr>
     <tr>
-        <td colspan="3" class="full-width" style="text-align: center; background: burlywood; color: white; padding: 5px 0 5px;">
+        <td colspan="3" class="full-width" style="text-align: center; background: darkgray; color: white; padding: 7px 0; 
+                                                  font-size: 16px;">
             <strong>Results Checking</strong>
         </td> 
     </tr>
@@ -89,15 +89,18 @@
     </tr>
     <tr>
         <td colspan="3" class="full-width" style="background: burlywood; color: white;">
-            <strong>Results</strong>
+            <strong>Statement of Results</strong>
         </td>
     </tr>
     <tbody id="subjectResults"></tbody>
+    <tr>
+        <td colspan="3" class="full-width" style="background: darkgray; text-align: center; padding-bottom: 0;">
+    <button onclick="window.print()">Click to Print This Page</button>
+
+        </td>
+    </tr>
 </table>
 
-<div>
-    <button onclick="window.print()">Click to Print This Page</button>
-</div>
 
 <script>
     window.onload = function() {
