@@ -1,12 +1,12 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=1000", initial-scale=1.0">
+    <meta name="viewport" content="width=1000", initial-scale="1.0">
     <title>Terminal Reports Checking</title>
     <style>
-        body {font-size: 14px;
-            font-family: Roboto, sans-serif;
+        body {font-size: 16px;
+            font-family: Arial Rounded MT Bold, sans-serif;
             margin: 0 20px;
             display: flex;
             flex-direction: column; /* Stack elements vertically */
@@ -17,7 +17,7 @@
             border-collapse: collapse; /* Ensure borders are collapsed for uniformity */
             margin-bottom: 20px;}
         th,
-        td {border: 1px solid gray; /* Uniform border for all cells */
+        td {border: 1px solid #000; /* Uniform border for all cells */
             padding: 5px;
             text-align: left; /* Align text to the left */}
         button {background: darkgray;
@@ -33,13 +33,14 @@
             height: auto; /* Maintain aspect ratio */}
         .full-width {text-align: left; /* Align text to the left for full-width rows */}
         .empty-row {height: 90px; /* Set height to match the header */}
-        .empty-row img {width: 7em; height: 6em; padding: 0.7em 0 0.7em 2em;
+        .empty-row img {width: 7em; height: 6em; padding: 0.5em 0 0.5em 1.7em;
                         border-radius: 0px}
         /* Hide borders when printing */
         @media print {
             table {border: none; /* Hide table borders */}
             th, td {border: none; /* Hide cell borders */}
             button {margin-top: 20px;}}
+        alt {display: flex; flex-direction: column;}
      .wrap {word-wrap: break-word;
             max-width: 150px; /* Set a max width for the subject name */}
     </style>
@@ -54,27 +55,30 @@
     </tr>
     <tr>
         <td colspan="3" class="full-width" style="text-align: center; background: darkgray; color: white; padding: 7px 0; 
-                                                  font-size: 16px;">
-            <strong>Results Checking</strong>
+                                                  font-size: 18px;">
+            <b>Results Checking</b>
         </td> 
     </tr>
     <tr>
         <td colspan="3" class="full-width">
-            <strong style="color: red;">Disclaimer:</strong> 
-            <span style="color: indigo; font-size: 14px;">THE RESULTS GIVEN BELOW ARE PROVISIONAL. THE FINAL RESULTS WILL BE PRINTED ON YOUR REPORT CARD.</span>
+            <b style="color: red; font-size: 16px; font-family: Calibri;">Disclaimer:</b> 
+            <b style="color: indigo; font-size: 14px; font-family: Dubai Light, sans-serif ; line-height: 1.2em;">THE RESULTS GIVEN BELOW ARE PROVISIONAL. THE FINAL RESULTS WILL BE PRINTED ON YOUR REPORT CARD.</b>
         </td>
     </tr>
     <tr>
-        <td colspan="3" class="full-width" style="background: #CC5D12; color: white;">
+        <td colspan="3" class="full-width" style="background: #CC5D12; color: white; font-family: Calibri,sans-serif; font-size: 18px;">
             <strong>Candidate's Details</strong>
         </td>
     </tr>
+
     <tr class="empty-row" style="padding: 0;">
-        <td colspan="3" class="full-width"><img src="i.Breman Islamic Bage 1.jpg" alt="Empty Space"></td>
+        <td colspan="3" class="full-width">
+            <img src="i.Breman Islamic Bage 1.jpg" alt="School Bage">
+        </td>
     </tr>
     <tr>
         <td colspan="3" class="full-width">
-            <span style="color: indigo; font-size: 14px;">RESULTS OF THE CANDIDATE ON THIS PRINT-OUT CAN BE CROSS-CHECKED BY COMPARING IT TO THE ONE ON THE REPORT CARD.</span>
+            <b style="color: indigo; font-size: 14px; font-family: Dubai Light, sans-serif; line-height: 1.2em">RESULTS OF THE CANDIDATE ON THIS PRINT-OUT CAN BE CROSS-CHECKED BY COMPARING IT TO THE ONE ON THE REPORT CARD.</b>
         </td>
     </tr>
     <tbody id="studentDetails"></tbody>
@@ -88,8 +92,8 @@
                     <td colspan="2"></td>
     </tr>
     <tr>
-        <td colspan="3" class="full-width" style="background: #CC5D12; color: white;">
-            <strong>Results</strong>
+        <td colspan="3" class="full-width" style="background: #CC5D12; color: white; font-size: 18px; font-family: Calibri, sans-serif; text-align: center;">
+            <b> Statement of Results</b>
         </td>
     </tr>
     <tbody id="subjectResults"></tbody>
@@ -109,28 +113,28 @@
             document.getElementById("studentDetails").innerHTML = `
                 <tr>
                     <td><strong>Student Name</strong></td>
-                    <td colspan="2">${student.studentName}</td>
+                    <td colspan="2" style="font-family: Times New Roman, sans-serif;">${student.studentName}</td>
                 </tr>
                 <tr>
                     <td><strong>Class</strong></td>
-                    <td colspan="2">${student.class}</td>
+                    <td colspan="2" style="font-family: Times New Roman, sans-serif;">${student.class}</td>
                 </tr>
                 <tr>
                     <td><strong>Term</strong></td>
-                    <td colspan="2">${student.term}</td>
+                    <td colspan="2" style="font-family: Times New Roman, sans-serif;">${student.term}</td>
                 </tr>
                 
                 <tr>
                     <td><strong>Academic Year</strong></td>
-                    <td colspan="2">${student.academicYear}</td>
+                    <td colspan="2" style="font-family: Times New Roman, sans-serif;">${student.academicYear}</td>
                 </tr>
                 <tr>
                     <td><strong>Aggregate</strong></td>
-                    <td colspan="2">${student.aggregate}</td>
+                    <td colspan="2" style="font-family: Times New Roman, sans-serif;">${student.aggregate}</td>
                 </tr>
                 <tr>
                     <td><strong>Position</strong></td>
-                    <td colspan="2">${student.position}</td>
+                    <td colspan="2" style="font-family: Times New Roman, sans-serif;">${student.position}</td>
                 </tr>
 
             `;
@@ -138,9 +142,9 @@
             let resultsHTML = `
 
                 <tr>
-                    <td><strong>SUBJECT NAME</strong></td>
-                    <td style="padding-right: 3em;"><strong>GRADE</strong></td>
-                    <td style="padding-right: 6em;"><strong>REMARKS</strong></td>
+                    <td><strong style="font-family: Dubai Meduim">SUBJECT NAME</strong></td>
+                    <td style="padding-right: 2em; font-family: Dubai Meduim"><strong>GRADE</strong></td>
+                    <td style="padding-right: 4em; font-family: Dubai Meduim"><strong>REMARKS</strong></td>
                 </tr>
             `;
             
@@ -148,9 +152,9 @@
                 const subjectName = subject === "religious and moral education" ? "RELIGIOUS AND MORAL EDUCATION" : subject.toUpperCase();
                 resultsHTML += `
                     <tr>
-                        <td class="wrap">${subjectName}</td>
-                        <td style="padding-left: 1.8em">${student.grades[subject]}</td>
-                        <td>${student.remarks[subject]}</td>
+                        <td class="wrap" style="font-family: Calibri, sans-serif;"><b>${subjectName}</b></td>
+                        <td style="padding-left: 1.8em font-family: Dubai Light; font-size: 14px;">${student.grades[subject]}</td>
+                        <td style="font-family: Dubai Light, sans-serif; line-height: 0;">${student.remarks[subject]}</td>
                     </tr>
                 `;
             }
