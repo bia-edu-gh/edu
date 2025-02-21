@@ -1517,7 +1517,7 @@ const reportCards2024 = [
         aggregate: ""
     },
     {
-        studentName: "AHMAB BILIKIS",
+        studentName: "AHMAD BILIKIS",
         class: "Form 1",
         term: "Term 1",
         academicYear: "2023/2024",
