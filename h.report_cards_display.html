@@ -32,7 +32,7 @@
             max-width: 500px; /* Max width to maintain responsiveness */
             height: auto; /* Maintain aspect ratio */}
         .full-width {text-align: left; /* Align text to the left for full-width rows */}
-        .empty-row {height: 80px; /* Set height to match the header */}
+        .empty-row {height: 90px; /* Set height to match the header */}
         .empty-row img {width: 7em; height: 6em; padding: 0.5em 0 0.5em 1.7em;
                         border-radius: 0px}
         /* Hide borders when printing */
@@ -83,12 +83,12 @@
     </tr>
     <tbody id="studentDetails"></tbody>
      <tr>
-        <td colspan="3" class="full-width" style="background: #CC5D12; color: white; padding: 0.8em;">
+        <td colspan="3" class="full-width" style="background: #CC5D12; color: white; padding: 0.85em;">
             <strong></strong>
         </td>
     </tr>
     <tr>
-                    <td style="padding: 0.8em;"><strong></strong></td>
+                    <td style="padding: 0.85em;"><strong></strong></td>
                     <td colspan="2"></td>
     </tr>
     <tr>
@@ -143,7 +143,7 @@
 
                 <tr>
                     <td><strong style="font-family: Dubai Meduim">SUBJECT NAME</strong></td>
-                    <td style="padding-right: 2em; font-family: Dubai Meduim"><strong>GRADE</strong></td>
+                    <td style="padding-right: 2em; padding-left: 1em; font-family: Dubai Meduim"><strong>GRADE</strong></td>
                     <td style="padding-right: 4em; font-family: Dubai Meduim"><strong>REMARKS</strong></td>
                 </tr>
             `;
@@ -153,7 +153,7 @@
                 resultsHTML += `
                     <tr>
                         <td class="wrap" style="font-family: Calibri, sans-serif;"><b>${subjectName}</b></td>
-                        <td style="padding-left: 1.8em font-family: Dubai Light; font-size: 14px;">${student.grades[subject]}</td>
+                        <td style="padding-left: 3em; font-family: Dubai Light; font-size: 14px;">${student.grades[subject]}</td>
                         <td style="font-family: Dubai Light, sans-serif; line-height: 0;">${student.remarks[subject]}</td>
                     </tr>
                 `;
