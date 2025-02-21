@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terminal Reports Checking</title>
     <style>
         body {font-size: 14px;
@@ -18,7 +18,7 @@
             margin-bottom: 20px;}
         th,
         td {border: 1px solid #000; /* Uniform border for all cells */
-            padding: 7px;
+            padding: 5px;
             text-align: left; /* Align text to the left */}
         button {background: darkgray;
             font-size: 16px;
@@ -32,8 +32,8 @@
             max-width: 500px; /* Max width to maintain responsiveness */
             height: auto; /* Maintain aspect ratio */}
         .full-width {text-align: left; /* Align text to the left for full-width rows */}
-        .empty-row {height: 80px; /* Set height to match the header */}
-        .empty-row img {width: 7em; height: 6em; padding-left: 3em;
+        .empty-row {height: 90px; /* Set height to match the header */}
+        .empty-row img {width: 7em; height: 6em; padding: 1em 0 1em 2em;
                         border-radius: 0px}
         /* Hide borders when printing */
         @media print {
@@ -64,7 +64,7 @@
             <span style="color: indigo; font-size: 14px;">THE RESULTS GIVEN BELOW ARE PROVISIONAL. THE FINAL RESULTS WILL BE PRINTED ON YOUR REPORT CARD.</span>
         </td>
     </tr>
-    <tr class="empty-row" style="padding: 1em 0;">
+    <tr class="empty-row" style="padding: 0;">
         <td colspan="3" class="full-width"><img src="i.Breman Islamic Bage 1.jpg" alt="Empty Space"></td>
     </tr>
     <tr>
@@ -89,7 +89,7 @@
     </tr>
     <tr>
         <td colspan="3" class="full-width" style="background: burlywood; color: white;">
-            <strong>Statement of Results</strong>
+            <strong>Results</strong>
         </td>
     </tr>
     <tbody id="subjectResults"></tbody>
@@ -100,7 +100,6 @@
         </td>
     </tr>
 </table>
-
 
 <script>
     window.onload = function() {
@@ -140,8 +139,8 @@
 
                 <tr>
                     <td><strong>SUBJECT NAME</strong></td>
-                    <td style="text-align: center; padding: 0 1.5em;"><strong>GRADE</strong></td>
-                    <td style="padding: 0 1.5em;><strong>REMARKS</strong></td>
+                    <td style="padding-right: 2em;"><strong>GRADE</strong></td>
+                    <td style="padding-right: 4em;"><strong>REMARKS</strong></td>
                 </tr>
             `;
             
@@ -150,7 +149,7 @@
                 resultsHTML += `
                     <tr>
                         <td class="wrap">${subjectName}</td>
-                        <td style="text-align: center;">${student.grades[subject]}</td>
+                        <td style="padding-left: 1.8em">${student.grades[subject]}</td>
                         <td>${student.remarks[subject]}</td>
                     </tr>
                 `;
@@ -159,7 +158,7 @@
             document.getElementById("subjectResults").innerHTML = resultsHTML;
         } else {
             alert("No student data found.");
-            window.location.href = "/breman-islamic-academy/html/h.report_cards.html"; // Redirect back if no data
+            window.location.href = "h.report_cards.html"; // Redirect back if no data
         }
     }
 </script>
