@@ -216,7 +216,7 @@
         /*Styles for mobile*/
 
         /* Tablet styles */
-        @media screen and (min-width: 600px) and (min-height: 768px) {
+        @media screen and (min-width: 600px) {
           
         .left_me {position: relative;
                   left: 8%;}
