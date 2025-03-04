@@ -364,8 +364,7 @@
             z-index: 1000;}
         #audio {height: 20px;
                 width: 90px;
-                position: relative;
-                left: 150px}
+                position: relative;}
         marquee {background: white;
                  position: relative;
                  left: 40%;
