@@ -5,7 +5,7 @@
             display: flex;
             flex-direction: column; /* Added for better header/content flow */}
         
-        .navbar {height: 5em;
+       .navbar {height: 5em;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -16,12 +16,14 @@
             background: burlywood;
             z-index: 1000;}
   
-        .left_me {position: relative;
+       .left_me {position: relative;
                   left: 8%;}
        #current, #mail, #call {border-radius: 5px; padding: 5px; 
                                   border: none; background: green; 
                                   color: white; cursor: pointer;
-                                  font-size: 15px;}
+                                  font-size: 15px;
+                                  font-family: Dubai, sans-serif;
+                                  line-height: 1.2em;}
         #toggle-button {position: relative; right: 2.5em; display: block;
                         border-radius: 3px; 
                         padding: 0 2px; 
@@ -60,29 +62,24 @@
             padding: 7em 0em 0em;
             transition: left 0.0s ease; /* Slide effect */
             z-index: 2;
-            overflow-y: auto; /* Add scrollbar if content exceeds height */
-        }
+            overflow-y: auto; /* Add scrollbar if content exceeds height */}
         .sidebar.open {
-            left: 0; /* Shift sidebar into view */
-        }
-        .sidebar img  {
-            width: 55%;
+            left: 0; /* Shift sidebar into view */}
+        .sidebar img  {width: 55%;
             max-width: 300px;
             height: auto;
             border-radius: 50%;
             display: block;
-            margin: 0 auto; margin-top: 0px;
-            text-align: center;
-        }
-        ul {
-            padding: 0;
-            list-style-type: none; /* Remove bullet points */
-        }
-        .sidebar .button {
-            width: 100%; /* Make buttons full width of sidebar */
+            margin: auto;
+            text-align: center;}
+        ul {padding: 0;
+            list-style-type: none; /* Remove bullet points */}
+        .sidebar .button {width: 100%; /* Make buttons full width of sidebar */
             background-color: burlywood; /* Set button color to burlywood */
             border: 2px solid rgba(255, 255, 255, 0.2); /* Increase border thickness */
             color: black; /* Text color for better contrast */
+            font-family: Geometr706BlkCnBT,serif;
+            font-size: 15px;
             padding: 15px; /* Increase inner padding for thickness */
             text-align: left; /* Align text to the left */
             margin: 0; /* Remove margin to make buttons meet */
@@ -93,52 +90,34 @@
             background-size: 20px 20px; /* Adjust size as needed */
             background-repeat: no-repeat; /* Do not repeat the image */
             background-position: left center; /* Position the image to the left */
-            padding-left: 30px; /* Add space for the image */
-        }
+            padding-left: 30px; /* Add space for the image */}
+
         /* Add specific background images for each button */
-        #home {
-            background-image: url('i.home.jpg'); /* Replace with the actual home image URL */
-        }
-        #report_cards {
-            background-image: url('i.report.jpg'); /* Replace with the actual report cards image URL */
-        }
-        #exams {
-            background-image: url('i.exams.jpg'); /* Replace with the actual exams image URL */
-        }
-        #gallery {
-            background-image: url('i.gallery.jpg'); /* Replace with the actual gallery image URL */
-        }
-        #audios {
-            background-image: url('i.audios.jpg'); /* Replace with the actual audios image URL */
-        }
-        #admission {
-            background-image: url('i.admission.jpg'); /* Replace with the actual admission image URL */
-        }
+        #home {background-image: url('i.home.jpg');}
+        #report_cards {background-image: url('i.report.jpg');}
+        #exams {background-image: url('i.exams.jpg');}
+        #gallery {background-image: url('i.gallery.jpg');}
+        #audios {background-image: url('i.audios.jpg');}
+        #admission {background-image: url('i.admission.jpg');}
+
         .sidebar .button:hover {
-            background-color: rgba(255, 215, 0, 0.5); /* Lighten on hover (optional) */
-        }
-        .sidebar .button a {
-            color: inherit; /* Inherit color from button */
+            background-color: rgba(255, 215, 0, 0.5); /* Lighten on hover (optional) */}
+        .sidebar .button a {color: inherit; /* Inherit color from button */
             text-decoration: none; /* Remove underline */
             display: block; /* Make anchor fill button */
             width: 100%; /* Ensure anchor is full width */
             height: 100%; /* Ensure anchor is full height */}
-        .content {
-            padding: 6% 0% 0%;
+
+        .content {padding: 5em 0 0;
             text-align: center;
             flex-grow: 1;
             margin-top: 60px; /* Space for header and navbar */
-            transition: margin-left 0.3s ease; /* Smooth transition for content shift */
-             }
+            transition: margin-left 0.3s ease; /* Smooth transition for content shift */}
          /* Shift content on large screens only */
-        @media (min-width: 768px) {
-            .content.shifted {
-                margin-left: 200px; /* Shift content when sidebar is open */}}
-        /* Small screens: No shifting */
-        @media (max-width: 767px) {.content {margin-left: 0; /* No shifting on small screens */}}
-
-        .main-container {
-            display: flex;
+        @media screen and (min-width: 768px) and (max-height: 768px) {
+            .content.shifted {margin-left: 200px; /* Shift content when sidebar is open */}}
+       
+        .main-container {display: flex;
             margin-top: 1%; /* Space for header and navbar */
             height: calc(100vh - 60px); /* Full viewport height */}
 
@@ -154,126 +133,113 @@
             top: 50%; /* Center vertically */
             transform: translate(-50%, -50%); /* Perfectly center */
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Add shadow for better visibility */
-            border-radius: 10px; /* Rounded corners */
-        }
-        .popup-header, .popup-footer {
-            background-color: #4CAF40; /* Same color for header and footer */
+            border-radius: 10px; /* Rounded corners */}
+        .popup-header, .popup-footer {background-color: #4CAF40; /* Same color for header and footer */
             color: white; /* Text color for header and footer */
             padding: 10px; /* Padding inside header and footer */
             text-align: center; /* Center the text */
-            border-radius: 10px 10px 0 0; /* Rounded top corners for header */
-        }
-
-        .popup-content {
-            background-color: #e0f7fa; /* Different color for content inside the popup */
-            padding: 10px; /* Padding for content */
-            margin: 10px 0; /* Margin for spacing */
-        }
-
+            border-radius: 10px 10px 0 0; /* Rounded top corners for header */}
         .popup-footer {
-            border-radius: 0 0 10px 10px; /* Rounded bottom corners for footer */
-        }
+            border-radius: 0 0 10px 10px; /* Rounded bottom corners for footer */}
+        .popup-content {background-color: #e0f7fa; /* Different color for content inside the popup */
+            padding: 10px 10px 10px 22px; /* Padding for content */
+            margin: 10px 0; /* Margin for spacing */
+            font-size: 16px;}
         .popup p {
-            margin: 10px 0; /* Space around paragraphs */
-        }
-        .popup button {
-            background-color: #f44336; /* Color for the close button */
+            margin: 5px 0; /* Space around paragraphs */}
+        .popup button {background-color: #f44336; /* Color for the close button */
             color: white; /* Text color for the button */
             border: none; /* Remove border */
-            padding: 10px 15px; /* Padding for the button */
+            padding: 8px 15px; /* Padding for the button */
             cursor: pointer; /* Pointer cursor on hover */
-            border-radius: 5px; /* Rounded corners */
+            border-radius: 10px; /* Rounded corners */
             display: block; /* Make the button block-level for full width */
-            margin: 10px auto 0; /* Center the button */
-        }
-        .overlay {
-            display: none;
+            margin: 10px auto 0; /* Center the button */}
+        .overlay {display: none;
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-        }
+            background: rgba(0, 0, 0, 0.5);}
 
-        .footer {height: 5%;    
-            display: flex;
-            padding: 10px 0px 15%;
+        .footer {padding: 10px 0px 2em;
             position: relative;
-            top: 10em;
+            top: 0em;
             width: 100%;
             background: burlywood;
             z-index: 1000;}
         #audio {height: 20px;
-                width: 90px;
-                position: relative;
-                left: 120px}
+            width: 90px;
+            position: relative;
+            left: 145px}
         marquee {background: white;
-                 width: 30%;
-                 position: relative;
-                 left: 40%;
-                 height: 1.3em;}
+            width: 40%;
+            position: relative;
+            left: 35%;
+            height: 1.3em;}
         /*Styles for mobile*/
 
         /* Tablet styles */
-        @media screen and (min-width: 600px) {
-          
-        .left_me {position: relative;
-                  left: 8%;}
-       #current, #mail, #call {border-radius: 5px; padding: 5px; 
-                                  border: none; background: green; 
-                                  color: white; cursor: pointer;
-                                  font-size: 16px;}
-        #toggle-button {position: relative; right: 2em; display: block;
-                        border-radius: 3px; 
-                        padding: 0 2px; 
-                        border: none; background: green; 
-                        color: white; cursor: pointer;
-                        font-size: 28px}
-        #schoolName {width: 7em; height: 2em;
-                     position: absolute;
-                     right: 16em;
-                     border-radius: 1em;}
-        .right_us {position: relative;
-                   right: 7em;
-                   top: 1em;
-                   margin: 0;}
-        .one      {position: absolute;
-                   top: 3em;
-                   right: 18em;}
-        #input    {border-radius: 2em 0em 0em 2em; width: 100%; max-width: 40em;
-                   border: none; position: relative; bottom: 2.5em; padding: 5px;
-                   margin-right: 0;
-                   box-shadow: 0 0 10px rgba(100, 200, 30, 3);}
-        #go    {color: white; font-size: 15px;
-                   position: relative; bottom: 3.7em; left: 14.8em;
-                   border-radius: 0 50%;
-                   background: green;
-                   padding: 6.5px 5px;}}
+        @media screen and (min-width: 481px) {
+            body {font-size: 16px;}
+
+            .left_me {position: relative;
+                left: 8%;}
+            #cur    rent, #mail, #call {border-radius: 5px; padding: 5px; 
+                border: none; background: green; 
+                color: white; cursor: pointer;
+                font-size: 14px;}
+            #toggle-button {position: relative; right: 2em; display: block;
+                border-radius: 3px; 
+                padding: 0 2px; 
+                border: none; background: green; 
+                color: white; cursor: pointer;
+                font-size: 28px}
+            #schoolName {width: 7em; height: 2em;
+                position: absolute;
+                right: 14em;
+                border-radius: 1em;}
+            .right_us {position: relative;
+                right: 7em;
+                top: 1em;
+                margin: 0;}
+            .one {position: absolute;
+                top: 3em;
+                right: 15em;}
+            #input  {border-radius: 2em 0em 0em 2em; width: 100%; max-width: 40em;
+                border: none; position: relative; bottom: 2.5em; padding: 5px;
+                margin-right: 0;
+                box-shadow: 0 0 10px rgba(100, 200, 30, 3);}
+            #go  {color: white; font-size: 15px;
+                position: relative; bottom: 3.7em; left: 14.8em;
+                border-radius: 0 50%;
+                background: green;
+                padding: 6.5px 5px;}}
         /*Styles for Tablets/
 
         /* Desktop styles */
-        @media screen and (min-width: 768px) and (min-height: 600px) {
+        @media screen and (min-width: 768px) {
             body {font-size: 18px;}
 
             #schoolName {width: 10em; height: 2.5em;
-                     position: absolute;
-                     right: 65em;
-                     bottom: 0.1em;
-                     border-radius: 2em;}
+                    position: absolute;
+                    right: 65em;
+                    bottom: 0.1em;
+                    border-radius: 2em;}
             #current, #mail, #call {border-radius: 5px; padding: 8px; 
-                                  border: none; background: green; 
-                                  color: white; cursor: pointer;
-                                  font-size: 18px;
-                                  margin-right: 1em}
+                    border: none; background: green; 
+                    color: white; cursor: pointer;
+                    font-size: 18px;
+                    margin-right: 1em}
             .right_us {position: absolute;
                    right: 20em;
                    top: 2em;
                    margin: 0;}
-            .one  {position: absolute;
+            .one {position: absolute;
                    top: 4.5em;
                    right: 54em;}
-            #input    {border-radius: 2em 0em 0em 2em; width: 25em;
+            #input {border-radius: 2em 0em 0em 2em; width: 25em;
                    border: none; position: relative; bottom: 2.5em; padding: 8px; left: 1em;
                    margin-right: 0;
                    box-shadow: 0 0 10px rgba(100, 200, 30, 3);}
@@ -283,102 +249,5 @@
                    background: green;
                    padding: 11.5px 6px;}
        
-            .sidebar {
-            position: fixed;
-            top: 1em; /* Adjust based on header height */
-            left: -250px; /* Initially off-screen */
-            width: 230px;
-            max-height: 100%;
-            height: calc(100vh - 60px); /* Full height minus header */
-            background: bisque; /* Sidebar background color */
-            padding: 7em 0em 0em;
-            transition: left 0.0s ease; /* Slide effect */
-            z-index: 2;
-            overflow-y: auto; /* Add scrollbar if content exceeds height */}}
-
-        .main-container {
-            display: flex;
-            margin-top: 1%; /* Space for header and navbar */
-            height: calc(100vh - 60px); /* Full viewport height */}
-
-
-        .popup {width: 20em;
-            display: none; /* Hide pop-ups by default */
-            position: fixed; /* Position them fixed to the viewport */
-            background: white; /* Aquamarine background color for the pop-up */
-            border: 1px solid #ccc; /* Border for the pop-up */
-            padding: 20px; /* Padding inside the pop-up */
-            z-index: 1000; /* Ensure it's above other content */
-            left: 50%; /* Center horizontally */
-            top: 50%; /* Center vertically */
-            transform: translate(-50%, -50%); /* Perfectly center */
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Add shadow for better visibility */
-            border-radius: 10px; /* Rounded corners */
-        }
-        .popup-header, .popup-footer {
-            background-color: #4CAF40; /* Same color for header and footer */
-            color: white; /* Text color for header and footer */
-            padding: 10px; /* Padding inside header and footer */
-            text-align: center; /* Center the text */
-            border-radius: 10px 10px 0 0; /* Rounded top corners for header */
-        }
-
-        .popup-content {
-            background-color: #e0f7fa; /* Different color for content inside the popup */
-            padding: 10px; /* Padding for content */
-            margin: 10px 0; /* Margin for spacing */
-        }
-
-        .popup-footer {
-            border-radius: 0 0 10px 10px; /* Rounded bottom corners for footer */
-        }
-        .popup p {
-            margin: 10px 0; /* Space around paragraphs */
-        }
-        .popup button {
-            background-color: #f44336; /* Color for the close button */
-            color: white; /* Text color for the button */
-            border: none; /* Remove border */
-            padding: 10px 15px; /* Padding for the button */
-            cursor: pointer; /* Pointer cursor on hover */
-            border-radius: 5px; /* Rounded corners */
-            display: block; /* Make the button block-level for full width */
-            margin: 10px auto 0; /* Center the button */}
-        .overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 5;
-            background: rgba(0, 0, 0, 0.5);}
-
-        .footer {height: 2em;
-            display: flex;
-            padding: 10px 0px 2em;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-            background: burlywood;
-            z-index: 1000;}
-        #audio {height: 20px;
-                width: 90px;
-                position: relative;}
-        marquee {background: white;
-                 position: relative;
-                 left: 40%;
-                 height: 1.3em;}
+            .sidebar {max-height: 100%;}
         /*Styles for Desktop*/
-
-           .content {padding: 6% 0% 0%;
-            text-align: center;
-            flex-grow: 1;
-            margin-top: 60px; /* Space for header and navbar */
-            transition: margin-left 0.3s ease; /* Smooth transition for content shift */}
-         /* Shift content on large screens only */
-        @media (min-width: 768px) {
-            .content.shifted {
-                margin-left: 200px; /* Shift content when sidebar is open */}}
-        /* Small screens: No shifting */
-        @media (max-width: 767px) {.content {margin-left: 0; /* No shifting on small screens */}}

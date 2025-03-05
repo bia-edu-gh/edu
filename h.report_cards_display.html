@@ -32,8 +32,8 @@
             max-width: 500px; /* Max width to maintain responsiveness */
             height: auto; /* Maintain aspect ratio */}
         .full-width {text-align: left; /* Align text to the left for full-width rows */}
-        .empty-row {height: 90px; /* Set height to match the header */}
-        .empty-row img {width: 7em; height: 6em; padding: 0.5em 0 0.5em 1.7em;
+        .empty-row {padding: 2em; /* Set height to match the header */}
+        .empty-row img {width: 6em; height: 5em; padding: 1em 0 0.5em 2em;
                         border-radius: 0px}
         /* Hide borders when printing */
         @media print {
@@ -62,7 +62,7 @@
     <tr>
         <td colspan="3" class="full-width">
             <b style="color: red; font-size: 16px; font-family: Calibri;">Disclaimer:</b> 
-            <b style="color: indigo; font-size: 14px; font-family: Dubai Light, sans-serif ; line-height: 1.2em;">THE RESULTS GIVEN BELOW ARE PROVISIONAL. THE FINAL RESULTS WILL BE PRINTED ON YOUR REPORT CARD.</b>
+            <b style="color: indigo; font-size: 14px; font-family: Dubai Light, sans-serif; line-height: 1.2em;">THE RESULTS GIVEN BELOW ARE PROVISIONAL. THE FINAL RESULTS WILL BE PRINTED ON YOUR REPORT CARD.</b>
         </td>
     </tr>
     <tr>
@@ -74,6 +74,8 @@
     <tr class="empty-row" style="padding: 0;">
         <td colspan="3" class="full-width">
             <img src="i.Breman Islamic Bage 1.jpg" alt="School Bage">
+            <b id="image" style="position: relative; left: 15em; bottom: 3.5em;  border: 3px solid #FFE699;
+                       font-family: Dubai Light,sans-serif; font-size: 13px; padding: 36.5px 6px; background: #FFE699;">No Photo Available</b>
         </td>
     </tr>
     <tr>
