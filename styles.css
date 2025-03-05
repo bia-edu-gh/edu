@@ -219,7 +219,7 @@
         /*Styles for Tablets/
 
         /* Desktop styles */
-        @media screen and (min-width: 768px) {
+        @media screen and (min-width: 768px) and (min-height: 600px) {
             body {font-size: 18px;}
 
             #schoolName {width: 10em; height: 2.5em;
