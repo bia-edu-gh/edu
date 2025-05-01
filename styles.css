@@ -1,5 +1,6 @@
       /* Base styles for mobile */
       body {background: url('Bage 3.jpg');
+            filter: blur (5px);
             background-size: 80%;
             background-position: center;
             background-repeat: no-repeat;
