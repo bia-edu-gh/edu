@@ -50,7 +50,7 @@
 <table>
     <tr>
         <td colspan="3" class="full-width" style="padding: 0">
-            <img src="/breman-islamic-academy/images/i.report-head.jpg" alt="Header Image" style="display: block;">
+            <img src="i.report-head.jpg" alt="Header Image" style="display: block;">
         </td>
     </tr>
     <tr>
@@ -73,7 +73,7 @@
 
     <tr class="empty-row" style="padding: 0;">
         <td colspan="3" class="full-width">
-            <img src="/breman-islamic-academy/images/i.Breman Islamic Bage 1.jpg" alt="School Bage">
+            <img src="i.Breman Islamic Bage 1.jpg" alt="School Bage">
             <b id="image" style="position: relative; left: 15em; bottom: 3.5em;  border: 3px solid #FFE699;
                        font-family: Dubai Light,sans-serif; font-size: 13px; 
                        padding: 36.5px 0.6px; background: #FFE699;">No Photo Available</b>
@@ -162,7 +162,7 @@ function calculateAggregate(student) {
     }
 
     // Calculate and display aggregate
-    const aggregate = (count > 0) ? (total / count).toFixed(2) : 0; // Avoid division by zero
+    const aggregate = (count > 0) ? (total / count).toFixed() : 0; // Avoid division by zero
     student.aggregate = aggregate;
     document.getElementById("studentDetails").innerHTML += `
         <tr>
@@ -228,7 +228,7 @@ function calculateAggregate(student) {
             document.getElementById("subjectResults").innerHTML = resultsHTML;
         } else {
             alert("No student data found.");
-            window.location.href = "/breman-islamic-academy/html/h.report_cards.html"; // Redirect back if no data
+            window.location.href = "h.report_cards.html"; // Redirect back if no data
         }
     }
 </script>
