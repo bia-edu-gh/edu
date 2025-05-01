@@ -1,5 +1,5 @@
       /* Base styles for mobile */
-      body {background: url('/breman-islamic-academy/images/Bage 3.jpg');
+      body {background: url('Bage 3.jpg');
             background-size: 80%;
             background-position: center;
             background-repeat: no-repeat;
@@ -96,12 +96,12 @@
             padding-left: 30px; /* Add space for the image */}
 
         /* Add specific background images for each button */
-        #home {background-image: url('/breman-islamic-academy/images/i.home.jpg');}
-        #report_cards {background-image: url('/breman-islamic-academy/images/i.report.jpg');}
-        #exams {background-image: url('/breman-islamic-academy/images/i.exams.jpg');}
-        #gallery {background-image: url('/breman-islamic-academy/images/i.gallery.jpg');}
-        #audios {background-image: url('/breman-islamic-academy/images/i.audios.jpg');}
-        #admission {background-image: url('/breman-islamic-academy/images/i.admission.jpg');}
+        #home {background-image: url('i.home.jpg');}
+        #report_cards {background-image: url('i.report.jpg');}
+        #exams {background-image: url('i.exams.jpg');}
+        #gallery {background-image: url('i.gallery.jpg');}
+        #audios {background-image: url('i.audios.jpg');}
+        #admission {background-image: url('i.admission.jpg');}
 
         .sidebar .button:hover {
             background-color: rgba(255, 215, 0, 0.5); /* Lighten on hover (optional) */}
