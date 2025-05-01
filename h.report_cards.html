@@ -3,20 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="/breman-islamic-academy/css/styles.css">
     <title>Breman Islamic Academy - Report Cards</title>
     <style>
-        /* Your existing CSS styles remain unchanged */
-        .one { position: absolute; top: 3em; right: 11.5em; }
-        #schoolName { position: absolute; right: 14em; height: 1.7em; width: 4em; }
-        .content { transition: margin-left 0.3s ease; margin-left: 0; padding: 20px; display: flex; flex-direction: column; align-items: center; }
-        #generate { background: seagreen; color: white; padding: 3px 5px; width: 80%; border-radius: 20px; font-size: 15px; margin-top: 50px; border: none; position: relative; left: 2em; }
-        fieldset { border: none; border-radius: 8px; padding: 2em 0; margin-left: auto; height: 100%; max-height: 25em; position: relative; top: 2em; background: mediumorchid; width: 100%; max-width: 40em; box-shadow: 0 0 10px rgba(200, 150, 300, 0.9); }
-        #termSelect, #classSelect { max-width: 15em; margin-left: 5em; text-align: center; }
-        #yearSelect { max-width: 20em; margin-left: 4.2em; text-align: center; }
-        legend { background: gold; color: blue; padding: 5px; border-radius: 15px; width: 80%; max-width: 40em; }
-        p { margin-top: 2em; display: flex; flex-direction: column; }
-        #studentName, select { border-radius: 1em; margin-left: 1em; text-align: center; }
+        .content {transition: margin-left 0.3s ease;
+                  margin-left: 0;
+                  padding: 20px;
+                  display: flex;
+                 flex-direction: column;
+                 align-items: center; /* Center content */}
+
+        #generate {background: seagreen; 
+                   color: white; padding: 3px 5px;
+                   width: 80%;
+                   border-radius: 20px; font-size: 15px;
+                   margin-top: 50px; border: none;
+                   position: relative;
+                   left: 1em;}
+        fieldset {border: none;
+                  border-radius: 8px;
+                  padding: 2em 0 0 2em;
+                  height: 100%;
+                  max-height: 30em;
+                  position: relative;
+                  top: 5em;
+                  right: 1em;
+                  background: mediumorchid;
+                  width: 100%; /* Set the width of the fieldset */
+                  max-width: 26em; /* Max width for larger screens */
+                  box-shadow: 0 0 10px rgba(200, 150, 300, 0.9); /* Optional shadow for better visibility */}
+        #termSelect, #classSelect {max-width: 15em; margin-left: 2.5em;
+                                   text-align: center;}
+        #yearSelect   {max-width: 20em; margin-left: 0em;
+                       text-align: center;}
+        b {margin-left: 0; text-align: left;}
+
+        legend  {background: gold; color: blue; padding: 5px; border-radius: 15px;
+                 width: 80%; max-width: 40em;}
+        p       {margin-top: 1em; display: flex; flex-direction: column;}
+        #studentName, select   {border-radius: 1em; margin-left: 0em; text-align: center;}
+
+
+        /* Desktop styles */
+        @media screen and (min-width: 768px) {
+            body {font-size: 18px;}
+
+            .container {width: 90%;
+                        margin: auto; /* Centering */}
+            .grid {grid-template-columns: repeat(3, 1fr); /* Three columns */}
+        .navbar {height: 5em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0px 60px;
+            position: fixed;
+            top: 0; /* Adjust based on header height */
+            width: 100%;
+            background: burlywood;
+            z-index: 1000;}
+        #schoolName {width: 7.7em; height: 1.9em;
+                     position: absolute;
+                     right: 51em;
+                     bottom: 0.1em;
+                     border-radius: 1em;}
+        .right_us {position: absolute;
+                   right: 15em;
+                   top: 1.5em;
+                   margin: 0;}
+            .one  {position: absolute;
+                   top: 3.5em;
+                   right: 38em;}
+            #go    {color: white; font-size: 15px;
+                   position: relative; bottom: 2.1em; left: -0.1em;
+                   border-radius: 0 50%;
+                   background: green;
+                   padding: 11.5px 6px;}
+            fieldset {position: relative;
+                      top: 4em;}
+        .content {margin-left: 0;
+                  padding: 20px;
+        p {display: inline-flex;
+           flex-direction: initial;
+           width: 100%;
+           margin: 1em;}
+           select {position: relative;
+                   right: 3.5em;
+                   width: 100%}
+        #termSelect, #classSelect {max-width: 15em; margin-left: 5em;
+                                   text-align: center;}
+        #yearSelect   {max-width: 20em; margin-left: 4em;
+                       text-align: center;}
+        #studentName  {border-radius: 1em; margin-left: 1em; text-align: center;}
+        #select {margin-left: 4em;}}
     </style>
 </head>
 <body>
@@ -24,12 +102,12 @@
         <div class="left_me">
             <button id="toggle-button" onclick="toggleSidebar()" title="Toggle Sidebar">≡</button>
         </div>
-        <form action="https://www.google.com/search" method="get" style="display: inline;" class="one">
-            <input type="text" name="q" placeholder="Search Google" id="input" required>
-            <button type="submit" id="search" style="border: none; background: burlywood;"><b id="go">GO</b></button>
-        </form>
+            <form action="https://www.google.com/search" method="get" style="display: inline;" class="one">
+                <input type="text" name="q" placeholder="Search Google" id="input" required>
+                <button type="submit" id="search" style="border: none; background: burlywood;"><b id="go">GO</b></button>
+            </form>
         <div class="right_us">
-            <img id="schoolName" src="i.nav.jpg">
+            <img id="schoolName" src="/breman-islamic-academy/images/i.nav.jpg">
             <button title="Current Page" id="current">Report Cards</button>
             <button onclick="openEmailPopup()" id="mail">Email</button>
             <button onclick="openContactPopup()" id="call">Contact</button>
@@ -37,11 +115,12 @@
     </nav>
     <div class="main-container">
         <aside class="sidebar" id="sidebar">
-            <img src="i.Breman Islamic Bage 1.jpg" alt="School Badge" id="side">
+            <img src="/breman-islamic-academy/images/i.Breman Islamic Bage 1.jpg" alt="School Badge" id="side">
             <br><b style="margin-left: 60px;">BIA.EDU</b><br><b style="margin-left: 35px;">BREMAN ASIKUMA</b>
             <ul>
-                <li><button id="home" class="button"><a href="index.html">Home</a></button></li>
-                <li><button id="report_cards" class="button active"><a href="h.report_cards.html" style="color: blue;"><b>Report Cards</b></a></button></li>
+                <li><button id="home" class="button"><a href="/breman-islamic-academy/html/index.html">Home</a></button></li>
+                <li><button id="report_cards" class="button active"><a href="/breman-islamic-academy/html/h.report_cards.html" 
+                    style="color: blue;"><b>Report Cards</b></a></button></li>
                 <li><button id="exams" class="button"><a href="h.exams.html">Exams</a></button></li>
                 <li><button id="gallery" class="button"><a href="h.gallery.html">Gallery</a></button></li>
                 <li><button id="audios" class="button"><a href="h.audios.html">Audios</a></button></li>
@@ -50,14 +129,15 @@
         </aside>
         <main class="content" id="content">
             <form id="loginForm">
-                <fieldset class="report_cards">
-                    <legend><b>Student Report Card Checking</b></legend>
+            <fieldset class="report_cards">
+                <legend><b>Student Report Card Checking</b></legend>
                     <p>
-                        <label for="studentName"><b>Student Name:</b></label>
-                        <input type="text" id="studentName" placeholder="- - -enter your full name- - -" style="text-transform: uppercase; width: 20em;" required>
+                        <b><label for="studentName">Student Name:</label></b>
+                        <input type="text" id="studentName" placeholder="- - -enter your full name- - -" 
+                        style="text-transform: uppercase; width: 20em;" required>
                     </p>
                     <p>
-                        <b><label for="classSelect">Class:</label></b>
+                        <b id="select"><label for="classSelect">Class:</label></b>
                         <select id="classSelect" required>
                             <option>- - - Select Class - - -</option>
                             <option>Nursery</option>
@@ -75,7 +155,7 @@
                         </select>
                     </p>
                     <p>
-                        <b><label for="termSelect">Term:</label></b>
+                        <b id="select"><label for="termSelect" >Term:</label></b>
                         <select id="termSelect" required>
                             <option>- - - Select Term - - -</option>
                             <option>Term 1</option>
@@ -88,142 +168,143 @@
                         <select id="yearSelect" required>
                             <option>- - -Select Academic Year- - -</option>
                             <option>2025</option>
-                            <option>2023/2024</optio>
+                            <option>2023/2024</option>
                         </select>
                     </p>
                     <p>
-                        <button id="generate" type="submit"><b>Generate Report Card</b></button>
+                        <button id="generate" type="submit"><b>Generate Report Card</b></button>                   
                     </p>
-                </fieldset>
+            </fieldset>
             </form>
             <div id="result" style="display:none;"></div>
-        </main>
-    </div>
+            </main>
+            </div>
 
-    <div class="overlay" id="overlay"></div>
+       <div class="overlay" id="overlay"></div>
     <div class="popup" id="emailPopup">
         <div class="popup-header">
             <h2>Email for Support</h2>
         </div>
         <div class="popup-content" id="popupContent">
-            <p>Are you confused about something?<br>Don't worry, send a mail to:</p>
-            <p><br><input id="help" type="email" value="abubakarabdulai@gmail.com" readonly style="position: absolute; left: 10%; bottom: 32%; width: 78%; padding-left: 5px; border-radius: 6px; text-align: center;"></p>
-        </div>
+        <p>Are you confused about something?<br>Don't worry, send a mail to:</p>
+        <p><br><input id="help" type="email" value="abubakarabdulai@gmail.com" readonly style="position: absolute;
+                                                                           left: 10%; bottom: 32%; width: 78%; padding-left: 5px;
+                                                                           border-radius: 6px; text-align: center;"></p>
+                                                                       </div>
         <div class="popup-footer">
             <button onclick="closePopup()">Close</button>
         </div>
-    </div>
+        </div>
 
-    <div class="popup" id="contactPopup">
+        <div class="popup" id="contactPopup">
         <div class="popup-header">
             <h2>Contact for Help</h2>
         </div>
         <div class="popup-content" id="popupContent">
-            <p>Do you want to talk to the school management?</p>
-            <p><strong>Headmaster Name:</strong>
-                <input type="text" value="Abdulai Abubakar" readonly style="border-radius: 5px; width: 80%; text-align: center;">
-            </p>
-            <p><strong>Contact:</strong>
-                <input type="text" value="0241303485" readonly style="border-radius: 5px; width: 80%; text-align: center;">
-            </p>
+        <p>Do you want to talk to the school management?</p>
+        <p><strong>Headmaster Name:</strong>
+        <input type="text" value="Abdulai Abubakar" readonly style="border-radius: 5px; width: 80%; text-align: center;"></p>
+        <p><strong>Contact:</strong>
+        <input type="text" value="0241303485" readonly style="border-radius: 5px; width: 80%; text-align: center;"></p>
         </div>
         <div class="popup-footer">
             <button onclick="closeContactPopup()">Close</button>
         </div>
-    </div>
+        </div>
 
+        <!-- Confirmation Popup -->
     <div class="overlay" id="confirmationOverlay" style="display:none;"></div>
-    <div class="popup" id="confirmationPopup" style="display:none;">
+        <div class="popup" id="confirmationPopup" style="display:none;">
         <div class="popup-header">
             <h2>Confirm Details</h2>
         </div>
         <div class="popup-content" id="popupContent">
-            <p><strong>Student Name:</strong> <span id="confirmStudentName"></span></p>
-            <p><strong>Class:</strong> <span id="confirmClass"></span></p>
-            <p><strong>Term:</strong> <span id="confirmTerm"></span></p>
-            <p><strong>Academic Year:</strong> <span id="confirmAcademicYear"></span></p>
+        <p><strong>Student Name:</strong> <span id="confirmStudentName"></span></p>
+        <p><strong>Class:</strong> <span id="confirmClass"></span></p>
+        <p><strong>Term:</strong> <span id="confirmTerm"></span></p>
+        <p><strong>Academic Year:</strong> <span id="confirmAcademicYear"></span></p>
         </div>
-        <div class="popup-footer">
-            <button id="agreeButton" style="background: green; color: white;">Agree</button>
-            <button onclick="closeConfirmationPopup()" style="background: red; color: white;">Disagree</button>
+         <div class="popup-footer">
+        <button id="agreeButton" style="background: blue; color: white;">Agree</button>
+        <button onclick="closeConfirmationPopup()" style="background: red; color: white;">Disagree</button>
         </div>
     </div>
 
-    <script type="text/javascript" src="script.js"></script>
-    <script type="text/javascript" src="2024.1.data.js"></script>
-    <script type="text/javascript" src="2025.2.data.js"></script>
+    <script type="text/javascript" src="/breman-islamic-academy/js/script.js"></script>
+    <script type="text/javascript" src="/breman-islamic-academy/js/2024.1.data.js"></script>
+    <script type="text/javascript" src="/breman-islamic-academy/js/2025.2.data.js"></script>
     <!-- Add more data files as needed -->
-
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            let combinedReportCards = [];
-
-            function combineReportCards() {
-                const reportCardsFiles = [
-                    reportCards2024, // Ensure these variables are defined in your data files
-                    reportCards2025
-                ];
-
-                reportCardsFiles.forEach(reportCards => {
-                    if (Array.isArray(reportCards)) {
-                        combinedReportCards = [...combinedReportCards, ...reportCards];
-                    }
-                });
-            }
-
-            combineReportCards(); // Call the function to combine data
-
-            document.getElementById("loginForm").addEventListener("submit", function(event) {
-                event.preventDefault(); // Prevents the default form submission
-
-                const name = document.getElementById("studentName").value.toUpperCase();
-                const classValue = document.getElementById("classSelect").value;
-                const term = document.getElementById("termSelect").value;
-                const academicYear = document.getElementById("yearSelect").value;
-
-                // Show confirmation popup
-                document.getElementById("confirmStudentName").innerText = name;
-                document.getElementById("confirmClass").innerText = classValue;
-                document.getElementById("confirmTerm").innerText = term;
-                document.getElementById("confirmAcademicYear").innerText = academicYear;
-
-                document.getElementById("confirmationOverlay").style.display = "block";
-                document.getElementById("confirmationPopup").style.display = "block";
-            });
-
-            document.getElementById("agreeButton").addEventListener("click", function() {
-                const name = document.getElementById("confirmStudentName").innerText;
-                const classValue = document.getElementById("confirmClass").innerText;
-                const term = document.getElementById("confirmTerm").innerText;
-                const academicYear = document.getElementById("confirmAcademicYear").innerText;
-
-                const student = combinedReportCards.find(s => 
-                    s.studentName === name && 
-                    s.class === classValue && 
-                    s.term === term && 
-                    s.academicYear === academicYear
-                );
-
-                if (student) {
-                    // Store student data in local storage
-                    localStorage.setItem("studentData", JSON.stringify(student));
-                    // Redirect to report_cards_display.html
-                    window.location.href = "h.report_cards_display.html"; // Ensure this file exists
-                } else {
-                    alert("Student not found. Please enter the correct details.");
-                    closeConfirmationPopup();
-                }
-            });
-
-            function closeConfirmationPopup() {
-                document.getElementById("confirmationOverlay").style.display = "none";
-                document.getElementById("confirmationPopup").style.display = "none";
+    let combinedReportCards = [];
+    
+    function combineReportCards() {
+        const reportCardsFiles = [reportCards2024, reportCards2025]; // Ensure these variables are defined
+        reportCardsFiles.forEach(reportCards => {
+            if (Array.isArray(reportCards)) {
+                combinedReportCards = [...combinedReportCards, ...reportCards];
             }
         });
+    }
+
+    combineReportCards(); // Call the function to combine data
+
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevents the default form submission
+
+        const name = document.getElementById("studentName").value.toUpperCase();
+        const classValue = document.getElementById("classSelect").value;
+        const term = document.getElementById("termSelect").value;
+        const academicYear = document.getElementById("yearSelect").value;
+
+        // Show confirmation popup
+        document.getElementById("confirmStudentName").innerText = name;
+        document.getElementById("confirmClass").innerText = classValue;
+        document.getElementById("confirmTerm").innerText = term;
+        document.getElementById("confirmAcademicYear").innerText = academicYear;
+
+        document.getElementById("confirmationOverlay").style.display = "block";
+        document.getElementById("confirmationPopup").style.display = "block";
+    });
+
+    document.getElementById("agreeButton").addEventListener("click", function() {
+        const name = document.getElementById("confirmStudentName").innerText;
+        const classValue = document.getElementById("confirmClass").innerText;
+        const term = document.getElementById("confirmTerm").innerText;
+        const academicYear = document.getElementById("confirmAcademicYear").innerText;
+
+        const student = combinedReportCards.find(s =>
+            s.studentName === name && 
+            s.class === classValue && 
+            s.term === term && 
+            s.academicYear === academicYear
+        );
+
+        if (student) {
+            // Store student data in local storage
+            localStorage.setItem("studentData", JSON.stringify(student));
+            // Redirect to report_cards_display.html
+            window.location.href = "h.report_cards_display.html";
+        } else {
+            alert("Student not found. Please enter the correct Student Name, select the correct Class, Term and Academic Year.");
+            closeConfirmationPopup();
+        }
+    });
+
+    // Function to close the confirmation popup
+    function closeConfirmationPopup() {
+        document.getElementById("confirmationOverlay").style.display = "none";
+        document.getElementById("confirmationPopup").style.display = "none";
+    }
+
+    // Add event listener to the Disagree button
+    document.querySelector(".popup-footer button:nth-child(2)").addEventListener("click", closeConfirmationPopup);
+});
+
     </script>
     <footer class="footer">
         <audio controls id="audio" autoplay loop>
-            <source src="m.background-music.aac" type="audio/mpeg">
+            <source src="/breman-islamic-academy/audios/m.background-music.aac" type="audio/mpeg">
         </audio>
         <marquee>- - - Motto: Sovereignty Belongs to Allah - - -</marquee>
     </footer>

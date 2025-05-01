@@ -50,7 +50,7 @@
 <table>
     <tr>
         <td colspan="3" class="full-width" style="padding: 0">
-            <img src="i.report-head.jpg" alt="Header Image" style="display: block;">
+            <img src="/breman-islamic-academy/images/i.report-head.jpg" alt="Header Image" style="display: block;">
         </td>
     </tr>
     <tr>
@@ -73,9 +73,10 @@
 
     <tr class="empty-row" style="padding: 0;">
         <td colspan="3" class="full-width">
-            <img src="i.Breman Islamic Bage 1.jpg" alt="School Bage">
+            <img src="/breman-islamic-academy/images/i.Breman Islamic Bage 1.jpg" alt="School Bage">
             <b id="image" style="position: relative; left: 15em; bottom: 3.5em;  border: 3px solid #FFE699;
-                       font-family: Dubai Light,sans-serif; font-size: 13px; padding: 36.5px 6px; background: #FFE699;">No Photo Available</b>
+                       font-family: Dubai Light,sans-serif; font-size: 13px; 
+                       padding: 36.5px 0.6px; background: #FFE699;">No Photo Available</b>
         </td>
     </tr>
     <tr>
@@ -108,6 +109,69 @@
 </table>
 
 <script>
+function calculateAggregate(student) {
+    let total = 0;
+    let count = 0;
+
+    const mandatorySubjects = {
+        "Nursery": [],
+        "KG1": [],
+        "KG2": [],
+        "Basic 1": ["english language", "history", "mathematics", "science"],
+        "Basic 2": ["english language", "history", "mathematics", "science"],
+        "Basic 3": ["english language", "history", "mathematics", "science"],
+        "Basic 4": ["english language", "history", "mathematics", "science"],
+        "Basic 5": ["english language", "history", "mathematics", "science"],
+        "Basic 6": ["english language", "history", "mathematics", "science"],
+        "Form 1": ["english language", "mathematics", "science", "social studies"],
+        "Form 2": ["english language", "mathematics", "science", "social studies"],
+        "Form 3": ["english language", "mathematics", "science", "social studies"],
+    };
+
+    const optionalSubjects = {
+        "Basic": ["arabic", "creative arts", "mfantse", "religious and moral education", "computing"],
+        "Form": ["arabic", "career technology", "computing", "creative arts", "mfantse", "religious and moral education"]
+    };
+
+    const classLevel = student.class.split(" ")[0]; // Extract the class level (e.g., Basic, Form)
+
+    // Calculate mandatory subjects
+    if (mandatorySubjects[student.class]) {
+        mandatorySubjects[student.class].forEach(subject => {
+            if (student.grades[subject]) {
+                total += student.grades[subject];
+                count++;
+            }
+        });
+    }
+
+    // Calculate optional subjects (two lowest grades)
+    if (classLevel === "Basic" || classLevel === "Form") {
+        let optionalGrades = [];
+
+        optionalSubjects[classLevel].forEach(subject => {
+            if (student.grades[subject]) {
+                optionalGrades.push(student.grades[subject]);
+            }
+        });
+
+        optionalGrades.sort((a, b) => a - b); // Sort grades ascending
+        const lowestGrades = optionalGrades.slice(0, 2); // Get two lowest grades
+        total += lowestGrades.reduce((sum, grade) => sum + grade, 0);
+        count += lowestGrades.length;
+    }
+
+    // Calculate and display aggregate
+    const aggregate = (count > 0) ? (total / count).toFixed(2) : 0; // Avoid division by zero
+    student.aggregate = aggregate;
+    document.getElementById("studentDetails").innerHTML += `
+        <tr>
+            <td><strong>Aggregate</strong></td>
+            <td colspan="2" style="font-family: Times New Roman, sans-serif;">${aggregate}</td>
+        </tr>
+    `;
+}
+    // Call calculateAggregate after loading student data
     window.onload = function() {
         const student = JSON.parse(localStorage.getItem("studentData"));
 
@@ -160,11 +224,11 @@
                     </tr>
                 `;
             }
-
+            calculateAggregate(student); // Call the aggregate calculation
             document.getElementById("subjectResults").innerHTML = resultsHTML;
         } else {
             alert("No student data found.");
-            window.location.href = "h.report_cards.html"; // Redirect back if no data
+            window.location.href = "/breman-islamic-academy/html/h.report_cards.html"; // Redirect back if no data
         }
     }
 </script>
