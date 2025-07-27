@@ -1,196 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=0.1">
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <title>Breman Islamic Academy - Home</title>
-    <style type="text/css">
-        body {font-family: Times New Roman,sans-serif;}
-        /* Tablet styles */
-        @media screen and (min-width: 481px) {
-        body {font-size: 16px;}
-        .container {width: 90%;
-                    margin-left: 1.5em}
-        .grid {display: grid;
-               grid-template-columns: repeat(2, 1fr); /* Two columns */}
-        .grid-item {margin-right:2em;
-                    border: none;
-                    border-radius: 5px;}}
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>B.I.A-Home</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
-
-        /* Desktop styles */
-        @media screen and (min-width: 2024px) {
-            body {font-size: 18px;}
-
-            .container {width: 90%;
-                        margin: auto; /* Centering */}
-            .grid {grid-template-columns: repeat(3, 1fr); /* Three columns */}
-        .navbar {height: 5em;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0px 60px;
-            position: fixed;
-            top: 0; /* Adjust based on header height */
-            width: 100%;
-            background: burlywood;
-            z-index: 1000;}
-        #schoolName {width: 7.7em; height: 1.9em;
-                     position: absolute;
-                     right: 51em;
-                     bottom: 0.1em;
-                     border-radius: 1em;}
-        .right_us {position: absolute;
-                   right: 15em;
-                   top: 1.5em;
-                   margin: 0;}
-            .one  {position: absolute;
-                   top: 3.5em;
-                   right: 38em;}
-            #go    {color: white; font-size: 15px;
-                   position: relative; bottom: 2.1em; left: -0.1em;
-                   border-radius: 0 50%;
-                   background: green;
-                   padding: 11.5px 6px;}}
-
-        #index_head {
-            background: #CC5D12;
-            color: white;
-            padding: 73px 15px;
-            border-radius: 5px;
-            max-width: 600px;
-            margin: 0 auto;
-            margin-top: 0.8em;
-            width: 90%;}
-
-        .welcome-message {
-            background: blue;
-            color: white;
-            padding: 10px 15px;
-            border-radius: 5px;
-            margin-top: 0px;
-            max-width: 600px;
-            margin: 20px auto;
-            width: 90%;} 
-
-        #acomodation {
-            padding: 30px 15px;
-            border-radius: 5px; 
-            margin-bottom: 10px;
-            background: silver;
-            color: blue;
-            max-width: 600px;
-            margin: 20px auto;
-            width: 90%;}
-             
-        #motto {font-family: forte,sans-serif;
-            font-size: 20px;
-            padding: 70px 15px;
-            border-radius: 5px; 
-            margin-top: 1em;
-            background: greenyellow;
-            max-width: 600px;
-            margin: 20px auto;
-            width: 90%;}
-    </style>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-     <nav class="navbar">
-        <div class="left_me">
-            <button id="toggle-button" onclick="toggleSidebar()" title="Toggle Sidebar">≡</button>
-        </div>
-            <form action="https://www.google.com/search" method="get" style="display: inline;" class="one">
-                <input type="text" name="q" placeholder="Search Google" id="input" required>
-                <button type="submit" id="search" style="border: none; background: burlywood;"><b id="go">GO</b></button>
-            </form>
-        <div class="right_us">
-            <img id="schoolName" src="i.nav.jpg">            
-            <button title="Current Page" id="current">Home</button>
-            <button onclick="openEmailPopup()" id="mail">Email</button>
-            <button onclick="openContactPopup()" id="call">Contact</button>
-        </div>
-    </nav>
-    <div class="main-container">
-        <aside class="sidebar" id="sidebar">
-            <img src="i.Breman Islamic Bage 1.jpg" alt="School Badge" id="side">
-            <br><b style="margin-left: 65px; font-family: Calibri,sans-serif;">BIA.EDU.GH</b><br><b style="margin-left: 40px;
-                    font-family: Calibri,sans-serif;">BREMAN ASIKUMA</b>
-            <ul>
-                <li><button id="home" class="button active"><a href="index.html" style="color: blue;">
-                    <b>Home</b></a></button></li>
-                <li><button id="report_cards" class="button"><a href="h.report_cards.html">Report Cards</a></button></li>
-                <li><button id="exams" class="button"><a href="h.exams.html">Exams</a></button></li>
-                <li><button id="gallery" class="button"><a href="h.gallery.html">Gallery</a></button></li>
-                <li><button id="audios" class="button"><a href="h.audios.html">Audios</a></button></li>
-                <li><button id="admission" class="button"><a href="h.admission.html">Admission</a></button></li>
+    <nav class="green darken-3">
+    <div class="container">
+        <div class="nav-wrapper">
+            <a href="#" class="sidenav-trigger show-on-large"><i class="material-icons">forward</i></a>
+            <a href="#" class="brand-logo hide-on-med-and-up">B. I. A</a>
+
+            <ul class="right hide-on-small-only">
+                <li><a href="#about">Home<i class="material-icons left">home</i></a></li>
+                <li><a href="#services">Email<i class="material-icons left">mail</i></a></li>
+                <li><a href="#contact">Contact<i class="material-icons left">call</i></a></li>
             </ul>
-        </aside>
-        <main class="content" id="content">
-            <div class="container">
-            <div class="grid">
-                <div class="grid-item">
-                <h2 id="index_head">بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ 
-                </h2></div>
-                <div class="grid-item">
-                <div class="welcome-message">
-                    <p>Assalamualaikum,<br>Welcome to <b style="font-family: Algerian,sans-serif; letter-spacing: 2px;">BREMAN ISLAMIC ACADEMY</b> Portal.</p>
-                    <p>Select from the dropdown menu to perform your actions.</p>
-                </div>
-                </div>
-                <div class="grid-item">
-                <div id="acomodation">
-                    <strong style="font-family: Algerian,sans-serif; letter-spacing: 2px;">ACOMODATION</strong>
-                    <p>Breman Islamic Academy offer acomodation for both</p><b>Boarding and Day Students.</b>
-                </div></div>
-                <div class="grid-item">
-                <div id="motto">
-                    Sovereignty Belongs to Allah.
-                </div></div>
-            </div>
-            </div>
-        </main>
-    </div>
-
-    <div class="overlay" id="overlay"></div>
-    <div class="popup" id="emailPopup">
-        <div class="popup-header">
-            <h2>Email for Support</h2>
-        </div>
-        <div class="popup-content" id="popupContent">
-        <p>Are you confused about something?<br>Don't worry, send a mail to:</p>
-        <p><br><input id="help" type="email" value="abubakarabdulai@gmail.com" readonly style="position: absolute;
-                                                                           left: 10%; bottom: 32%; width: 78%; padding-left: 5px;
-                                                                           border-radius: 6px; text-align: center;"></p>
-                                                                       </div>
-        <div class="popup-footer">
-            <button onclick="closePopup()">Close</button>
-        </div>
-        </div>
-
-        <div class="popup" id="contactPopup">
-        <div class="popup-header">
-            <h2>Contact for Help</h2>
-        </div>
-        <div class="popup-content" id="popupContent">
-        <p>Do you want to talk to the school management?</p>
-        <p><strong>Headmaster Name:</strong>
-        <input type="text" value="Abdulai Abubakar" readonly style="border-radius: 5px; width: 80%; text-align: center;"></p>
-        <p><strong>Contact:</strong>
-        <input type="text" value="0241303485" readonly style="border-radius: 5px; width: 80%; text-align: center;"></p>
-        </div>
-        <div class="popup-footer">
-            <button onclick="closeContactPopup()">Close</button>
         </div>
     </div>
+</nav>
 
-    <script type="text/javascript" src="script.js"></script>
 
-    <footer class="footer">
-        <audio controls id="audio" autoplay loop>
-            <source src="m.background-music.aac" type="audio/mpeg">
-        </audio>
-        <marquee>- - - Motto: Sovereignty Belongs to Allah - - -</marquee>
+    <div class="container">
+        <br><p>Welcome To BREMAN ISLAMIC ACADEMY</p><br>
+    </div>
+
+
+    <footer class="page-footer green darken-3">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Breman Islamic Academy</h5>
+                    <p class="grey-text text-lighten-4">Sovereignty Belongs to Allah</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Links</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="#!">About</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Services</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-copyright">
+             <div class="container">
+             © 2025 Breman Islamic Academy, Breman Asikuma,Central Region, Ghana. Designed by Al-Ghafar Ar-Rahman It Center. All Rights Reserved.
+             </div>
+        </div>
     </footer>
 </body>
 </html>
