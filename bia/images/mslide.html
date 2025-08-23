@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materialize Slideshow Example</title>
+    <!-- Materialize CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full viewport height */
+            margin: 0;
+        }
+        .carousel {
+            position: relative;
+            width: 80%; /* Adjust width as needed */
+        }
+        .caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        .carousel .carousel-control {
+            color: black; /* Arrow color */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="carousel">
+        <a class="carousel-item" href="#one!">
+            <img src="/bia/images/admission.jpg" alt="Slide 1" style="height: 100%;">
+            <div class="caption">We serve you well</div>
+        </a>
+        <a class="carousel-item" href="#two!">
+            <img src="/bia/images/Bage 1.jpg" alt="Slide 2">
+            <div class="caption">Select your network</div>
+        </a>
+        <a class="carousel-item" href="#three!">
+            <img src="/bia/images/Bage 3.png" alt="Slide 3">
+            <div class="caption">Enjoy our exclusive data deals</div>
+        </a>
+          <a class="carousel-item" href="#three!">
+            <img src="/bia/images/bia-logo-1.png" alt="Slide 4">
+            <div class="caption">Enjoy our exclusive data deals</div>
+        </a>
+
+        <!-- Navigation Controls -->
+        <a class="carousel-control left" href="#!" data-target="carousel" role="button">
+            <i class="material-icons">chevron_left</i>
+        </a>
+        <a class="carousel-control right" href="#!" data-target="carousel" role="button">
+            <i class="material-icons">chevron_right</i>
+        </a>
+    </div>
+
+    <!-- Materialize JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const elems = document.querySelectorAll('.carousel');
+            const instances = M.Carousel.init(elems, {
+                fullWidth: true,
+                indicators: true
+            });
+
+            // Automatically transition slides every second
+            setInterval(() => {
+                instances[0].next();
+            }, 2000); // 1000 milliseconds = 1 second
+        });
+    </script>
+</body>
+</html>

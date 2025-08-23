@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=0.8">
 	<title>B.I.A-Home</title>
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -13,15 +12,112 @@
     
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <!--Import Bootstrap Icon Font-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <style>
+        .nav      {position: fixed;
+                   z-index: 1000;}
+        #large-nav {position: fixed;
+                    top: 6em;
+            width: 15%;
+            height: 27em;
+            margin: 0 0 0em 4em;
+            border-radius: 0.8em;
+            padding: 0.5em 0 0 0;
+        }
+        .lbtn {width: 100%;
+            border-radius: 0;
+        }
+
+        #small-nav {width: 13.5%;
+            height: 32em;
+            padding: 12em 0 0 0;
+            position: fixed;
+            top: 0;
+            z-index: 2000;}
+        .sbtn {
+            width: 100%;
+            border-radius: 0;
+        }
+
+        #large-nav a {color: white;
+                       text-align: left;}
+        #large-nav i {margin-left: 17%;}
+        #large-nav .btn {border: 2px grey solid;}
+
+        .small {
+            position: absolute;
+            top: 12%;
+            width: 64%;
+            left: 24%;
+            text-align: center;
+        }
+        .medium {
+            position: absolute;
+            top: 48em; /* Adjust this value as necessary */
+            width: 80%; /* Adjust the width as needed */
+            left: 61%; /* Centering */
+            transform: translate(-50%, -50%); /* Adjust for centering */
+            text-align: center;}
+
+        .large {
+            position: absolute;
+            top: 6em;
+            width: 74%;
+            left: 24%;
+            text-align: center;}
+
+        /* Media query for smartphones */
+        @media (min-width: 780px) {
+        .medium {top: 38em; /* Adjust for smartphones */
+                width: 78%; /* Adjust width if needed */}
+                }
+
+        #navImg   {width: 19%;
+               
+                   position: absolute;
+                   right: 95%;}
+        #side  {width: 80%;
+            border-radius: 50%;
+            position: absolute;
+            top: 5em;
+            left: 10%;
+            text-align: center;}
+
+
+        .carousel {width: 100%; /* Adjust width as needed */
+                   display: flex;
+                         justify-content: center;
+                         align-items: center;}
+
+        .caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        .carousel .carousel-control {
+            color: red; /* Arrow color */
+            z-index: 1000;
+            padding: 0 40%}
+    </style>
 </head>
 <body>
-    <nav class="green darken-3">
+<nav class="green nav">
     <div class="container">
         <div class="nav-wrapper">
-            <a href="#" class="sidenav-trigger show-on-large"><i class="material-icons">forward</i></a>
-            <a href="#" class="brand-logo hide-on-med-and-up">B. I. A</a>
-
-            <ul class="right hide-on-small-only">
+            <img src="/bia/images/bia-logo.jpg" alt="School Badge" id="navImg" class="hide-on-med-and-down">
+            <a href="#" data-target="mobile-nav" class="hide-on-med-and-down" style="position: absolute; top: 0; left: 6%;">
+                <i class="material-icons">format_indent_decrease</i></a>
+            <a href="#" data-target="mobile-nav" class="hide-on-large-only" style="position: absolute; top: 0; left: 10%;">
+                <i class="material-icons">format_indent_increase</i></a>
+             <ul id="nav-mobile" class="right">
                 <li><a href="#about">Home<i class="material-icons left">home</i></a></li>
                 <li><a href="#services">Email<i class="material-icons left">mail</i></a></li>
                 <li><a href="#contact">Contact<i class="material-icons left">call</i></a></li>
@@ -29,36 +125,454 @@
         </div>
     </div>
 </nav>
+<br>
+<div class="nav-wrapper green hide-on-med-and-down" id="large-nav"><b style="margin-left: 20%; color: yellow;">QUICK ACCESS</b>
+    <hr class="divider">
+    <ul>
+        <li><a href="index.html" class="btn orange lbtn" style="color: blue;"><b>Home</b><i class="material-icons left">home</i></a></li>
+        <li><a href="/breman-islamic-academy/html/h.report_cards.html" class="btn brown lbtn">Report<i class="bi bi-file-earmark-medical left"></i></a></li>
+        <li><a href="/breman-islamic-academy/html/h.exams.html" class="btn brown lbtn">Exams<i class="bi bi-file-text left"></i></a></li>
+        <li><a href="/breman-islamic-academy/html/h.gallery.html" class="btn brown lbtn">Gallery<i class="bi bi-images left"></i></a></li>
+        <li><a href="/breman-islamic-academy/html/h.audios.html" class="btn brown lbtn">Audios<i class="material-icons left">headset</i></a></li>
+        <li><a href="/breman-islamic-academy/html/h.admission.html" class="btn brown lbtn">Apply<i class="bi bi-file-earmark-pdf left"></i></a></li>
+    </ul>
+</div>
+
+<div class="nav-wrapper green hide-on-large-only" id="small-nav">   
+    <ul>    <b style="color: yellow; font-size: 20px; text-align: center; font-family: Lucida Calligraphy,serif; position: absolute; width: 100%; left: 0; top: 0.5em;">B.I.A</b>
+        <img src="/bia/images/bia-logo-4.png" alt="School Badge" id="side">
+        <li><a href="#" class="btn orange sbtn" style="color: blue;"><i class="material-icons">home</i></a></li>
+        <li><a href="/breman-islamic-academy/html/h.report_cards.html" class="btn brown sbtn"><i class="bi bi-file-earmark-medical"></i></a></li>
+        <li><a href="/breman-islamic-academy/html/h.exams.html" class="btn brown sbtn"><i class="bi bi-file-text"></i></a></li>
+        <li><a href="/breman-islamic-academy/html/h.gallery.html" class="btn brown sbtn"><i class="bi bi-images"></i></a></li>
+        <li><a href="/breman-islamic-academy/html/h.audios.html" class="btn brown sbtn"><i class="material-icons" title="Audios">headset</i></a></li>
+        <li><a href="/breman-islamic-academy/html/h.admission.html" class="btn brown sbtn"><i class="bi bi-file-earmark-pdf"></i></a></li>
+    </ul>
+</div>
 
 
-    <div class="container">
-        <br><p>Welcome To BREMAN ISLAMIC ACADEMY</p><br>
+
+
+
+//*Grid for Smart Phones*//
+<div class="row small hide-on-med-and-up">
+    <div class="col s12 grey white-text" style="margin: 0.5em; padding: 3%; border-radius: 1em;">
+        <div class="container carousel">
+        <a class="carousel-item" href="#one!">
+            <img src="/bia/images/admission.jpg" alt="Slide 1" style="height: 100%;">
+            <div class="caption">Admission Open for 2025/2026 Academic Year</div>
+        </a>
+        <a class="carousel-item" href="#two!">
+            <img src="/bia/images/bia-logo-1.jpg" alt="Slide 3">
+            <div class="caption">School's first logo</div>
+        </a>
+        <a class="carousel-item" href="#three!">
+            <img src="/bia/images/bia-logo-2.jpg" alt="Slide 4">
+            <div class="caption">School's second logo</div>
+        </a>
+        <a class="carousel-item" href="#one!">
+            <img src="/bia/images/admission.jpg" alt="Slide 5" style="height: 100%;">
+            <div class="caption">Admission Open for 2025/2026 Academic Year</div>
+        </a>
+        <a class="carousel-item" href="#four!">
+            <img src="/bia/images/bia-logo-3.jpg" alt="Slide 6">
+            <div class="caption">School's third logo</div>
+        </a>
+        <a class="carousel-item" href="#four!">
+            <img src="/bia/images/bia-logo-4.png" alt="Slide 7">
+            <div class="caption">School's fourth logo</div>
+        </a>
+        <a class="carousel-item" href="#two!">
+            <img src="/bia/images/bage-1.jpg" alt="Slide 8">
+            <div class="caption">Future Inovation</div>
+        </a>
+        <a class="carousel-item" href="#two!">
+            <img src="/bia/images/bage-2.jpg" alt="Slide 9">
+            <div class="caption">Future Inovation</div>
+        </a>
+        <a class="carousel-item" href="#two!">
+            <img src="/bia/images/bage-3.jpg" alt="Slide 10">
+            <div class="caption">Future Inovation</div>
+        </a>
+        <a class="carousel-item" href="#two!">
+            <img src="/bia/images/bus.jpg" alt="Slide 2">
+            <div class="caption">Future Inovation</div>
+        </a>
+
+        <!-- Navigation Controls -->
+        <a class="carousel-control left" href="#!" data-target="carousel" role="button">
+            <i class="material-icons">chevron_left</i>
+        </a>
+        <a class="carousel-control right" href="#!" data-target="carousel" role="button">
+            <i class="material-icons">chevron_right</i>
+        </a>
     </div>
 
 
-    <footer class="page-footer green darken-3">
-        <div class="container">
-            <div class="row">
-                <div class="col l6 s12">
-                    <h5 class="white-text">Breman Islamic Academy</h5>
-                    <p class="grey-text text-lighten-4">Sovereignty Belongs to Allah</p>
-                </div>
-                <div class="col l4 offset-l2 s12">
-                    <h5 class="white-text">Links</h5>
-                    <ul>
-                        <li><a class="grey-text text-lighten-3" href="#!">About</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Services</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Contact</a></li>
-                    </ul>
-                </div>
+        <b>ASSALAAMU ALAIKUM WARAHMATULILAIHI WABARAKAATUH</b>
+    </div>
+
+    <div class="col s12 yellow violet-text" style="margin: 0.5em; padding: 3%; border-radius: 1em;">
+        <p><h6><b>Welcome to Breman Islamic Academy (B.I.A)</b></h6></p>
+
+        <div style="text-align: left;">
+            <h6><b>ACCOMODATION || LOCATION</b></h6>
+            <hr class="divider">
+            <div class="black-text darken-3">
+                <p>Breman Islamic Academy offer Accomodation to:<br>
+                ➡ DAY STUDENTS & <br>
+                ➡ BOARDING STUDENTS
+                </p> 
+
+                <p>
+                The School is located at Breman Asikuma in the ASIKUMA ODOBEN BRAKWA DISTRICT, CENTRAL REGION, GHANA.
+                </p>
             </div>
         </div>
+    </div>
 
-        <div class="footer-copyright">
-             <div class="container">
-             © 2025 Breman Islamic Academy, Breman Asikuma,Central Region, Ghana. Designed by Al-Ghafar Ar-Rahman It Center. All Rights Reserved.
-             </div>
+    <div class="col s12 purple" style="margin: 0.5em; text-align: left; border-radius: 1em;">
+        <p><h6><b>ADMISSION! ADMISSION!! ADMISSION!!</b></h6>
+        <hr class="divider">
+        <div class="yellow-text">
+            <p>Dear Parents/Guardian</p>
+            <p>
+            Breman Islamic Academy,the leading Islamic school in Ghana at the moment, wishes to inform you that, the school has open the Admission 
+            for 2025/2026 academic year.</p>
+            <p>
+            ➡ Enroll your wonderful kids with us, Let's NURTURE the children that will give you SAKEENAH (Tranquility and Peace of Mind) 
+                in your old 
+            age!</p>
+            <p>
+            ➡ Enjoy FREE Admission!!!! (for this month)
+            This is the best opportunity for your child, you shouldn't miss it.</p>
+            <br><br></p>
         </div>
-    </footer>
+    </div>
+
+    <div class="col s12 blue" style="margin: 0.5em; text-align: left; border-radius: 1em;">
+        <h6><b style="color: yellow;">SUBJECT OFFERED</b></h6>
+        <hr class="divider">
+        <p><h6><b style="color: yellow;">✅ NURSERY - JHS</b></h6>
+            <div class="container white-text" >
+                🔯 <b><i>CORE</i></b><br>
+                ➡ English Language<br>
+                ➡ History<br>
+                ➡ Language & Literacy<br>
+                ➡ Mathematics<br>
+                ➡ Numeracy<br>
+                ➡ Science<br>
+                ➡ Social Studies<br>
+                ➡ Writing<br>
+
+                🔯 <b><i>ELECTIVE</i></b><br>
+                ➡ Arabic<br>
+                ➡ Colouring<br>
+                ➡ Creative Arts<br>
+                ➡ Mfantse<br>
+                ➡ Religious and Moral Education<br>
+            </div>
+        </p>
+    </div>
+</div>
+
+
+//*Grid for Tablet Screens*//
+<div class="row medium hide-on-small-only hide-on-large-only">
+    <div class="col m10 grey white-text" style="margin: 0.5em; padding: 1.57em; border-radius: 1em; width: 89%;">
+        <div class="container carousel">
+        <a class="carousel-item" href="#one!">
+            <img src="/bia/images/admission.jpg" alt="Slide 1" style="height: 100%;">
+            <div class="caption">Admission Open for 2025/2026 Academic Year</div>
+        </a>
+        <a class="carousel-item" href="#two!">
+            <img src="/bia/images/bia-logo-1.jpg" alt="Slide 3">
+            <div class="caption">School's first logo</div>
+        </a>
+        <a class="carousel-item" href="#three!">
+            <img src="/bia/images/bia-logo-2.jpg" alt="Slide 4">
+            <div class="caption">School's second logo</div>
+        </a>
+        <a class="carousel-item" href="#one!">
+            <img src="/bia/images/admission.jpg" alt="Slide 5" style="height: 100%;">
+            <div class="caption">Admission Open for 2025/2026 Academic Year</div>
+        </a>
+        <a class="carousel-item" href="#four!">
+            <img src="/bia/images/bia-logo-3.jpg" alt="Slide 6">
+            <div class="caption">School's third logo</div>
+        </a>
+        <a class="carousel-item" href="#four!">
+            <img src="/bia/images/bia-logo-4.png" alt="Slide 7">
+            <div class="caption">School's fourth logo</div>
+        </a>
+        <a class="carousel-item" href="#two!">
+            <img src="/bia/images/bage-1.jpg" alt="Slide 8">
+            <div class="caption">Future Inovation</div>
+        </a>
+        <a class="carousel-item" href="#two!">
+            <img src="/bia/images/bage-2.jpg" alt="Slide 9">
+            <div class="caption">Future Inovation</div>
+        </a>
+        <a class="carousel-item" href="#two!">
+            <img src="/bia/images/bage-3.jpg" alt="Slide 10">
+            <div class="caption">Future Inovation</div>
+        </a>
+        <a class="carousel-item" href="#two!">
+            <img src="/bia/images/bus.jpg" alt="Slide 2">
+            <div class="caption">Future Inovation</div>
+        </a>
+
+        <!-- Navigation Controls -->
+        <a class="carousel-control left" href="#!" data-target="carousel" role="button">
+            <i class="material-icons">chevron_left</i>
+        </a>
+        <a class="carousel-control right" href="#!" data-target="carousel" role="button">
+            <i class="material-icons">chevron_right</i>
+        </a>
+    </div>
+
+        <b>ASSALAAMU ALAIKUM WARAHMATULILAIHI WABARAKAATUH</b>
+    </div>
+
+    <div class="col m4 yellow violet-text" style="margin: 0.5em; padding: 1em; border-radius: 1em;">
+       <p><h6><b>Welcome to Breman Islamic Academy (B.I.A)</b></h6></p>
+
+        <div style="text-align: left;">
+            <h6><b>ACCOMODATION || LOCATION</b></h6>
+            <hr class="divider">
+            <div class="black-text darken-3">
+                <p>Breman Islamic Academy offer Accomodation to:<br>
+                ➡ DAY STUDENTS & <br>
+                ➡ BOARDING STUDENTS
+                </p> 
+
+                <p>
+                The School is located at Breman Asikuma in the ASIKUMA ODOBEN BRAKWA DISTRICT, CENTRAL REGION, GHANA.
+                <br><br><br><br><br><br><br><br><br><br></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col m3 purple" style="margin: 0.5em; text-align: left; border-radius: 1em;">
+        <p><h6><b>ADMISSION! ADMISSION!! ADMISSION!!</b></h6>
+        <hr class="divider">
+        <div class="yellow-text">
+            <p>Dear Parents/Guardian</p>
+            <p>
+            Breman Islamic Academy,the leading Islamic school in Ghana at the moment, wishes to inform you that, the school has open the Admission 
+            for 2025/2026 academic year.</p>
+            <p>
+            ➡ Enroll your wonderful kids with us, Let's NURTURE the children that will give you SAKEENAH (Tranquility and Peace of Mind) 
+                in your old 
+            age!</p>
+            <p>
+            ➡ Enjoy FREE Admission!!!! (for this month)
+            This is the best opportunity for your child, you shouldn't miss it.</p>
+            </p>
+        </div>
+    </div>
+
+    <div class="col m3 blue" style="margin: 0.5em; text-align: left; border-radius: 1em;">
+       <h6><b style="color: yellow;">SUBJECT OFFERED</b></h6>
+        <hr class="divider">
+        <p><h6><b style="color: yellow;">✅ NURSERY - JHS</b></h6>
+            <div class="container white-text" >
+                🔯 <b><i>CORE</i></b><br>
+                ➡ English Language<br>
+                ➡ History<br>
+                ➡ Language & Literacy<br>
+                ➡ Mathematics<br>
+                ➡ Numeracy<br>
+                ➡ Science<br>
+                ➡ Social Studies<br>
+                ➡ Writing<br>
+
+                🔯 <b><i>ELECTIVE</i></b><br>
+                ➡ Arabic<br>
+                ➡ Colouring<br>
+                ➡ Creative Arts<br>
+                ➡ Mfantse<br>
+                ➡ Religious and Moral Education<br>
+            </div><br><br><br><br><br>
+        </p>
+    </div>
+</div>
+
+//*Grid for Desktop*//
+<div class="row large hide-on-med-and-down">
+    <div class="col l11 grey white-text" style="margin: 0.5em; padding: 3%; border-radius: 1em; width: 94%;">
+        <div class="container carousel">
+        <a class="carousel-item" href="#one!">
+            <img src="/bia/images/admission.jpg" alt="Slide 1" style="height: 100%;">
+            <div class="caption">Admission Open for 2025/2026 Academic Year</div>
+        </a>
+        <a class="carousel-item" href="#two!">
+            <img src="/bia/images/bia-logo-1.jpg" alt="Slide 3">
+            <div class="caption">School's first logo</div>
+        </a>
+        <a class="carousel-item" href="#three!">
+            <img src="/bia/images/bia-logo-2.jpg" alt="Slide 4">
+            <div class="caption">School's second logo</div>
+        </a>
+        <a class="carousel-item" href="#one!">
+            <img src="/bia/images/admission.jpg" alt="Slide 5" style="height: 100%;">
+            <div class="caption">Admission Open for 2025/2026 Academic Year</div>
+        </a>
+        <a class="carousel-item" href="#four!">
+            <img src="/bia/images/bia-logo-3.jpg" alt="Slide 6">
+            <div class="caption">School's third logo</div>
+        </a>
+        <a class="carousel-item" href="#four!">
+            <img src="/bia/images/bia-logo-4.png" alt="Slide 7">
+            <div class="caption">School's fourth logo</div>
+        </a>
+        <a class="carousel-item" href="#two!">
+            <img src="/bia/images/bage-1.jpg" alt="Slide 8">
+            <div class="caption">Future Inovation</div>
+        </a>
+        <a class="carousel-item" href="#two!">
+            <img src="/bia/images/bage-2.jpg" alt="Slide 9">
+            <div class="caption">Future Inovation</div>
+        </a>
+        <a class="carousel-item" href="#two!">
+            <img src="/bia/images/bage-3.jpg" alt="Slide 10">
+            <div class="caption">Future Inovation</div>
+        </a>
+        <a class="carousel-item" href="#two!">
+            <img src="/bia/images/bus.jpg" alt="Slide 2">
+            <div class="caption">Future Inovation</div>
+        </a>
+
+        <!-- Navigation Controls -->
+        <a class="carousel-control left" href="#!" data-target="carousel" role="button">
+            <i class="material-icons">chevron_left</i>
+        </a>
+        <a class="carousel-control right" href="#!" data-target="carousel" role="button">
+            <i class="material-icons">chevron_right</i>
+        </a>
+    </div>
+
+
+        <b>ASSALAAMU ALAIKUM WARAHMATULILAIHI WABARAKAATUH</b></div>
+    <div class="col l3 yellow violet-text" style="margin: 0.5em; border-radius: 1em;">
+        <p><h6><b>Welcome to Breman Islamic Academy (B.I.A)</b></h6></p>
+
+        <div style="text-align: left;">
+            <h6><b>ACCOMODATION || LOCATION</b></h6>
+            <hr class="divider">
+            <p>Breman Islamic Academy offer Accomodation to:<br>
+            ➡ DAY STUDENTS & <br>
+            ➡ BOARDING STUDENTS
+            </p> 
+
+            <p>
+                The School is located at Breman Asikuma in the ASIKUMA ODOBEN BRAKWA DISTRICT, CENTRAL REGION, GHANA.
+            </p>
+            <br><br><br><br><br>
+        </div>
+    </div>
+    <div class="col l4 purple" style="margin: 0.5em; text-align: left; border-radius: 1em;">
+        <p><h6><b>ADMISSION! ADMISSION!! ADMISSION!!</b></h6>
+        <hr class="divider">
+        <div class="yellow-text">
+            <p>Dear Parents/Guardian</p>
+            <p>
+            Breman Islamic Academy,the leading Islamic school in Ghana at the moment, wishes to inform you that, the school has open the Admission 
+            for 2025/2026 academic year.</p>
+            <p>
+            ➡ Enroll your wonderful kids with us, Let's NURTURE the children that will give you SAKEENAH (Tranquility and Peace of Mind) 
+                in your old 
+            age!</p>
+            <p>
+            ➡ Enjoy FREE Admission!!!! (for this month)
+            This is the best opportunity for your child, you shouldn't miss it.</p>
+            <br><br></p>
+        </div>
+    </div>
+    <div class="col l4 blue" style="margin: 0.5em; text-align: left; border-radius: 1em;">
+        <h6><b style="color: yellow;">SUBJECT OFFERED</b></h6>
+        <hr class="divider">
+        <p><h6><b style="text-align: left; color: yellow;">✅ NURSERY - JHS</b></h6>
+            <div class="container white-text">
+                🔯 <b><i>CORE</i></b><br>
+                ➡ English Language<br>
+                ➡ History<br>
+                ➡ Language & Literacy<br>
+                ➡ Mathematics<br>
+                ➡ Numeracy<br>
+                ➡ Science<br>
+                ➡ Social Studies<br>
+                ➡ Writing<br>
+
+                🔯 <b><i>ELECTIVE</i></b><br>
+                ➡ Arabic<br>
+                ➡ Colouring<br>
+                ➡ Creative Arts<br>
+                ➡ Mfantse<br>
+                ➡ Religious and Moral Education<br>
+            </div>
+        </p>
+    </div>
+</div>
+
+<p style="display: none;">//*Space for Small Screens*//</p>
+<div class="container hide-on-med-and-up">
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+</div>
+
+<div class="container hide-on-small-only hide-on-large-only">
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</div>
+
+<p style="display: none;">//*Space for large Screens*//</p>
+<div class="container hide-on-med-and-down">
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</div>
+<footer class="page-footer green">
+    <div class="container">
+        <div class="row">
+            <div class="col l6 s6">
+                <h6 class="white-text"><b>Breman Islamic Academy</b></h6>
+                <p class="grey-text text-lighten-4">Sovereignty Belongs to Allah</p>
+            </div>
+            <div class="col l4 offset-5 s6">
+                <ul><b>
+                    <li><a class="grey-text text-lighten-3" href="#!">About</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Services</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Directions</a></li>
+                </b></ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-copyright">
+         <div class="container yellow-text">
+         © 2025 Breman Islamic Academy, Breman Asikuma, Central Region, Ghana. Designed by Al-Ghafar Ar-Rahman It Center. All Rights Reserved.
+         </div>
+    </div>
+</footer>
+
+
+    <!-- Materialize JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const elems = document.querySelectorAll('.carousel');
+            const instances = M.Carousel.init(elems, {
+                fullWidth: true,
+                indicators: true,
+                numvisble: 3
+            });
+
+            // Automatically transition slides every second
+            setInterval(() => {
+                instances[0].next();
+            }, 2000); // 1000 milliseconds = 1 second
+        });
+    </script>
 </body>
 </html>
