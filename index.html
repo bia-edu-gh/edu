@@ -17,6 +17,55 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 
     <style>
+        body        {background: url(bia/images/background.jpg);
+                     background-position: right;
+                     display: flex;
+                     margin: 0;
+                     flex-direction: column;
+                     background-repeat: no-repeat;}
+        .popup {width: 20em;
+            display: none; /* Hide pop-ups by default */
+            position: fixed; /* Position them fixed to the viewport */
+            background: white; /* Aquamarine background color for the pop-up */
+            border: 1px solid #ccc; /* Border for the pop-up */
+            padding: 20px; /* Padding inside the pop-up */
+            z-index: 1000; /* Ensure it's above other content */
+            left: 50%; /* Center horizontally */
+            top: 50%; /* Center vertically */
+            transform: translate(-50%, -50%); /* Perfectly center */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Add shadow for better visibility */
+            border-radius: 10px; /* Rounded corners */}
+        .popup-header, .popup-footer {background-color: #4CAF40; /* Same color for header and footer */
+            color: white; /* Text color for header and footer */
+            padding: 10px; /* Padding inside header and footer */
+            text-align: center; /* Center the text */
+            border-radius: 10px 10px 0 0; /* Rounded top corners for header */}
+        .popup-footer {
+            border-radius: 0 0 10px 10px; /* Rounded bottom corners for footer */}
+        .popup-content {background-color: #e0f7fa; /* Different color for content inside the popup */
+            padding: 10px 10px 10px 22px; /* Padding for content */
+            margin: 10px 0; /* Margin for spacing */
+            font-size: 16px;}
+        .popup p {
+            margin: 5px 0; /* Space around paragraphs */}
+        .popup button {background-color: #f44336; /* Color for the close button */
+            color: white; /* Text color for the button */
+            border: none; /* Remove border */
+            padding: 8px 15px; /* Padding for the button */
+            cursor: pointer; /* Pointer cursor on hover */
+            border-radius: 10px; /* Rounded corners */
+            display: block; /* Make the button block-level for full width */
+            margin: 10px auto 0; /* Center the button */}
+        .overlay {display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);}
+
+
+
         .nav      {position: fixed;
                    z-index: 1000;}
         #large-nav {position: fixed;
@@ -64,14 +113,14 @@
 
         .large {
             position: absolute;
-            top: 6em;
+            top: 7em;
             width: 74%;
             left: 24%;
             text-align: center;}
 
         /* Media query for smartphones */
-        @media (min-width: 780px) {
-        .medium {top: 38em; /* Adjust for smartphones */
+        @media (min-width: 900px) {
+        .medium {top: 40em; /* Adjust for smartphones */
                 width: 78%; /* Adjust width if needed */}
                 }
 
@@ -139,7 +188,7 @@
 </div>
 
 <div class="nav-wrapper green hide-on-large-only" id="small-nav">   
-    <ul>    <b style="color: yellow; font-size: 20px; text-align: center; font-family: Lucida Calligraphy,serif; position: absolute; width: 100%; left: 0; top: 0.5em;">B.I.A</b>
+    <ul>    <b style="color: yellow; font-size: 20px; text-align: center; font-family: Lucida Calligraphy,sans-serif; position: absolute; width: 100%; left: 0; top: 0.5em;">B.I.A</b>
         <img src="bia/images/bia-logo-4.png" alt="School Badge" id="side">
         <li><a href="#" class="btn orange sbtn" style="color: blue;"><i class="material-icons">home</i></a></li>
         <li><a href="/breman-islamic-academy/html/h.report_cards.html" class="btn brown sbtn"><i class="bi bi-file-earmark-medical"></i></a></li>
@@ -154,7 +203,7 @@
 
 
 
-/*Grid for Smart Phones*/
+<!--Grid for Smart Phones-->
 <div class="row small hide-on-med-and-up">
     <div class="col s12 grey white-text" style="margin: 0.5em; padding: 3%; border-radius: 1em;">
         <div class="container carousel">
@@ -267,6 +316,7 @@
 
                 🔯 <b><i>ELECTIVE</i></b><br>
                 ➡ Arabic<br>
+                ➡ Career Technology<br>
                 ➡ Colouring<br>
                 ➡ Creative Arts<br>
                 ➡ Mfantse<br>
@@ -277,7 +327,7 @@
 </div>
 
 
-/*Grid for Tablet Screens*/
+<!--Grid for Tablet Screens-->
 <div class="row medium hide-on-small-only hide-on-large-only">
     <div class="col m10 grey white-text" style="margin: 0.5em; padding: 1.57em; border-radius: 1em; width: 89%;">
         <div class="container carousel">
@@ -389,6 +439,7 @@
 
                 🔯 <b><i>ELECTIVE</i></b><br>
                 ➡ Arabic<br>
+                ➡ Career Technology<br>
                 ➡ Colouring<br>
                 ➡ Creative Arts<br>
                 ➡ Mfantse<br>
@@ -398,7 +449,7 @@
     </div>
 </div>
 
-/*Grid for Desktop*/
+<!--Grid for Desktop-->
 <div class="row large hide-on-med-and-down">
     <div class="col l11 grey white-text" style="margin: 0.5em; padding: 3%; border-radius: 1em; width: 94%;">
         <div class="container carousel">
@@ -506,6 +557,7 @@
 
                 🔯 <b><i>ELECTIVE</i></b><br>
                 ➡ Arabic<br>
+                ➡ Career Technology<br>
                 ➡ Colouring<br>
                 ➡ Creative Arts<br>
                 ➡ Mfantse<br>
@@ -515,22 +567,23 @@
     </div>
 </div>
 
-<p style="display: none;">//*Space for Small Screens*//</p>
+<!--Space for Small Screens-->
 <div class="container hide-on-med-and-up">
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 </div>
 
+<!--Space for large Screens-->
 <div class="container hide-on-small-only hide-on-large-only">
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 </div>
 
-<p style="display: none;">//*Space for large Screens*//</p>
+<!--Space for large Screens-->
 <div class="container hide-on-med-and-down">
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 </div>
 <footer class="page-footer green">
     <div class="container">
@@ -549,6 +602,41 @@
         </div>
     </div>
 
+
+
+
+
+<div class="overlay" id="overlay"></div>
+    <div class="popup" id="emailPopup">
+        <div class="popup-header">
+            <h2>Email for Support</h2>
+        </div>
+        <div class="popup-content" id="popupContent">
+        <p>Are you confused about something?<br>Don't worry, send a mail to:</p>
+        <p><br><input id="help" type="email" value="abubakarabdulai@gmail.com" readonly style="position: absolute;
+                                                                           left: 10%; bottom: 32%; width: 78%; padding-left: 5px;
+                                                                           border-radius: 6px; text-align: center;"></p>
+                                                                       </div>
+        <div class="popup-footer">
+            <button onclick="closePopup()">Close</button>
+        </div>
+        </div>
+
+        <div class="popup" id="contactPopup">
+        <div class="popup-header">
+            <h2>Contact for Help</h2>
+        </div>
+        <div class="popup-content" id="popupContent">
+        <p>Do you want to talk to the school management?</p>
+        <p><strong>Headmaster Name:</strong>
+        <input type="text" value="Abdulai Abubakar" readonly style="border-radius: 5px; width: 80%; text-align: center;"></p>
+        <p><strong>Contact:</strong>
+        <input type="text" value="0241303485" readonly style="border-radius: 5px; width: 80%; text-align: center;"></p>
+        </div>
+        <div class="popup-footer">
+            <button onclick="closeContactPopup()">Close</button>
+        </div>
+    </div>
     <div class="footer-copyright">
          <div class="container yellow-text">
          © 2025 Breman Islamic Academy, Breman Asikuma, Central Region, Ghana. Designed by Al-Ghafar Ar-Rahman It Center. All Rights Reserved.
@@ -571,7 +659,7 @@
             // Automatically transition slides every second
             setInterval(() => {
                 instances[0].next();
-            }, 2000); // 1000 milliseconds = 1 second
+            }, 3000); // 1000 milliseconds = 1 second
         });
     </script>
 </body>
