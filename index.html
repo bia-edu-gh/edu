@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=0.8">
-	<title>B.I.A-Home</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8">
+    <title>B.I.A-Home</title>
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
@@ -82,7 +82,7 @@
 
         #small-nav {width: 13.5%;
             height: 32em;
-            padding: 12em 0 0 0;
+            padding: 13em 0 0 0;
             position: fixed;
             top: 0;
             z-index: 2000;}
@@ -125,13 +125,15 @@
                 }
 
         #navImg   {width: 19%;
-               
                    position: absolute;
                    right: 95%;}
+        #sideImg  {width: 90%;
+                   position: absolute;
+                   top: 0;}
         #side  {width: 80%;
             border-radius: 50%;
             position: absolute;
-            top: 5em;
+            top: 5.5em;
             left: 10%;
             text-align: center;}
 
@@ -158,6 +160,7 @@
     </style>
 </head>
 <body>
+    <!--Navigation bar-->
 <nav class="green nav">
     <div class="container">
         <div class="nav-wrapper">
@@ -175,6 +178,8 @@
     </div>
 </nav>
 <br>
+
+<!--Desktop Side Bar-->
 <div class="nav-wrapper green hide-on-med-and-down" id="large-nav"><b style="margin-left: 20%; color: yellow;">QUICK ACCESS</b>
     <hr class="divider">
     <ul>
@@ -187,8 +192,9 @@
     </ul>
 </div>
 
+<!--Tablet and Smart phone Side Bar-->
 <div class="nav-wrapper green hide-on-large-only" id="small-nav">   
-    <ul>    <b style="color: yellow; font-size: 20px; text-align: center; font-family: Lucida Calligraphy,sans-serif; position: absolute; width: 100%; left: 0; top: 0.5em;">B.I.A</b>
+    <ul>    <img src="bia/images/bia-small-logo.jpg" alt="logo text"  id="sideImg">
         <img src="bia/images/bia-logo-4.png" alt="School Badge" id="side">
         <li><a href="#" class="btn orange sbtn" style="color: blue;"><i class="material-icons">home</i></a></li>
         <li><a href="/breman-islamic-academy/html/h.report_cards.html" class="btn brown sbtn"><i class="bi bi-file-earmark-medical"></i></a></li>
@@ -605,7 +611,7 @@
 
 
 
-
+<!--Popup-->
 <div class="overlay" id="overlay"></div>
     <div class="popup" id="emailPopup">
         <div class="popup-header">
