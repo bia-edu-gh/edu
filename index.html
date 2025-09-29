@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=0.8">
-    <title>B.I.A-Home</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=0.8">
+	<title>B.I.A-Home</title>
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
@@ -17,57 +17,16 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 
     <style>
-        body        {background: url(bia/images/background.jpg);
+        body        {background: url(/bia/images/background.jpg);
                      background-position: right;
                      display: flex;
                      margin: 0;
                      flex-direction: column;
                      background-repeat: no-repeat;}
-        .popup {width: 20em;
-            display: none; /* Hide pop-ups by default */
-            position: fixed; /* Position them fixed to the viewport */
-            background: white; /* Aquamarine background color for the pop-up */
-            border: 1px solid #ccc; /* Border for the pop-up */
-            padding: 20px; /* Padding inside the pop-up */
-            z-index: 1000; /* Ensure it's above other content */
-            left: 50%; /* Center horizontally */
-            top: 50%; /* Center vertically */
-            transform: translate(-50%, -50%); /* Perfectly center */
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Add shadow for better visibility */
-            border-radius: 10px; /* Rounded corners */}
-        .popup-header, .popup-footer {background-color: #4CAF40; /* Same color for header and footer */
-            color: white; /* Text color for header and footer */
-            padding: 10px; /* Padding inside header and footer */
-            text-align: center; /* Center the text */
-            border-radius: 10px 10px 0 0; /* Rounded top corners for header */}
-        .popup-footer {
-            border-radius: 0 0 10px 10px; /* Rounded bottom corners for footer */}
-        .popup-content {background-color: #e0f7fa; /* Different color for content inside the popup */
-            padding: 10px 10px 10px 22px; /* Padding for content */
-            margin: 10px 0; /* Margin for spacing */
-            font-size: 16px;}
-        .popup p {
-            margin: 5px 0; /* Space around paragraphs */}
-        .popup button {background-color: #f44336; /* Color for the close button */
-            color: white; /* Text color for the button */
-            border: none; /* Remove border */
-            padding: 8px 15px; /* Padding for the button */
-            cursor: pointer; /* Pointer cursor on hover */
-            border-radius: 10px; /* Rounded corners */
-            display: block; /* Make the button block-level for full width */
-            margin: 10px auto 0; /* Center the button */}
-        .overlay {display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);}
-
 
 
         .nav      {position: fixed;
-                   z-index: 1000;}
+                   z-index: 1;}
         #large-nav {position: fixed;
                     top: 5.3em;
             width: 15%;
@@ -85,7 +44,7 @@
             padding: 13em 0 0 0;
             position: fixed;
             top: 0;
-            z-index: 2000;}
+            z-index: 0.9;}
         .sbtn {
             width: 100%;
             border-radius: 0;
@@ -95,6 +54,12 @@
                        text-align: left;}
         #large-nav i {margin-left: 17%;}
         #large-nav .btn {border: 2px grey solid;}
+
+        .modal                {z-index: 1050; width: 70%; border-radius: 1em;}
+        .modal-header         {color: black; margin-left: 1em; padding: 0.8em 0.8em 0;}
+        .modal-content        {background: brown;}
+        .modal-footer         {color: black;}
+
 
         .small {
             position: absolute;
@@ -127,9 +92,10 @@
         #navImg   {width: 19%;
                    position: absolute;
                    right: 95%;}
-        #sideImg  {width: 90%;
+        #sideImg  {width: 13%;
                    position: absolute;
-                   top: 0;}
+                   top: 0;
+                   right: 93%}
         #side  {width: 80%;
             border-radius: 50%;
             position: absolute;
@@ -157,6 +123,7 @@
             color: red; /* Arrow color */
             z-index: 1000;
             padding: 0 40%}
+
         #audio {height: 20px;
             width: 90px;
             position: relative;
@@ -169,47 +136,88 @@
 <nav class="green nav">
     <div class="container">
         <div class="nav-wrapper">
-            <img src="bia/images/bia-logo.jpg" alt="School Badge" id="navImg" class="hide-on-med-and-down">
+            <img src="/bia/images/bia-small-logo.jpg" alt="logo text"  id="sideImg" class="hide-on-large-only">
+            <img src="/bia/images/bia-logo.jpg" alt="School Badge" id="navImg" class="hide-on-med-and-down">
             <a href="#" data-target="mobile-nav" class="hide-on-med-and-down" style="position: absolute; top: 0; left: 6%;">
                 <i class="material-icons">format_indent_decrease</i></a>
             <a href="#" data-target="mobile-nav" class="hide-on-large-only" style="position: absolute; top: 0; left: 10%;">
                 <i class="material-icons">format_indent_increase</i></a>
              <ul id="nav-mobile" class="right">
                 <li><a href="#about">Home<i class="material-icons left">home</i></a></li>
-                <li><a href="#services">Email<i class="material-icons left">mail</i></a></li>
-                <li><a href="#contact">Contact<i class="material-icons left">call</i></a></li>
+
+                <!--Trigger Button for Email Modal-->
+                <li><a class="modal-trigger" href="#modal1">Email
+                    <i class="material-icons left">mail</i></a></li>
+
+                <!--Trigger Button for Contact Modal-->    
+                <li><a class="modal-trigger" href="#modal2">Contact
+                    <i class="material-icons left">call</i></a></li>
+
+                <!--Modal Structure for Email-->
+                <div class="modal" id="modal1">
+                    <div class="modal-header"><h4>Email for Support</h4></div>
+                    <div class="modal-content">
+                        <p>Are you confused about something?<br>Don't worry, send a mail to:</p>
+                        <p><br><input id="help" type="email" value="abubakarabdulai@gmail.com" readonly style="position: absolute;
+                                                                           left: 10%; color: white; bottom: 32%; width: 78%; padding-left: 5px;
+                                                                           border-radius: 6px; text-align: center;"></p>
+                    </div>
+
+                    <div class="modal-footer">
+                        <a href="#!" class="modal-close green btn" style="position: absolute; bottom: 0.5em; right: 2em;
+                                                                          border-radius: 1em;">Close</a>
+                    </div>
+                </div>
+
+                <!--Modal Structure for Contact-->
+                <div class="modal" id="modal2">
+                    <div class="modal-header"><h4>Contact for Help</h4></div>
+                    <div class="modal-content">
+                        <p>Do you want to talk to the school management?</p>
+                        <p><strong>Headmaster Name:</strong>
+                        <input type="text" value="Abdulai Abubakar" readonly style="border-radius: 5px; color: white;
+                                                                            width: 80%; text-align: center;"></p>
+                        <p><strong>Contact:</strong>
+                        <input type="text" value="0241303485" readonly style="border-radius: 5px; width: 80%; color: white;
+                                                        text-align: center;"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#!" class="modal-close green btn" style="position: absolute; top: 36em; right: 2em;
+                                                                          border-radius: 1em;">Close</a>
+                    </div>
+                </div>
             </ul>
         </div>
     </div>
 </nav>
-<br>
+
 
 <!--Desktop Side Bar-->
 <div class="nav-wrapper green hide-on-med-and-down" id="large-nav"><b style="margin-left: 20%; color: yellow;">QUICK ACCESS</b>
     <hr class="divider">
     <ul>
         <li><a href="index.html" class="btn orange lbtn" style="color: blue;"><b>Home</b><i class="material-icons left">home</i></a></li>
-        <li><a href="/breman-islamic-academy/html/h.report_cards.html" class="btn brown lbtn">Report<i class="bi bi-file-earmark-medical left"></i></a></li>
-        <li><a href="/breman-islamic-academy/html/h.exams.html" class="btn brown lbtn">Exams<i class="bi bi-file-text left"></i></a></li>
-        <li><a href="/breman-islamic-academy/html/h.gallery.html" class="btn brown lbtn">Gallery<i class="bi bi-images left"></i></a></li>
-        <li><a href="/breman-islamic-academy/html/h.audios.html" class="btn brown lbtn">Audios<i class="material-icons left">headset</i></a></li>
-        <li><a href="/breman-islamic-academy/html/h.admission.html" class="btn brown lbtn">Apply<i class="bi bi-file-earmark-pdf left"></i></a></li>
+        <li><a href="/bia/html/result.html" class="btn brown lbtn">Result<i class="bi bi-file-earmark-medical left"></i></a></li>
+        <li><a href="/bia/html/exams.html" class="btn brown lbtn">Exams<i class="bi bi-file-text left"></i></a></li>
+        <li><a href="/bia/html/gallery.html" class="btn brown lbtn">Gallery<i class="bi bi-images left"></i></a></li>
+        <li><a href="/bia/html/audios.html" class="btn brown lbtn">Audios<i class="material-icons left">headset</i></a></li>
+        <li><a href="/bia/html/apply.html" class="btn brown lbtn">Apply<i class="bi bi-file-earmark-pdf left"></i></a></li>
     </ul>
 </div>
+
 
 <!--Tablet and Smart phone Side Bar-->
 <div class="nav-wrapper green hide-on-large-only" id="small-nav">   
-    <ul>    <img src="bia/images/bia-small-logo.jpg" alt="logo text"  id="sideImg">
-        <img src="bia/images/bia-logo-4.png" alt="School Badge" id="side">
-        <li><a href="#" class="btn orange sbtn" style="color: blue;"><i class="material-icons">home</i></a></li>
-        <li><a href="/breman-islamic-academy/html/h.report_cards.html" class="btn brown sbtn"><i class="bi bi-file-earmark-medical"></i></a></li>
-        <li><a href="/breman-islamic-academy/html/h.exams.html" class="btn brown sbtn"><i class="bi bi-file-text"></i></a></li>
-        <li><a href="/breman-islamic-academy/html/h.gallery.html" class="btn brown sbtn"><i class="bi bi-images"></i></a></li>
-        <li><a href="/breman-islamic-academy/html/h.audios.html" class="btn brown sbtn"><i class="material-icons" title="Audios">headset</i></a></li>
-        <li><a href="/breman-islamic-academy/html/h.admission.html" class="btn brown sbtn"><i class="bi bi-file-earmark-pdf"></i></a></li>
+    <ul>   
+        <img src="/bia/images/bia-logo-4.png" alt="first logo" id="side">
+        <li><a href="/Users/arapp/OneDrive/Desktop/index.html" class="btn orange sbtn" style="color: blue;" title="Home"><b><i class="material-icons">home</i></b></a></li>
+        <li><a href="/bia/html/result.html" class="btn brown sbtn" title="Result"><i class="bi bi-file-earmark-medical"></i></a></li>
+        <li><a href="/bia/html/exams.html" class="btn brown sbtn" title="Exams"><i class="bi bi-file-text"></i></a></li>
+        <li><a href="/bia/html/gallery.html" class="btn brown sbtn" title="Gallery"><i class="bi bi-images"></i></a></li>
+        <li><a href="/bia/html/audios.html" class="btn brown sbtn" title="Audios"><i class="material-icons" title="Audios">headset</i></a></li>
+        <li><a href="/bia/html/apply.html" class="btn brown sbtn" title="Apply"><i class="bi bi-file-earmark-pdf"></i></a></li>
     </ul>
 </div>
-
 
 
 
@@ -219,43 +227,43 @@
     <div class="col s12 grey white-text" style="margin: 0.5em; padding: 3%; border-radius: 1em;">
         <div class="container carousel">
         <a class="carousel-item" href="#one!">
-            <img src="bia/images/admission.jpg" alt="Slide 1" style="height: 100%;">
+            <img src="/bia/images/admission.jpg" alt="Slide 1" style="height: 100%;">
             <div class="caption">Admission Open for 2025/2026 Academic Year</div>
         </a>
         <a class="carousel-item" href="#two!">
-            <img src="bia/images/bia-logo-1.jpg" alt="Slide 3">
+            <img src="/bia/images/bia-logo-1.jpg" alt="Slide 3">
             <div class="caption">School's first logo</div>
         </a>
         <a class="carousel-item" href="#three!">
-            <img src="bia/images/bia-logo-2.jpg" alt="Slide 4">
+            <img src="/bia/images/bia-logo-2.jpg" alt="Slide 4">
             <div class="caption">School's second logo</div>
         </a>
         <a class="carousel-item" href="#one!">
-            <img src="bia/images/admission.jpg" alt="Slide 5" style="height: 100%;">
+            <img src="/bia/images/admission.jpg" alt="Slide 5" style="height: 100%;">
             <div class="caption">Admission Open for 2025/2026 Academic Year</div>
         </a>
         <a class="carousel-item" href="#four!">
-            <img src="bia/images/bia-logo-3.jpg" alt="Slide 6">
+            <img src="/bia/images/bia-logo-3.jpg" alt="Slide 6">
             <div class="caption">School's third logo</div>
         </a>
         <a class="carousel-item" href="#four!">
-            <img src="bia/images/bia-logo-4.png" alt="Slide 7">
+            <img src="/bia/images/bia-logo-4.png" alt="Slide 7">
             <div class="caption">School's fourth logo</div>
         </a>
         <a class="carousel-item" href="#two!">
-            <img src="bia/images/bage-1.jpg" alt="Slide 8">
+            <img src="/bia/images/bage-1.jpg" alt="Slide 8">
             <div class="caption">Future Inovation</div>
         </a>
         <a class="carousel-item" href="#two!">
-            <img src="bia/images/bage-2.jpg" alt="Slide 9">
+            <img src="/bia/images/bage-2.jpg" alt="Slide 9">
             <div class="caption">Future Inovation</div>
         </a>
         <a class="carousel-item" href="#two!">
-            <img src="bia/images/bage-3.jpg" alt="Slide 10">
+            <img src="/bia/images/bage-3.jpg" alt="Slide 10">
             <div class="caption">Future Inovation</div>
         </a>
         <a class="carousel-item" href="#two!">
-            <img src="bia/images/bus.jpg" alt="Slide 2">
+            <img src="/bia/images/bus.jpg" alt="Slide 2">
             <div class="caption">Future Inovation</div>
         </a>
 
@@ -343,43 +351,43 @@
     <div class="col m10 grey white-text" style="margin: 0.5em; padding: 1.57em; border-radius: 1em; width: 89%;">
         <div class="container carousel">
         <a class="carousel-item" href="#one!">
-            <img src="bia/images/admission.jpg" alt="Slide 1" style="height: 100%;">
+            <img src="/bia/images/admission.jpg" alt="Slide 1" style="height: 100%;">
             <div class="caption">Admission Open for 2025/2026 Academic Year</div>
         </a>
         <a class="carousel-item" href="#two!">
-            <img src="bia/images/bia-logo-1.jpg" alt="Slide 3">
+            <img src="/bia/images/bia-logo-1.jpg" alt="Slide 3">
             <div class="caption">School's first logo</div>
         </a>
         <a class="carousel-item" href="#three!">
-            <img src="bia/images/bia-logo-2.jpg" alt="Slide 4">
+            <img src="/bia/images/bia-logo-2.jpg" alt="Slide 4">
             <div class="caption">School's second logo</div>
         </a>
         <a class="carousel-item" href="#one!">
-            <img src="bia/images/admission.jpg" alt="Slide 5" style="height: 100%;">
+            <img src="/bia/images/admission.jpg" alt="Slide 5" style="height: 100%;">
             <div class="caption">Admission Open for 2025/2026 Academic Year</div>
         </a>
         <a class="carousel-item" href="#four!">
-            <img src="bia/images/bia-logo-3.jpg" alt="Slide 6">
+            <img src="/bia/images/bia-logo-3.jpg" alt="Slide 6">
             <div class="caption">School's third logo</div>
         </a>
         <a class="carousel-item" href="#four!">
-            <img src="bia/images/bia-logo-4.png" alt="Slide 7">
+            <img src="/bia/images/bia-logo-4.png" alt="Slide 7">
             <div class="caption">School's fourth logo</div>
         </a>
         <a class="carousel-item" href="#two!">
-            <img src="bia/images/bage-1.jpg" alt="Slide 8">
+            <img src="/bia/images/bage-1.jpg" alt="Slide 8">
             <div class="caption">Future Inovation</div>
         </a>
         <a class="carousel-item" href="#two!">
-            <img src="bia/images/bage-2.jpg" alt="Slide 9">
+            <img src="/bia/images/bage-2.jpg" alt="Slide 9">
             <div class="caption">Future Inovation</div>
         </a>
         <a class="carousel-item" href="#two!">
-            <img src="bia/images/bage-3.jpg" alt="Slide 10">
+            <img src="/bia/images/bage-3.jpg" alt="Slide 10">
             <div class="caption">Future Inovation</div>
         </a>
         <a class="carousel-item" href="#two!">
-            <img src="bia/images/bus.jpg" alt="Slide 2">
+            <img src="/bia/images/bus.jpg" alt="Slide 2">
             <div class="caption">Future Inovation</div>
         </a>
 
@@ -465,43 +473,43 @@
     <div class="col l11 grey white-text" style="margin: 0.5em; padding: 3%; border-radius: 1em; width: 94%;">
         <div class="container carousel">
         <a class="carousel-item" href="#one!">
-            <img src="bia/images/admission.jpg" alt="Slide 1" style="height: 100%;">
+            <img src="/bia/images/admission.jpg" alt="Slide 1" style="height: 100%;">
             <div class="caption">Admission Open for 2025/2026 Academic Year</div>
         </a>
         <a class="carousel-item" href="#two!">
-            <img src="bia/images/bia-logo-1.jpg" alt="Slide 3">
+            <img src="/bia/images/bia-logo-1.jpg" alt="Slide 3">
             <div class="caption">School's first logo</div>
         </a>
         <a class="carousel-item" href="#three!">
-            <img src="bia/images/bia-logo-2.jpg" alt="Slide 4">
+            <img src="/bia/images/bia-logo-2.jpg" alt="Slide 4">
             <div class="caption">School's second logo</div>
         </a>
         <a class="carousel-item" href="#one!">
-            <img src="bia/images/admission.jpg" alt="Slide 5" style="height: 100%;">
+            <img src="/bia/images/admission.jpg" alt="Slide 5" style="height: 100%;">
             <div class="caption">Admission Open for 2025/2026 Academic Year</div>
         </a>
         <a class="carousel-item" href="#four!">
-            <img src="bia/images/bia-logo-3.jpg" alt="Slide 6">
+            <img src="/bia/images/bia-logo-3.jpg" alt="Slide 6">
             <div class="caption">School's third logo</div>
         </a>
         <a class="carousel-item" href="#four!">
-            <img src="bia/images/bia-logo-4.png" alt="Slide 7">
+            <img src="/bia/images/bia-logo-4.png" alt="Slide 7">
             <div class="caption">School's fourth logo</div>
         </a>
         <a class="carousel-item" href="#two!">
-            <img src="bia/images/bage-1.jpg" alt="Slide 8">
+            <img src="/bia/images/bage-1.jpg" alt="Slide 8">
             <div class="caption">Future Inovation</div>
         </a>
         <a class="carousel-item" href="#two!">
-            <img src="bia/images/bage-2.jpg" alt="Slide 9">
+            <img src="/bia/images/bage-2.jpg" alt="Slide 9">
             <div class="caption">Future Inovation</div>
         </a>
         <a class="carousel-item" href="#two!">
-            <img src="bia/images/bage-3.jpg" alt="Slide 10">
+            <img src="/bia/images/bage-3.jpg" alt="Slide 10">
             <div class="caption">Future Inovation</div>
         </a>
         <a class="carousel-item" href="#two!">
-            <img src="bia/images/bus.jpg" alt="Slide 2">
+            <img src="/bia/images/bus.jpg" alt="Slide 2">
             <div class="caption">Future Inovation</div>
         </a>
 
@@ -582,7 +590,7 @@
 <div class="container hide-on-med-and-up">
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 </div>
 
 <!--Space for large Screens-->
@@ -613,46 +621,16 @@
         </div>
     </div>
     <div class="container">
-        <audio controls id="audio" autoplay>
-            <source src="bia/audios/m.background-music.aac" type="audio/mpeg">
+        <audio controls id="audio" autoplay loop>
+            <source src="/bia/audios/m.background-music.aac" type="audio/mpeg">
         </audio>
     </div>
 
 
 
 
-<!--Popup-->
-<div class="overlay" id="overlay"></div>
-    <div class="popup" id="emailPopup">
-        <div class="popup-header">
-            <h2>Email for Support</h2>
-        </div>
-        <div class="popup-content" id="popupContent">
-        <p>Are you confused about something?<br>Don't worry, send a mail to:</p>
-        <p><br><input id="help" type="email" value="abubakarabdulai@gmail.com" readonly style="position: absolute;
-                                                                           left: 10%; bottom: 32%; width: 78%; padding-left: 5px;
-                                                                           border-radius: 6px; text-align: center;"></p>
-                                                                       </div>
-        <div class="popup-footer">
-            <button onclick="closePopup()">Close</button>
-        </div>
-        </div>
 
-        <div class="popup" id="contactPopup">
-        <div class="popup-header">
-            <h2>Contact for Help</h2>
-        </div>
-        <div class="popup-content" id="popupContent">
-        <p>Do you want to talk to the school management?</p>
-        <p><strong>Headmaster Name:</strong>
-        <input type="text" value="Abdulai Abubakar" readonly style="border-radius: 5px; width: 80%; text-align: center;"></p>
-        <p><strong>Contact:</strong>
-        <input type="text" value="0241303485" readonly style="border-radius: 5px; width: 80%; text-align: center;"></p>
-        </div>
-        <div class="popup-footer">
-            <button onclick="closeContactPopup()">Close</button>
-        </div>
-    </div>
+
     <div class="footer-copyright">
          <div class="container yellow-text">
          © 2025 Breman Islamic Academy, Breman Asikuma, Central Region, Ghana. Designed by Al-Ghafar Ar-Rahman It Center. All Rights Reserved.
@@ -663,20 +641,26 @@
 
     <!-- Materialize JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const elems = document.querySelectorAll('.carousel');
-            const instances = M.Carousel.init(elems, {
-                fullWidth: true,
-                indicators: true,
-                numvisble: 3
-            });
+<script>
+    // Initialize the modal and carousel
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initialize modals
+        const modalElems = document.querySelectorAll('.modal');
+        M.Modal.init(modalElems);
 
-            // Automatically transition slides every second
-            setInterval(() => {
-                instances[0].next();
-            }, 3000); // 1000 milliseconds = 1 second
+        // Initialize carousels
+        const carouselElems = document.querySelectorAll('.carousel');
+        const carouselInstances = M.Carousel.init(carouselElems, {
+            fullWidth: true,
+            indicators: true,
+            numVisible: 3 // Corrected spelling: numVisible
         });
-    </script>
+
+        // Automatically transition slides every 3 seconds
+        setInterval(() => {
+            carouselInstances[0].next();
+        }, 3000); // 3000 milliseconds = 3 seconds
+    });
+</script>
 </body>
-</html>
+<html>
