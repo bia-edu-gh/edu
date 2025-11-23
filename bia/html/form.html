@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form with Materialize Grid</title>
+    <!-- Materialize CSS CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+    <style>
+        body {
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        h2 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Registration Form</h2>
+        <form>
+            <div class="row">
+                <div class="input-field col s12 m6">
+                    <input type="email" id="email" required>
+                    <label for="email">Email</label>
+                </div>
+
+                <div class="input-field col s12 m6">
+                    <input type="text" id="address1" required>
+                    <label for="address1">Address Line 1</label>
+                </div>
+
+                <div class="input-field col s12 m6">
+                    <input type="text" id="address2">
+                    <label for="address2">Address Line 2 (Optional)</label>
+                </div>
+
+                <div class="input-field col s12 m6">
+                    <input type="text" id="city" required>
+                    <label for="city">City/Town</label>
+                </div>
+
+                <div class="input-field col s12 m6">
+                    <select id="country" required>
+                        <option value="" disabled selected>Select your country</option>
+                        <option value="Ghana">Ghana</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    <label>Country</label>
+                </div>
+
+                <div class="input-field col s12 m6">
+                    <input type="tel" id="phone">
+                    <label for="phone">Mobile Phone (if available)</label>
+                </div>
+
+                <div class="input-field col s12 m6">
+                    <input type="text" id="permAddress1">
+                    <label for="permAddress1">Permanent Address Line 1</label>
+                </div>
+
+                <div class="input-field col s12 m6">
+                    <input type="text" id="permAddress2">
+                    <label for="permAddress2">Permanent Address Line 2</label>
+                </div>
+
+                <div class="input-field col s12 m6">
+                    <input type="text" id="permCity">
+                    <label for="permCity">City/Town</label>
+                </div>
+
+                <h5 class="col s12">Details of the Sponsor of Your Studies</h5>
+                <div class="input-field col s12 m6">
+                    <input type="text" id="sponsorName" required>
+                    <label for="sponsorName">Name of Sponsor</label>
+                </div>
+
+                <div class="input-field col s12 m6">
+                    <input type="tel" id="sponsorPhone">
+                    <label for="sponsorPhone">Sponsor's Phone Number</label>
+                </div>
+
+                <div class="input-field col s12 m6">
+                    <input type="email" id="sponsorEmail">
+                    <label for="sponsorEmail">Sponsor's Email</label>
+                </div>
+
+                <h5 class="col s12">Parent/Guardian/NEXT of KIN INFORMATION</h5>
+                <div class="input-field col s12 m6">
+                    <input type="text" id="guardianName">
+                    <label for="guardianName">Name</label>
+                </div>
+
+                <div class="input-field col s12 m6">
+                    <input type="text" id="guardianRelation">
+                    <label for="guardianRelation">Relation</label>
+                </div>
+
+                <div class="input-field col s12 m6">
+                    <input type="tel" id="guardianPhone">
+                    <label for="guardianPhone">Phone Number</label>
+                </div>
+
+                <div class="input-field col s12 m6">
+                    <input type="text" id="occupation">
+                    <label for="occupation">Occupation</label>
+                </div>
+
+                <div class="input-field col s12 m6">
+                    <input type="text" id="sports">
+                    <label for="sports">Sports Information</label>
+                </div>
+
+                <div class="input-field col s12 m6">
+                    <input type="text" id="disability">
+                    <label for="disability">Disability (if any)</label>
+                </div>
+
+                <div class="input-field col s12 m6">
+                    <input type="text" id="employment">
+                    <label for="employment">Past/Present Employment Information</label>
+                </div>
+            </div>
+
+            <div class="center">
+                <button class="btn waves-effect waves-light" type="submit">Save and Continue</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Materialize JavaScript CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('select');
+            var instances = M.FormSelect.init(elems);
+        });
+    </script>
+</body>
+</html>

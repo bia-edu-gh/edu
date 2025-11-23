@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=0.8">
+	<title>B.I.A-Online Admission Login</title>
+
+    <!-- Customized CSS -->
+    <link rel="stylesheet" type="text/css" href="/bia/css/style.css">
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <!--Import Bootstrap Icon Font-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <style>
+        .passport-preview {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: mintcream;
+            cursor: pointer; /* Make it look clickable */
+            position: relative;
+            flex-direction: column; }
+
+        .passport-preview img {
+            width: 100%;
+            height: auto;
+            display: none; /* Hide image by default */ }
+
+        .file-input {
+            display: none; /* Hide original file input */ }
+
+        .icon {font-size: 4em;
+            color: black; }
+
+        .icon-small {font-size: 2em;
+            color: black; }
+
+        /*apply-step1 background*/
+        #step1Img  {width: 67.2%;
+                 height: 102.5%;
+                 position: absolute;
+                 top: 4.2em;
+                 left: 12.5em;
+                 border-radius: 0.8em 0 0.8em 0;
+                 z-index: 20; }
+        #pInfo  {position: absolute;
+                 top: 10em;
+                 z-index: 30;}
+
+        footer {position: relative;
+                z-index: 5000;}
+    </style>
+</head>
+<body>
+    <!--Navigation bar-->
+<nav class="green nav">
+    <div class="container">
+        <div class="nav-wrapper">
+            <img src="/bia/images/bia-small-logo.jpg" alt="logo text"  id="sideImg" class="hide-on-large-only">
+            <img src="/bia/images/bia-logo.jpg" alt="School Badge" id="navImg" class="hide-on-med-and-down">
+            <a href="#" data-target="mobile-nav" class="hide-on-med-and-down" style="position: absolute; top: 0; left: 6%;">
+                <i class="material-icons">format_indent_decrease</i></a>
+            <a href="#" data-target="mobile-nav" class="hide-on-large-only" style="position: absolute; top: 0; left: 10%;">
+                <i class="material-icons">format_indent_increase</i></a>
+             <ul id="nav-mobile" class="right">
+                <li><a href="#about">Apply<i class="bi bi-file-earmark-pdf left"></i></a></li>
+
+                <!--Trigger Button for Email Modal-->
+                <li><a class="modal-trigger" href="#modal1">Email
+                    <i class="material-icons left">mail</i></a></li>
+
+                <!--Trigger Button for Contact Modal-->    
+                <li><a class="modal-trigger" href="#modal2">Contact
+                    <i class="material-icons left">call</i></a></li>
+
+                <!--Modal Structure for Email-->
+                <div class="modal" id="modal1">
+                    <div class="modal-header"><h4>Email for Support</h4></div>
+                    <div class="modal-content">
+                        <p>Are you confused about something?<br>Don't worry, send a mail to:</p>
+                        <p><br><input id="help" type="email" value="abubakarabdulai@gmail.com" readonly style="position: absolute;
+                                                                           left: 10%; color: white; bottom: 32%; width: 78%; padding-left: 5px;
+                                                                           border-radius: 6px; text-align: center;"></p>
+                    </div>
+
+                    <div class="modal-footer">
+                        <a href="#!" class="modal-close red btn" style="position: absolute; bottom: 0.5em; right: 2em;
+                                                                          border-radius: 1em;">Close</a>
+                    </div>
+                </div>
+
+                <!--Modal Structure for Contact-->
+                <div class="modal" id="modal2">
+                    <div class="modal-header"><h4>Contact for Help</h4></div>
+                    <div class="modal-content">
+                        <p>Do you want to talk to the school management?</p>
+                        <p><strong>Headmaster Name:</strong>
+                        <input type="text" value="Abdulai Abubakar" readonly style="border-radius: 5px; color: white;
+                                                                            width: 80%; text-align: center;"></p>
+                        <p><strong>Contact:</strong>
+                        <input type="text" value="0241303485" readonly style="border-radius: 5px; width: 80%; color: white;
+                                                        text-align: center;"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#!" class="modal-close red btn" style="position: absolute; top: 36em; right: 2em;
+                                                                          border-radius: 1em;">Close</a>
+                    </div>
+                </div>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<!--Desktop Side Bar-->
+<div class="nav-wrapper green hide-on-med-and-down" id="large-nav"><b style="margin-left: 20%; color: yellow;">QUICK ACCESS</b>
+    <hr class="divider">
+    <ul>
+        <li><a href="/Users/arapp/OneDrive/Desktop/index.html" class="btn brown lbtn">Home<i class="material-icons left">home</i></a></li>
+        <li><a href="/bia/html/result.html" class="btn brown lbtn">Result<i class="bi bi-file-earmark-medical left"></i></a></li>
+        <li><a href="/bia/html/exams.html" class="btn brown lbtn">Exams<i class="bi bi-file-text left"></i></a></li>
+        <li><a href="/bia/html/gallery.html" class="btn brown lbtn">Gallery<i class="bi bi-images left"></i></a></li>
+        <li><a href="/bia/html/audios.html" class="btn brown lbtn">Audios<i class="material-icons left">headset</i></a></li>
+        <li><a href="/bia/html/apply.html" class="btn orange lbtn" style="color: blue;"><b>Apply<i class="bi bi-file-earmark-pdf left"></i></b></a></li>
+    </ul>
+</div>
+
+
+<!--Tablet and Smart phone Side Bar-->
+<div class="nav-wrapper green hide-on-large-only" id="small-nav">   
+    <ul>   
+        <img src="/bia/images/bia-logo-4.png" alt="first logo" id="side">
+        <li><a href="/Users/arapp/OneDrive/Desktop/index.html" class="btn brown sbtn" title="Home"><i class="material-icons">home</i></a></li>
+        <li><a href="/bia/html/result.html" class="btn brown sbtn" title="Result"><i class="bi bi-file-earmark-medical"></i></a></li>
+        <li><a href="/bia/html/exams.html" class="btn brown sbtn" title="Exams"><i class="bi bi-file-text"></i></a></li>
+        <li><a href="/bia/html/gallery.html" class="btn brown sbtn" title="Gallery"><i class="bi bi-images"></i></a></li>
+        <li><a href="/bia/html/audios.html" class="btn brown sbtn" title="Audios"><i class="material-icons">headset</i></a></li>
+        <li><a href="/bia/html/apply.html" class="btn orange sbtn" style="color: blue;" title="Apply"><i class="bi bi-file-earmark-pdf"></i></a></li>
+    </ul>
+</div>
+
+
+
+
+<!--Grid for Smart Phones-->
+<div class="row small hide-on-med-and-up">
+    <div class="col s12 grey white-text" style="margin: 0.5em; padding: 3%; border-radius: 1em;">
+        <p><h6>
+            Welcome to BREMAN ISLAMIC ACADEMY online admission portal.
+        <br> Enter the Serial number and PIN on the voucher purchased to start applying for admission.
+        </h6></p><br>        <div class="container" style="border-radius: 0.8em; border: 2px solid black; background: burlywood;">
+            <p style="text-align: left; margin-left: 2em; line-height: 1em; color: black;"><b>Serial Number:</b></p>
+            <input type="username" name="serial-details" placeholder="Serial number" style="background: white; border-radius: 1em; height: 2em; 
+                                            padding-left: 1em; width: 90%;">
+            <p style="text-align: left; margin-left: 2em; line-height: 1em; color: black;"><b>PIN:</b></p>
+            <input type="pin" name="pin" placeholder="PIN" style="background: white; border-radius: 1em; height: 2em; 
+                                            padding-left: 1em; width: 90%;">
+            <p><a href="/bia/html/apply-step1.html" class="btn-small green sbtn" style="width: 35%; border-radius: 1em;">Login<i class="material-icons left">login</i></a></p>
+        </div>
+        <br>        
+    </div>
+</div>
+
+
+<!--Grid for Tablet Screens-->
+<div class="row medium hide-on-small-only hide-on-large-only">
+    <div class="col m10 grey white-text" style="margin: 0.5em; padding: 1.57em; border-radius: 1em; width: 89%;">
+        <p>
+            Welcome to BREMAN ISLAMIC ACADEMY online admission portal.
+        <br> Enter the Serial number and PIN on the voucher purchased to start applying for admission.
+        </p>
+        <div class="container" style="border-radius: 0.8em; border: 2px solid black; background: burlywood;">
+            <p style="text-align: left; margin-left: 2em; line-height: 1em; color: black;"><b>Serial Number:</b></p>
+            <input type="username" name="serial-details" placeholder="Serial number" style="background: white; border-radius: 1em; height: 2em; 
+                                            padding-left: 1em; width: 90%;">
+            <p style="text-align: left; margin-left: 2em; line-height: 1em; color: black;"><b>PIN:</b></p>
+            <input type="pin" name="pin" placeholder="PIN" style="background: white; border-radius: 1em; height: 2em; 
+                                            padding-left: 1em; width: 90%;">
+            <p><a href="/bia/html/apply-step1.html" class="btn-small green sbtn" style="width: 35%; border-radius: 1em;">Login<i class="material-icons left">login</i></a></p>
+        </div>
+        <br>        
+    </div>
+</div>
+
+
+<!--Grid for Desktop-->
+<div class="row large hide-on-med-and-down">
+    <div class="col l11">
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <div class="container" style="border-radius: 0.8em 0 0 0.8em; background: burlywood; width: 12%; position: absolute; 
+                                    left: 3em; top: 0.5em; z-index: 1;">
+            <div class="container">
+                <br>
+
+                <!--Upload Passport Picture-->
+                <div class="passport-preview" id="passportPreview">
+                    <i class="bi bi-person-up icon"></i>
+                    <img id="uploadedImage" alt="Uploaded Passport Image">
+                    <input type="file" id="passportInput" class="file-input" accept="image/*">
+                </div>
+            </div>
+
+            <!--Vertical Navigation for Application form-->
+            <div  id="large" style="height: 19.65em;">
+                <hr class="divider">
+                <ul>
+                    <li><a href="/Users/arapp/OneDrive/Desktop/index.html" class="btn orange lbtn" style="color: blue;"><b>Personal Info<i class="material-icons left">home</i></b></a></li>
+                    <li><a href="/bia/html/result.html" class="btn brown lbtn">Guardian Info<i class="bi bi-file-earmark-medical left"></i></a></li>
+                    <li><a href="/bia/html/exams.html" class="btn brown lbtn">Enrollment<i class="bi bi-file-text left"></i></a></li>
+                    <li><a href="/bia/html/gallery.html" class="btn brown lbtn">Review<i class="bi bi- left"></i></a></li>
+                    <li><a href="/bia/html/audios.html" class="btn brown lbtn">Declaration<i class="material-icons left">headset</i></a></li>
+                    <li><a href="/bia/html/apply.html" class="btn brown lbtn" >Print Form<i class="bi bi-print left"></i></a></li>
+                </ul>
+            </div>
+        </div>
+            <br> 
+
+            <!--Horizontal Navigation for Application form--> 
+                <div class="container" style="border-radius: 0 0.8em 0 0em; background: burlywood; width: 69%; position: absolute; 
+                                    left: 11em; top: 0.5em; line-height: 1em; z-index: 20;">
+                                    <br>
+                <div class="passport-preview" id="passportPreview" style="width: 3em; height: 3em; bottom: 0.5em; position: relative; left: 32em;">
+                    <i class="bi bi-person-up icon-small"></i>
+                    <img id="uploadedImage" alt="Uploaded Passport Image">
+                    <input type="file" id="passportInput" class="file-input" accept="image/*">
+                </div>
+                <a href="/bia/html/apply.html" class="btn-small green sbtn" style="width: 10em; border-radius: 1em; position: absolute; left: 44em; bottom: 1.2em;">Logout<i class="material-icons left">logout</i></a>
+        </div>
+
+        <!--Personal Infor-->
+            <img src="/bia/images/ap_back.jpg" id="step1Img">
+            <div class="container" id="pInfo">
+                <div class="row" style="text-align: left; margin-left: 9em; width: 90%;">
+    <form class="container white">
+        <div class="row">
+            <div class="content black-text grey">PERSONAL INFOMATION</div>
+            <div class="input-field col s12 m6 l4">
+                <input type="text" id="firstName" name="first_name" style="text-transform: uppercase;" required>
+                <label for="firstName">First Name:</label>
+            </div>
+
+            <div class="input-field col s12 m6 l4">
+                <input type="text" id="otherNames" name="other_names" style="text-transform: uppercase;">
+                <label for="otherNames">Other Name(s):</label>
+            </div>
+
+            <div class="input-field col s12 m6 l4">
+                <input type="text" id="surname" name="surname" style="text-transform: uppercase;">
+                <label for="surname">Surname:</label>
+            </div>
+
+            <div class="input-field col s12 m6 l4">
+                <input type="date" id="dob" name="dob" required>
+                <label for="dob">Date of Birth:</label>
+            </div>
+
+            <div class="input-field col s12 m6 l4">
+                <input type="text" id="resident" name="resident" style="text-transform: uppercase;">
+                <label for="resident">Resident:</label>
+            </div>
+
+            <div class="input-field col s12 m6 l4">
+                <input type="text" id="admissionNumber" name="admission_number" style="text-transform: uppercase;" readonly>
+                <label for="admissionNumber">Admission Number:</label>
+            </div>
+        </div>
+
+        <div class="center">
+            <button class="btn" type="submit">Save and Continue</button>
+        </div>
+    </form>
+</div>
+                            <br>
+                             
+            </div>
+      
+    </div>
+</div>
+
+
+<!--Space for Small Screens-->
+<div class="container hide-on-med-and-up">
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</div>
+
+<!--Space for large Screens-->
+<div class="container hide-on-small-only hide-on-large-only">
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</div>
+
+<!--Space for large Screens-->
+<div class="container hide-on-med-and-down">
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</div>
+<footer class="page-footer green" style="line-height: 1.2em;">
+    <div class="container">
+        <div class="row">
+            <div class="col l6 s6">
+                <h6 class="white-text"><b>Breman Islamic Academy</b></h6>
+                <p class="grey-text text-lighten-4">Sovereignty Belongs to Allah</p>
+            </div>
+            <div class="col l4 offset-5 s6">
+                <ul><b>
+                    <li><a class="grey-text text-lighten-3" href="#!">About</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Services</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Directions</a></li>
+                </b></ul>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <audio controls id="audio" autoplay loop>
+            <source src="/bia/audios/m.background-music.aac" type="audio/mpeg">
+        </audio>
+    </div>
+
+
+
+
+
+
+    <div class="footer-copyright">
+         <div class="container yellow-text">
+         © 2025 Breman Islamic Academy, Breman Asikuma, Central Region, Ghana. Designed by Al-Ghafar Ar-Rahman It Center. All Rights Reserved.
+         </div>
+    </div>
+</footer>
+
+
+    <!-- Materialize JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script>
+    // Initialize the modal and carousel
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initialize modals
+        const modalElems = document.querySelectorAll('.modal');
+        M.Modal.init(modalElems);
+
+        // Initialize carousels
+        const carouselElems = document.querySelectorAll('.carousel');
+        const carouselInstances = M.Carousel.init(carouselElems, {
+            fullWidth: true,
+            indicators: true,
+            numVisible: 3 // Corrected spelling: numVisible
+        });
+
+        //Form script
+        var elems = document.querySelectorAll('select');
+        var instances = M.FormSelect.init(elems);
+
+        // Automatically transition slides every 3 seconds
+        setInterval(() => {
+            carouselInstances[0].next();
+        }, 3000); // 3000 milliseconds = 3 seconds
+    });
+
+
+    document.getElementById('passportPreview').addEventListener('click', function() {
+        document.getElementById('passportInput').click(); // Trigger file input click
+    });
+
+    document.getElementById('passportInput').addEventListener('change', function(event) {
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const img = document.getElementById('uploadedImage');
+                img.src = e.target.result;
+                img.style.display = 'block'; // Show the uploaded image
+                document.querySelector('.icon').style.display = 'none'; // Hide the icon
+                    };
+            reader.readAsDataURL(file);}
+                    });
+
+</script>
+</body>
+</html>
