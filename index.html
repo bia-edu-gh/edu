@@ -95,84 +95,6 @@
             border-radius: 0 0 1em 1em !important;
         }
 
-        /* Footer styling */
-        footer.page-footer {
-            border-radius: 1em 1em 0 0 !important;
-        }
-
-        /* Audio player styling */
-        audio {
-            border-radius: 0.8em !important;
-            position: relative;
-            right: 130px;
-            top: 2px;
-            height: 28px !important;
-            width: 100px !important;
-            max-width: 90% !important; /* Responsive for smaller screens */
-        }
-
-        /* Audio player container styling */
-        .audio-container {
-            display: flex;
-            justify-content: center;
-            align-items: left;
-            padding: 5px 0;
-        }
-
-        /* Footer content spacing */
-        footer.page-footer .container {
-            padding: 12px 0;
-        }
-
-        footer.page-footer h6 {
-            margin-bottom: 12px;
-            font-size: 1.1em;
-        }
-
-        footer.page-footer ul {
-            margin: 0;
-            padding-left: 0;
-        }
-
-        footer.page-footer ul li {
-            list-style: none;
-            margin-bottom: 3px;
-        }
-
-        footer.page-footer ul li a {
-            padding: 2px 0;
-            display: block;
-            transition: all 0.3s ease;
-        }
-
-        footer.page-footer ul li a:hover {
-            padding-left: 5px;
-            color: #ffeb3b !important;
-        }
-
-        /* Footer copyright styling */
-        footer.page-footer .footer-copyright {
-            background-color: rgba(0, 0, 0, 0.1);
-            padding: 10px 0;
-            margin-top: 10px;
-        }
-
-        footer.page-footer .footer-copyright .container {
-            padding: 0;
-        }
-
-        /* Responsive footer spacing */
-        @media only screen and (max-width: 600px) {
-            footer.page-footer {
-                margin-top: 8000px; /* Less spacing on mobile */
-            }
-        }
-
-        @media only screen and (min-width: 601px) and (max-width: 992px) {
-            footer.page-footer {
-                margin-top: 4000px; /* Medium spacing on tablet */
-            }
-        }
 
         /* Footer positioning - True Sticky Footer */
         html, body {
@@ -188,12 +110,6 @@
 
         main {
             padding-bottom: 0;
-        }
-
-        footer.page-footer {
-            height: auto; /* Let content determine height */
-            border-radius: 1em 1em 0 0 !important;
-            margin-top: 2490px; /* Responsive spacing instead of <br> tags */
         }
 
         /* Smooth scrolling */
@@ -373,6 +289,72 @@
                 margin-left: 250px;
             }
         }
+
+/* =========== Footer Styling ========= */
+        /* Footer styling */
+        footer.page-footer {
+            margin-top: 2490px; /* Responsive spacing instead of <br> tags */
+            border-radius: 0.8em 0.8em 0 0 !important;
+        }
+
+        footer.page-footer ul {
+            display: flex;
+        }
+
+        footer.page-footer ul li {
+            padding-right: 20px;
+            margin-right: 20px;
+        }
+
+        footer.page-footer ul li i {
+            display: none; /* Hide icons in footer links for a cleaner look */;
+        }
+
+        footer.page-footer ul li a {
+            padding: 0;
+            display: flex;
+            transition: all 0.3s ease;
+        }
+
+        footer.page-footer ul li a:hover {
+            padding: 0 10px;
+            font-weight: 500;
+            border-left: 5px solid #056313;
+            background: #ecebe6 !important;
+            color: #04500e !important;
+        }
+
+        /* Footer copyright styling */
+        footer.page-footer .footer-copyright {
+            background-color: rgba(0, 0, 0, 0.1);
+            padding: 10px 0;
+            margin-top: 10px;
+        }
+
+        footer.page-footer .footer-copyright .container {
+            padding: 0;
+        }
+
+        /* Audio player styling */
+        audio {
+            border-radius: 0.8em !important;
+            position: relative;
+            right: 130px;
+            top: 2px;
+            height: 28px !important;
+            width: 100px !important;
+            max-width: 90% !important; /* Responsive for smaller screens */
+        }
+
+        /* Audio player container styling */
+        .audio-container {
+            display: flex;
+            justify-content: center;
+            align-items: left;
+            padding: 5px 0;
+        }
+
+/* ========== End of Footer Styling ========= */
     </style>
 </head>
 <body>
@@ -617,41 +599,39 @@
                 <p class="grey-text text-lighten-4">Sovereignty Belongs to Allah</p>
                 <p class="grey-text text-lighten-3">
                     <i class="material-icons left">location_on</i>
-                    Breman Asikuma, Central Region, Ghana
+                    <a class="grey-text text-lighten-3" href="https://maps.app.goo.gl/DE4b49jHT5XzuMd49"  target="_blank">
+                        Behind Breman Asikuma Main Lorry Station, Central Region, Ghana
+                    </a>
                 </p>
-                <p class="grey-text text-lighten-3">
-                    <i class="material-icons left">school</i>
-                    Excellence in Islamic Education
-                </p>
-                <hr style="border-color: rgba(255, 255, 255, 0.2); margin: 20px 0;">
                 <p class="grey-text text-lighten-3">
                     <i class="material-icons left">email</i>
                     <a href="mailto:info@bremanislamicacademy.edu.gh" class="grey-text text-lighten-3">info@bremanislamicacademy.edu.gh</a>
                 </p>
                 <p class="grey-text text-lighten-3">
                     <i class="material-icons left">phone</i>
-                    +233 241 303 485
+                    <a href="tel:+233241303485" class="grey-text text-lighten-3">+233 241 303 485</a>
                 </p>
-                <hr style="border-color: rgba(255, 255, 255, 0.2); margin: 20px 0;">
+                <hr style="border-color: 1px solid rgba(142, 182, 20, 0.2); margin: 20px 0;">
             </div>
 
             <!-- Quick Links Section -->
-            <div class="col l3 s6">
+            <div class="col l3 s12">
                 <h6 class="white-text"><b>Quick Links</b></h6>
                 <ul>
-                    <li><a class="grey-text text-lighten-3" href="index.html">
+                    <li style="border-right: 1px solid white;"><a class="grey-text text-lighten-3" href="index.html">
                         <i class="material-icons left tiny">home</i>Home</a></li>
-                    <li><a class="grey-text text-lighten-3" href="#results">
+                    <li style="border-right: 1px solid white;"><a class="grey-text text-lighten-3" href="#results">
                         <i class="material-icons left tiny">assessment</i>Results</a></li>
-                    <li><a class="grey-text text-lighten-3" href="#exams">
+                    <li style="border-right: 1px solid white;"><a class="grey-text text-lighten-3" href="#exams">
                         <i class="material-icons left tiny">description</i>Exams</a></li>
                     <li><a class="grey-text text-lighten-3" href="#gallery">
                         <i class="material-icons left tiny">photo</i>Gallery</a></li>
                 </ul>
+                <hr style="border-color: 1px solid rgba(182, 20, 20, 0.2); margin: 20px 0; line-height: 1px;">
             </div>
 
             <!-- Services Section -->
-            <div class="col l3 s6">
+            <div class="col l3 s12">
                 <h6 class="white-text"><b>Services</b></h6>
                 <ul>
                     <li><a class="grey-text text-lighten-3" href="html/audios.html">
@@ -663,6 +643,7 @@
                     <li><a class="grey-text text-lighten-3" href="#modal2">
                         <i class="material-icons left tiny">call</i>Help & Support</a></li>
                 </ul>
+                <hr style="border-color: 1px solid rgba(182, 20, 20, 0.2); margin: 20px 0; line-height: 0.5;">
             </div>
 
             <!-- Audio Player Section -->
@@ -687,7 +668,7 @@
                         © 2025 Breman Islamic Academy. All Rights Reserved.
                     </span>
                 </div>
-                <div class="col s12 m6 right-align">
+                <div class="col s12 m6">
                     <span class="grey-text text-lighten-2">
                         Designed by <span class="yellow-text">Al-Ghafar Ar-Rahman IT Center</span>
                     </span>
