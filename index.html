@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=0.8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>B.I.A-Home</title>
 
     <!-- Customized CSS -->
@@ -103,8 +103,11 @@
         /* Audio player styling */
         audio {
             border-radius: 0.8em !important;
-            width: 300px !important;
-            height: 40px !important;
+            position: relative;
+            right: 130px;
+            top: 2px;
+            height: 28px !important;
+            width: 100px !important;
             max-width: 90% !important; /* Responsive for smaller screens */
         }
 
@@ -112,10 +115,7 @@
         .audio-container {
             display: flex;
             justify-content: center;
-            align-items: center;
-            position: relative;
-            right: 140px;
-            top: 10px;
+            align-items: left;
             padding: 5px 0;
         }
 
@@ -368,47 +368,6 @@
             border-left: 4px solid #ffeb3b;
         }
 
-        .bottom-nav {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(135deg, #4CAF50, #45a049);
-            display: flex;
-            justify-content: space-around;
-            padding: 10px 0;
-            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
-            z-index: 1000;
-        }
-
-        .bottom-nav .nav-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            color: white;
-            text-decoration: none;
-            padding: 5px;
-            transition: color 0.3s ease, transform 0.2s ease;
-        }
-
-        .bottom-nav .nav-item:hover {
-            color: #ffeb3b;
-            transform: scale(1.1);
-        }
-
-        .bottom-nav .nav-item i {
-            font-size: 24px;
-        }
-
-        .bottom-nav .nav-item span {
-            font-size: 12px;
-            margin-top: 5px;
-        }
-
-        .bottom-nav .nav-item.active {
-            color: #ffeb3b;
-        }
-
         @media (min-width: 993px) {
             main {
                 margin-left: 250px;
@@ -422,8 +381,8 @@
     <nav class="green nav">
         <div class="container">
             <div class="nav-wrapper">
-                <img src="../images/bia-small-logo.jpg" alt="Breman Islamic Academy Logo" id="sideImg" class="hide-on-large-only">
-                <img src="../images/bia-logo.jpg" alt="School Badge" id="navImg" class="hide-on-med-and-down">
+                <img src="bia/images/bia-small-logo.jpg" alt="Breman Islamic Academy Logo" id="sideImg" class="hide-on-large-only">
+                <img src="bia/images/bia-logo.jpg" alt="School Badge" id="navImg" class="hide-on-med-and-down">
                 <a href="#" id="sidebar-toggle" class="hide-on-med-and-down" style="position: absolute; top: 0; left: 6%;">
                     <i class="material-icons">menu</i></a>
                 <a href="#" data-target="mobile-nav" class="hide-on-large-only" style="position: absolute; top: 0; left: 10%;">
@@ -510,38 +469,7 @@
     </ul>
 </div>
 
-<!-- Professional Mobile Bottom Navigation -->
-<div class="bottom-nav hide-on-large-only">
-    <a href="index.html" class="nav-item active">
-        <i class="material-icons">home</i>
-        <span>Home</span>
-    </a>
-    <a href="#results" class="nav-item">
-        <i class="material-icons">assignment</i>
-        <span>Results</span>
-    </a>
-    <a href="#exams" class="nav-item">
-        <i class="material-icons">description</i>
-        <span>Exams</span>
-    </a>
-    <a href="#gallery" class="nav-item">
-        <i class="material-icons">photo</i>
-        <span>Gallery</span>
-    </a>
-    <a href="../html/audios.html" class="nav-item">
-        <i class="material-icons">headset</i>
-        <span>Audios</span>
-    </a>
-    <a href="#apply" class="nav-item">
-        <i class="material-icons">edit</i>
-        <span>Apply</span>
-    </a>
-</div>
-
-
-
-
-<!--Grid for Smart Phones-->
+<!--===BASE DESIGN===-->
 <div class="row small hide-on-med-and-up">
     <!-- Carousel Card -->
     <div class="col s12">
@@ -680,283 +608,6 @@
     </div>
 </div>
 
-
-<!--Grid for Tablet Screens-->
-<div class="row medium hide-on-small-only hide-on-large-only">
-    <!-- Carousel Card -->
-    <div class="col m10">
-        <div class="card grey animate-on-scroll">
-            <div class="card-content white-text">
-                <div class="container carousel">
-                    <a class="carousel-item" href="#one!">
-                        <img src="../images/admission.jpg" alt="Slide 1" style="height: 100%;">
-                        <div class="caption">Admission Open for 2025/2026 Academic Year</div>
-                    </a>
-                    <a class="carousel-item" href="#two!">
-                        <img src="../images/bia-logo-1.jpg" alt="Slide 3">
-                        <div class="caption">School's first logo</div>
-                    </a>
-                    <a class="carousel-item" href="#three!">
-                        <img src="../images/bia-logo-2.jpg" alt="Slide 4">
-                        <div class="caption">School's second logo</div>
-                    </a>
-                    <a class="carousel-item" href="#one!">
-                        <img src="../images/admission.jpg" alt="Slide 5" style="height: 100%;">
-                        <div class="caption">Admission Open for 2025/2026 Academic Year</div>
-                    </a>
-                    <a class="carousel-item" href="#four!">
-                        <img src="../images/bia-logo-3.jpg" alt="Slide 6">
-                        <div class="caption">School's third logo</div>
-                    </a>
-                    <a class="carousel-item" href="#four!">
-                        <img src="../images/bia-logo-4.png" alt="Slide 7">
-                        <div class="caption">School's fourth logo</div>
-                    </a>
-                    <a class="carousel-item" href="#two!">
-                        <img src="../images/bage-1.jpg" alt="Slide 8">
-                        <div class="caption">Future Innovation</div>
-                    </a>
-                    <a class="carousel-item" href="#two!">
-                        <img src="../images/bage-2.jpg" alt="Slide 9">
-                        <div class="caption">Future Innovation</div>
-                    </a>
-                    <a class="carousel-item" href="#two!">
-                        <img src="../images/bage-3.jpg" alt="Slide 10">
-                        <div class="caption">Future Innovation</div>
-                    </a>
-                    <a class="carousel-item" href="#two!">
-                        <img src="../images/bus.jpg" alt="Slide 2">
-                        <div class="caption">Future Innovation</div>
-                    </a>
-                </div>
-                <div class="card-action center-align">
-                    <b>ASSALAAMU ALAIKUM WARAHMATULILAIHI WABARAKAATUH</b>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Welcome Card -->
-    <div class="col m4">
-        <div class="card yellow animate-on-scroll">
-            <div class="card-content violet-text">
-                <span class="card-title"><i class="material-icons left">school</i>Welcome to Breman Islamic Academy (B.I.A)</span>
-                <div class="card-content">
-                    <h6><b>ACCOMMODATION || LOCATION</b></h6>
-                    <div class="divider"></div>
-                    <div class="black-text">
-                        <p><i class="material-icons left">home</i>Breman Islamic Academy offers accommodation to:</p>
-                        <ul class="collection">
-                            <li class="collection-item"><i class="material-icons left">person</i>DAY STUDENTS</li>
-                            <li class="collection-item"><i class="material-icons left">hotel</i>BOARDING STUDENTS</li>
-                        </ul>
-                        <p><i class="material-icons left">location_on</i>The School is located at Breman Asikuma in the ASIKUMA ODOBEN BRAKWA DISTRICT, CENTRAL REGION, GHANA.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Admission Card -->
-    <div class="col m3">
-        <div class="card purple">
-            <div class="card-content">
-                <span class="card-title white-text"><i class="material-icons left">announcement</i>ADMISSION!</span>
-                <div class="yellow-text">
-                    <p><strong>Dear Parents/Guardian</strong></p>
-                    <p>Breman Islamic Academy, the leading Islamic school in Ghana, has opened admission for the 2025/2026 academic year.</p>
-                    <div class="card-panel yellow lighten-4">
-                        <p><i class="material-icons left">child_care</i>Enroll your wonderful kids with us!</p>
-                        <p><i class="material-icons left">free_breakfast</i>FREE Admission this month!</p>
-                    </div>
-                </div>
-            </div>
-            <div class="card-action">
-                <a href="#apply" class="btn waves-effect waves-light green btn-small"><i class="material-icons left">edit</i>Apply</a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Subjects Card -->
-    <div class="col m3">
-        <div class="card blue">
-            <div class="card-content">
-                <span class="card-title yellow-text"><i class="material-icons left">book</i>SUBJECTS</span>
-                <div class="card-content">
-                    <h6 class="yellow-text">✅ NURSERY - JHS</h6>
-                    <div class="row">
-                        <div class="col s12">
-                            <div class="card-panel white">
-                                <span class="blue-text"><i class="material-icons left">star</i><strong>CORE</strong></span>
-                                <ul class="collection">
-                                    <li class="collection-item">English Language</li>
-                                    <li class="collection-item">Mathematics</li>
-                                    <li class="collection-item">Science</li>
-                                    <li class="collection-item">Social Studies</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col s12">
-                            <div class="card-panel white">
-                                <span class="blue-text"><i class="material-icons left">palette</i><strong>ELECTIVE</strong></span>
-                                <ul class="collection">
-                                    <li class="collection-item">Arabic</li>
-                                    <li class="collection-item">Creative Arts</li>
-                                    <li class="collection-item">Religious Education</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!--Grid for Desktop-->
-<div class="row large hide-on-med-and-down">
-    <!-- Carousel Card -->
-    <div class="col l11">
-        <div class="card grey animate-on-scroll">
-            <div class="card-content white-text">
-                <div class="container carousel">
-                    <a class="carousel-item" href="#one!">
-                        <img src="../images/admission.jpg" alt="Slide 1" style="height: 100%;">
-                        <div class="caption">Admission Open for 2025/2026 Academic Year</div>
-                    </a>
-                    <a class="carousel-item" href="#two!">
-                        <img src="../images/bia-logo-1.jpg" alt="Slide 3">
-                        <div class="caption">School's first logo</div>
-                    </a>
-                    <a class="carousel-item" href="#three!">
-                        <img src="../images/bia-logo-2.jpg" alt="Slide 4">
-                        <div class="caption">School's second logo</div>
-                    </a>
-                    <a class="carousel-item" href="#one!">
-                        <img src="../images/admission.jpg" alt="Slide 5" style="height: 100%;">
-                        <div class="caption">Admission Open for 2025/2026 Academic Year</div>
-                    </a>
-                    <a class="carousel-item" href="#four!">
-                        <img src="../images/bia-logo-3.jpg" alt="Slide 6">
-                        <div class="caption">School's third logo</div>
-                    </a>
-                    <a class="carousel-item" href="#four!">
-                        <img src="../images/bia-logo-4.png" alt="Slide 7">
-                        <div class="caption">School's fourth logo</div>
-                    </a>
-                    <a class="carousel-item" href="#two!">
-                        <img src="../images/bage-1.jpg" alt="Slide 8">
-                        <div class="caption">Future Innovation</div>
-                    </a>
-                    <a class="carousel-item" href="#two!">
-                        <img src="../images/bage-2.jpg" alt="Slide 9">
-                        <div class="caption">Future Innovation</div>
-                    </a>
-                    <a class="carousel-item" href="#two!">
-                        <img src="../images/bage-3.jpg" alt="Slide 10">
-                        <div class="caption">Future Innovation</div>
-                    </a>
-                    <a class="carousel-item" href="#two!">
-                        <img src="../images/bus.jpg" alt="Slide 2">
-                        <div class="caption">Future Innovation</div>
-                    </a>
-                </div>
-                <div class="card-action center-align">
-                    <b>ASSALAAMU ALAIKUM WARAHMATULILAIHI WABARAKAATUH</b>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Welcome Card -->
-    <div class="col l3">
-        <div class="card yellow animate-on-scroll">
-            <div class="card-content violet-text">
-                <span class="card-title"><i class="material-icons left">school</i>Welcome to Breman Islamic Academy (B.I.A)</span>
-                <div class="card-content">
-                    <h6><b>ACCOMMODATION || LOCATION</b></h6>
-                    <div class="divider"></div>
-                    <div class="black-text">
-                        <p><i class="material-icons left">home</i>Breman Islamic Academy offers accommodation to:</p>
-                        <ul class="collection">
-                            <li class="collection-item"><i class="material-icons left">person</i>DAY STUDENTS</li>
-                            <li class="collection-item"><i class="material-icons left">hotel</i>BOARDING STUDENTS</li>
-                        </ul>
-                        <p><i class="material-icons left">location_on</i>The School is located at Breman Asikuma in the ASIKUMA ODOBEN BRAKWA DISTRICT, CENTRAL REGION, GHANA.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Admission Card -->
-    <div class="col l4">
-        <div class="card purple animate-on-scroll">
-            <div class="card-content">
-                <span class="card-title white-text"><i class="material-icons left">announcement</i>ADMISSION! ADMISSION!! ADMISSION!!</span>
-                <div class="yellow-text">
-                    <p><strong>Dear Parents/Guardian</strong></p>
-                    <p>Breman Islamic Academy, the leading Islamic school in Ghana at the moment, wishes to inform you that the school has opened admission for the 2025/2026 academic year.</p>
-                    <div class="card-panel yellow lighten-4">
-                        <p><i class="material-icons left">child_care</i>Enroll your wonderful kids with us! Let's NURTURE the children that will give you SAKEENAH (Tranquility and Peace of Mind) in your old age!</p>
-                        <p><i class="material-icons left">free_breakfast</i>Enjoy FREE Admission!!!! (for this month) - This is the best opportunity for your child, you shouldn't miss it.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="card-action">
-                <a href="#apply" class="btn waves-effect waves-light green"><i class="material-icons left">edit</i>Apply Now</a>
-                <a href="#results" class="btn waves-effect waves-light brown"><i class="material-icons left">assessment</i>Check Results</a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Subjects Card -->
-    <div class="col l4">
-        <div class="card blue animate-on-scroll">
-            <div class="card-content">
-                <span class="card-title yellow-text"><i class="material-icons left">book</i>SUBJECT OFFERED</span>
-                <div class="card-content">
-                    <h6 class="yellow-text">✅ NURSERY - JHS</h6>
-                    <div class="row">
-                        <div class="col l6">
-                            <div class="card-panel white">
-                                <span class="blue-text"><i class="material-icons left">star</i><strong>CORE</strong></span>
-                                <ul class="collection">
-                                    <li class="collection-item">English Language</li>
-                                    <li class="collection-item">History</li>
-                                    <li class="collection-item">Language & Literacy</li>
-                                    <li class="collection-item">Mathematics</li>
-                                    <li class="collection-item">Numeracy</li>
-                                    <li class="collection-item">Science</li>
-                                    <li class="collection-item">Social Studies</li>
-                                    <li class="collection-item">Writing</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col l6">
-                            <div class="card-panel white">
-                                <span class="blue-text"><i class="material-icons left">palette</i><strong>ELECTIVE</strong></span>
-                                <ul class="collection">
-                                    <li class="collection-item">Arabic</li>
-                                    <li class="collection-item">Career Technology</li>
-                                    <li class="collection-item">Colouring</li>
-                                    <li class="collection-item">Creative Arts</li>
-                                    <li class="collection-item">Mfantse</li>
-                                    <li class="collection-item">Religious and Moral Education</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card-action">
-                <a href="#" class="btn waves-effect waves-light brown"><i class="material-icons left">description</i>View Exams</a>
-                <a href="#" class="btn waves-effect waves-light brown"><i class="material-icons left">photo</i>View Gallery</a>
-            </div>
-        </div>
-    </div>
-</div>
-
 <footer class="page-footer green">
     <div class="container">
         <div class="row">
@@ -972,13 +623,23 @@
                     <i class="material-icons left">school</i>
                     Excellence in Islamic Education
                 </p>
+                <hr style="border-color: rgba(255, 255, 255, 0.2); margin: 20px 0;">
+                <p class="grey-text text-lighten-3">
+                    <i class="material-icons left">email</i>
+                    <a href="mailto:info@bremanislamicacademy.edu.gh" class="grey-text text-lighten-3">info@bremanislamicacademy.edu.gh</a>
+                </p>
+                <p class="grey-text text-lighten-3">
+                    <i class="material-icons left">phone</i>
+                    +233 241 303 485
+                </p>
+                <hr style="border-color: rgba(255, 255, 255, 0.2); margin: 20px 0;">
             </div>
 
             <!-- Quick Links Section -->
             <div class="col l3 s6">
                 <h6 class="white-text"><b>Quick Links</b></h6>
                 <ul>
-                    <li><a class="grey-text text-lighten-3" href="../index.html">
+                    <li><a class="grey-text text-lighten-3" href="index.html">
                         <i class="material-icons left tiny">home</i>Home</a></li>
                     <li><a class="grey-text text-lighten-3" href="#results">
                         <i class="material-icons left tiny">assessment</i>Results</a></li>
@@ -993,7 +654,7 @@
             <div class="col l3 s6">
                 <h6 class="white-text"><b>Services</b></h6>
                 <ul>
-                    <li><a class="grey-text text-lighten-3" href="../html/audios.html">
+                    <li><a class="grey-text text-lighten-3" href="html/audios.html">
                         <i class="material-icons left tiny">headset</i>Audio Library</a></li>
                     <li><a class="grey-text text-lighten-3" href="#apply">
                         <i class="material-icons left tiny">edit</i>Apply Online</a></li>
@@ -1005,11 +666,11 @@
             </div>
 
             <!-- Audio Player Section -->
-            <div class="col l2 s12 center-align">
+            <div class="col l2 s12 left-align">
                 <h6 class="white-text"><b>Background Music</b></h6>
                 <div class="audio-container">
                     <audio controls id="audio" autoplay loop>
-                        <source src="../audios/m.background-music.aac" type="audio/mpeg">
+                        <source src="audios/m.background-music.aac" type="audio/mpeg">
                         Your browser does not support the audio element.
                     </audio>
                 </div>
