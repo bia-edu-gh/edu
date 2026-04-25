@@ -78,7 +78,7 @@
 
 /* =========== Footer Styling ========= */
         footer.page-footer .footer-content {
-            padding: 0 10px;
+            padding: 0;
         }
         footer.page-footer {
             position: relative;
