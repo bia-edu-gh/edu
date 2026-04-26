@@ -21,7 +21,8 @@
 
     <style>
         .carousel {
-            width: 100%;
+            width: 90%;
+            margin: 90px 20px 20px 20px;
             display: flex;
             justify-content: center;
             align-items: center; }
@@ -76,12 +77,6 @@
         /* Card panel styling */
         .card-panel {
             border-radius: 0.8em !important;
-        }
-
-        /* Navigation styling */
-        nav {
-            border-radius: 0 0 1em 1em !important;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
         }
 
         /* Modal styling */
@@ -226,133 +221,46 @@
             opacity: 1;
             transform: translateY(0) rotateX(0deg);
         }
-
-        /* Professional Sidebar Styles */
-        .sidebar {
-            position: fixed;
-            left: 0;
-            top: 64px;
-            width: 250px;
-            height: calc(100vh - 64px);
-            background: linear-gradient(135deg, #4CAF50, #45a049);
-            box-shadow: 2px 0 10px rgba(0,0,0,0.1);
-            z-index: 1000;
-            transition: transform 0.3s ease;
-        }
-
-        .sidebar.collapsed {
-            transform: translateX(-250px);
-        }
-
-        .sidebar-header {
-            padding: 20px;
-            text-align: center;
-            color: white;
-            border-bottom: 1px solid rgba(255,255,255,0.2);
-        }
-
-        .sidebar-nav {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .nav-item {
-            margin: 0;
-        }
-
-        .nav-link {
-            display: flex;
-            align-items: center;
-            padding: 15px 20px;
-            color: white;
-            text-decoration: none;
-            transition: background 0.3s ease, transform 0.2s ease;
-        }
-
-        .nav-link:hover {
-            background: rgba(255,255,255,0.1);
-            transform: translateX(5px);
-        }
-
-        .nav-link i {
-            margin-right: 15px;
-            font-size: 24px;
-        }
-
-        .nav-item.active .nav-link {
-            background: rgba(255,255,255,0.2);
-            font-weight: bold;
-            border-left: 4px solid #ffeb3b;
-        }
-
-        @media (min-width: 993px) {
-            main {
-                margin-left: 250px;
-            }
-        }
-
-
     </style>
 </head>
 <body>
 <main>
-    <!-- Main Navigation Bar -->
-    <nav class="green nav">
-        <div class="container">
-            <div class="nav-wrapper">
-                <img src="images/bia-small-logo.jpg" alt="Breman Islamic Academy Logo" id="sideImg" class="hide-on-large-only">
-                <img src="images/bia-logo.jpg" alt="School Badge" id="navImg" class="hide-on-med-and-down">
-                <a href="#" id="sidebar-toggle" class="hide-on-med-and-down" style="position: absolute; top: 0; left: 6%;">
-                    <i class="material-icons">menu</i></a>
-                <a href="#" data-target="mobile-nav" class="hide-on-large-only" style="position: absolute; top: 0; left: 10%;">
-                    <i class="material-icons">format_indent_increase</i></a>
-                <ul id="nav-mobile" class="right">
-                    <li><a href="#about">Home<i class="material-icons left">home</i></a></li>
-                    <li><a class="modal-trigger" href="#modal1">Email<i class="material-icons left">mail</i></a></li>
-                    <li><a class="modal-trigger" href="#modal2">Contact<i class="material-icons left">call</i></a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+<!-- ================= NAVBAR ================= -->
+    <nav class="green nav nav-wrapper">
+        <div class="contain">
 
-    <div class="modal green" id="modal1">
-        <div class="modal-header white-text"><h4>Email for Support</h4></div>
-        <div class="modal-content">
-            <p>Are you confused about something?<br>Don't worry, send a mail to:</p>
-            <p>
-                <input id="help" type="email" value="abubakarabdulai@gmail.com" readonly style="width: 78%; padding-left: 5px; border-radius: 6px; text-align: center;">
-            </p>
-        </div>
-        <div class="modal-footer green">
-            <a href="#!" class="modal-close red btn" style="border-radius: 0.8em;">Close</a>
-        </div>
+        <a href="#" class="brand-logo"><img src="images/bia-logo.jpg" alt="bia_logo" id="navImg"></a>
+
+        <!-- Mobile menu icon --> 
+        <a href="#" data-target="mobile-nav" class="sidenav-trigger right">
+            <i class="bi bi-list"></i>
+        </a>
+
+        <!-- Desktop nav -->
+        <ul class="right hide-on-med-and-down">
+            <li><a href="#"><i class="bi bi-house-door"></i>Home</a></li>
+            <li><a href="#"><i class="bi bi-clipboard-data"></i>Results</a></li>
+            <li><a href="#"><i class="bi bi-journal-bookmark"></i>Exams</a></li>
+            <li><a href="#"><i class="bi bi-images"></i>Gallery</a></li>
+            <li><a href="#"><i class="bi bi-pencil-square"></i>Apply</a></li>
+        </ul>
+
     </div>
+</nav>
 
-    <div class="modal green" id="modal2">
-        <div class="modal-header white-text"><h4>Contact for Help</h4></div>
-        <div class="modal-content">
-            <p>Do you want to talk to the school management?</p>
-            <p><strong>Headmaster Name:</strong>
-            <input type="text" value="Abdulai Abubakar" readonly style="width: 80%; border-radius: 5px; text-align: center;"></p>
-            <p><strong>Contact:</strong>
-            <input type="text" value="0241303485" readonly style="width: 80%; border-radius: 5px; text-align: center;"></p>
-        </div>
-        <div class="modal-footer green">
-            <a href="#!" class="modal-close red btn" style="border-radius: 0.8em;">Close</a>
-        </div>
-    </div>
-
-
-<!-- Professional Desktop Sidebar -->
-<div class="sidebar hide-on-med-and-down" id="sidebar">
-    <div class="sidebar-header">
+<!-- ================= MOBILE SIDENAV ================= -->
+<ul class="sidenav green" id="mobile-nav">
+    <div class="sidenav-header white-text center-align">
         <h5>Quick Access</h5>
     </div>
-    <ul class="sidebar-nav">
-        <li class="nav-item active">
-            <a href="index.html" class="nav-link">
-                <i class="material-icons">home</i>
+    <li class="nav-item active white" style="
+
+            font-weight: 600;
+            border-left: 5px solid #056313;
+            background: #ecebe6 !important;
+            ">
+            <a href="index.html" class="nav-link  #04500e !important;" style="color: #04500e !important;">
+                <i class="material-icons" style="color: #04500e !important;">home</i>
                 <span>Home</span>
             </a>
         </li>
@@ -386,146 +294,77 @@
                 <span>Apply</span>
             </a>
         </li>
-    </ul>
-</div>
+</ul>
+
+    <div class="modal green" id="modal1">
+        <div class="modal-header white-text"><h4>Email for Support</h4></div>
+        <div class="modal-content">
+            <p>Are you confused about something?<br>Don't worry, send a mail to:</p>
+            <p>
+                <input id="help" type="email" value="abubakarabdulai@gmail.com" readonly style="width: 78%; padding-left: 5px; border-radius: 6px; text-align: center;">
+            </p>
+        </div>
+        <div class="modal-footer green">
+            <a href="#!" class="modal-close red btn" style="border-radius: 0.8em;">Close</a>
+        </div>
+    </div>
+
+    <div class="modal green" id="modal2">
+        <div class="modal-header white-text"><h4>Contact for Help</h4></div>
+        <div class="modal-content">
+            <p>Do you want to talk to the school management?</p>
+            <p><strong>Headmaster Name:</strong>
+            <input type="text" value="Abdulai Abubakar" readonly style="width: 80%; border-radius: 5px; text-align: center;"></p>
+            <p><strong>Contact:</strong>
+            <input type="text" value="0241303485" readonly style="width: 80%; border-radius: 5px; text-align: center;"></p>
+        </div>
+        <div class="modal-footer green">
+            <a href="#!" class="modal-close red btn" style="border-radius: 0.8em;">Close</a>
+        </div>
+    </div>
 
 <!--===BASE DESIGN===-->
-<div class="row small hide-on-med-and-up">
-    <!-- Carousel Card -->
-    <div class="col s12">
-        <div class="card grey animate-on-scroll">
-            <div class="card-content white-text">
-                <div class="container carousel">
-                    <a class="carousel-item" href="#one!">
-                        <img src="images/admission.jpg" alt="Slide 1" style="height: 100%;">
-                        <div class="caption">Admission Open for 2025/2026 Academic Year</div>
-                    </a>
-                    <a class="carousel-item" href="#two!">
-                        <img src="images/bia-logo-1.jpg" alt="Slide 3">
-                        <div class="caption">School's first logo</div>
-                    </a>
-                    <a class="carousel-item" href="#three!">
-                        <img src="images/bia-logo-2.jpg" alt="Slide 4">
-                        <div class="caption">School's second logo</div>
-                    </a>
-                    <a class="carousel-item" href="#one!">
-                        <img src="images/admission.jpg" alt="Slide 5" style="height: 100%;">
-                        <div class="caption">Admission Open for 2025/2026 Academic Year</div>
-                    </a>
-                    <a class="carousel-item" href="#four!">
-                        <img src="images/bia-logo-3.jpg" alt="Slide 6">
-                        <div class="caption">School's third logo</div>
-                    </a>
-                    <a class="carousel-item" href="#four!">
-                        <img src="images/bia-logo-4.png" alt="Slide 7">
-                        <div class="caption">School's fourth logo</div>
-                    </a>
-                    <a class="carousel-item" href="#two!">
-                        <img src="images/bage-1.jpg" alt="Slide 8">
-                        <div class="caption">Future Innovation</div>
-                    </a>
-                    <a class="carousel-item" href="#two!">
-                        <img src="images/bage-2.jpg" alt="Slide 9">
-                        <div class="caption">Future Innovation</div>
-                    </a>
-                    <a class="carousel-item" href="#two!">
-                        <img src="images/bage-3.jpg" alt="Slide 10">
-                        <div class="caption">Future Innovation</div>
-                    </a>
-                    <a class="carousel-item" href="#two!">
-                        <img src="images/bus.jpg" alt="Slide 2">
-                        <div class="caption">Future Innovation</div>
-                    </a>
-                </div>
-                <div class="card-action center-align">
-                    <b>ASSALAAMU ALAIKUM WARAHMATULILAIHI WABARAKAATUH</b>
-                </div>
-            </div>
-        </div>
+    <!-- CAROUSEL -->
+    <div class="carousel carousel-slider">
+        <a class="carousel-item"><img src="images/bia-logo-1.jpg"></a>
+        <a class="carousel-item"><img src="images/bus.jpg"></a>
+        <a class="carousel-item"><img src="images/bage-1.jpg"></a>
     </div>
 
-    <!-- Welcome Card -->
-    <div class="col s12">
-        <div class="card yellow animate-on-scroll">
-            <div class="card-content violet-text">
-                <span class="card-title"><i class="material-icons left">school</i>Welcome to Breman Islamic Academy (B.I.A)</span>
+    <br>
+
+    <!-- CARDS -->
+    <div class="row">
+
+        <div class="col s12 m6 l4 animate">
+            <div class="card">
                 <div class="card-content">
-                    <h6><b>ACCOMMODATION || LOCATION</b></h6>
-                    <div class="divider"></div>
-                    <div class="black-text">
-                        <p><i class="material-icons left">home</i>Breman Islamic Academy offers accommodation to:</p>
-                        <ul class="collection">
-                            <li class="collection-item"><i class="material-icons left">person</i>DAY STUDENTS</li>
-                            <li class="collection-item"><i class="material-icons left">hotel</i>BOARDING STUDENTS</li>
-                        </ul>
-                        <p><i class="material-icons left">location_on</i>The School is located at Breman Asikuma in the ASIKUMA ODOBEN BRAKWA DISTRICT, CENTRAL REGION, GHANA.</p>
-                    </div>
+                    <span class="card-title">Welcome</span>
+                    <p>Official school website introduction.</p>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- Admission Card -->
-    <div class="col s12">
-        <div class="card purple animate-on-scroll">
-            <div class="card-content">
-                <span class="card-title white-text"><i class="material-icons left">announcement</i>ADMISSION! ADMISSION!! ADMISSION!!</span>
-                <div class="yellow-text">
-                    <p><strong>Dear Parents/Guardian</strong></p>
-                    <p>Breman Islamic Academy, the leading Islamic school in Ghana at the moment, wishes to inform you that the school has opened admission for the 2025/2026 academic year.</p>
-                    <div class="card-panel yellow lighten-4">
-                        <p class="black-text"><i class="material-icons left">child_care</i>Enroll your wonderful kids with us! Let's NURTURE the children that will give you SAKEENAH (Tranquility and Peace of Mind) in your old age!</p>
-                        <p class="black-text"><i class="material-icons left">free_breakfast</i>Enjoy FREE Admission!!!! (for this month) - This is the best opportunity for your child, you shouldn't miss it.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="card-action">
-                <a href="html/apply.html" class="btn waves-effect waves-light green"><i class="material-icons left">edit</i>Apply Now</a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Subjects Card -->
-    <div class="col s12">
-        <div class="card blue animate-on-scroll">
-            <div class="card-content">
-                <span class="card-title yellow-text"><i class="material-icons left">book</i>SUBJECT OFFERED</span>
+        <div class="col s12 m6 l4 animate">
+            <div class="card">
                 <div class="card-content">
-                    <h6 class="yellow-text">✅ NURSERY - JHS</h6>
-                    <div class="row">
-                        <div class="col s6">
-                            <div class="card-panel white">
-                                <span class="blue-text"><i class="material-icons left">star</i><strong>CORE</strong></span>
-                                <ul class="collection">
-                                    <li class="collection-item">English Language</li>
-                                    <li class="collection-item">History</li>
-                                    <li class="collection-item">Language & Literacy</li>
-                                    <li class="collection-item">Mathematics</li>
-                                    <li class="collection-item">Numeracy</li>
-                                    <li class="collection-item">Science</li>
-                                    <li class="collection-item">Social Studies</li>
-                                    <li class="collection-item">Writing</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col s6">
-                            <div class="card-panel white">
-                                <span class="blue-text"><i class="material-icons left">palette</i><strong>ELECTIVE</strong></span>
-                                <ul class="collection">
-                                    <li class="collection-item">Arabic</li>
-                                    <li class="collection-item">Career Technology</li>
-                                    <li class="collection-item">Colouring</li>
-                                    <li class="collection-item">Creative Arts</li>
-                                    <li class="collection-item">Mfantse</li>
-                                    <li class="collection-item">Religious and Moral Education</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                    <span class="card-title">Admissions</span>
+                    <p>Admissions open for 2025/2026 academic year.</p>
                 </div>
             </div>
         </div>
+
+        <div class="col s12 m6 l4 animate">
+            <div class="card">
+                <div class="card-content">
+                    <span class="card-title">Subjects</span>
+                    <p>Core and elective subjects offered.</p>
+                </div>
+            </div>
+        </div>
+
     </div>
+
 </div>
 
 <footer class="page-footer green">
@@ -584,21 +423,21 @@
                 <h6 class="white-text font-semibold">Contact Us</h6>
                 <p class="grey-text text-lighten-3">
                     <i class="bi bi-geo-alt small-icon"></i>
-                    <a class="grey-text text-lighten-3" href="https://maps.app.goo.gl/DE4b49jHT5XzuMd49"  target="_blank" style="line-height: 20px; text-align: center;">
+                    <span class="grey-text text-lighten-3" href="https://maps.app.goo.gl/DE4b49jHT5XzuMd49"  target="_blank" style="line-height: 20px;">
                         Behind Breman Asikuma Main Lorry Station, Central Region, Ghana
-                    </a>
+                    </span>
                 </p>
                 <p class="grey-text text-lighten-3">
                     <i class="bi bi-envelope small-icon"></i>
-                    <a href="mailto:info@bremanislamicacademy.edu.gh" class="grey-text text-lighten-3">info@bremanislamicacademy.edu.gh</a>
+                    <span href="mailto:info@bremanislamicacademy.edu.gh" class="grey-text text-lighten-3">info@bremanislamicacademy.edu.gh</span>
                 </p>
                 <p class="grey-text text-lighten-3">
                     <i class="bi bi-telephone small-icon"></i>
-                    <a href="tel:+233241303485" class="grey-text text-lighten-3">+233 241 303 485</a>
+                    <span href="tel:+233241303485" class="grey-text text-lighten-3">+233 241 303 485</span>
                 </p>
                 <p class="grey-text text-lighten-3">
                     <i class="bi bi-clock small-icon"></i>
-                    Mon - Fri: 6:00 AM - 5:00 PM
+                    <span class="grey-text text-lighten-3">Mon - Fri: 6:00 AM - 5:00 PM</span>
                 </p>
                 <hr>
             </div>
@@ -619,15 +458,14 @@
     <div class="footer-copyright">
         <div>
             <div class="row">
-                <div class="col s12 m6">
-                    <span class="yellow-text font-normal">
-                        © 2025 Breman Islamic Academy. All Rights Reserved.
+                <div class="col s12 m6 l6 center">
+                    <span class="yellow-text font-normal text-sm">
+                        &copy; 2026 Breman Islamic Academy. All Rights Reserved.
                     </span>
                 </div>
-                <div class="col s12 m6">
-                    <span class="grey-text text-lighten-2 font-normal">
-                        Designed by:
-                        <br><span class="yellow-text">RahmaTrust Multi Services-IT & DIGITAL SOLUTIONS</span>
+                <div class="col s12 m6 l6 center">
+                    <span class="grey-text text-lighten-2 font-normal text-sm ">
+                        Designed by: <span class="yellow-text">RahmaTrust Multi Services-IT & Digital Solutions</span>
                     </span>
                 </div>
             </div>
@@ -644,6 +482,10 @@
         // Initialize modals
         const modalElems = document.querySelectorAll('.modal');
         M.Modal.init(modalElems);
+
+        // mobile sidenav init
+    const elems = document.querySelectorAll('.sidenav');
+    M.Sidenav.init(elems);
 
         // Initialize carousels
         const carouselElems = document.querySelectorAll('.carousel');

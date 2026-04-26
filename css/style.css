@@ -6,8 +6,37 @@
             flex-direction: column;
             background-repeat: no-repeat; }
 
+        /* Navigation styling */
+/* ================= NAVBAR ================= */
+        nav {
+            border-radius: 0 0 1em 1em !important;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+            position: fixed; z-index: 99;
+        }
 
-        .nav { position: fixed; z-index: 5000; }
+        /* Align icon spacing */
+        nav ul li a {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+/* =================END OF NAVBAR STYLING======================== */
+
+        .sidenav {
+            max-width: 50%;
+            position: fixed;
+            z-index: 1000;
+        }
+        .sidenav li a:hover {
+            font-weight: 600;
+            border-left: 5px solid #056313;
+            background: #ecebe6 !important;
+            color: #04500e !important;
+        }
+
+        .sidenav li i, a{
+            color:  #ecebe6 !important;
+        }
         #large-nav {
             position: fixed;
             top: 5.3em;
@@ -61,9 +90,12 @@
             left: 24%;
             text-align: center; }
 
-        #navImg   {width: 19%;
-                   position: absolute;
-                   right: 95%;}
+        #navImg   {
+            margin: 5px 0;
+            width: 150px;
+            position: absolute;
+            right: 55px;
+        }
         #sideImg  {width: 13%;
                    position: absolute;
                    top: 0;
@@ -83,26 +115,29 @@
         footer.page-footer {
             position: relative;
             padding: 0;
-            z-index: 5000;
-            margin-top: 2100px; /* Responsive spacing instead of <br> tags */
+            z-index: 98;
             border-radius: 0.8em 0.8em 0 0 !important;
         }
 
         footer.page-footer ul  {
             display: flex;
+            white-space: nowrap;
             padding: 0;
             margin: 10px 0;
         }
 
-        .contact-info {
-            line-height: 0;
-
+        .contact-info p {
+            display: flex;
         }
-        
+        .contact-info i {
+            display: flex;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
 
         .school-info img {
             position: relative;
-            right: 20px;
+            right: 8px;
             width: 110px;
             height: auto;
             margin: 15px 0 0 0;
@@ -189,8 +224,8 @@
         /* Footer copyright styling */
         footer.page-footer .footer-copyright {
             background-color: rgba(0, 0, 0, 0.1);
-            padding: 10px 0;
-            margin-top: 10px;
+            padding: 0;
+            margin: 0;
         }
 
         footer.page-footer .footer-copyright .container {
