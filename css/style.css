@@ -11,8 +11,24 @@
         nav {
             border-radius: 0 0 1em 1em !important;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
-            position: fixed; z-index: 99;
+            position: fixed; z-index: 1000;
         }
+
+        #navImg   {
+            margin: 5px 0;
+            width: 150px;
+            position: absolute;
+            right: 40px;
+        }
+
+        .sidenav-trigger {
+            position: relative;
+            right: 15px;
+            font-size: 1.5em;
+            color: #ecebe6;
+        }
+
+         /* Hover effect for nav links */
 
         /* Align icon spacing */
         nav ul li a {
@@ -90,12 +106,6 @@
             left: 24%;
             text-align: center; }
 
-        #navImg   {
-            margin: 5px 0;
-            width: 150px;
-            position: absolute;
-            right: 55px;
-        }
         #sideImg  {width: 13%;
                    position: absolute;
                    top: 0;
@@ -177,8 +187,8 @@
 
         footer.page-footer ul li {
             text-wrap: unset;
-            padding-right: 20px;
-            margin-right: 20px;
+            padding-right: 10px;
+            margin-right: 10px;
             border-right: 1px solid white;
         }
 
