@@ -167,7 +167,7 @@
         audio {
             border-radius: 0.8em !important;
             position: relative;
-            right: 130px;
+            right: 30px;
             top: 2px;
             height: 25px !important;
             width: 100px !important; /* Responsive for smaller screens */
