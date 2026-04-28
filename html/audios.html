@@ -3,432 +3,252 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=0.8">
-	<title>B.I.A - Audios</title>
+	<title>B.I.A | Audios</title>
 
     <!-- Customized CSS -->
     <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <!-- Custom helpers -->
+    <link rel="stylesheet" type="text/css" href="../css/helpers.css">
 
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     
-    <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    
-    <!--Import Bootstrap Icon Font-->
+    <!-- Import Bootstrap Icon Font -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 
     <style>
-        body {
-            background: url("../images/background.jpg") right / cover no-repeat fixed;
-            display: flex;
-            margin: 0;
-            flex-direction: column;
-            min-height: 100vh;
+        /* Custom card styling */
+        .content {
+            margin: 130px 0;
         }
 
-
-        /* Navigation styling */
-        nav {
-            border-radius: 0 0 1em 1em !important;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
-        }
-
-        /* Modal styling */
-        .modal {
-            border-radius: 1em !important;
-        }
-
-        .modal .modal-content {
-            border-radius: 1em !important;
-        }
-
-        .modal .modal-footer {
-            border-radius: 0 0 1em 1em !important;
-        }
-
-
-
-        /* Responsive footer spacing */
-        @media only screen and (max-width: 600px) {
-            footer.page-footer {
-                margin-top: 30px; /* Less spacing on mobile */
-            }
-        }
-
-        @media only screen and (min-width: 601px) and (max-width: 992px) {
-            footer.page-footer {
-                margin-top: 40px; /* Medium spacing on tablet */
-            }
-        }
-
-        /* Footer positioning - True Sticky Footer */
-        html, body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            position: relative;
-            min-height: 100vh;
-        }
-
-        main {
-            padding-bottom: 0;
-        }
-
-        /* Footer styling */
-        footer.page-footer {
-            border-radius: 1em 1em 0 0 !important;
-        }
-
-        /* Audio player styling */
-        audio {
-            border-radius: 0.8em !important;
-            width: 300px !important;
-            height: 40px !important;
-            max-width: 90% !important; /* Responsive for smaller screens */
-        }
-
-        /* Audio player container styling */
-        .audio-container {
-            display: flex;
-            justify-content: center;
+        .card {
+            width: 143px;
             align-items: center;
-            position: relative;
-            right: 140px;
-            top: 10px;
-            padding: 5px 0;
+            margin: 10px 0 0 0;
+            border-radius: 1em !important;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1) !important;
+            transition: all 0.3s ease !important;
         }
 
-        /* Footer content spacing */
-        footer.page-footer .container {
-            padding: 12px 0;
-        }
-
-        footer.page-footer h6 {
-            margin-bottom: 12px;
-            font-size: 1.1em;
-        }
-
-        footer.page-footer ul {
-            margin: 0;
-            padding-left: 0;
-        }
-
-        footer.page-footer ul li {
-            list-style: none;
-            margin-bottom: 3px;
-        }
-
-        footer.page-footer ul li a {
-            padding: 2px 0;
-            display: block;
-            transition: all 0.3s ease;
-        }
-
-        footer.page-footer ul li a:hover {
-            padding-left: 5px;
-            color: #ffeb3b !important;
-        }
-
-        /* Footer copyright styling */
-        footer.page-footer .footer-copyright {
-            background-color: rgba(0, 0, 0, 0.1);
-            padding: 10px 0;
-            margin-top: 10px;
-        }
-
-        footer.page-footer .footer-copyright .container {
-            padding: 0;
-        }
-
-        /* Responsive footer spacing */
-        @media only screen and (max-width: 600px) {
-            footer.page-footer {
-                margin-top: 30px; /* Less spacing on mobile */
-            }
-        }
-
-        @media only screen and (min-width: 601px) and (max-width: 992px) {
-            footer.page-footer {
-                margin-top: 40px; /* Medium spacing on tablet */
-            }
-        }
-
-        /* Footer positioning - True Sticky Footer */
-        html, body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            position: relative;
-            min-height: 100vh;
-        }
-
-        main {
-            padding-bottom: 0;
-        }
-
-        footer.page-footer {
-            height: auto; /* Let content determine height */
-            border-radius: 1em 1em 0 0 !important;
-            margin-top: 1390px; /* Responsive spacing instead of <br> tags */
-        }
-
-        /* Smooth scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Scroll-triggered animations */
-        .animate-on-scroll {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease-out;
-        }
-
-        .animate-on-scroll.animate {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Staggered animation delays */
-        .animate-on-scroll:nth-child(1) { transition-delay: 0.1s; }
-        .animate-on-scroll:nth-child(2) { transition-delay: 0.2s; }
-        .animate-on-scroll:nth-child(3) { transition-delay: 0.3s; }
-        .animate-on-scroll:nth-child(4) { transition-delay: 0.4s; }
-        .animate-on-scroll:nth-child(5) { transition-delay: 0.5s; }
-        .animate-on-scroll:nth-child(6) { transition-delay: 0.6s; }
-
-        /* Floating scroll-to-top button */
-        .scroll-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(45deg, #4CAF50, #45a049);
-            color: white;
-            border: none;
-            border-radius: 50%;
-            cursor: pointer;
-            opacity: 0;
-            transform: translateY(100px);
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-            z-index: 1000;
-        }
-
-        .scroll-to-top.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .scroll-to-top:hover {
-            background: linear-gradient(45deg, #45a049, #4CAF50);
+        .card:hover {
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2) !important;
             transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(0,0,0,0.4);
         }
 
-        /* Pulse animation for important elements */
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
+        .card .card-content {
+            border-radius: 1em 1em 0 0 !important;
+            padding: 0;
+            margin: 0;
         }
 
-        .pulse-on-hover:hover {
-            animation: pulse 0.6s ease-in-out;
+        .card .card-action {
+            border-radius: 0 0 1em 1em !important;
+            border-top: 1px solid rgba(160,160,160,0.2);
         }
 
-        /* Floating animation for navigation */
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-5px); }
-        }
-
-        nav {
-            animation: float 3s ease-in-out infinite;
-        }
-
-        /* Gradient text effect for titles */
-        .gradient-text {
-            background: linear-gradient(45deg, #4CAF50, #45a049, #FF9800);
-            background-size: 200% 200%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: gradientShift 3s ease infinite;
-        }
-
-        @keyframes gradientShift {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-
-        /* Smooth reveal animation */
-        .animate-on-scroll {
-            opacity: 0;
-            transform: translateY(50px) rotateX(10deg);
-            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-
-        .animate-on-scroll.animate {
-            opacity: 1;
-            transform: translateY(0) rotateX(0deg);
+        .card img {
+            width: 140px;
+            height: 110px;
+            padding: 0;
+            margin: 0;
+            border-radius: 0.5em 0.5em 0 0 !important;;
         }
     </style>
 </head>
 <body>
 <main>
-    <!-- Main Navigation Bar -->
-    <nav class="green nav">
-        <div class="container">
-            <div class="nav-wrapper">
-                <img src="../images/bia-small-logo.jpg" alt="Breman Islamic Academy Logo" id="sideImg" class="hide-on-large-only">
-                <img src="../images/bia-logo.jpg" alt="School Badge" id="navImg" class="hide-on-med-and-down">
-                <a href="#" data-target="mobile-nav" class="hide-on-med-and-down" style="position: absolute; top: 0; left: 6%;">
-                    <i class="material-icons">format_indent_decrease</i></a>
-                <a href="#" data-target="mobile-nav" class="hide-on-large-only" style="position: absolute; top: 0; left: 10%;">
-                    <i class="material-icons">format_indent_increase</i></a>
-                <ul id="nav-mobile" class="right">
-                    <li><a href="../index.html">Home<i class="material-icons left">home</i></a></li>
-                    <li><a class="modal-trigger" href="#modal1">Email<i class="material-icons left">mail</i></a></li>
-                    <li><a class="modal-trigger" href="#modal2">Contact<i class="material-icons left">call</i></a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+<!-- ================= NAVBAR ================= -->
+    <nav class="green nav nav-wrapper">
+        <div class="contain">
 
-    <div class="modal green" id="modal1">
-        <div class="modal-header white-text"><h4>Email for Support</h4></div>
-        <div class="modal-content">
-            <p>Are you confused about something?<br>Don't worry, send a mail to:</p>
-            <p>
-                <input id="help" type="email" value="abubakarabdulai@gmail.com" readonly style="width: 78%; padding-left: 5px; border-radius: 6px; text-align: center;">
-            </p>
-        </div>
-        <div class="modal-footer green">
-            <a href="#!" class="modal-close red btn" style="border-radius: 0.8em;">Close</a>
-        </div>
+        <a href="#" class="brand-logo"><img src="../images/bia-logo.jpg" alt="bia_logo" id="navImg"></a>
+
+        <!-- Mobile menu icon --> 
+        <a href="#" data-target="mobile-nav" class="sidenav-trigger right">
+            <i class="bi bi-list"></i>
+        </a>
+
+        <!-- Desktop nav -->
+        <ul class="right hide-on-med-and-down">
+            <li><a href="#"><i class="bi bi-house-door"></i>Home</a></li>
+            <li><a href="#"><i class="bi bi-clipboard-data"></i>Results</a></li>
+            <li><a href="#"><i class="bi bi-journal-bookmark"></i>Exams</a></li>
+            <li><a href="#"><i class="bi bi-images"></i>Gallery</a></li>
+            <li><a href="#"><i class="bi bi-pencil-square"></i>Apply</a></li>
+        </ul>
+
     </div>
-
-    <div class="modal green" id="modal2">
-        <div class="modal-header white-text"><h4>Contact for Help</h4></div>
-        <div class="modal-content">
-            <p>Do you want to talk to the school management?</p>
-            <p><strong>Headmaster Name:</strong>
-            <input type="text" value="Abdulai Abubakar" readonly style="width: 80%; border-radius: 5px; text-align: center;"></p>
-            <p><strong>Contact:</strong>
-            <input type="text" value="0241303485" readonly style="width: 80%; border-radius: 5px; text-align: center;"></p>
-        </div>
-        <div class="modal-footer green">
-            <a href="#!" class="modal-close red btn" style="border-radius: 0.8em;">Close</a>
-        </div>
+</nav>
+    <div class="mini-nav">
+        <hr style="margin: 58px 0 0 0; border: none; border-top: 1px solid #22c90b; width: 438px; margin-left: auto; margin-right: auto;">
+        <h1 class="flow-text center font-bold" style="margin: 10px 250px 10px 0;">
+            <i class="bi bi-headset"></i> Audio Library
+        </h1>
+        <hr style="margin: 0px 0 10px 0; border: none; border-top: 1px solid #22c90b; width: 438px; margin-left: auto; margin-right: auto;">
     </div>
+<!-- ================= MOBILE SIDENAV ================= -->
+<ul class="sidenav green" id="mobile-nav" style="margin-top: 45px;">
+    <div class="sidenav-header white-text center-align">
+        <h5>Quick Access</h5>
+        <hr>
+    </div>
+    <li class="nav-item">
+            <a href="../index.html" class="nav-link">
+                <i class="bi bi-house-door medium-icon" style="margin:10px 15px 5px 0; height: 30px;"></i>
+                <span>Home</span>
+            </a>
+        </li> 
+        <li class="nav-item">
+            <a href="#results" class="nav-link" >
+                <i class="bi bi-clipboard-data medium-icon" style="margin:10px 15px 5px 0; height: 30px;"></i>
+                <span>Results</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="#exams" class="nav-link">
+                <i class="bi bi-journal-bookmark medium-icon" style="margin:10px 15px 5px 0; height: 30px;"></i>
+                <span>Exams</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="#gallery" class="nav-link">
+                <i class="bi bi-images medium-icon" style="margin:10px 15px 5px 0; height: 30px;"></i>
+                <span>Gallery</span>
+            </a>
+        </li>
+        <li class="nav-item active"  style="font-weight: 600; border-left: 5px solid #056313; background: #ecebe6 !important;">
+            <a href="../html/audios.html" class="nav-link" style="color: #04500e !important;">
+                <i class="bi bi-headset medium-icon" style="margin:10px 15px 5px 0; height: 30px;"></i>
+                <span>Audios</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="#apply" class="nav-link">
+                <i class="bi bi-pencil-square medium-icon" style="margin:10px 15px 5px 0; height: 30px;"></i>
+                <span>Apply</span>
+            </a>
+        </li>
+</ul>
 
+    <!-- CARDS -->
+    <div class="row content">
+        <h1 class="flow-text center font-bold">
+            Asaatidhah (Teachers)/ Reciters
+        </h1>
+        <hr style="margin: 0 0 0 0; border: none; border-top: 1px solid #22c90b; width: 400px; margin-left: auto; margin-right: auto;
+        position: relative; bottom: 20px;">
 
-<!--Desktop Side Bar-->
-<div class="nav-wrapper green hide-on-med-and-down" id="large-nav"><b style="margin-left: 20%; color: yellow;">QUICK ACCESS</b>
-    <hr class="divider">
-    <ul>
-        <li><a href="../index.html" class="btn brown lbtn">Home<i class="material-icons left">home</i></a></li>
-        <li><a href="result.html" class="btn brown lbtn">Result<i class="bi bi-file-earmark-medical left"></i></a></li>
-        <li><a href="exams.html" class="btn brown lbtn">Exams<i class="bi bi-file-text left"></i></a></li>
-        <li><a href="gallery.html" class="btn brown lbtn">Gallery<i class="bi bi-images left"></i></a></li>
-        <li><a href="audios.html" class="btn orange lbtn" style="color: blue;"><b>Audios</b><i class="material-icons left">headset</i></a></li>
-        <li><a href="apply.html" class="btn brown lbtn">Apply<i class="bi bi-file-earmark-pdf left"></i></a></li>
-    </ul>
-</div>
+        <div class="col s6 m6 l4 animate">
+            <a href="#abubakar_audios"><div class="card" style="margin-left: 50px;">
+                <div class="card-content">
+                    <!-- Card Image -->
+                    <span class="card-title"><img src="../images/abubakar.jpg" alt="sanaaullah"></span>
+                    <hr style="margin: 0; border: none; border-top: 4px solid #22c90b; position: relative; bottom: 16px;">
+                    <p class="black-text" style="text-align: center; margin: 0 1px 0 5px; position: relative; bottom: 12px;">
+                        Abubakar Abdulai
+                    </p>
+                </div>
+            </div></a>
+        </div>
 
+        <div class="col s6 m6 l4 animate">
+            <a href="#sanauallah_audios"><div class="card" style="margin-left: 5px;">
+                <div class="card-content">
+                    <!-- Card Image -->
+                    <span class="card-title"><img src="../images/sanauallah.jpg" alt="sanaaullah"></span>
+                    <hr style="margin: 0; border: none; border-top: 4px solid #22c90b; position: relative; bottom: 16px;">
+                    <p class="black-text" style="text-align: center; margin: 0 1px 0 5px; position: relative; bottom: 12px;">
+                        Sanaaullah Ishaq
+                    </p>
+                </div>
+            </div></a>
+        </div>
+        <hr style="margin: 199px 0 15px 0; border: none; border-top: 1px solid #22c90b; width: 400px; margin-left: auto; margin-right: auto;">
 
-<!--Tablet and Smart phone Side Bar-->
-<div class="nav-wrapper green hide-on-large-only" id="small-nav">   
-    <ul>   
-        <img src="../images/bia-logo-4.png" alt="first logo" id="side">
-        <li><a href="../index.html" class="btn brown sbtn" title="Home"><i class="material-icons">home</i></a></li>
-        <li><a href="result.html" class="btn brown sbtn" title="Result"><i class="bi bi-file-earmark-medical"></i></a></li>
-        <li><a href="exams.html" class="btn brown sbtn" title="Exams"><i class="bi bi-file-text"></i></a></li>
-        <li><a href="gallery.html" class="btn brown sbtn" title="Gallery"><i class="bi bi-images"></i></a></li>
-        <li><a href="audios.html" class="btn orange sbtn" style="color: blue;" title="Audios"><i class="material-icons">headset</i></a></li>
-        <li><a href="apply.html" class="btn brown sbtn" title="Apply"><i class="bi bi-file-earmark-pdf"></i></a></li>
-    </ul>
-</div>
-
-
-
-<!--Grid for Smart Phones-->
-
-
-
-<!--Grid for Tablet Screens-->
-
-
-
-<!--Grid for Desktop-->
-
-
-
-<!--Space for Small Screens-->
 </main>
 
 <footer class="page-footer green">
-    <div class="container">
+    <div class="footer-content">
         <div class="row">
             <!-- School Information Section -->
-            <div class="col l4 s12">
-                <h6 class="white-text"><b>Breman Islamic Academy</b></h6>
-                <p class="grey-text text-lighten-4">Sovereignty Belongs to Allah</p>
-                <p class="grey-text text-lighten-3">
-                    <i class="material-icons left">location_on</i>
-                    Breman Asikuma, Central Region, Ghana
+            <div class="col l4 s12   school-info">
+                <img src="../images/bia-logo-4.png" alt="Breman Islamic Academy Logo">
+                <h6 class="white-text font-bold" id="school-info">Breman Islamic Academy</h6>
+                <p class="grey-text text-lighten-3" id="sub-school-info">
+                    Sovereignty Belongs to Allah.
+                    <br>We train children that gives SAKEENAH 
+                    <br>(Tranquility and Peace of Mind) in your old age.
                 </p>
-                <p class="grey-text text-lighten-3">
-                    <i class="material-icons left">school</i>
-                    Excellence in Islamic Education
-                </p>
+                <div class="social-media-icons">
+                    <a class="big-icon" href="#BremanIslamicAcademy"><i class="bi bi-whatsapp"></i></a>
+                    <a class="big-icon" href="#BremanIslamicAcademy"><i class="bi bi-facebook"></i></a>
+                    <a class="big-icon" href="#BremanIslamicAcademy"><i class="bi bi-twitter"></i></a>
+                    <a class="big-icon" href="#BremanIslamicAcademy"><i class="bi bi-instagram"></i></a>
+                </div>
+                <hr style="margin-top: 15px;">
             </div>
 
             <!-- Quick Links Section -->
-            <div class="col l3 s6">
-                <h6 class="white-text"><b>Quick Links</b></h6>
+            <div class="col l3 s12">
+                <h6 class="white-text font-semibold">Quick Links</h6>
                 <ul>
                     <li><a class="grey-text text-lighten-3" href="../index.html">
                         <i class="material-icons left tiny">home</i>Home</a></li>
-                    <li><a class="grey-text text-lighten-3" href="result.html">
+                    <li><a class="grey-text text-lighten-3" href="#results">
                         <i class="material-icons left tiny">assessment</i>Results</a></li>
-                    <li><a class="grey-text text-lighten-3" href="exams.html">
+                    <li><a class="grey-text text-lighten-3" href="#exams">
                         <i class="material-icons left tiny">description</i>Exams</a></li>
-                    <li><a class="grey-text text-lighten-3" href="gallery.html">
+                    <li style="border-right: none;"><a class="grey-text text-lighten-3" href="#gallery">
                         <i class="material-icons left tiny">photo</i>Gallery</a></li>
                 </ul>
+                <hr>
             </div>
 
             <!-- Services Section -->
-            <div class="col l3 s6">
-                <h6 class="white-text"><b>Services</b></h6>
+            <div class="col l3 s12">
+                <h6 class="white-text font-semibold">Services</h6>
                 <ul>
-                    <li><a class="grey-text text-lighten-3" href="audios.html">
+                    <li><a class="grey-text text-lighten-3 col span s12" href="../html/audios.html">
                         <i class="material-icons left tiny">headset</i>Audio Library</a></li>
-                    <li><a class="grey-text text-lighten-3" href="apply.html">
+                    <li><a class="grey-text text-lighten-3" href="#apply">
                         <i class="material-icons left tiny">edit</i>Apply Online</a></li>
-                    <li><a class="grey-text text-lighten-3" href="#modal1">
-                        <i class="material-icons left tiny">mail</i>Contact Us</a></li>
-                    <li><a class="grey-text text-lighten-3" href="#modal2">
+                    <li style="border-right: none;"><a class="grey-text text-lighten-3" href="#modal2">
                         <i class="material-icons left tiny">call</i>Help & Support</a></li>
                 </ul>
+                <hr>
+            </div>
+
+            <!-- Contact Us Information Section -->
+            <div class="col l2 s12 contact-info">
+                <h6 class="white-text font-semibold">Contact Us</h6>
+                <p class="grey-text text-lighten-3">
+                    <i class="bi bi-geo-alt small-icon"></i>
+                    <a class="grey-text text-lighten-3" href="https://maps.app.goo.gl/DE4b49jHT5XzuMd49"  target="_blank" style="line-height: 20px;">
+                        Behind Breman Asikuma Main Lorry Station, Central Region, Ghana
+                    </a>
+                </p>
+                <p class="grey-text text-lighten-3">
+                    <i class="bi bi-envelope small-icon"></i>
+                    <a href="mailto:info@bremanislamicacademy.edu.gh" class="grey-text text-lighten-3">info@bremanislamicacademy.edu.gh</a>
+                </p>
+                <p class="grey-text text-lighten-3">
+                    <i class="bi bi-telephone small-icon"></i>
+                    <a href="tel:+233241303485" class="grey-text text-lighten-3">+233 241 303 485</a>
+                </p>
+                <p class="grey-text text-lighten-3">
+                    <i class="bi bi-clock small-icon"></i>
+                    <span class="grey-text text-lighten-3">Mon - Fri: 6:00 AM - 5:00 PM</span>
+                </p>
+                <hr>
             </div>
 
             <!-- Audio Player Section -->
-            <div class="col l2 s12 center-align">
-                <h6 class="white-text"><b>Background Music</b></h6>
+            <div class="col l2 s12 left-align">
+                <h6 class="white-text font-semibold">Background Music</h6>
                 <div class="audio-container">
                     <audio controls id="audio" autoplay loop>
                         <source src="../audios/m.background-music.aac" type="audio/mpeg">
-                        Your browser does not support the audio element.
                     </audio>
                 </div>
             </div>
@@ -437,16 +257,16 @@
 
     <!-- Copyright Section -->
     <div class="footer-copyright">
-        <div class="container">
+        <div>
             <div class="row">
-                <div class="col s12 m6">
-                    <span class="yellow-text">
-                        © 2025 Breman Islamic Academy. All Rights Reserved.
+                <div class="col s12 m6 l6 center">
+                    <span class="yellow-text font-normal text-sm">
+                        &copy; 2026 Breman Islamic Academy. All Rights Reserved.
                     </span>
                 </div>
-                <div class="col s12 m6 right-align">
-                    <span class="grey-text text-lighten-2">
-                        Designed by <span class="yellow-text">Al-Ghafar Ar-Rahman IT Center</span>
+                <div class="col s12 m6 l6 center">
+                    <span class="grey-text text-lighten-2 font-normal text-sm ">
+                        Designed by: <span class="yellow-text">RahmaTrust Multi Services-IT & Digital Solutions</span>
                     </span>
                 </div>
             </div>
@@ -454,27 +274,116 @@
     </div>
 </footer>
 
+
     <!-- Materialize JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <script>
-    // Initialize the modal and carousel
+    // Initialize modals and carousels
     document.addEventListener('DOMContentLoaded', function() {
         // Initialize modals
         const modalElems = document.querySelectorAll('.modal');
         M.Modal.init(modalElems);
+
+        // mobile sidenav init
+    const elems = document.querySelectorAll('.sidenav');
+    M.Sidenav.init(elems);
 
         // Initialize carousels
         const carouselElems = document.querySelectorAll('.carousel');
         const carouselInstances = M.Carousel.init(carouselElems, {
             fullWidth: true,
             indicators: true,
-            numVisible: 3 // Corrected spelling: numVisible
+            numVisible: 1
         });
 
-        // Automatically transition slides every 3 seconds
+        // Automatically transition all carousels every 4 seconds
         setInterval(() => {
-            carouselInstances[0].next();
-        }, 3000); // 3000 milliseconds = 3 seconds
+            carouselInstances.forEach(carousel => carousel.next());
+        }, 4000);
+
+        // Scroll-triggered animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all elements with animate-on-scroll class
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Scroll-to-top button functionality
+        const scrollButton = document.createElement('button');
+        scrollButton.innerHTML = '<i class="bi bi-arrow-up"></i>';
+        scrollButton.className = 'scroll-to-top';
+        scrollButton.title = 'Scroll to top';
+        document.body.appendChild(scrollButton);
+
+        // Scroll to down button functionality
+        const scrollDownButton = document.createElement('button');
+        scrollDownButton.innerHTML = '<i class="bi bi-arrow-down"></i>';
+        scrollDownButton.className = 'scroll-to-down';
+        scrollDownButton.style.bottom = '80px';
+        scrollDownButton.title = 'Scroll down';
+        document.body.appendChild(scrollDownButton);
+
+        // Show/hide scroll button based on scroll position
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollButton.classList.add('show');
+            } else {
+                scrollButton.classList.remove('show');
+            }
+        });
+
+        // Show/ hide scroll down button based on scroll position
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset < document.body.scrollHeight - window.innerHeight - 300) {
+                scrollDownButton.classList.add('show');
+            } else {                scrollDownButton.classList.remove('show');
+            }
+        });
+
+        // Scroll to top when button is clicked
+        scrollButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Scroll to down when button is clicked
+        scrollDownButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: document.body.scrollHeight,
+                behavior: 'smooth'
+            });
+        });
+
+        // Enhanced hover effects for cards
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-8px) scale(1.02)';
+            });
+
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Sidebar toggle functionality
+        document.getElementById('sidebar-toggle').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('sidebar').classList.toggle('collapsed');
+        });
     });
 </script>
 </body>

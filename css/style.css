@@ -1,10 +1,18 @@
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             background: url(/bia/images/background.jpg);
             background-position: right;
             display: flex;
             margin: 0;
             flex-direction: column;
-            background-repeat: no-repeat; }
+            background-repeat: no-repeat; 
+            background-size: cover;
+            font-family: Arial Round, serif;
+            font-size: 15px;
+        }
 
         /* Navigation styling */
 /* ================= NAVBAR ================= */
@@ -19,6 +27,10 @@
             width: 150px;
             position: relative;
             left: 15px;
+        }
+
+        .sidenav li i {
+        display: flex;
         }
 
         .sidenav-trigger {
@@ -55,6 +67,73 @@
         .sidenav li i, a {
             color:  #ecebe6 !important;
         }
+
+        /* =================Floating scroll-to-top button=============== */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(45deg, #4CAF50, #45a049);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            opacity: 0;
+            transform: translateY(100px);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            z-index: 1000;
+        }
+
+        .scroll-to-top.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .scroll-to-top:hover {
+            background: linear-gradient(45deg, #45a049, #4CAF50);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+        }
+        /* ===========================END============================ */
+
+        /* ===============Floating scroll-to-bottom button=========== */
+        .scroll-to-down {
+            position: fixed;
+            top: 80px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(45deg, #4CAF50, #45a049);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            opacity: 0;
+            transform: translateY(100px);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            z-index: 2000;
+        }
+
+        .scroll-to-down.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .scroll-to-down:hover {
+            background: linear-gradient(45deg, #45a049, #4CAF50);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+        }
+
+        .scroll-to-top i, .scroll-to-down i {
+            font-size: 24px;
+        }
+        /* ==========================END========================== */
+
         #large-nav {
             position: fixed;
             top: 5.3em;
