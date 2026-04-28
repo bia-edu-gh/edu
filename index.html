@@ -22,14 +22,12 @@
     <style>
             .sidenav li i {
             display: flex;
-            margin-right: 10px;
+      
             vertical-align: middle;
             height: 0;
             color: white !important;
         }
         .carousel {
-            width: 90%;
-            margin: 70px 20px 20px 20px;
             display: flex;
             justify-content: center;
             align-items: center; }
@@ -41,13 +39,16 @@
             right: 0;
             background-color: rgba(0, 0, 0, 0.5);
             color: white;
-            padding: 10px;
-            text-align: center; }
+            padding: 196px 0;
+            text-align: center; 
+            height: 10px;
+        }
 
         .carousel .carousel-item img {
             width: 100%; /* Ensures images take up full width */
-            border-radius: 0.5em; /* Optional: add some rounding */ }
-
+            margin-top: 45px;
+        }
+           
         /* Custom card styling */
         .card {
             border-radius: 1em !important;
@@ -169,6 +170,40 @@
             background: linear-gradient(45deg, #45a049, #4CAF50);
             transform: translateY(-2px);
             box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+        }
+
+        /* Floating scroll-to-bottom button */
+        .scroll-to-down {
+            position: fixed;
+            top: 80px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(45deg, #4CAF50, #45a049);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            opacity: 0;
+            transform: translateY(100px);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            z-index: 2000;
+        }
+
+        .scroll-to-down.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .scroll-to-down:hover {
+            background: linear-gradient(45deg, #45a049, #4CAF50);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+        }
+
+        .scroll-to-top i, .scroll-to-down i {
+            font-size: 24px;
         }
 
         /* Enhanced card hover effects */
@@ -331,9 +366,18 @@
 <!--===BASE DESIGN===-->
     <!-- CAROUSEL -->
     <div class="carousel carousel-slider">
-        <a class="carousel-item"><img src="images/bia-logo-1.jpg"></a>
-        <a class="carousel-item"><img src="images/bus.jpg"></a>
-        <a class="carousel-item"><img src="images/bage-1.jpg"></a>
+        <a class="carousel-item"><img src="images/bia-logo-1.jpg">
+            <div class="caption">School's first logo</div>
+        </a>
+        <a class="carousel-item"><img src="images/bus.jpg">
+            <div class="caption">Future Innovation</div>
+        </a>
+        <a class="carousel-item"><img src="images/bage-1.jpg">
+            <div class="caption">Future Innovation</div>
+        </a>
+        <a class="carousel-item"><img src="images/bage-2.jpg">
+            <div class="caption">Future Innovation</div>
+        </a>
     </div>
 
     <br>
@@ -526,10 +570,18 @@
 
         // Scroll-to-top button functionality
         const scrollButton = document.createElement('button');
-        scrollButton.innerHTML = '<i class="material-icons">keyboard_arrow_up</i>';
+        scrollButton.innerHTML = '<i class="bi bi-arrow-up"></i>';
         scrollButton.className = 'scroll-to-top';
         scrollButton.title = 'Scroll to top';
         document.body.appendChild(scrollButton);
+
+        // Scroll to down button functionality
+        const scrollDownButton = document.createElement('button');
+        scrollDownButton.innerHTML = '<i class="bi bi-arrow-down"></i>';
+        scrollDownButton.className = 'scroll-to-down';
+        scrollDownButton.style.bottom = '80px';
+        scrollDownButton.title = 'Scroll down';
+        document.body.appendChild(scrollDownButton);
 
         // Show/hide scroll button based on scroll position
         window.addEventListener('scroll', () => {
@@ -540,10 +592,26 @@
             }
         });
 
+        // Show/ hide scroll down button based on scroll position
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset < document.body.scrollHeight - window.innerHeight - 300) {
+                scrollDownButton.classList.add('show');
+            } else {                scrollDownButton.classList.remove('show');
+            }
+        });
+
         // Scroll to top when button is clicked
         scrollButton.addEventListener('click', () => {
             window.scrollTo({
                 top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Scroll to down when button is clicked
+        scrollDownButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: document.body.scrollHeight,
                 behavior: 'smooth'
             });
         });
