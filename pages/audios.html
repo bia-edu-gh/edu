@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>B.I.A | Audios</title>
+
+    <!-- Customized CSS -->
+    <link rel="stylesheet" type="text/css" href="../assets/css/main.css">
+    <!-- Custom helpers -->
+    <link rel="stylesheet" type="text/css" href="../assets/css/helpers.css">
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    
+    <!-- Import Bootstrap Icon Font -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <style>
+        /* --- Mini Navbar --- */
+        .mini-nav {
+            background: #f6f7ec;
+            padding: 0px;
+            margin: 5px auto 0 auto;
+            width: 99%;
+            height: 105px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 98;
+        }
+        
+        /* Custom card styling */
+        .content {
+            margin: 130px 0;
+        }
+
+        .card {
+            width: 143px;
+            align-items: center;
+            margin: 10px 0 0 0;
+            border-radius: 1em !important;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1) !important;
+            transition: all 0.3s ease !important;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2) !important;
+            transform: translateY(-2px);
+        }
+
+        .card .card-content {
+            border-radius: 1em 1em 0 0 !important;
+            padding: 0;
+            margin: 0;
+        }
+
+        .card .card-action {
+            border-radius: 0 0 1em 1em !important;
+            border-top: 1px solid rgba(160,160,160,0.2);
+        }
+
+        .card img {
+            width: 142.8px;
+            height: 110px;
+            padding: 0;
+            margin: 0;
+            border-radius: 0.5em 0.5em 0 0 !important;;
+        }
+    </style>
+</head>
+<body>
+<main>
+<!-- ================= NAVBAR ================= -->
+    <nav class="green nav nav-wrapper">
+        <div class="contain">
+
+        <a href="#" class="brand-logo"><img src="../assets/images/bia-logo.jpg" alt="bia_logo" id="navImg"></a>
+
+        <!-- Mobile menu icon --> 
+        <a href="#" data-target="mobile-nav" class="sidenav-trigger right">
+            <i class="bi bi-list"></i>
+        </a>
+
+        <!-- Desktop nav -->
+        <ul class="right hide-on-med-and-down">
+            <li><a href="#"><i class="bi bi-house-door"></i>Home</a></li>
+            <li><a href="#"><i class="bi bi-clipboard-data"></i>Results</a></li>
+            <li><a href="#"><i class="bi bi-journal-bookmark"></i>Exams</a></li>
+            <li><a href="#"><i class="bi bi-images"></i>Gallery</a></li>
+            <li><a href="#"><i class="bi bi-pencil-square"></i>Apply</a></li>
+        </ul>
+
+    </div>
+</nav>
+    <div class="mini-nav">
+        <hr style="margin: 58px 0 0 0; border: none; border-top: 1px solid #22c90b; width: 410px; margin-left: auto; margin-right: auto;">
+        <h1 class="flow-text center font-bold" style="margin: 10px 235px 10px 0;">
+            <i class="bi bi-headset"></i> Audio Library
+        </h1>
+        <hr style="margin: 0px 0 10px 0; border: none; border-top: 1px solid #22c90b; width: 410px; margin-left: auto; margin-right: auto;">
+    </div>
+<!-- ================= MOBILE SIDENAV ================= -->
+<ul class="sidenav green" id="mobile-nav" style="margin-top: 45px;">
+    <div class="sidenav-header white-text center-align">
+        <h5>Quick Access</h5>
+        <hr>
+    </div>
+    <li class="nav-item">
+            <a href="../index.html" class="nav-link">
+                <i class="bi bi-house-door medium-icon" style="margin:10px 15px 5px 0; height: 30px;"></i>
+                <span>Home</span>
+            </a>
+        </li> 
+        <li class="nav-item">
+            <a href="#results" class="nav-link" >
+                <i class="bi bi-clipboard-data medium-icon" style="margin:10px 15px 5px 0; height: 30px;"></i>
+                <span>Results</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="#exams" class="nav-link">
+                <i class="bi bi-journal-bookmark medium-icon" style="margin:10px 15px 5px 0; height: 30px;"></i>
+                <span>Exams</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="#gallery" class="nav-link">
+                <i class="bi bi-images medium-icon" style="margin:10px 15px 5px 0; height: 30px;"></i>
+                <span>Gallery</span>
+            </a>
+        </li>
+        <li class="nav-item active"  style="font-weight: 600; border-left: 5px solid #056313; background: #ecebe6 !important;">
+            <a href="../pages/audios.html" class="nav-link" style="color: #04500e !important;">
+                <i class="bi bi-headset medium-icon" style="margin:10px 15px 5px 0; height: 30px;"></i>
+                <span>Audios</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="#apply" class="nav-link">
+                <i class="bi bi-pencil-square medium-icon" style="margin:10px 15px 5px 0; height: 30px;"></i>
+                <span>Apply</span>
+            </a>
+        </li>
+</ul>
+
+    <!-- CARDS -->
+    <div class="row content">
+        <h1 class="flow-text center font-bold">
+            Asaatidhah (Teachers)/ Reciters
+        </h1>
+        <hr style="margin: 0 0 0 0; border: none; border-top: 1px solid #22c90b; width: 350px; margin-left: auto; margin-right: auto;
+        position: relative; bottom: 20px;">
+
+        <div class="col s6 m6 l4 animate">
+            <a href="#abubakar_audios"><div class="card" style="margin-left: 50px;">
+                <div class="card-content">
+                    <!-- Card Image -->
+                    <span class="card-title"><img src="../assets/images/abubakar.jpg" alt="abubakar"></span>
+                    <hr style="margin: 0; border: none; border-top: 4px solid #22c90b; position: relative; bottom: 16px;">
+                    <p class="black-text" style="text-align: center; margin: 0 1px 0 2px; position: relative; bottom: 12px;">
+                        Abubakar Abdulai
+                    </p>
+                </div>
+            </div></a>
+        </div>
+
+        <div class="col s6 m6 l4 animate">
+            <a href="../pages/sanaaullah_playlist.html"><div class="card" style="margin-left: 5px;">
+                <div class="card-content">
+                    <!-- Card Image -->
+                    <span class="card-title"><img src="../assets/images/sanauallah.jpg" alt="sanaaullah"></span>
+                    <hr style="margin: 0; border: none; border-top: 4px solid #22c90b; position: relative; bottom: 16px;">
+                    <p class="black-text" style="text-align: center; margin: 0 1px 0 5px; position: relative; bottom: 12px;">
+                        Sanaaullah Ishaq
+                    </p>
+                </div>
+            </div></a>
+        </div>
+        <hr style="margin: 199px 0 15px 0; border: none; border-top: 1px solid #22c90b; width: 400px; margin-left: auto; margin-right: auto;">
+
+</main>
+
+<footer class="page-footer green">
+    <div class="footer-content">
+        <div class="row">
+            <!-- School Information Section -->
+            <div class="col l4 s12   school-info">
+                <img src="../assets/images/bia-logo-4.png" alt="Breman Islamic Academy Logo">
+                <h6 class="white-text font-bold" id="school-info">Breman Islamic Academy</h6>
+                <p class="grey-text text-lighten-3" id="sub-school-info">
+                    Sovereignty Belongs to Allah.
+                    <br>We train children that gives SAKEENAH 
+                    <br>(Tranquility and Peace of Mind) in your old age.
+                </p>
+                <div class="social-media-icons">
+                    <a class="big-icon" href="#BremanIslamicAcademy"><i class="bi bi-whatsapp"></i></a>
+                    <a class="big-icon" href="#BremanIslamicAcademy"><i class="bi bi-facebook"></i></a>
+                    <a class="big-icon" href="#BremanIslamicAcademy"><i class="bi bi-twitter"></i></a>
+                    <a class="big-icon" href="#BremanIslamicAcademy"><i class="bi bi-instagram"></i></a>
+                </div>
+                <hr style="margin-top: 15px;">
+            </div>
+
+            <!-- Quick Links Section -->
+            <div class="col l3 s12">
+                <h6 class="white-text font-semibold">Quick Links</h6>
+                <ul>
+                    <li><a class="grey-text text-lighten-3" href="../index.html">
+                        <i class="material-icons left tiny">home</i>Home</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#results">
+                        <i class="material-icons left tiny">assessment</i>Results</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#exams">
+                        <i class="material-icons left tiny">description</i>Exams</a></li>
+                    <li style="border-right: none;"><a class="grey-text text-lighten-3" href="#gallery">
+                        <i class="material-icons left tiny">photo</i>Gallery</a></li>
+                </ul>
+                <hr>
+            </div>
+
+            <!-- Services Section -->
+            <div class="col l3 s12">
+                <h6 class="white-text font-semibold">Services</h6>
+                <ul>
+                    <li><a class="grey-text text-lighten-3 col span s12" href="../html/audios.html">
+                        <i class="material-icons left tiny">headset</i>Audio Library</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#apply">
+                        <i class="material-icons left tiny">edit</i>Apply Online</a></li>
+                    <li style="border-right: none;"><a class="grey-text text-lighten-3" href="#modal2">
+                        <i class="material-icons left tiny">call</i>Help & Support</a></li>
+                </ul>
+                <hr>
+            </div>
+
+            <!-- Contact Us Information Section -->
+            <div class="col l2 s12 contact-info">
+                <h6 class="white-text font-semibold">Contact Us</h6>
+                <p class="grey-text text-lighten-3">
+                    <i class="bi bi-geo-alt small-icon"></i>
+                    <a class="grey-text text-lighten-3" href="https://maps.app.goo.gl/DE4b49jHT5XzuMd49"  target="_blank" style="line-height: 20px;">
+                        Behind Breman Asikuma Main Lorry Station, Central Region, Ghana
+                    </a>
+                </p>
+                <p class="grey-text text-lighten-3">
+                    <i class="bi bi-envelope small-icon"></i>
+                    <a href="mailto:info@bremanislamicacademy.edu.gh" class="grey-text text-lighten-3">info@bremanislamicacademy.edu.gh</a>
+                </p>
+                <p class="grey-text text-lighten-3">
+                    <i class="bi bi-telephone small-icon"></i>
+                    <a href="tel:+233241303485" class="grey-text text-lighten-3">+233 241 303 485</a>
+                </p>
+                <p class="grey-text text-lighten-3">
+                    <i class="bi bi-clock small-icon"></i>
+                    <span class="grey-text text-lighten-3">Mon - Fri: 6:00 AM - 5:00 PM</span>
+                </p>
+                <hr>
+            </div>
+
+            <!-- Audio Player Section -->
+            <div class="col l2 s12 left-align">
+                <h6 class="white-text font-semibold">Background Music</h6>
+                <div class="audio-container">
+                    <audio controls id="audio" loop>
+                        <source src="../assets/audios/m.background-music.aac" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Copyright Section -->
+    <div class="footer-copyright">
+        <div>
+            <div class="row">
+                <div class="col s12 m6 l6 center">
+                    <span class="yellow-text font-normal text-sm">
+                        &copy; 2026 Breman Islamic Academy. All Rights Reserved.
+                    </span>
+                </div>
+                <div class="col s12 m6 l6 center">
+                    <span class="grey-text text-lighten-2 font-normal text-sm ">
+                        Designed by: <span class="yellow-text">RahmaTrust Multi Services-IT & Digital Solutions</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- Materialize JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script>
+    // Initialize modals and carousels
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initialize modals
+        const modalElems = document.querySelectorAll('.modal');
+        M.Modal.init(modalElems);
+
+        // mobile sidenav init
+    const elems = document.querySelectorAll('.sidenav');
+    M.Sidenav.init(elems);
+
+        // Initialize carousels
+        const carouselElems = document.querySelectorAll('.carousel');
+        const carouselInstances = M.Carousel.init(carouselElems, {
+            fullWidth: true,
+            indicators: true,
+            numVisible: 1
+        });
+
+        // Automatically transition all carousels every 4 seconds
+        setInterval(() => {
+            carouselInstances.forEach(carousel => carousel.next());
+        }, 4000);
+
+        // Scroll-triggered animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all elements with animate-on-scroll class
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Scroll-to-top button functionality
+        const scrollButton = document.createElement('button');
+        scrollButton.innerHTML = '<i class="bi bi-arrow-up"></i>';
+        scrollButton.className = 'scroll-to-top';
+        scrollButton.title = 'Scroll to top';
+        document.body.appendChild(scrollButton);
+
+        // Scroll to down button functionality
+        const scrollDownButton = document.createElement('button');
+        scrollDownButton.innerHTML = '<i class="bi bi-arrow-down"></i>';
+        scrollDownButton.className = 'scroll-to-down';
+        scrollDownButton.style.bottom = '80px';
+        scrollDownButton.title = 'Scroll down';
+        document.body.appendChild(scrollDownButton);
+
+        // Show/hide scroll button based on scroll position
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollButton.classList.add('show');
+            } else {
+                scrollButton.classList.remove('show');
+            }
+        });
+
+        // Show/ hide scroll down button based on scroll position
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset < document.body.scrollHeight - window.innerHeight - 300) {
+                scrollDownButton.classList.add('show');
+            } else {                scrollDownButton.classList.remove('show');
+            }
+        });
+
+        // Scroll to top when button is clicked
+        scrollButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Scroll to down when button is clicked
+        scrollDownButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: document.body.scrollHeight,
+                behavior: 'smooth'
+            });
+        });
+
+        // Enhanced hover effects for cards
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-8px) scale(1.02)';
+            });
+
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Sidebar toggle functionality
+        document.getElementById('sidebar-toggle').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('sidebar').classList.toggle('collapsed');
+        });
+    });
+</script>
+</body>
+</html>

@@ -6,9 +6,9 @@
     <title>B.I.A | Home</title>
 
     <!-- Customized CSS -->
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
     <!-- Custom helpers -->
-  <link rel="stylesheet" type="text/css" href="css/helpers.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/helpers.css">
 
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -53,7 +53,7 @@
     <nav class="green nav nav-wrapper">
         <div class="contain">
 
-        <a href="#" class="brand-logo"><img src="images/bia-logo.jpg" alt="bia_logo" id="navImg"></a>
+        <a href="#" class="brand-logo"><img src="assets/images/bia-logo.jpg" alt="bia_logo" id="navImg"></a>
 
         <!-- Mobile menu icon --> 
         <a href="#" data-target="mobile-nav" class="sidenav-trigger right">
@@ -108,7 +108,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a href="html/audios.html" class="nav-link">
+            <a href="pages/audios.html" class="nav-link">
                 <i class="bi bi-headset medium-icon" style="margin:10px 15px 5px 0; height: 30px;"></i>
                 <span>Audios</span>
             </a>
@@ -124,19 +124,19 @@
 <!--===BASE DESIGN===-->
     <!-- CAROUSEL -->
     <div class="carousel carousel-slider">
-        <a class="carousel-item"><img src="images/bia-logo-1.jpg">
+        <a class="carousel-item"><img src="assets/images/bia-logo-1.jpg">
             <div class="caption">School's first logo</div>
         </a>
-        <a class="carousel-item"><img src="images/bus.jpg">
+        <a class="carousel-item"><img src="assets/images/bus.jpg">
             <div class="caption">Future Innovation</div>
         </a>
-        <a class="carousel-item"><img src="images/bage-1.jpg">
+        <a class="carousel-item"><img src="assets/images/bage-1.jpg">
             <div class="caption">Future Innovation</div>
         </a>
-        <a class="carousel-item"><img src="images/bage-2.jpg">
+        <a class="carousel-item"><img src="assets/images/bage-2.jpg">
             <div class="caption">Future Innovation</div>
         </a>
-        <a class="carousel-item"><img src="images/assembly.jpg">
+        <a class="carousel-item"><img src="assets/images/assembly.jpg">
             <div class="caption">Students at Assembly</div>
         </a>
     </div>
@@ -183,7 +183,7 @@
         <div class="row">
             <!-- School Information Section -->
             <div class="col l4 s12   school-info">
-                <img src="images/bia-logo-4.png" alt="Breman Islamic Academy Logo">
+                <img src="assets/images/bia-logo-4.png" alt="Breman Islamic Academy Logo">
                 <h6 class="white-text font-bold" id="school-info">Breman Islamic Academy</h6>
                 <p class="grey-text text-lighten-3" id="sub-school-info">
                     Sovereignty Belongs to Allah.
@@ -219,7 +219,7 @@
             <div class="col l3 s12">
                 <h6 class="white-text font-semibold">Services</h6>
                 <ul>
-                    <li><a class="grey-text text-lighten-3 col span s12" href="html/audios.html">
+                    <li><a class="grey-text text-lighten-3 col span s12" href="pages/audios.html">
                         <i class="material-icons left tiny">headset</i>Audio Library</a></li>
                     <li><a class="grey-text text-lighten-3" href="#apply">
                         <i class="material-icons left tiny">edit</i>Apply Online</a></li>
@@ -258,7 +258,7 @@
                 <h6 class="white-text font-semibold">Background Music</h6>
                 <div class="audio-container">
                     <audio controls id="audio" loop>
-                        <source src="audios/m.background-music.aac" type="audio/mpeg">
+                        <source src="assets/audios/m.background-music.aac" type="audio/mpeg">
                     </audio>
                 </div>
             </div>
@@ -287,18 +287,14 @@
 
     <!-- Materialize JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!-- ==============Custom JavaScript============ -->
+    <script src="assets/js/main.js"></script>
 <script>
-    // Initialize modals and carousels
+    // Initialize carousels
     document.addEventListener('DOMContentLoaded', function() {
-        // Initialize modals
-        const modalElems = document.querySelectorAll('.modal');
-        M.Modal.init(modalElems);
 
-        // mobile sidenav init
-    const elems = document.querySelectorAll('.sidenav');
-    M.Sidenav.init(elems);
-
-        // Initialize carousels
+        // Initialize carousels visibility and indicators
         const carouselElems = document.querySelectorAll('.carousel');
         const carouselInstances = M.Carousel.init(carouselElems, {
             fullWidth: true,
@@ -310,74 +306,7 @@
         setInterval(() => {
             carouselInstances.forEach(carousel => carousel.next());
         }, 4000);
-
-        // Scroll-triggered animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate');
-                }
-            });
-        }, observerOptions);
-
-        // Observe all elements with animate-on-scroll class
-        document.querySelectorAll('.animate-on-scroll').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Scroll-to-top button functionality
-        const scrollButton = document.createElement('button');
-        scrollButton.innerHTML = '<i class="bi bi-arrow-up"></i>';
-        scrollButton.className = 'scroll-to-top';
-        scrollButton.title = 'Scroll to top';
-        document.body.appendChild(scrollButton);
-
-        // Scroll to down button functionality
-        const scrollDownButton = document.createElement('button');
-        scrollDownButton.innerHTML = '<i class="bi bi-arrow-down"></i>';
-        scrollDownButton.className = 'scroll-to-down';
-        scrollDownButton.style.bottom = '80px';
-        scrollDownButton.title = 'Scroll down';
-        document.body.appendChild(scrollDownButton);
-
-        // Show/hide scroll button based on scroll position
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                scrollButton.classList.add('show');
-            } else {
-                scrollButton.classList.remove('show');
-            }
-        });
-
-        // Show/ hide scroll down button based on scroll position
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset < document.body.scrollHeight - window.innerHeight - 300) {
-                scrollDownButton.classList.add('show');
-            } else {                scrollDownButton.classList.remove('show');
-            }
-        });
-
-        // Scroll to top when button is clicked
-        scrollButton.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-
-        // Scroll to down when button is clicked
-        scrollDownButton.addEventListener('click', () => {
-            window.scrollTo({
-                top: document.body.scrollHeight,
-                behavior: 'smooth'
-            });
-        });
-
+        
         // Enhanced hover effects for cards
         document.querySelectorAll('.card').forEach(card => {
             card.addEventListener('mouseenter', function() {
@@ -387,12 +316,6 @@
             card.addEventListener('mouseleave', function() {
                 this.style.transform = 'translateY(0) scale(1)';
             });
-        });
-
-        // Sidebar toggle functionality
-        document.getElementById('sidebar-toggle').addEventListener('click', function(e) {
-            e.preventDefault();
-            document.getElementById('sidebar').classList.toggle('collapsed');
         });
     });
 </script>

@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>B.I.A | Audios-Sanaaullah Playlist</title>
+
+    <!-- Customized CSS -->
+    <link rel="stylesheet" type="text/css" href="../assets/css/main.css">
+    <!-- Custom helpers -->
+    <link rel="stylesheet" type="text/css" href="../assets/css/helpers.css">
+    <!-- Custom audio player CSS -->
+    <link rel="stylesheet" type="text/css" href="../assets/css/audioPlayer.css">
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    
+    <!-- Import Bootstrap Icon Font -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <style>
+        /* --- Mini Navbar --- */
+        .mini-nav {
+            background: #f6f7ec; 
+            padding: 0px;
+            margin: 5px auto 0 auto;
+            width: 99%;
+            height: 105px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 98;
+        }
+        /* Custom card styling */
+        .content {
+            margin: 0;
+        }
+
+        .card {
+            width: 100px;
+            height: 90px;
+            align-items: center;
+            margin: 0;
+            border-radius: 1em !important;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1) !important;
+            transition: all 0.3s ease !important;
+        }
+
+        .card .card-content {
+            border-radius: 1em 1em 0 0 !important;
+            padding: 0;
+            margin: 0;
+        }
+
+        .card .card-action {
+            border-radius: 0 0 1em 1em !important;
+            border-top: 1px solid rgba(160,160,160,0.2);
+        }
+
+        .card img {
+            width: 100px;
+            height: 90px;
+            padding: 0;
+            margin: 0;
+            border-bottom: 3.5px solid rgb(12, 191, 12) !important;
+            border-radius: 0.5em 0.5em !important;;
+        }
+
+         /* Custom collection styling */
+        .card-panel {
+            margin: 0 0 120px 0 !important;
+            border: none !important;
+            border-radius: 1em !important;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+        }
+        .collection {
+            border: none !important;
+            margin: 0;
+        }
+
+        .collection-item {
+            color: #04500e !important;
+            border-radius: 0.3em !important;
+        }
+    </style>
+</head>
+<body>
+<main>
+<!-- ================= NAVBAR ================= -->
+    <nav class="green nav nav-wrapper">
+        <div class="contain">
+
+        <a href="#" class="brand-logo"><img src="../assets/images/bia-logo.jpg" alt="bia_logo" id="navImg"></a>
+
+        <!-- Mobile menu icon --> 
+        <a href="#" data-target="mobile-nav" class="sidenav-trigger right">
+            <i class="bi bi-list"></i>
+        </a>
+
+        <!-- Desktop nav -->
+        <ul class="right hide-on-med-and-down">
+            <li><a href="#"><i class="bi bi-house-door"></i>Home</a></li>
+            <li><a href="#"><i class="bi bi-clipboard-data"></i>Results</a></li>
+            <li><a href="#"><i class="bi bi-journal-bookmark"></i>Exams</a></li>
+            <li><a href="#"><i class="bi bi-images"></i>Gallery</a></li>
+            <li><a href="#"><i class="bi bi-pencil-square"></i>Apply</a></li>
+        </ul>
+
+    </div>
+</nav>
+    <div class="mini-nav">
+        <hr style="margin: 58px 0 0 0; border: none; border-top: 1px solid #22c90b; width: 410px; margin-left: auto; margin-right: auto;">
+        <!-- Back arrow icon to audios page -->
+        <a href="../pages/audios.html" class="btn left" style="margin: 2px 0 10px 25px; background: #f6f7ec; color: #04500e !important; 
+        border-radius: 4px !important; display: flex; align-items: center; justify-content: center;">
+            <i class="bi bi-arrow-left" style="font-size: 24px;"></i>
+        </a>
+        <h1 class="flow-text center font-bold" style="margin: 10px 200px 10px 0;">
+            <i class="bi bi-headset"></i> Audio Library
+        </h1>
+        <hr style="margin: 0px 0 20px 0; border: none; border-top: 1px solid #22c90b; width: 410px; margin-left: auto; margin-right: auto;">
+    </div>
+<!-- ================= MOBILE SIDENAV ================= -->
+<ul class="sidenav green" id="mobile-nav" style="margin-top: 45px;">
+    <div class="sidenav-header white-text center-align">
+        <h5>Quick Access</h5>
+        <hr>
+    </div>
+    <li class="nav-item">
+            <a href="../index.html" class="nav-link">
+                <i class="bi bi-house-door medium-icon" style="margin:10px 15px 5px 0; height: 30px;"></i>
+                <span>Home</span>
+            </a>
+        </li> 
+        <li class="nav-item">
+            <a href="#results" class="nav-link" >
+                <i class="bi bi-clipboard-data medium-icon" style="margin:10px 15px 5px 0; height: 30px;"></i>
+                <span>Results</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="#exams" class="nav-link">
+                <i class="bi bi-journal-bookmark medium-icon" style="margin:10px 15px 5px 0; height: 30px;"></i>
+                <span>Exams</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="#gallery" class="nav-link">
+                <i class="bi bi-images medium-icon" style="margin:10px 15px 5px 0; height: 30px;"></i>
+                <span>Gallery</span>
+            </a>
+        </li>
+        <li class="nav-item active"  style="font-weight: 600; border-left: 5px solid #056313; background: #ecebe6 !important;">
+            <a href="../html/audios.html" class="nav-link" style="color: #04500e !important;">
+                <i class="bi bi-headset medium-icon" style="margin:10px 15px 5px 0; height: 30px;"></i>
+                <span>Audios</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="#apply" class="nav-link">
+                <i class="bi bi-pencil-square medium-icon" style="margin:10px 15px 5px 0; height: 30px;"></i>
+                <span>Apply</span>
+            </a>
+        </li>
+</ul>
+
+<!-- =====================CARDS============== -->
+    <div class="container" style="margin: 0 8px;">
+        <div class="row content">
+            <div class="col s6 m6 l4 animate">
+                <h1 class="flow-text font-bold" style="font-size: 1.6rem; margin: 120px 0 20px 0;">Sanaaullah Ishaq</h1>
+                <div class="card" style="margin-left: 5px;">
+                    <div class="card-content">
+                        <!-- Card Image -->
+                        <span class="card-title"><img src="../assets/images/sanauallah.jpg" alt="sanaaullah"></span>
+                    </div>
+                </div>
+
+                <div class="card-action" style="display: flex; justify-content: space-around; padding: 0px;">
+                    <a href="../pages/sanaaullah_playlist.html" class="btn-small active" style="margin: 25px 0 10px 0; border-radius: 4px !important; display: flex; align-items: center; 
+                    justify-content: center; margin-right: 8px;">
+                        <i class="bi bi-play-fill" style="font-size: 24px; margin-right: 8px;"></i>
+                        Playlist
+                    </a>
+
+                    <a class="btn-small grey" style="margin: 25px 0 10px 0; border-radius: 4px !important; display: flex; align-items: center;
+                    justify-content: center; box-shadow: none;">
+                        <i class="bi bi-info-circle" style="font-size: 24px; margin-right: 8px;"></i>
+                        Info
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row content">
+            <div class="card-panel col s12 m12 l12 animate" style="padding: 0;">
+                <div class="collection" style="margin: 0;">
+                    <ul id="audio-list" class="collection"></ul>
+
+                    <div class="container" style="margin: 0 0 8px 8px;">
+                        <div class="player">
+                            <audio id="audio" src="" preload="metadata"></audio>
+
+                            <!-- Timeline -->
+                            <div class="timeline">
+                                <span id="currentTime">0:00</span>
+                                <input type="range" id="progress" value="0" min="0" max="100">
+                                <span id="duration">0:00</span>
+                            </div>
+
+                            <!-- Controls -->
+                            <div class="controls">
+                                <button id="backward"><i class="bi bi-skip-start-fill"></i></button>
+                                <button id="playPause"><i class="bi bi-play-fill"></i></button>
+                                <button id="forward"><i class="bi bi-skip-end-fill"></i></button>
+                            </div>
+
+                            <!-- Extras -->
+                            <div class="extras">
+                                <div class="volume-controls">
+                                    <button id="mute"><i class="bi bi-volume-up-fill"></i></button>
+                                    <input type="range" id="volume" min="0" max="1" step="0.01" value="1">
+                                    <span class="volume-rate">100%</span>
+                                </div>
+
+                                <div class="playback-speed">
+                                    <label for="speed">Speed</label>
+                                    <select id="speed" class="browser-default">
+                                        <option value="0.5">0.5x</option>
+                                        <option value="1" selected>1x</option>
+                                        <option value="1.25">1.25x</option>
+                                        <option value="1.5">1.5x</option>
+                                        <option value="2">2x</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="page-footer green">
+    <div class="footer-content">
+        <div class="row">
+            <!-- School Information Section -->
+            <div class="col l4 s12   school-info">
+                <img src="../assets/images/bia-logo-4.png" alt="Breman Islamic Academy Logo">
+                <h6 class="white-text font-bold" id="school-info">Breman Islamic Academy</h6>
+                <p class="grey-text text-lighten-3" id="sub-school-info">
+                    Sovereignty Belongs to Allah.
+                    <br>We train children that gives SAKEENAH 
+                    <br>(Tranquility and Peace of Mind) in your old age.
+                </p>
+                <div class="social-media-icons">
+                    <a class="big-icon" href="#BremanIslamicAcademy"><i class="bi bi-whatsapp"></i></a>
+                    <a class="big-icon" href="#BremanIslamicAcademy"><i class="bi bi-facebook"></i></a>
+                    <a class="big-icon" href="#BremanIslamicAcademy"><i class="bi bi-twitter"></i></a>
+                    <a class="big-icon" href="#BremanIslamicAcademy"><i class="bi bi-instagram"></i></a>
+                </div>
+                <hr style="margin-top: 15px;">
+            </div>
+
+            <!-- Quick Links Section -->
+            <div class="col l3 s12">
+                <h6 class="white-text font-semibold">Quick Links</h6>
+                <ul>
+                    <li><a class="grey-text text-lighten-3" href="../index.html">
+                        <i class="material-icons left tiny">home</i>Home</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#results">
+                        <i class="material-icons left tiny">assessment</i>Results</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#exams">
+                        <i class="material-icons left tiny">description</i>Exams</a></li>
+                    <li style="border-right: none;"><a class="grey-text text-lighten-3" href="#gallery">
+                        <i class="material-icons left tiny">photo</i>Gallery</a></li>
+                </ul>
+                <hr>
+            </div>
+
+            <!-- Services Section -->
+            <div class="col l3 s12">
+                <h6 class="white-text font-semibold">Services</h6>
+                <ul>
+                    <li><a class="grey-text text-lighten-3 col span s12" href="../html/audios.html">
+                        <i class="material-icons left tiny">headset</i>Audio Library</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#apply">
+                        <i class="material-icons left tiny">edit</i>Apply Online</a></li>
+                    <li style="border-right: none;"><a class="grey-text text-lighten-3" href="#modal2">
+                        <i class="material-icons left tiny">call</i>Help & Support</a></li>
+                </ul>
+                <hr>
+            </div>
+
+            <!-- Contact Us Information Section -->
+            <div class="col l2 s12 contact-info">
+                <h6 class="white-text font-semibold">Contact Us</h6>
+                <p class="grey-text text-lighten-3">
+                    <i class="bi bi-geo-alt small-icon"></i>
+                    <a class="grey-text text-lighten-3" href="https://maps.app.goo.gl/DE4b49jHT5XzuMd49"  target="_blank" style="line-height: 20px;">
+                        Behind Breman Asikuma Main Lorry Station, Central Region, Ghana
+                    </a>
+                </p>
+                <p class="grey-text text-lighten-3">
+                    <i class="bi bi-envelope small-icon"></i>
+                    <a href="mailto:info@bremanislamicacademy.edu.gh" class="grey-text text-lighten-3">info@bremanislamicacademy.edu.gh</a>
+                </p>
+                <p class="grey-text text-lighten-3">
+                    <i class="bi bi-telephone small-icon"></i>
+                    <a href="tel:+233241303485" class="grey-text text-lighten-3">+233 241 303 485</a>
+                </p>
+                <p class="grey-text text-lighten-3">
+                    <i class="bi bi-clock small-icon"></i>
+                    <span class="grey-text text-lighten-3">Mon - Fri: 6:00 AM - 5:00 PM</span>
+                </p>
+                <hr>
+            </div>
+
+            <!-- Audio Player Section -->
+            <div class="col l2 s12 left-align">
+                <h6 class="white-text font-semibold">Background Music</h6>
+                <div class="audio-container">
+                    <audio controls id="background-audio" loop>
+                        <source src="../assets/audios/m.background-music.aac" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Copyright Section -->
+    <div class="footer-copyright">
+        <div>
+            <div class="row">
+                <div class="col s12 m6 l6 center">
+                    <span class="yellow-text font-normal text-sm">
+                        &copy; 2026 Breman Islamic Academy. All Rights Reserved.
+                    </span>
+                </div>
+                <div class="col s12 m6 l6 center">
+                    <span class="grey-text text-lighten-2 font-normal text-sm ">
+                        Designed by: <span class="yellow-text">RahmaTrust Multi Services-IT & Digital Solutions</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <!-- Materialize JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!-- ==============Custom JavaScript============ -->
+    <script src="../assets/js/main.js"></script>
+
+    <!-- =============Audios JavaScript=========== -->
+     <script src="../assets/js/audioPlayer.js"></script>
+</body>
+</html>
