@@ -258,14 +258,14 @@ html {
         /* ----Horizontal line styling for footer sections---- */
         footer hr {
             border-color: 8px solid rgba(182, 20, 20, 0.2); 
-            margin: 0; 
+            margin: auto; 
             line-height: 0;
             padding: 0;
         }
         /* -----------------------End------------------------- */
 
         footer.page-footer ul li {
-            text-wrap: unset;
+            
             padding-right: 10px;
             margin-right: 10px;
             border-right: 1px solid white;
@@ -282,7 +282,7 @@ html {
         }
 
         footer.page-footer ul li a:hover {
-            text-wrap: unset;
+            white-space: nowrap;
             margin: 0;
             padding: 0 10px;
             font-weight: 600;
