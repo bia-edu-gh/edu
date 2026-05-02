@@ -210,13 +210,13 @@ html {
 
         footer.page-footer ul  {
             display: flex;
-            white-space: nowrap;
             padding: 0;
             margin: 10px 0;
         }
 
         .contact-info p {
             display: flex;
+            margin: auto;
         }
         .contact-info i {
             display: flex;
