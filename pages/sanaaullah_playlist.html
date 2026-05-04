@@ -6,11 +6,11 @@
 	<title>B.I.A | Audios-Sanaaullah Playlist</title>
 
     <!-- Customized CSS -->
-    <link rel="stylesheet" type="text/css" href="../assets/css/main.css">
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
     <!-- Custom helpers -->
-    <link rel="stylesheet" type="text/css" href="../assets/css/helpers.css">
+    <link rel="stylesheet" type="text/css" href="../css/helpers.css">
     <!-- Custom audio player CSS -->
-    <link rel="stylesheet" type="text/css" href="../assets/css/audioPlayer.css">
+    <link rel="stylesheet" type="text/css" href="../css/audioPlayer.css">
 
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -112,7 +112,7 @@
     <div class="mini-nav">
         <hr style="margin: 58px 0 0 0; border: none; border-top: 1px solid #22c90b; width: 410px; margin-left: auto; margin-right: auto;">
         <!-- Back arrow icon to audios page -->
-        <a href="../pages/audios.html" class="btn left" style="margin: 2px 0 10px 25px; background: #f6f7ec; color: #04500e !important; 
+        <a href="../pages/audios.html" class="btn-small left" style="margin: 2px 0 10px 25px; background: #f6f7ec; color: #04500e !important; 
         border-radius: 4px !important; display: flex; align-items: center; justify-content: center;">
             <i class="bi bi-arrow-left" style="font-size: 24px;"></i>
         </a>
@@ -152,7 +152,7 @@
             </a>
         </li>
         <li class="nav-item active"  style="font-weight: 600; border-left: 5px solid #056313; background: #ecebe6 !important;">
-            <a href="../html/audios.html" class="nav-link" style="color: #04500e !important;">
+            <a href="../pages/audios.html" class="nav-link" style="color: #04500e !important;">
                 <i class="bi bi-headset medium-icon" style="margin:10px 15px 5px 0; height: 30px;"></i>
                 <span>Audios</span>
             </a>
@@ -169,7 +169,7 @@
     <div class="container" style="margin: 0 8px;">
         <div class="row content">
             <div class="col s6 m6 l4 animate">
-                <h1 class="flow-text font-bold" style="font-size: 1.6rem; margin: 120px 0 20px 0;">Sanaaullah Ishaq</h1>
+                <h1 class="flow-text font-bold" style="font-size: 1.25rem; margin: 120px 0 20px 0;">Sanaaullah Ishaq</h1>
                 <div class="card" style="margin-left: 5px;">
                     <div class="card-content">
                         <!-- Card Image -->
@@ -220,14 +220,7 @@
 
                             <!-- Extras -->
                             <div class="extras">
-                                <div class="volume-controls">
-                                    <button id="mute"><i class="bi bi-volume-up-fill"></i></button>
-                                    <input type="range" id="volume" min="0" max="1" step="0.01" value="1">
-                                    <span class="volume-rate">100%</span>
-                                </div>
-
                                 <div class="playback-speed">
-                                    <label for="speed"></label>
                                     <select id="speed" class="browser-default">
                                         <option value="0.5">0.5x</option>
                                         <option value="1" selected>1x</option>
@@ -235,6 +228,12 @@
                                         <option value="1.5">1.5x</option>
                                         <option value="2">2x</option>
                                     </select>
+                                </div>
+
+                                <div class="volume-controls">
+                                    <button id="mute"><i class="bi bi-volume-up-fill"></i></button>
+                                    <input type="range" id="volume" min="0" max="1" step="0.01" value="1">
+                                    <span class="volume-rate">100%</span>
                                 </div>
                             </div>
                         </div>
@@ -249,15 +248,14 @@
     <div class="footer-content">
         <div class="row">
             <!-- School Information Section -->
-            <div class="col l4 s12   school-info">
-                <img src="../assets/images/bia-logo-4.png" alt="Breman Islamic Academy Logo">
+            <div class="col l4 s12   school-info center">
+                <img src="../assets/images/bia-logo-4.png" alt="b.i.a Logo">
                 <h6 class="white-text font-bold" id="school-info">Breman Islamic Academy</h6>
                 <p class="grey-text text-lighten-3" id="sub-school-info">
                     Sovereignty Belongs to Allah.
-                    <br>We train children that gives SAKEENAH 
-                    (Tranquility and Peace of Mind) in your old age.
+                    <br>We train children that gives SAKEENAH (Tranquility and Peace of Mind) in your old age.
                 </p>
-                <div class="social-media-icons">
+                <div class="social-media-icons center">
                     <a class="big-icon" href="#BremanIslamicAcademy"><i class="bi bi-whatsapp"></i></a>
                     <a class="big-icon" href="#BremanIslamicAcademy"><i class="bi bi-facebook"></i></a>
                     <a class="big-icon" href="#BremanIslamicAcademy"><i class="bi bi-twitter"></i></a>
@@ -270,30 +268,30 @@
             <div class="col l3 s12">
                 <h6 class="white-text font-semibold">Quick Links</h6>
                 <ul>
-                    <li><a class="grey-text text-lighten-3" href="../index.html">
-                        <i class="material-icons left tiny">home</i>Home</a></li>
-                    <li><a class="grey-text text-lighten-3" href="#results">
-                        <i class="material-icons left tiny">assessment</i>Results</a></li>
-                    <li><a class="grey-text text-lighten-3" href="#exams">
-                        <i class="material-icons left tiny">description</i>Exams</a></li>
-                    <li style="border-right: none;"><a class="grey-text text-lighten-3" href="#gallery">
-                        <i class="material-icons left tiny">photo</i>Gallery</a></li>
+                    <li><a class="grey-text text-lighten-3 col s12" href="../index.html">
+                        <i class="bi bi-house left tiny"></i>Home</a></li>
+                    <li><a class="grey-text text-lighten-3 col s12" href="#results">
+                        <i class="bi bi-clipboard-data left tiny"></i>Results</a></li>
+                    <li><a class="grey-text text-lighten-3 col s12" href="#exams">
+                        <i class="bi bi-file-earmark-text left tiny"></i>Exams</a></li>
+                    <li style="border-right: none;"><a class="grey-text text-lighten-3 col s12" href="#gallery">
+                        <i class="bi bi-images left tiny"></i>Gallery</a></li>
                 </ul>
-                <hr>
+                <hr class="col s12" style="margin: 10px 0;">
             </div>
 
             <!-- Services Section -->
             <div class="col l3 s12">
                 <h6 class="white-text font-semibold">Services</h6>
                 <ul>
-                    <li><a class="grey-text text-lighten-3 col span s12" href="../html/audios.html">
-                        <i class="material-icons left tiny">headset</i>Audio Library</a></li>
-                    <li><a class="grey-text text-lighten-3" href="#apply">
-                        <i class="material-icons left tiny">edit</i>Apply Online</a></li>
-                    <li style="border-right: none;"><a class="grey-text text-lighten-3" href="#modal2">
-                        <i class="material-icons left tiny">call</i>Help & Support</a></li>
+                    <li><a class="grey-text text-lighten-3 col s12 m12 l12" href="../pages/audios.html">
+                        <i class="bi bi-headset left tiny"></i>Audio Library</a></li>
+                    <li><a class="grey-text text-lighten-3 col s12 m12 l12" href="#apply">
+                        <i class="bi bi-pencil-square left tiny"></i>Apply Online</a></li>
+                    <li><a class="grey-text text-lighten-3 col s12 m12 l12" href="#modal2">
+                        <i class="bi bi-question-circle left tiny"></i>Help & Support</a></li>
                 </ul>
-                <hr>
+                <hr class="col s12 m12 l12" style="margin: 10px 0;">
             </div>
 
             <!-- Contact Us Information Section -->
@@ -307,11 +305,15 @@
                 </p>
                 <p class="grey-text text-lighten-3">
                     <i class="bi bi-envelope small-icon"></i>
-                    <a href="mailto:info@bremanislamicacademy.edu.gh" class="grey-text text-lighten-3">info@bremanislamicacademy.edu.gh</a>
+                    <a href="mailto:info@bremanislamicacademy.edu.gh" class="grey-text text-lighten-3 col s12">
+                        info@bia.edu.gh
+                    </a>
                 </p>
                 <p class="grey-text text-lighten-3">
                     <i class="bi bi-telephone small-icon"></i>
-                    <a href="tel:+233241303485" class="grey-text text-lighten-3">+233 241 303 485</a>
+                    <a href="tel:+233241303485" class="grey-text text-lighten-3">
+                        +233 241 303 485
+                    </a>
                 </p>
                 <p class="grey-text text-lighten-3">
                     <i class="bi bi-clock small-icon"></i>
@@ -324,7 +326,7 @@
             <div class="col l2 s12 left-align">
                 <h6 class="white-text font-semibold">Background Music</h6>
                 <div class="audio-container">
-                    <audio controls id="background-audio" loop>
+                    <audio controls id="audio" loop>
                         <source src="../assets/audios/m.background-music.aac" type="audio/mpeg">
                     </audio>
                 </div>
@@ -336,12 +338,12 @@
     <div class="footer-copyright">
         <div>
             <div class="row">
-                <div class="col s12 m6 l6 center">
+                <div class="col s12 m2 l6 center">
                     <span class="yellow-text font-normal text-sm">
                         &copy; 2026 Breman Islamic Academy. All Rights Reserved.
                     </span>
                 </div>
-                <div class="col s12 m6 l6 center">
+                <div class="col s12 m2 l6 center">
                     <span class="grey-text text-lighten-2 font-normal text-sm ">
                         Designed by: <span class="yellow-text">RahmaTrust Multi Services-IT & Digital Solutions</span>
                     </span>
@@ -355,9 +357,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
     <!-- ==============Custom JavaScript============ -->
-    <script src="../assets/js/main.js"></script>
+    <script src="../js/main.js"></script>
 
     <!-- =============Audios JavaScript=========== -->
-     <script src="../assets/js/audioPlayer.js"></script>
+     <script src="../js/audioPlayer.js"></script>
 </body>
 </html>
