@@ -2,77 +2,77 @@ const audios = [
     {
     title: "(001, 105 to 114)_Al-Fatiha",
     duration: "00:38",
-    src: "../assets/audios/sanaaullah_playlist/(001_105_106_107_108_109_110_111_112_113_114)_Al-Faatiha_Al-Fiil_Quraish_Al-Maa'uun_Al-Kawthar_Al-Kaafiruun_An-Nasr_Al-Masad_Al-Ikhlaas_Al-Falaq_An-Naas.mp3"
+    src: "https://res.cloudinary.com/rt-multi-services-it-digital-solutions/video/upload/fl_attachment/v1777928114/001_105_106_107_108_109_110_111_112_113_114__Al-Faatiha_Al-Fiil_Quraish_Al-Maa_uun_Al-Kawthar_Al-Kaafiruun_An-Nasr_Al-Masad_Al-Ikhlaas_Al-Falaq_An-Naas_q9zpac.mp3"
     },
     {
     title: "(002)_Al-Baqarah",
     duration: "02:15",
-    src: "../assets/audios/sanaaullah_playlist/(002)_Al-Baqara.mp3"
+    src: "https://res.cloudinary.com/rt-multi-services-it-digital-solutions/video/upload/fl_attachment/v1777928092/002__Al-Baqara_xbuuvk.mp3"
     },
     {
     title: "(004)_An-Nisaa",
     duration: "02:15",
-    src: "../assets/audios/sanaaullah_playlist/(004)_An-Nisaa_1-10.mp3"
+    src: "https://res.cloudinary.com/djc1unhik/video/upload/fl_attachment/v1777918941/004__An-Nisaa_1-10_bqvp9x.mp3"
     },
     {
     title: "(006)_Al-An'aam",
     duration: "02:15",
-    src: "../assets/audios/sanaaullah_playlist/(006)_Al-An'aam.mp3"
+    src: "https://res.cloudinary.com/rt-multi-services-it-digital-solutions/video/upload/fl_attachment/v1777927600/006__Al-An_aam_n4sl3o.mp3"
     },
     {
     title: "(007)_Al-A'raaf_94-137",
     duration: "02:15",
-    src: "../assets/audios/sanaaullah_playlist/(007)_Al-A'raaf_94-137.mp3"
+    src: "https://res.cloudinary.com/rt-multi-services-it-digital-solutions/video/upload/fl_attachment/v1777928153/007__Al-A_raaf_94-137_izcjmk.mp3"
     },
     {
     title: "(014)_Ibrahim",
     duration: "02:15",
-    src: "../assets/audios/sanaaullah_playlist/(014)_Ibrahim.mp3"
+    src: "https://res.cloudinary.com/rt-multi-services-it-digital-solutions/video/upload/fl_attachment/v1777927131/014__Ibrahim_jb1hc8.mp3"
     },
     {
     title: "(017)_Al-Israa_22-39",
     duration: "02:15",
-    src: "../assets/audios/sanaaullah_playlist/(017)_Al-Israa_22-39.mp3"
+    src: "https://res.cloudinary.com/rt-multi-services-it-digital-solutions/video/upload/fl_attachment/v1777928147/017__Al-Israa_22-39_ssn0nf.mp3"
     },
     {
     title: "(018)_Al-Kahf_1-27",
     duration: "02:15",
-    src: "../assets/audios/sanaaullah_playlist/(018)_Al-Kahf_1-27.mp3"
+    src: "https://res.cloudinary.com/rt-multi-services-it-digital-solutions/video/upload/fl_attachment/v1777927318/018__Al-Kahf_1-27_rc9sid.mp3"
     },
     {
     title: "(018)_Al-Kahf_10-18",
     duration: "02:15",
-    src: "../assets/audios/sanaaullah_playlist/(018)_Al-Kahf_10-18.mp3"
+    src: "https://res.cloudinary.com/rt-multi-services-it-digital-solutions/video/upload/fl_attachment/v1777927262/018__Al-Kahf_10-18_qbequf.mp3"
     },
     {
     title: "(027)_An-Naml_54-58",
     duration: "02:15",
-    src: "../assets/audios/sanaaullah_playlist/(027)_An-Naml_54-58.mp3"
+    src: "https://res.cloudinary.com/rt-multi-services-it-digital-solutions/video/upload/fl_attachment/v1777927304/027__An-Naml_54-58_pyz4xw.mp3"
     },
     {
     title: "(061)_As-Saff",
     duration: "02:15",
-    src: "../assets/audios/sanaaullah_playlist/(061)_As-Saff.mp3"
+    src: "https://res.cloudinary.com/rt-multi-services-it-digital-solutions/video/upload/fl_attachment/v1777928112/061__As-Saff_xmek1w.mp3"
     },
     {
     title: "(062)_Al-Jumu'a",
     duration: "02:15",
-    src: "../assets/audios/sanaaullah_playlist/(062)_Al-Jumu'a.mp3"
+    src: "https://res.cloudinary.com/rt-multi-services-it-digital-solutions/video/upload/fl_attachment/v1777928131/062__Al-Jumu_a_neg2xy.mp3"
     },
     {
     title: "(064)_At-Taghaabun",
     duration: "02:15",
-    src: "../assets/audios/sanaaullah_playlist/(064)_At-Taghaabun.mp3"
+    src: "https://res.cloudinary.com/rt-multi-services-it-digital-solutions/video/upload/fl_attachment/v1777928133/064__At-Taghaabun_h3umbt.mp3"
     },   
     {
     title: "(065)_Aṭ-Ṭalaaq",
     duration: "02:15",
-    src: "../assets/audios/sanaaullah_playlist/(065)_Aṭ-Ṭalaaq.mp3"
+    src: "https://res.cloudinary.com/rt-multi-services-it-digital-solutions/video/upload/fl_attachment/v1777928201/065__A%E1%B9%AD-%E1%B9%ACalaaq_pusqck.mp3"
     },
     {
     title: "(066)_At-Tahriim",
     duration: "02:15",
-    src: "../assets/audios/sanaaullah_playlist/(066)_At-Tahriim.mp3"
+    src: "https://res.cloudinary.com/rt-multi-services-it-digital-solutions/video/upload/fl_attachment/v1777928128/066__At-Tahriim_pwqqjn.mp3"
     },
 ];
 
