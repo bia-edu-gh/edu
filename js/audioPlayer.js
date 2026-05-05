@@ -12,7 +12,7 @@ const audios = [
     {
     title: "(004)_An-Nisaa",
     duration: "02:15",
-    src: "https://res.cloudinary.com/djc1unhik/video/upload/fl_attachment/v1777918941/004__An-Nisaa_1-10_bqvp9x.mp3"
+    src: "https://res.cloudinary.com/rt-multi-services-it-digital-solutions/video/upload/fl_attachment/v1777918941/004__An-Nisaa_1-10_bqvp9x.mp3"
     },
     {
     title: "(006)_Al-An'aam",
