@@ -25,6 +25,11 @@ const audios = [
     src: "https://res.cloudinary.com/rt-multi-services-it-digital-solutions/video/upload/fl_attachment/v1777928153/007__Al-A_raaf_94-137_izcjmk.mp3"
     },
     {
+    title: "(012)_Yuusuf",
+    duration: "02:15",
+    src: "https://res.cloudinary.com/rt-multi-services-it-digital-solutions/video/upload/fl_attachment/v1777967111/012__Yuusuf_z3lx0k.mp3"
+    },
+    {
     title: "(014)_Ibrahim",
     duration: "02:15",
     src: "https://res.cloudinary.com/rt-multi-services-it-digital-solutions/video/upload/fl_attachment/v1777927131/014__Ibrahim_jb1hc8.mp3"
