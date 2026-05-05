@@ -33,11 +33,11 @@
         
         /* Custom card styling */
         .content {
-            margin: 130px 0;
+            margin: 170px 0 100px 0;
         }
 
         .card {
-            width: 30%;
+            width: 60%;
             align-items: center;
             margin: 10px 0 0 0;
             border-radius: 1em !important;
@@ -62,8 +62,8 @@
         }
 
         .card img {
-            width: 30%;
-            height: 110px;
+            width: 100%;
+            height: 80px;
             padding: 0;
             margin: 0;
             border-radius: 0.5em 0.5em 0 0 !important;;
@@ -95,7 +95,7 @@
     </div>
 </nav>
     <div class="mini-nav">
-        <hr style="margin: 68px 0 0 0; border: none; border-top: 1px solid #22c90b; width: 95%; margin-left: auto; margin-right: auto;">
+        <hr style="margin: 58px 0 0 0; border: none; border-top: 1px solid #22c90b; width: 95%; margin-left: auto; margin-right: auto;">
         <h1 class="flow-text center font-bold" style="margin: 10px 238px 10px 0; white-space: nowrap;">
             <i class="bi bi-headset"></i> Audio Library
         </h1>
@@ -150,11 +150,11 @@
         <h1 class="flow-text center font-bold">
             Asaatidhah (Teachers)/ Reciters
         </h1>
-        <hr style="margin: 0 0 0 0; border: none; border-top: 1px solid #22c90b; width: 88%; margin-left: auto; margin-right: auto;
+        <hr style="margin: 0 0 0 0; border: none; border-top: 1px solid #22c90b; width: 80%; margin-left: auto; margin-right: auto;
         position: relative; bottom: 20px;">
 
         <div class="col s6 m6 l4 animate">
-            <a href="#abubakar_audios"><div class="card" style="margin-left: 30px;">
+            <a href="#abubakar_audios"><div class="card" style="margin-left: 40%;">
                 <div class="card-content">
                     <!-- Card Image -->
                     <span class="card-title"><img src="../assets/images/abubakar.jpg" alt="abubakar"></span>
@@ -178,7 +178,7 @@
                 </div>
             </div></a>
         </div>
-        <hr style="margin: 199px 0 15px 0; border: none; border-top: 1px solid #22c90b; width: 88%; margin-left: auto; margin-right: auto;">
+        <hr style="margin: 170px 0 15px 0; border: none; border-top: 1px solid #22c90b; width: 80%; margin-left: auto; margin-right: auto;">
 
 </main>
 
@@ -294,114 +294,8 @@
 
     <!-- Materialize JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-<script>
-    // Initialize modals and carousels
-    document.addEventListener('DOMContentLoaded', function() {
-        // Initialize modals
-        const modalElems = document.querySelectorAll('.modal');
-        M.Modal.init(modalElems);
 
-        // mobile sidenav init
-    const elems = document.querySelectorAll('.sidenav');
-    M.Sidenav.init(elems);
-
-        // Initialize carousels
-        const carouselElems = document.querySelectorAll('.carousel');
-        const carouselInstances = M.Carousel.init(carouselElems, {
-            fullWidth: true,
-            indicators: true,
-            numVisible: 1
-        });
-
-        // Automatically transition all carousels every 4 seconds
-        setInterval(() => {
-            carouselInstances.forEach(carousel => carousel.next());
-        }, 4000);
-
-        // Scroll-triggered animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate');
-                }
-            });
-        }, observerOptions);
-
-        // Observe all elements with animate-on-scroll class
-        document.querySelectorAll('.animate-on-scroll').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Scroll-to-top button functionality
-        const scrollButton = document.createElement('button');
-        scrollButton.innerHTML = '<i class="bi bi-arrow-up"></i>';
-        scrollButton.className = 'scroll-to-top';
-        scrollButton.title = 'Scroll to top';
-        document.body.appendChild(scrollButton);
-
-        // Scroll to down button functionality
-        const scrollDownButton = document.createElement('button');
-        scrollDownButton.innerHTML = '<i class="bi bi-arrow-down"></i>';
-        scrollDownButton.className = 'scroll-to-down';
-        scrollDownButton.style.bottom = '80px';
-        scrollDownButton.title = 'Scroll down';
-        document.body.appendChild(scrollDownButton);
-
-        // Show/hide scroll button based on scroll position
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                scrollButton.classList.add('show');
-            } else {
-                scrollButton.classList.remove('show');
-            }
-        });
-
-        // Show/ hide scroll down button based on scroll position
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset < document.body.scrollHeight - window.innerHeight - 300) {
-                scrollDownButton.classList.add('show');
-            } else {                scrollDownButton.classList.remove('show');
-            }
-        });
-
-        // Scroll to top when button is clicked
-        scrollButton.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-
-        // Scroll to down when button is clicked
-        scrollDownButton.addEventListener('click', () => {
-            window.scrollTo({
-                top: document.body.scrollHeight,
-                behavior: 'smooth'
-            });
-        });
-
-        // Enhanced hover effects for cards
-        document.querySelectorAll('.card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-8px) scale(1.02)';
-            });
-
-            card.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0) scale(1)';
-            });
-        });
-
-        // Sidebar toggle functionality
-        document.getElementById('sidebar-toggle').addEventListener('click', function(e) {
-            e.preventDefault();
-            document.getElementById('sidebar').classList.toggle('collapsed');
-        });
-    });
-</script>
+    <!-- ==============Custom JavaScript============ -->
+    <script src="../js/main.js"></script>
 </body>
 </html>
