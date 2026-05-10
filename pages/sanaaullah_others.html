@@ -3,12 +3,14 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>B.I.A | Audios</title>
+	<title>B.I.A | Audio-Sanaaullah Others</title>
 
     <!-- Customized CSS -->
     <link rel="stylesheet" type="text/css" href="../css/main.css">
     <!-- Custom helpers -->
     <link rel="stylesheet" type="text/css" href="../css/helpers.css">
+    <!-- Custom audio player CSS -->
+    <link rel="stylesheet" type="text/css" href="../css/audioPlayer.css">
 
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -19,7 +21,7 @@
     <style>
         /* --- Mini Navbar --- */
         .mini-nav {
-            background: #f6f7ec;
+            background: #f6f7ec; 
             padding: 0px;
             margin: 5px auto 0 auto;
             width: 98%;
@@ -30,30 +32,49 @@
             right: 0;
             z-index: 98;
         }
-        
         /* Custom card styling */
         .content {
-            margin: 170px 0 100px 0;
+            margin: 0;
         }
 
         .card {
-            width: 60%;
+            width: 100px;
+            height: 90px;
             align-items: center;
-            margin: 10px 0 0 0;
+            margin: 0;
             border-radius: 1em !important;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1) !important;
             transition: all 0.3s ease !important;
-        }
-
-        .card:hover {
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2) !important;
-            transform: translateY(-2px);
         }
 
         .card .card-content {
             border-radius: 1em 1em 0 0 !important;
             padding: 0;
             margin: 0;
+            width: 100%;
+        }
+
+        .list {
+            width: 100%;
+            background: #dadad5 !important;
+            color: #04500e !important;
+            border-radius: 4px !important;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
+            transition: all 0.3s ease !important;
+        }
+
+        .btn-small.active {
+            background: #22c90b !important;
+            color: #f6f7ec !important;
+            box-shadow: 0 4px 8px rgba(34,201,11,0.3) !important;
+        }
+
+        .btn-small.active:hover {
+            background: #1fa409 !important;
+            box-shadow: 0 6px 12px rgba(31,164,9,0.4) !important;
         }
 
         .card .card-action {
@@ -62,11 +83,29 @@
         }
 
         .card img {
-            width: 100%;
-            height: 80px;
+            width: 100px;
+            height: 90px;
             padding: 0;
             margin: 0;
-            border-radius: 0.5em 0.5em 0 0 !important;;
+            border-bottom: 3.5px solid rgb(12, 191, 12) !important;
+            border-radius: 0.5em 0.5em !important;;
+        }
+
+         /* Custom collection styling */
+        .card-panel {
+            margin: 0 0 120px 0 !important;
+            border: none !important;
+            border-radius: 1em !important;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+        }
+        .collection {
+            border: none !important;
+            margin: 0;
+        }
+
+        .collection-item {
+            color: #04500e !important;
+            border-radius: 1em !important;
         }
     </style>
 </head>
@@ -95,11 +134,16 @@
     </div>
 </nav>
     <div class="mini-nav">
-        <hr style="margin: 58px 0 0 0; border: none; border-top: 1px solid #22c90b; width: 95%; margin-left: auto; margin-right: auto;">
-        <h1 class="flow-text center font-bold" style="margin: 10px 50% 10px 0; white-space: nowrap;">
+        <hr style="margin: 58px 0 0 0; border: none; border-top: 1px solid #22c90b; width: 90%; margin-left: auto; margin-right: auto;">
+        <!-- Back arrow icon to audios page -->
+        <a href="../pages/audios.html" class="btn-small left" style="margin: 2px 0 10px 25px; background: #f6f7ec; color: #04500e !important; 
+        border-radius: 4px !important; display: flex; align-items: center; justify-content: center;">
+            <i class="bi bi-arrow-left" style="font-size: 24px;"></i>
+        </a>
+        <h1 class="flow-text center font-bold" style="margin: 10px 180px 10px 0; white-space: nowrap;">
             <i class="bi bi-headset"></i> Audio Library
         </h1>
-        <hr style="margin: 0px 0 0 0; border: none; border-top: 1px solid #22c90b; width: 95%; margin-left: auto; margin-right: auto;">
+        <hr style="margin: 0px 0 20px 0; border: none; border-top: 1px solid #22c90b; width: 90%; margin-left: auto; margin-right: auto;">
     </div>
 <!-- ================= MOBILE SIDENAV ================= -->
 <ul class="sidenav green" id="mobile-nav" style="margin-top: 45px;">
@@ -134,52 +178,106 @@
         <li class="nav-item active"  style="font-weight: 600; border-left: 5px solid #056313; background: #ecebe6 !important;">
             <a href="../pages/audios.html" class="nav-link" style="color: #04500e !important;">
                 <i class="bi bi-headset medium-icon" style="margin:10px 15px 5px 0; height: 30px;"></i>
-                <span>Audios</span>
+                <span>Audio Library</span>
             </a>
         </li>
         <li class="nav-item">
             <a href="#apply" class="nav-link">
                 <i class="bi bi-pencil-square medium-icon" style="margin:10px 15px 5px 0; height: 30px;"></i>
-                <span>Apply</span>
+                <span>Apply Online</span>
             </a>
         </li>
 </ul>
 
-    <!-- CARDS -->
-    <div class="row content">
-        <h1 class="flow-text center font-bold">
-            Asaatidhah (Teachers)/ Reciters
-        </h1>
-        <hr style="margin: 0 0 0 0; border: none; border-top: 1px solid #22c90b; width: 80%; margin-left: auto; margin-right: auto;
-        position: relative; bottom: 20px;">
-
-        <div class="col s6 m6 l4 animate">
-            <a href="#abubakar_audios"><div class="card" style="margin-left: 40%;">
-                <div class="card-content">
-                    <!-- Card Image -->
-                    <span class="card-title"><img src="../assets/images/abubakar.jpg" alt="abubakar"></span>
-                    <hr style="margin: 0; border: none; border-top: 4px solid #22c90b; position: relative; bottom: 16px;">
-                    <p class="black-text" style="text-align: center; margin: 0; position: relative; bottom: 12px; font-size: 0.8rem;">
-                        Abubakar Abdulai
-                    </p>
+<!-- =====================CARDS============== -->
+    <div class="container" style="margin: 0 0 0 3%;">
+        <div class="row content">
+            <section class="col s6 m6 l4 animate">
+                <h1 class="flow-text font-bold" style="font-size: 1.25rem; margin: 120px 0 20px 0; white-space: nowrap;">Sanaaullah Ishaq</h1>
+                <div class="card" style="margin-left: 5px;">
+                    <div class="card-content">
+                        <!-- Card Image -->
+                        <span class="card-title"><img src="../assets/images/sanauallah.jpg" alt="sanaaullah"></span>
+                    </div>
                 </div>
-            </div></a>
-        </div>
 
-        <div class="col s6 m6 l4 animate">
-            <a href="../pages/sanaaullah_qur'an.html"><div class="card" style="margin-left: 5px;">
-                <div class="card-content">
-                    <!-- Card Image -->
-                    <span class="card-title"><img src="../assets/images/sanauallah.jpg" alt="sanaaullah"></span>
-                    <hr style="margin: 0; border: none; border-top: 4px solid #22c90b; position: relative; bottom: 16px;">
-                    <p class="black-text" style="text-align: center; margin: 0; position: relative; bottom: 12px; font-size: 0.875rem; padding: 0.5px;">
-                        Sanaaullah Ishaq
-                    </p>
+                <div class="card-action" style="display: flex; justify-content: space-around; padding: 0px;">
+                    <a href="../pages/sanaaullah_qur'an.html" class="list btn-small col s6 font-bold" style="margin: 25px 8px 10px 0; border-radius: 4px !important; display: flex; align-items: center; 
+                    justify-content: center;">
+                        <i class="bi bi-book" style="font-size: 18px; margin-right: 4px;"></i>
+                        Qur'an
+                    </a>
+
+                    <a href="../pages/sanaaullah_videos.html" class="list btn-small grey col s6 font-bold" style="margin: 25px 8px 10px 0; border-radius: 4px !important; display: flex; align-items: center;
+                    justify-content: center; box-shadow: none;">
+                        <i class="bi bi-play-circle" style="font-size: 18px; margin-right: 4px;"></i>
+                        Videos
+                    </a>
+
+                    <a href="../pages/sanaaullah_others.html" class="list btn-small active grey col s6 font-bold" style="margin: 25px 8px 10px 0; border-radius: 4px !important; display: flex; align-items: center;
+                    justify-content: center; box-shadow: none;">
+                        <i class="bi bi-gear" style="font-size: 18px; margin-right: 4px;"></i>
+                        Others
+                    </a>
+
+                    <a href="../pages/sanaaullah_info.html" class="list btn-small grey col s6 font-bold" style="margin: 25px 0 10px 0; border-radius: 4px !important; display: flex; align-items: center;
+                    justify-content: center; box-shadow: none;">
+                        <i class="bi bi-info-circle" style="font-size: 18px; margin-right: 4px;"></i>
+                        Info
+                    </a>
                 </div>
-            </div></a>
+            </section>
         </div>
-        <hr style="margin: 170px 0 15px 0; border: none; border-top: 1px solid #22c90b; width: 80%; margin-left: auto; margin-right: auto;">
+    </div>
 
+    <div class="container">
+        <div class="row content">
+            <div class="card-panel col s12 m12 l12 animate" style="padding: 0;">
+                <div class="collection" style="margin: 0;">
+                    <ul id="audio-list" class="collection"></ul>
+
+                    <div class="container" style="margin: 0 0 8px 8px;">
+                        <div class="player">
+                            <audio id="audio" src="" preload="metadata"></audio>
+
+                            <!-- Timeline -->
+                            <div class="timeline">
+                                <span id="currentTime">0:00</span>
+                                <input type="range" id="progress" value="0" min="0" max="100">
+                                <span id="duration">0:00</span>
+                            </div>
+
+                            <!-- Controls -->
+                            <div class="controls">
+                                <button id="backward"><i class="bi bi-skip-start-fill"></i></button>
+                                <button id="playPause"><i class="bi bi-play-fill"></i></button>
+                                <button id="forward"><i class="bi bi-skip-end-fill"></i></button>
+                            </div>
+
+                            <!-- Extras -->
+                            <div class="extras">
+                                <div class="playback-speed">
+                                    <select id="speed" class="browser-default">
+                                        <option value="0.5">0.5x</option>
+                                        <option value="1" selected>1x</option>
+                                        <option value="1.25">1.25x</option>
+                                        <option value="1.5">1.5x</option>
+                                        <option value="2">2x</option>
+                                    </select>
+                                </div>
+
+                                <div class="volume-controls">
+                                    <button id="mute"><i class="bi bi-volume-up-fill"></i></button>
+                                    <input type="range" id="volume" min="0" max="1" step="0.01" value="1">
+                                    <span class="volume-rate">100%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </main>
 
 <footer class="page-footer green">
@@ -291,11 +389,13 @@
     </div>
 </footer>
 
-
     <!-- Materialize JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
     <!-- ==============Custom JavaScript============ -->
     <script src="../js/main.js"></script>
+
+    <!-- =============Audios JavaScript=========== -->
+     <script src="../js/others.js"></script>
 </body>
 </html>
