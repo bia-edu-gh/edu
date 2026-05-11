@@ -256,11 +256,10 @@
         audio {
             border-radius: 0.8em !important;
             position: relative;
-           right: 15%;
+            right: 15%;
             top: 2px;
             height: 25px !important;
-            width: 40% !important; /* Responsive for smaller screens */
-            max-width: 40% !important; 
+            width: 25% !important; /* Responsive for smaller screens */
         }
 
         /* Audio player container styling */
@@ -284,6 +283,6 @@
 
         @media screen and (min-width:993.60px) {
             #developer {white-space: nowrap; padding-left: 36%;}
-            
+            audio {width: 60% !important;}
         }
 /* ========== End of Footer Styling ========= */
