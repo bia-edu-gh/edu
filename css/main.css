@@ -281,4 +281,9 @@
         footer.page-footer .footer-copyright .container {
             padding: 0;
         }
+
+        @media screen and (min-width:993.60px) {
+            #developer {white-space: nowrap; padding-left: 36%;}
+            
+        }
 /* ========== End of Footer Styling ========= */
