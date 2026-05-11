@@ -3,7 +3,7 @@
         }
 
         body {
-            background: url(/bia/images/background.jpg);
+            background: url(../assets/images/background.jpg);
             background-position: right;
             display: flex;
             margin: 0;

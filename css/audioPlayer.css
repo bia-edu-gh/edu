@@ -26,11 +26,11 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            width: auto;
+            width: 15%;
             padding: 0;
             margin: 0;
             position: absolute;
-            left: 145px;
+            left: 140px;
             bottom: 14px;
         }
 
@@ -97,6 +97,7 @@
 
         /* Controls */
         .controls {
+            width: 90%;
             display: flex;
             justify-content: left;
             gap: 1px;
@@ -104,6 +105,7 @@
         }
 
         .controls button {
+            width: 10%;
             font-size: 15px;
         }
 
