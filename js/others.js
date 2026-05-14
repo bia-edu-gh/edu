@@ -2,7 +2,7 @@ const audios = [
     {
     title: "How To Perform Hajj Part_1",
     duration: "00:38",
-    src: "https://res.cloudinary.com/rt-multi-services-it-digital-solutions/video/upload/fl_attachment/v1778437957/Hajj_Part1_l5js7a.mp3"
+    src: "https://res.cloudinary.com/rahmatrust-multi-services/video/upload/fl_fl_attachment/v1778437957/Hajj_Part1_l5js7a.mp3"
     },
 ];
 
