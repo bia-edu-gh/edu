@@ -2,12 +2,12 @@ const audios = [
     {
     title: "(001, 105 to 114)_Al-Fatiha",
     duration: "00:38",
-    src: "https://res.cloudinary.com/rt-multi-services-it-digital-solutions/video/upload/fl_attachment/v1777928114/001_105_106_107_108_109_110_111_112_113_114__Al-Faatiha_Al-Fiil_Quraish_Al-Maa_uun_Al-Kawthar_Al-Kaafiruun_An-Nasr_Al-Masad_Al-Ikhlaas_Al-Falaq_An-Naas_q9zpac.mp3"
+    src: "https://res.cloudinary.com/rahmatrust-multi-services/video/upload/fl_attachment/v1777928114/001_105_106_107_108_109_110_111_112_113_114__Al-Faatiha_Al-Fiil_Quraish_Al-Maa_uun_Al-Kawthar_Al-Kaafiruun_An-Nasr_Al-Masad_Al-Ikhlaas_Al-Falaq_An-Naas_q9zpac.mp3"
     },
     {
     title: "(002)_Al-Baqarah",
     duration: "02:15",
-    src: "https://res.cloudinary.com/rt-multi-services-it-digital-solutions/video/upload/fl_attachment/v1777928092/002__Al-Baqara_xbuuvk.mp3"
+    src: "https://res.cloudinary.com/rahmatrust-multi-services/video/upload/fl_attachment/v1777928092/002__Al-Baqara_xbuuvk.mp3"
     },
     {
     title: "(004)_An-Nisaa",
@@ -17,37 +17,37 @@ const audios = [
     {
     title: "(006)_Al-An'aam",
     duration: "02:15",
-    src: "https://res.cloudinary.com/rt-multi-services-it-digital-solutions/video/upload/fl_attachment/v1777927600/006__Al-An_aam_n4sl3o.mp3"
+    src: "https://res.cloudinary.com/rahmatrust-multi-services/video/upload/fl_attachment/v1777927600/006__Al-An_aam_n4sl3o.mp3"
     },
     {
     title: "(007)_Al-A'raaf_94-137",
     duration: "02:15",
-    src: "https://res.cloudinary.com/rt-multi-services-it-digital-solutions/video/upload/fl_attachment/v1777928153/007__Al-A_raaf_94-137_izcjmk.mp3"
+    src: "https://res.cloudinary.com/rahmatrust-multi-services/video/upload/fl_attachment/v1777928153/007__Al-A_raaf_94-137_izcjmk.mp3"
     },
     {
     title: "(014)_Ibrahim",
     duration: "02:15",
-    src: "https://res.cloudinary.com/rt-multi-services-it-digital-solutions/video/upload/fl_attachment/v1777927131/014__Ibrahim_jb1hc8.mp3"
+    src: "https://res.cloudinary.com/rahmatrust-multi-services/video/upload/fl_attachment/v1777927131/014__Ibrahim_jb1hc8.mp3"
     },
     {
     title: "(017)_Al-Israa_22-39",
     duration: "02:15",
-    src: "https://res.cloudinary.com/rt-multi-services-it-digital-solutions/video/upload/fl_attachment/v1777928147/017__Al-Israa_22-39_ssn0nf.mp3"
+    src: "https://res.cloudinary.com/rahmatrust-multi-services/video/upload/fl_attachment/v1777928147/017__Al-Israa_22-39_ssn0nf.mp3"
     },
     {
     title: "(018)_Al-Kahf_1-27",
     duration: "02:15",
-    src: "https://res.cloudinary.com/rt-multi-services-it-digital-solutions/video/upload/fl_attachment/v1777927318/018__Al-Kahf_1-27_rc9sid.mp3"
+    src: "https://res.cloudinary.com/rahmatrust-multi-services/video/upload/fl_attachment/v1777927318/018__Al-Kahf_1-27_rc9sid.mp3"
     },
     {
     title: "(018)_Al-Kahf_10-18",
     duration: "02:15",
-    src: "https://res.cloudinary.com/rt-multi-services-it-digital-solutions/video/upload/fl_attachment/v1777927262/018__Al-Kahf_10-18_qbequf.mp3"
+    src: "https://res.cloudinary.com/rahmatrust-multi-services/video/upload/fl_attachment/v1777927262/018__Al-Kahf_10-18_qbequf.mp3"
     },
     {
     title: "(027)_An-Naml_54-58",
     duration: "02:15",
-    src: "https://res.cloudinary.com/rt-multi-services-it-digital-solutions/video/upload/fl_attachment/v1777927304/027__An-Naml_54-58_pyz4xw.mp3"
+    src: "https://res.cloudinary.com/rahmatrust-multi-services/video/upload/fl_attachment/v1777927304/027__An-Naml_54-58_pyz4xw.mp3"
     },
     {
     title: "(061)_As-Saff",
