@@ -27,7 +27,7 @@ const audios = [
     {
     title: "(012)_Yuusuf",
     duration: "02:15",
-    src: "https://res.cloudinary.com/rahmatrust-multi-services/video/upload/fl_attachment/v1777928153/007__Al-A_raaf_94-137_izcjmk.mp3"
+    src: "https://res.cloudinary.com/rahmatrust-multi-services/video/upload/fl_attachment/v1777967111/012__Yuusuf_z3lx0k.mp3"
     },
     {
     title: "(014)_Ibrahim",
