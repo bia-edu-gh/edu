@@ -25,6 +25,11 @@ const audios = [
     src: "https://res.cloudinary.com/rahmatrust-multi-services/video/upload/fl_attachment/v1777928153/007__Al-A_raaf_94-137_izcjmk.mp3"
     },
     {
+    title: "(012)_Yuusuf",
+    duration: "02:15",
+    src: "https://res.cloudinary.com/rahmatrust-multi-services/video/upload/fl_attachment/v1777928153/007__Al-A_raaf_94-137_izcjmk.mp3"
+    },
+    {
     title: "(014)_Ibrahim",
     duration: "02:15",
     src: "https://res.cloudinary.com/rahmatrust-multi-services/video/upload/fl_attachment/v1777927131/014__Ibrahim_jb1hc8.mp3"
@@ -52,27 +57,27 @@ const audios = [
     {
     title: "(061)_As-Saff",
     duration: "02:15",
-    src: "https://res.cloudinary.com/rt-multi-services-it-digital-solutions/video/upload/fl_attachment/v1777928112/061__As-Saff_xmek1w.mp3"
+    src: "https://res.cloudinary.com/rahmatrust-multi-services/video/upload/fl_attachment/v1777928112/061__As-Saff_xmek1w.mp3"
     },
     {
     title: "(062)_Al-Jumu'a",
     duration: "02:15",
-    src: "https://res.cloudinary.com/rt-multi-services-it-digital-solutions/video/upload/fl_attachment/v1777928131/062__Al-Jumu_a_neg2xy.mp3"
+    src: "https://res.cloudinary.com/rahmatrust-multi-services/video/upload/fl_attachment/v1777928131/062__Al-Jumu_a_neg2xy.mp3"
     },
     {
     title: "(064)_At-Taghaabun",
     duration: "02:15",
-    src: "https://res.cloudinary.com/rt-multi-services-it-digital-solutions/video/upload/fl_attachment/v1777928133/064__At-Taghaabun_h3umbt.mp3"
+    src: "https://res.cloudinary.com/rahmatrust-multi-services/video/upload/fl_attachment/v1777928133/064__At-Taghaabun_h3umbt.mp3"
     },   
     {
     title: "(065)_Aṭ-Ṭalaaq",
     duration: "02:15",
-    src: "https://res.cloudinary.com/rt-multi-services-it-digital-solutions/video/upload/fl_attachment/v1777928201/065__A%E1%B9%AD-%E1%B9%ACalaaq_pusqck.mp3"
+    src: "https://res.cloudinary.com/rahmatrust-multi-services/video/upload/fl_attachment/v1777928201/065__A%E1%B9%AD-%E1%B9%ACalaaq_pusqck.mp3"
     },
     {
     title: "(066)_At-Tahriim",
     duration: "02:15",
-    src: "https://res.cloudinary.com/rt-multi-services-it-digital-solutions/video/upload/fl_attachment/v1777928128/066__At-Tahriim_pwqqjn.mp3"
+    src: "https://res.cloudinary.com/rahmatrust-multi-services/video/upload/fl_attachment/v1777928128/066__At-Tahriim_pwqqjn.mp3"
     },
 ];
 
