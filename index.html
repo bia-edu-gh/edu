@@ -22,10 +22,12 @@
             justify-content: center;
             align-items: center; }
 
+        /* 
         .carousel .carousel-item img {
             width: 100%; /* Ensures images take up full width */
-            margin-top: 45px;
+            /*margin-top: 45px;
         }
+        */
 
         .caption {
             position: absolute;
@@ -76,16 +78,18 @@
 <main>
 <!--===BASE DESIGN===-->
     <!-- CAROUSEL -->
-    <div class="carousel carousel-slider">
+    <section class="carousel carousel-slider">
         <a class="carousel-item">
             <img src="assets/images/bia-logo-1.jpg" 
                  alt="First Logo of B.I.A"
-                 height="400"
-                 width="500">
-            <div class="caption">School's first logo</div>
+                 height="400">
+            <h1 class="caption">School's first logo</h1>
         </a>
-        <a class="carousel-item"><img src="assets/images/admission.jpg">
-            <div class="caption">2025/2026 Admissions are Open</div>
+        <a class="carousel-item">
+            <img src="assets/images/admission.jpg"
+                 alt="Admission image"
+                 height="400">
+            <h2 class="caption">2025/2026 Admissions are Open</h2>
         </a>
         <a class="carousel-item"><img src="assets/images/bus.jpg">
             <div class="caption">Future Innovation</div>
@@ -99,7 +103,7 @@
         <a class="carousel-item"><img src="assets/images/assembly.jpg">
             <div class="caption">Students at Assembly</div>
         </a>
-    </div>
+    </section>
 
     <br>
 
